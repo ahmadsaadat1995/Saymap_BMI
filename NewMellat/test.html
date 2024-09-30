@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <link rel="stylesheet" href="assets/css/form.css" />
+    <link rel="stylesheet" href="assets/fonts/material-icon/css/material-design-iconic-font.min.css" />
+    <script src="../../assets/js/bootstrap.js"></script>
+    <div dir="rtl">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-main-tab" data-toggle="tab" href="#nav-main" role="tab" aria-controls="nav-main" aria-selected="true">عملیات پروژه</a>
+                <a class="nav-item nav-link" id="nav-team-tab" data-toggle="tab" href="#nav-team" role="tab" aria-controls="nav-team" aria-selected="false">تیم پروژه </a>
+                <a class="nav-item nav-link" id="nav-doc-tab" data-toggle="tab" href="#nav-doc" role="tab" aria-controls="nav-doc" aria-selected="false">تاییده سند</a>
+                <a class="nav-item nav-link" id="nav-detail1-tab" data-toggle="tab" href="#nav-detail1" role="tab" aria-controls="nav-detail1" aria-selected="false">جزئیات طرح</a>
+                <a class="nav-item nav-link" id="nav-detail2-tab" data-toggle="tab" href="#nav-detail2" role="tab" aria-controls="nav-detail2" aria-selected="false">جرئیات درخواست</a>
+                <a class="nav-item nav-link" id="nav-corr-tab" data-toggle="tab" href="#nav-corr" role="tab" aria-controls="nav-corr" aria-selected="false">همپوشانی</a>
+                <a class="nav-item nav-link" id="nav-benefit-tab" data-toggle="tab" href="#nav-benefit" role="tab" aria-controls="nav-benefit" aria-selected="false">عواید</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-main" role="tabpanel" aria-labelledby="nav-main-tab">
+                <div class="main">
+                    <div class="container">
+                        <div class="signup-content">
+
+                            <div class="signup-form">
+                                <form method="POST" class="register-form" id="register-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="address">عنوان پروژه :</label>
+                                            <input type="text" name="address" id="address" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="state">نوع درخواست :</label>
+                                            <div class="form-select">
+                                                <select name="state" id="state">
+                                                    <option value=""></option>
+                                                    <option value="us">America</option>
+                                                    <option value="uk">English</option>
+                                                </select>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">واحد درخواست کننده :</label>
+                                            <div class="form-select">
+                                                <select name="city" id="city">
+                                                    <option value=""></option>
+                                                    <option value="losangeles">Los Angeles</option>
+                                                    <option value="washington">Washington</option>
+                                                </select>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">ناظر فنی :</label>
+                                            <div class="form-select">
+                                                <select name="city" id="city">
+                                                    <option value=""></option>
+                                                    <option value="losangeles">Los Angeles</option>
+                                                    <option value="washington">Washington</option>
+                                                </select>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="state">نوع پروژه :</label>
+                                            <div class="form-select">
+                                                <select name="state" id="state">
+                                                    <option value=""></option>
+                                                    <option value="us">America</option>
+                                                    <option value="uk">English</option>
+                                                </select>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">نوع سند :</label>
+                                            <div class="form-select">
+                                                <select name="city" id="city">
+                                                    <option value=""></option>
+                                                    <option value="losangeles">Los Angeles</option>
+                                                    <option value="washington">Washington</option>
+                                                </select>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">شرکت پیمانکار :</label>
+                                            <div class="form-select">
+                                                <select name="city" id="city">
+                                                    <option value=""></option>
+                                                    <option value="losangeles">Los Angeles</option>
+                                                    <option value="washington">Washington</option>
+                                                </select>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="state">اولویت :</label>
+                                            <div class="form-select">
+                                                <select name="state" id="state">
+                                                    <option value=""></option>
+                                                    <option value="us">America</option>
+                                                    <option value="uk">English</option>
+                                                </select>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">سرویس مرتبط :</label>
+                                            <div class="form-select">
+                                                <select name="city" id="city">
+                                                    <option value=""></option>
+                                                    <option value="losangeles">Los Angeles</option>
+                                                    <option value="washington">Washington</option>
+                                                </select>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"> </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="city">شناسه نامه :</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">شماره نامه :</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">تاریخ نامه :</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="form-submit">
+                                        <input type="button" value="لغو" class="submit" id="reset" />
+                                        <input type="button" value="ثبت" class="submit" id="submit" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-team" role="tabpanel" aria-labelledby="nav-team-tab">team</div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+        </div>
+    </div>
+</body>
+</html>

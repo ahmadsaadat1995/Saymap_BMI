@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectServer_Reporting_faModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.DimDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DimDate">
+    <Key>
+      <PropertyRef Name="DateKey" />
+    </Key>
+    <Property Name="DateKey" Type="int" Nullable="false" />
+    <Property Name="GregorianDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="GregorianYearInt" Type="smallint" />
+    <Property Name="GregorianMonthNo" Type="tinyint" />
+    <Property Name="GregorianDayInMonth" Type="tinyint" />
+    <Property Name="GregorianMonthDayInt" Type="smallint" />
+    <Property Name="GregorianDayOfWeekInt" Type="tinyint" />
+    <Property Name="GregorianMonthName" Type="nvarchar(max)" />
+    <Property Name="GregorianStr" Type="nvarchar" MaxLength="10" />
+    <Property Name="GregorianYearMonthInt" Type="int" />
+    <Property Name="GregorianYearMonthStr" Type="nvarchar" MaxLength="7" />
+    <Property Name="GregorianDayOfWeekName" Type="nvarchar(max)" />
+    <Property Name="GrgorianWeekOfYearName" Type="nvarchar(max)" />
+    <Property Name="GregorianWeekOfYearNo" Type="int" />
+    <Property Name="PersianInt" Type="int" />
+    <Property Name="PersianYearInt" Type="smallint" />
+    <Property Name="PersianMonthNo" Type="tinyint" />
+    <Property Name="PersianDayInMonth" Type="tinyint" />
+    <Property Name="PersianMonthDayInt" Type="smallint" />
+    <Property Name="PersianDayOfWeekInt" Type="tinyint" />
+    <Property Name="PersianMonthName" Type="nvarchar(max)" />
+    <Property Name="PersianStr" Type="nvarchar" MaxLength="10" />
+    <Property Name="PersianYearMonthInt" Type="int" />
+    <Property Name="PersianYearMonthStr" Type="nvarchar" MaxLength="7" />
+    <Property Name="PersianDayOfWeekName" Type="nvarchar(max)" />
+    <Property Name="PersianWeekOfYearName" Type="nvarchar(max)" />
+    <Property Name="PersianWeekOfYearNo" Type="int" />
+    <Property Name="PersianFullName" Type="nvarchar(max)" />
+    <Property Name="HijriInt" Type="int" />
+    <Property Name="HijriYearInt" Type="smallint" />
+    <Property Name="HijriMonthNo" Type="tinyint" />
+    <Property Name="HijriDayInMonth" Type="tinyint" />
+    <Property Name="HijriMonthDayInt" Type="smallint" />
+    <Property Name="HijriDayOfWeekInt" Type="tinyint" />
+    <Property Name="HijriMonthName" Type="nvarchar(max)" />
+    <Property Name="HijriStr" Type="nvarchar" MaxLength="10" />
+    <Property Name="HijriYearMonthInt" Type="int" />
+    <Property Name="HijriYearMonthStr" Type="nvarchar" MaxLength="7" />
+    <Property Name="HijriDayOfWeekName" Type="nvarchar(max)" />
+    <Property Name="HijriWeekOfYearName" Type="nvarchar(max)" />
+    <Property Name="HijriWeekOfYearNo" Type="int" />
+    <Property Name="SeasonCode" Type="tinyint" />
+    <Property Name="SeasonName" Type="nvarchar(max)" />
+    <Property Name="IsGregorianLeap" Type="smallint" />
+    <Property Name="IsPersianLeap" Type="smallint" />
+    <Property Name="IsOneDayBefore_PersianHoliday" Type="smallint" />
+    <Property Name="IsOneDayBefore_HijriHoliday" Type="smallint" />
+  </EntityType>
+  <EntityContainer Name="ProjectServer_Reporting_faModelStoreContainer">
+    <EntitySet Name="DimDate" EntityType="Self.DimDate" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DimDate].[DateKey] AS [DateKey], 
+    [DimDate].[GregorianDate] AS [GregorianDate], 
+    [DimDate].[GregorianYearInt] AS [GregorianYearInt], 
+    [DimDate].[GregorianMonthNo] AS [GregorianMonthNo], 
+    [DimDate].[GregorianDayInMonth] AS [GregorianDayInMonth], 
+    [DimDate].[GregorianMonthDayInt] AS [GregorianMonthDayInt], 
+    [DimDate].[GregorianDayOfWeekInt] AS [GregorianDayOfWeekInt], 
+    [DimDate].[GregorianMonthName] AS [GregorianMonthName], 
+    [DimDate].[GregorianStr] AS [GregorianStr], 
+    [DimDate].[GregorianYearMonthInt] AS [GregorianYearMonthInt], 
+    [DimDate].[GregorianYearMonthStr] AS [GregorianYearMonthStr], 
+    [DimDate].[GregorianDayOfWeekName] AS [GregorianDayOfWeekName], 
+    [DimDate].[GrgorianWeekOfYearName] AS [GrgorianWeekOfYearName], 
+    [DimDate].[GregorianWeekOfYearNo] AS [GregorianWeekOfYearNo], 
+    [DimDate].[PersianInt] AS [PersianInt], 
+    [DimDate].[PersianYearInt] AS [PersianYearInt], 
+    [DimDate].[PersianMonthNo] AS [PersianMonthNo], 
+    [DimDate].[PersianDayInMonth] AS [PersianDayInMonth], 
+    [DimDate].[PersianMonthDayInt] AS [PersianMonthDayInt], 
+    [DimDate].[PersianDayOfWeekInt] AS [PersianDayOfWeekInt], 
+    [DimDate].[PersianMonthName] AS [PersianMonthName], 
+    [DimDate].[PersianStr] AS [PersianStr], 
+    [DimDate].[PersianYearMonthInt] AS [PersianYearMonthInt], 
+    [DimDate].[PersianYearMonthStr] AS [PersianYearMonthStr], 
+    [DimDate].[PersianDayOfWeekName] AS [PersianDayOfWeekName], 
+    [DimDate].[PersianWeekOfYearName] AS [PersianWeekOfYearName], 
+    [DimDate].[PersianWeekOfYearNo] AS [PersianWeekOfYearNo], 
+    [DimDate].[PersianFullName] AS [PersianFullName], 
+    [DimDate].[HijriInt] AS [HijriInt], 
+    [DimDate].[HijriYearInt] AS [HijriYearInt], 
+    [DimDate].[HijriMonthNo] AS [HijriMonthNo], 
+    [DimDate].[HijriDayInMonth] AS [HijriDayInMonth], 
+    [DimDate].[HijriMonthDayInt] AS [HijriMonthDayInt], 
+    [DimDate].[HijriDayOfWeekInt] AS [HijriDayOfWeekInt], 
+    [DimDate].[HijriMonthName] AS [HijriMonthName], 
+    [DimDate].[HijriStr] AS [HijriStr], 
+    [DimDate].[HijriYearMonthInt] AS [HijriYearMonthInt], 
+    [DimDate].[HijriYearMonthStr] AS [HijriYearMonthStr], 
+    [DimDate].[HijriDayOfWeekName] AS [HijriDayOfWeekName], 
+    [DimDate].[HijriWeekOfYearName] AS [HijriWeekOfYearName], 
+    [DimDate].[HijriWeekOfYearNo] AS [HijriWeekOfYearNo], 
+    [DimDate].[SeasonCode] AS [SeasonCode], 
+    [DimDate].[SeasonName] AS [SeasonName], 
+    [DimDate].[IsGregorianLeap] AS [IsGregorianLeap], 
+    [DimDate].[IsPersianLeap] AS [IsPersianLeap], 
+    [DimDate].[IsOneDayBefore_PersianHoliday] AS [IsOneDayBefore_PersianHoliday], 
+    [DimDate].[IsOneDayBefore_HijriHoliday] AS [IsOneDayBefore_HijriHoliday]
+    FROM [dbo].[DimDate] AS [DimDate]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

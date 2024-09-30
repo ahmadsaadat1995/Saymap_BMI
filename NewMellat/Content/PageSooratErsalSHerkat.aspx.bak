@@ -1,0 +1,91 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="PageSooratErsalSHerkat.aspx.cs" Inherits="NewMellat.Content.PageSooratErsalSHerkat" %>
+
+<%@ Register Assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+
+
+        function loadDoc(parent) {
+
+            var oWnd = radopen("PageSooratPaper.aspx?project=" + parent + "&Type=1005", "RadWindow1");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+    </script>
+
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="box box-danger">
+    <dx:ASPxGridView runat="server" RightToLeft="True" AutoGenerateColumns="False" Theme="Office2010Silver" Width="100%" EnableTheming="True" ID="ASPxGridView1" DataSourceID="sourceInfo" OnHtmlDataCellPrepared="ASPxGridView1_HtmlDataCellPrepared" Font-Names="vazir">
+        <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+        <SettingsBehavior EnableRowHotTrack="True" />
+        <SettingsCommandButton>
+            <ClearFilterButton ButtonType="Image">
+                <Image IconID="filter_clearfilter_16x16">
+                </Image>
+            </ClearFilterButton>
+        </SettingsCommandButton>
+        <SettingsSearchPanel Visible="True" />
+        <SettingsText EmptyDataRow="اطلاعات موجود نمی باشد" GroupPanel="ستون مورد نظر جهت گروه بندی اطلاعات وارد نمایید" SearchPanelEditorNullText="جستجوی اطلاعات" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowInCustomizationForm="True" VisibleIndex="0" ShowClearFilterButton="True">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn ShowInCustomizationForm="True" Caption="شماره قرارداد" VisibleIndex="2" FieldName="ProjectGharardad">
+                <Settings AutoFilterCondition="Contains" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn ShowInCustomizationForm="True" Caption="عنوان تحویلی" VisibleIndex="5" FieldName="OnvanTahvili">
+                <Settings AutoFilterCondition="Contains" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn ShowInCustomizationForm="True" VisibleIndex="6" Caption="شناسه نامه اعلام نظر ناظر" FieldName="paShenase">
+                <Settings AutoFilterCondition="Contains" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="تاریخ نامه  اعلام نظر ناظر" VisibleIndex="7" FieldName="paDate">
+                <Settings AutoFilterCondition="Contains" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="ارسال به شرکت" VisibleIndex="8">
+                <DataItemTemplate>
+                    <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/Content/images/icons/message-bubble-send-icon.png" NavigateUrl='<%# Eval("pishId","~/content/PageSooratPaper.aspx?project={0}&type=1005") %>' Target="_blank"></asp:HyperLink>
+                </DataItemTemplate>
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="نام پروژه" VisibleIndex="1" FieldName="ProjectName">
+                <Settings AutoFilterCondition="Contains" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn Caption="ناظر 1" FieldName="Nazer1" VisibleIndex="3">
+                <PropertiesComboBox DataSourceID="sourceInfo0" TextField="infTitle" ValueField="infId">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="ناظر2" FieldName="Nazer2" VisibleIndex="4">
+                <PropertiesComboBox DataSourceID="sourceInfo0" TextField="infTitle" ValueField="infId">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+        </Columns>
+        <Styles>
+            <Header HorizontalAlign="Center" Font-Names="vazir" Font-Size="13px">
+            </Header>
+            <Row Font-Names="vazir">
+            </Row>
+        </Styles>
+    </dx:ASPxGridView></div>
+    <asp:SqlDataSource ID="sourceInfo" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT        tbSooratHesab.ProjectName, tbSooratHesab.ProjectGharardad, tbSooratHesab.id, tbSooratHesab.Nazer1, tbSooratHesab.Nazer2, tbSooratHesab.OnvanTahvili, tbProjectPaper.paShenase, 
+                         tbProjectPaper.paNumber, dbo.getShamsiDate(tbProjectPaper.paDate) AS paDate, tbProjectPaper.paAct, tbSooratPishNevis.pishId, tbProjectPaper.paType
+FROM            tbSooratHesab INNER JOIN
+                         tbSooratPishNevis ON tbSooratHesab.id = tbSooratPishNevis.pishProject INNER JOIN
+                         tbProjectPaper ON tbSooratHesab.id = tbProjectPaper.paProject
+WHERE        (tbProjectPaper.paType IN (1003, 1004)) AND (tbProjectPaper.paAct = 1) AND (tbSooratPishNevis.pishAct = 1) AND (tbProjectPaper.paEdare = 2)
+and step4=0
+and 
+pishId not in (select tbProjectPaper.paProject from tbProjectPaper where paType=1005 and paAct=1  and pastatus=1)"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceInfo0" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT * FROM [prInformation]"></asp:SqlDataSource>
+    <telerik:RadWindowManager ID="RadWindowManager1" runat="server" Animation="Fade" Behaviors="Close" Skin="Sunset">
+        <Windows>
+            <telerik:RadWindow runat="server" NavigateUrl="RadWindow1" Animation="Fade" Behavior="Close" Behaviors="Close">
+            </telerik:RadWindow>
+            <telerik:RadWindow runat="server" NavigateUrl="RadWindow2" Animation="Fade" Behavior="Close" Behaviors="Close">
+            </telerik:RadWindow>
+        </Windows>
+    </telerik:RadWindowManager>
+
+</asp:Content>

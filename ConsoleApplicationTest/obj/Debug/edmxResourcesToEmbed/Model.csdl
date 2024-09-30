@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectServer_Reporting_faModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProjectServer_Reporting_faEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DimDates" EntityType="ProjectServer_Reporting_faModel.DimDate" />
+  </EntityContainer>
+  <EntityType Name="DimDate">
+    <Key>
+      <PropertyRef Name="DateKey" />
+    </Key>
+    <Property Name="DateKey" Type="Int32" Nullable="false" />
+    <Property Name="GregorianDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GregorianYearInt" Type="Int16" />
+    <Property Name="GregorianMonthNo" Type="Byte" />
+    <Property Name="GregorianDayInMonth" Type="Byte" />
+    <Property Name="GregorianMonthDayInt" Type="Int16" />
+    <Property Name="GregorianDayOfWeekInt" Type="Byte" />
+    <Property Name="GregorianMonthName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GregorianStr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GregorianYearMonthInt" Type="Int32" />
+    <Property Name="GregorianYearMonthStr" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="GregorianDayOfWeekName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GrgorianWeekOfYearName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GregorianWeekOfYearNo" Type="Int32" />
+    <Property Name="PersianInt" Type="Int32" />
+    <Property Name="PersianYearInt" Type="Int16" />
+    <Property Name="PersianMonthNo" Type="Byte" />
+    <Property Name="PersianDayInMonth" Type="Byte" />
+    <Property Name="PersianMonthDayInt" Type="Int16" />
+    <Property Name="PersianDayOfWeekInt" Type="Byte" />
+    <Property Name="PersianMonthName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersianStr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PersianYearMonthInt" Type="Int32" />
+    <Property Name="PersianYearMonthStr" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="PersianDayOfWeekName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersianWeekOfYearName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersianWeekOfYearNo" Type="Int32" />
+    <Property Name="PersianFullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HijriInt" Type="Int32" />
+    <Property Name="HijriYearInt" Type="Int16" />
+    <Property Name="HijriMonthNo" Type="Byte" />
+    <Property Name="HijriDayInMonth" Type="Byte" />
+    <Property Name="HijriMonthDayInt" Type="Int16" />
+    <Property Name="HijriDayOfWeekInt" Type="Byte" />
+    <Property Name="HijriMonthName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HijriStr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="HijriYearMonthInt" Type="Int32" />
+    <Property Name="HijriYearMonthStr" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="HijriDayOfWeekName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HijriWeekOfYearName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HijriWeekOfYearNo" Type="Int32" />
+    <Property Name="SeasonCode" Type="Byte" />
+    <Property Name="SeasonName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsGregorianLeap" Type="Int16" />
+    <Property Name="IsPersianLeap" Type="Int16" />
+    <Property Name="IsOneDayBefore_PersianHoliday" Type="Int16" />
+    <Property Name="IsOneDayBefore_HijriHoliday" Type="Int16" />
+  </EntityType>
+</Schema>

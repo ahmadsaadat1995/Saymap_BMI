@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <OLAPDataSource ComponentName="dashboardOlapDataSource1" Name="olapConnection" ConnectionName="local_MellatDataMining_ProjectInfo" ConnectionString="provider=msolap;data source=local;initial catalog=MellatDataMining;timeout=1200;Cube Name=ProjectInfo;" />
+    <OLAPDataSource ComponentName="dashboardOlapDataSource2" Name="KhobreganMosavabCountSource" ConnectionName="local_MellatDataMining_KhobreganMosavab" ConnectionString="provider=msolap;data source=local;initial catalog=MellatDataMining;timeout=1200;Cube Name=KhobreganMosavab;" />
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="اطلاعات پروژه ها" ShowCaption="false" DataSource="dashboardOlapDataSource1">
+      <DataItems>
+        <Dimension DataMember="[DimProjectFull].[Pr Id].[Pr Id]" DefaultId="DataItem1" />
+        <Dimension DataMember="[DimProjectFull].[Pr Final Code].[Pr Final Code]" DefaultId="DataItem4" />
+        <Dimension DataMember="[DimProjectFull].[Project Type].[Project Type]" DefaultId="DataItem5" />
+        <Dimension DataMember="[DimProjectFull].[Peymankar].[Peymankar]" DefaultId="DataItem3" />
+        <Dimension DataMember="[DimProjectFull].[Vahed Name].[Vahed Name]" DefaultId="DataItem2" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Name="واحد درخواست کننده" Weight="16.133338796211635">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="پیمانکار" Weight="14.892312734964589">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="نوع پروژه" Weight="19.856416979952783">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="کد پروژه" Weight="19.608211767703377">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="عنوان" Weight="155.37646286813052">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions EnableBandedRows="true" ColumnWidthMode="Manual" WordWrap="true" />
+    </Grid>
+    <Pie ComponentName="pieDashboardItem1" Name="Pies 1" DataSource="dashboardOlapDataSource1" LabelContentType="Argument" TooltipContentType="ValueAndPercent" ShowPieCaptions="false">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Dimension DataMember="[DimProjectFull].[Olaviat].[Olaviat]" DefaultId="DataItem0" />
+        <Measure DataMember="[Measures].[Pr Vahed]" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value DefaultId="DataItem1" />
+      </Values>
+    </Pie>
+    <Chart ComponentName="chartDashboardItem2" Name="Chart 2" DataSource="dashboardOlapDataSource1">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Dimension DataMember="[DimProjectFull].[Sanad Type].[Sanad Type]" DefaultId="DataItem0" />
+        <Measure DataMember="[Measures].[تعداد پروژه]" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Chart ComponentName="chartDashboardItem1" Name="پروژه ها بر اساس واحد درخواست کننده" DataSource="dashboardOlapDataSource1">
+      <ColoringOptions UseGlobalColors="false" />
+      <InteractivityOptions MasterFilterMode="Single" TargetDimensions="Series" />
+      <DataItems>
+        <Dimension DataMember="[DimProjectFull].[Vahed Name].[Vahed Name]" DefaultId="DataItem1" />
+        <Measure DataMember="[Measures].[Pr Vahed]" DefaultId="DataItem0" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <AxisY Visible="false" TitleVisible="false" AlwaysShowZeroLevel="false" Logarithmic="true" />
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <ChartLegend Visible="false" IsInsidePosition="true" InsidePosition="BottomCenterVertical" OutsidePosition="TopCenterHorizontal" />
+      <AxisX Reverse="true" LimitVisiblePoints="true" VisiblePointsCount="14" />
+    </Chart>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="List Box 1" ShowCaption="false" DataSource="dashboardOlapDataSource1">
+      <DataItems>
+        <Dimension DataMember="[DimProjectFull].[Vahed Name].[Vahed Name]" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+  </Items>
+  <ColorScheme>
+    <Entry DataSource="dashboardOlapDataSource1" Color="-693231">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="[DimProjectFull].[Olaviat].[Olaviat]" />
+          <Value Type="System.String" Value="[DimProjectFull].[Olaviat].&amp;[فوری]" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="dashboardOlapDataSource1" PaletteIndex="1">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="[DimProjectFull].[Vahed Name].[Vahed Name]" />
+          <Value Type="System.String" Value="1" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="dashboardOlapDataSource1" PaletteIndex="17">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="[DimProjectFull].[Vahed Name].[Vahed Name]" />
+          <Value Type="System.String" Value="2" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="dashboardOlapDataSource1" Color="-16777216">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="[DimProjectFull].[Vahed Name].[Vahed Name]" />
+          <Value Type="System.String" Value="3" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+    <Entry DataSource="dashboardOlapDataSource1" PaletteIndex="1">
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="[DimProjectFull].[Vahed Name].[Vahed Name]" />
+          <Value Type="System.String" Value="ارز" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+  </ColorScheme>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Weight="60.33519553072626">
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="72.406417112299465" />
+        <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="27.593582887700535" />
+      </LayoutGroup>
+      <LayoutGroup Weight="29.050279329608937">
+        <LayoutItem DashboardItem="chartDashboardItem2" Weight="25.882352941176471" />
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="27.700534759358288" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="10.614525139664805" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

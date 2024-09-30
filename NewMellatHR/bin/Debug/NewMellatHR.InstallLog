@@ -1,0 +1,109 @@
+﻿Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+Rolling back assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+Rolling back assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+Rolling back assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Rolling back assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Rolling back assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Installing service SyncService...
+Creating EventLog source SyncService in log Application...
+Rolling back assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Restoring event log to previous state for source SyncService.
+Uninstalling assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Removing EventLog source SyncService.
+Service SyncService is being removed from the system...
+Service SyncService was successfully removed from the system.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Installing service SyncService...
+Service SyncService has been successfully installed.
+Creating EventLog source SyncService in log Application...
+Committing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe

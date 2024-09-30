@@ -1,0 +1,13 @@
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\bin\Release\WindowsFormsApplicationTest.exe.config
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\bin\Release\WindowsFormsApplicationTest.exe
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\bin\Release\WindowsFormsApplicationTest.pdb
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\bin\Release\OfficeAutomationServiceClient.dll
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\bin\Release\OfficeAutomationServiceClient.pdb
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\obj\Release\WindowsFormsApplicationTest.csprojResolveAssemblyReference.cache
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\obj\Release\WindowsFormsApplicationTest.Form1.resources
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\obj\Release\WindowsFormsApplicationTest.Form2.resources
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\obj\Release\WindowsFormsApplicationTest.Form3.resources
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\obj\Release\WindowsFormsApplicationTest.Properties.Resources.resources
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\obj\Release\WindowsFormsApplicationTest.csproj.GenerateResource.Cache
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\obj\Release\WindowsFormsApplicationTest.exe
+D:\Projects\NewMellat\NewMellat\WindowsFormsApplicationTest\obj\Release\WindowsFormsApplicationTest.pdb

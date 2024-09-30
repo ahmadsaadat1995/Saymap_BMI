@@ -1,0 +1,28 @@
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\ConsoleApplicationTest.exe.config
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\obj\Debug\ConsoleApplicationTest.csprojResolveAssemblyReference.cache
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\ConsoleApplicationTest.exe
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\ConsoleApplicationTest.pdb
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\EntityFramework.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\EntityFramework.SqlServer.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\Newtonsoft.Json.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\EntityFramework.xml
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\EntityFramework.SqlServer.xml
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\bin\Debug\Newtonsoft.Json.xml
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\obj\Debug\ConsoleApplicationTest.exe
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationTest\obj\Debug\ConsoleApplicationTest.pdb
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\obj\Debug\ConsoleApplicationTest.csprojResolveAssemblyReference.cache
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\ConsoleApplicationTest.exe.config
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\ConsoleApplicationTest.exe
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\ConsoleApplicationTest.pdb
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\EntityFramework.dll
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\NewMellatHR.exe
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\System.Net.Http.Formatting.dll
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\NewMellatHR.pdb
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\EntityFramework.xml
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\bin\Debug\System.Net.Http.Formatting.xml
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\obj\Debug\ConsoleApplicationTest.exe
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationTest\obj\Debug\ConsoleApplicationTest.pdb

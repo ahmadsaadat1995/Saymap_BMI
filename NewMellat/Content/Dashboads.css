@@ -1,0 +1,74 @@
+﻿@font-face {
+    font-family: Vazir;
+    src: url('BootStrapTheme/dist/fonts/Vazir-FD-WOL.eot');
+    src: url('BootStrapTheme/dist/fonts/Vazir-FD-WOL.eot?#iefix') format('embedded-opentype'), url('BootStrapTheme/dist/fonts/Vazir-FD-WOL.woff') format('woff'), url('BootStrapTheme/dist/fonts/fonts/Vazir-FD-WOL.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('BootStrapTheme/dist/fonts/Vazir-Bold-FD-WOL.eot');
+    src: url('BootStrapTheme/dist/fonts/Vazir-Bold-FD-WOL.eot?#iefix') format('embedded-opentype'), url('BootStrapTheme/dist/fonts/Vazir-Bold-FD-WOL.woff') format('woff'), url('../fonts/Vazir-Bold-FD-WOL.ttf') format('truetype');
+    font-weight: bold;
+}
+
+ .dxc-arg-axis
+        {
+            font-size: 4px !important;
+        }
+        .dx-pivotgrid
+        {
+            font-size: 12px ;
+        }
+
+        text
+        {
+                 font-size: 12px !important ;
+                 font-family:"Vazir" !important;
+        }
+
+        .dx-dashboard-item-header {
+
+        }
+ 
+
+
+     .RightColumn {
+    font-family: "vazir";
+    font-size: 16px;
+    color: #444444;
+    text-decoration: none;
+    font-style: normal;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 2px;
+    width: 150px;
+    height: 35px;
+}
+
+
+.RightColumn2 {
+    font-family: "vazir";
+    font-size: 14px;
+    color: #8b4513;
+    text-decoration: none;
+    font-style: normal;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 2px;
+    width: 150px;
+    height: 35px;
+}
+
+.LeftColumn {
+    font-family: "vazir";
+    font-size: 14px;
+    color: #444444;
+    text-decoration: none;
+    font-style: normal;
+    vertical-align: middle;
+    text-align: right;
+    padding-left: 2px;
+    width: 200px;
+    height: 35px;
+}

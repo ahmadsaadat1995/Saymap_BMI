@@ -1,0 +1,294 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="PageGharardad.aspx.cs" Inherits="NewMellat.Content.PageGharardad" %>
+<%@ Register assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+<%@ Register assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGauges" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGauges.Gauges" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGauges.Gauges.Linear" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGauges.Gauges.Circular" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGauges.Gauges.State" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGauges.Gauges.Digital" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        
+        function loadDoc(parent) {
+
+            var oWnd = radopen("Pagepages.aspx?Project=" + parent + "&Type=25", "RadWindow1");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+        function loadDoc2(parent) {
+
+            var oWnd = radopen("PageEstelamGharardad.aspx?id=" + parent + "&Type=26", "RadWindow1");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+        
+
+        function loadDoc3(parent) {
+
+            var oWnd = radopen("PageGharardadEblagh.aspx?project=" + parent + "&Type=27&tp=1", "RadWindow3");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+        function loadDoc3(parent) {
+
+            var oWnd = radopen("PageGharardadEblagh.aspx?project=" + parent + "&Type=27&tp=2", "RadWindow3");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+
+        function loadDoc4(parent) {
+            var oWnd = radopen("pagePages.aspx?project=" + parent + "&Type=30", "RadWindow3");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+        function loadDoc5(parent) {
+
+            var oWnd = radopen("PageGharardadCode.aspx?id=" + parent, "RadWindow1");
+            oWnd.setSize(250, 60);
+            oWnd.Center();
+        }
+
+
+        function loadDoc7(parent) {
+
+            var oWnd = radopen("PageAttach.aspx?parent=" + parent+"&type=8", "RadWindow2");
+            oWnd.setSize(900, 500);
+            oWnd.Center();
+        }
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div>
+    
+    <DIV align="center">
+        <div align="center" class="box box-warning">
+            <table align="center" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td align="center">
+                        &nbsp;</td>
+                    <td align="center" width="200">
+                        <asp:Label ID="Label5" runat="server" Text="تعداد قراردادها"></asp:Label>
+                    </td>
+                    <td align="center" width="200">
+                        <asp:Label ID="Label4" runat="server" Text="منتظر ابلاغ قرارداد"></asp:Label>
+                    </td>
+                    <td align="center">
+                        &nbsp;</td>
+                    <td align="center" width="200">
+                        <asp:Label ID="Label2" runat="server" Text="منتظر پاسخ استعلام پیش نویس"></asp:Label>
+                    </td>
+                    <td align="center" width="200">
+                        <asp:Label ID="Label1" runat="server" Text="منتظر پیش نویس قرارداد"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" height="45">
+                        &nbsp;</td>
+                    <td align="center" height="45" width="25%">
+                        <dx:ASPxGaugeControl ID="g5" runat="server" BackColor="White" Height="40px" Value="00,000" Width="120px">
+                            <Gauges>
+                                <dx:DigitalGauge AppearanceOff-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:#00FFFFFF&quot;/&gt;" AppearanceOn-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:WhiteSmoke&quot;/&gt;" Bounds="0, 0, 120, 40" DigitCount="5" Name="Gauge0" Padding="20, 20, 20, 20" Text="00,000">
+                                    <backgroundlayers>
+                                        <dx:DigitalBackgroundLayerComponent AcceptOrder="-1000" BottomRight="259.8125, 99.9625" Name="digitalBackgroundLayerComponent7" ShapeType="Style7" TopLeft="20, 0" ZOrder="1000" />
+                                    </backgroundlayers>
+                                </dx:DigitalGauge>
+                            </Gauges>
+<LayoutPadding All="0" Left="0" Top="0" Right="0" Bottom="0"></LayoutPadding>
+                        </dx:ASPxGaugeControl>
+                    </td>
+                    <td align="center" height="45" width="25%">
+                        <dx:ASPxGaugeControl ID="g4" runat="server" BackColor="White" Height="40px" Value="00,000" Width="120px">
+                            <Gauges>
+                                <dx:DigitalGauge AppearanceOff-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:#00FFFFFF&quot;/&gt;" AppearanceOn-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:WhiteSmoke&quot;/&gt;" Bounds="0, 0, 120, 40" DigitCount="5" Name="Gauge0" Padding="20, 20, 20, 20" Text="00,000">
+                                    <backgroundlayers>
+                                        <dx:DigitalBackgroundLayerComponent AcceptOrder="-1000" BottomRight="259.8125, 99.9625" Name="digitalBackgroundLayerComponent7" ShapeType="Style7" TopLeft="20, 0" ZOrder="1000" />
+                                    </backgroundlayers>
+                                </dx:DigitalGauge>
+                            </Gauges>
+<LayoutPadding All="0" Left="0" Top="0" Right="0" Bottom="0"></LayoutPadding>
+                        </dx:ASPxGaugeControl>
+                    </td>
+                    <td align="center" height="45">
+                        &nbsp;</td>
+                    <td align="center" height="45" width="25%">
+                        <dx:ASPxGaugeControl ID="g2" runat="server" BackColor="White" Height="40px" Value="00,000" Width="120px">
+                            <Gauges>
+                                <dx:DigitalGauge AppearanceOff-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:#00FFFFFF&quot;/&gt;" AppearanceOn-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:WhiteSmoke&quot;/&gt;" Bounds="0, 0, 120, 40" DigitCount="5" Name="Gauge0" Padding="20, 20, 20, 20" Text="00,000">
+                                    <backgroundlayers>
+                                        <dx:DigitalBackgroundLayerComponent AcceptOrder="-1000" BottomRight="259.8125, 99.9625" Name="digitalBackgroundLayerComponent7" ShapeType="Style7" TopLeft="20, 0" ZOrder="1000" />
+                                    </backgroundlayers>
+                                </dx:DigitalGauge>
+                            </Gauges>
+<LayoutPadding All="0" Left="0" Top="0" Right="0" Bottom="0"></LayoutPadding>
+                        </dx:ASPxGaugeControl>
+                    </td>
+                    <td align="center" height="45" width="25%">
+                        <dx:ASPxGaugeControl ID="g1" runat="server" BackColor="White" Height="40px" Value="00,000" Width="120px">
+                            <Gauges>
+                                <dx:DigitalGauge AppearanceOff-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:#00FFFFFF&quot;/&gt;" AppearanceOn-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:WhiteSmoke&quot;/&gt;" Bounds="0, 0, 120, 40" DigitCount="5" Name="Gauge0" Padding="20, 20, 20, 20" Text="00,000">
+                                    <backgroundlayers>
+                                        <dx:DigitalBackgroundLayerComponent AcceptOrder="-1000" BottomRight="259.8125, 99.9625" Name="digitalBackgroundLayerComponent7" ShapeType="Style7" TopLeft="20, 0" ZOrder="1000" />
+                                    </backgroundlayers>
+                                </dx:DigitalGauge>
+                            </Gauges>
+<LayoutPadding All="0" Left="0" Top="0" Right="0" Bottom="0"></LayoutPadding>
+                        </dx:ASPxGaugeControl>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </DIV>
+
+    </div>
+    <div class="box box-danger">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT prInformation.* FROM prInformation WHERE (infType = 2)"></asp:SqlDataSource>
+        <dx:ASPxGridView ID="ASPxGridView1" runat="server" Theme="Office2010Silver" AutoGenerateColumns="False" DataSourceID="sourceGharadad" KeyFieldName="ghId" RightToLeft="True" Width="100%" OnHtmlDataCellPrepared="ASPxGridView1_HtmlDataCellPrepared" OnRowCommand="ASPxGridView1_RowCommand" OnCommandButtonInitialize="ASPxGridView1_CommandButtonInitialize" Font-Names="vazir">
+            <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+            <SettingsBehavior ConfirmDelete="True" EnableRowHotTrack="True" />
+            <SettingsCommandButton>
+                <DeleteButton ButtonType="Image">
+                    <Image Url="~/Content/images/icons/Close-2-icon.png">
+                    </Image>
+                </DeleteButton>
+            </SettingsCommandButton>
+            <SettingsSearchPanel Visible="True" />
+            <SettingsLoadingPanel Text="در حال اجرا..." />
+            <SettingsText ConfirmDelete="آیا ردیف انتخابی حذف شود؟" EmptyDataRow="اطلاعات موجود نمی باشد" GroupPanel="ستون مورد نظر جهت گروه بندی اطلاعات را وارد نمایید" SearchPanelEditorNullText="متن مورد جستجو را وارد نمایید" />
+            <Columns>
+                <dx:GridViewCommandColumn ShowDeleteButton="True" VisibleIndex="0">
+                </dx:GridViewCommandColumn>
+<dx:GridViewDataTextColumn Caption="نامه" VisibleIndex="3" Visible="False">
+    <DataItemTemplate>
+        <asp:HyperLink ID="HyperLink4" runat="server" ImageUrl="~/Content/images/icons/mp3tag-icon.png" ></asp:HyperLink>
+    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="استعلام" VisibleIndex="5">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink6" runat="server" ImageUrl="~/Content/images/icons/missed-calls-icon.png"  Target="_blank" NavigateUrl='<%# Eval("ghId","~/content/PageEstelamgharardad.aspx?id={0}") %>'></asp:HyperLink><%--  <asp:HiddenField ID="HiddenField1" runat="server" Value='<%# Eval("thId") %>' />
+                        <asp:HiddenField ID="HiddenField2" runat="server" Value='<%# Eval("prVahed") %>' />--%>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="ابلاغ به تدارکات" VisibleIndex="6">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink7" runat="server" ImageUrl="~/Content/images/icons/edit-validated-icon.png"></asp:HyperLink>
+                        <asp:HiddenField ID="HiddenField3" runat="server" Value='<%# Eval("ghId") %>' />
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="دریافت قرارداد" VisibleIndex="7">
+                    <DataItemTemplate>
+                        <div align="center" dir="ltr">
+                            <table align="center" cellpadding="0" cellspacing="0" dir="rtl">
+                                <tr>
+                                    <td>
+                                        <asp:HyperLink ID="HyperLink8" runat="server" ImageUrl="~/Content/images/icons/check-icon.png" NavigateUrl='<%# Eval("ghId","~/content/PageGharardadCode.aspx?id={0}") %>' Target="_blank"></asp:HyperLink>
+                                    </td>
+                                    <td>
+                                        <dx:ASPxTextBox ID="txtG" runat="server" Theme="SoftOrange" Width="100px" Visible="False">
+                                        </dx:ASPxTextBox>
+                                    </td>
+                                    <td>-</td>
+                                    <td>
+                                        <dx:ASPxComboBox ID="ASPxComboBox1" runat="server" AnimationType="Fade" RightToLeft="True" Theme="SoftOrange" ValueType="System.String" Width="75px" Visible="False">
+                                        </dx:ASPxComboBox>
+                                    </td>
+                                    <td style="padding-right: 3px">
+                                        <asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Content/images/icons/Documents-icon24.png" NavigateUrl='<%# Eval("ghId","~/content/PagePages.aspx?project={0}") %>' Target="_blank"></asp:HyperLink>
+                                    </td>
+                                    <td style="padding-right: 3px">
+                                        <asp:HyperLink ID="HyperLink9" runat="server" ImageUrl="~/Content/images/icons/attachment-icon24.png" NavigateUrl='<%# Eval("ghId", "~/content/PageAttach.aspx?parent={0}") %>'></asp:HyperLink>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <asp:HiddenField ID="HiddenField1" runat="server" Value='<%# Eval("ghId") %>' />
+                        </div>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="نامه ها" VisibleIndex="8" Visible="False">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="دریافت پیش نویس قرارداد " VisibleIndex="4">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink5" runat="server" ImageUrl="~/Content/images/icons/Mimetypes-document-seal-icon.png"  Target="_blank" NavigateUrl='<%# Eval("ghId","~/content/PagePages.aspx?project={0}") %>'></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="واحد متولی" FieldName="prVahed" VisibleIndex="2">
+                    <PropertiesComboBox DataSourceID="sourceInfo" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn Caption="پروژه" FieldName="prTitle" VisibleIndex="1">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="شماره قرارداد" FieldName="ghCode" VisibleIndex="9">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn VisibleIndex="10">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink10" runat="server" ImageUrl="~/Content/images/icons/refresh-icon.png"></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="صورتحساب" VisibleIndex="11">
+                    <DataItemTemplate>
+                        <asp:ImageButton ID="ImageButton3" runat="server" CommandArgument='<%# Eval("ghId") %>' CommandName="soorat" ImageUrl="~/Content/images/icons/distributor-report-icon.png" />
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="وضعیت" VisibleIndex="12">
+                    <DataItemTemplate>
+                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Content/images/icons/Actions-redo-icon2.png" ToolTip='<%# Eval("ghCode") %>' Visible="False" />
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="نوع درخواست" FieldName="isElhaghie" VisibleIndex="14">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label6" runat="server" Font-Names="vazir" Font-Size="12px" ForeColor="#006600" Text="الحاقیه" Visible='<%# Eval("isElhaghie") %>'></asp:Label>
+                        <asp:Label ID="Label7" runat="server" Font-Names="vazir" Font-Size="12px" ForeColor="#003366" Text="پروپوزال" Visible='<%# !(bool)Eval("isElhaghie") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="شرکت" FieldName="prPeymankar" VisibleIndex="13">
+                    <PropertiesComboBox DataSourceID="sourcePeymankar" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataComboBoxColumn Caption="نوع پروژه" FieldName="prProjectType" VisibleIndex="15">
+                    <PropertiesComboBox DataSourceID="SqlDataSource1" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+            </Columns>
+            <Styles>
+                <Header Font-Names="vazir" Font-Size="13px" HorizontalAlign="Center">
+                </Header>
+                <Row HorizontalAlign="Center">
+                </Row>
+            </Styles>
+        </dx:ASPxGridView>
+        <asp:SqlDataSource ID="sourceGharadad" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" DeleteCommand="UPDATE tbGharardad SET ghAct = 0 WHERE (ghId = @ghId)" SelectCommand="SELECT tbGharardad.ghId, tbGharardad.ghAct, tbGharardad.ghProject, tbGharardad.ghBody, tbProjects.prTitle, tbProjects.prVahed, tbProjects.prId, tbGharardad.ghCode, tbProjects.prPeymankar, (SELECT TOP (1) thIsElhaghie FROM tbTarhPishnehadi WHERE (thProject = tbProjects.prId)) AS isElhaghie, tbProjects.prProjectType FROM tbGharardad INNER JOIN tbProjects ON tbGharardad.ghProject = tbProjects.prId WHERE (tbGharardad.ghAct = 1)">
+            <DeleteParameters>
+                <asp:Parameter Name="ghId" />
+            </DeleteParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceInfo" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT * FROM [prInformation]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceSoorat" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" InsertCommand="INSERT INTO tbSooratHesab(ProjectName, ProjectGharardad, Nazer1, CompanyName) VALUES (@ProjectName, @ProjectGharardad, @Nazer1, @CompanyName)" SelectCommand="SELECT TOP (1) ProjectName, ProjectGharardad, Nazer1, Nazer2, CompanyName, GharardadType, GharardadStart, GharardadEnd, Gharardad, Type, ElhaghieType, OnvanTahvili, MoedTahvili, Price, Vaziat, SoorathesbPrice, DoreErsali, ShomareNamePishnevisSoorathesab, TarikheNamePishnevisSoorathesab, ShenaseNamePishnevisSoorathesab, ShenaseEstelamPishSoorathesabNazer1, TarikheEstelamPishSoorathesabNazer1, MoedZamani1, ShenaseEstelamPishSoorathesabNazer2, TarikheEstelamPishSoorathesabNazer2, MoedZamani2, ShenaseAnswerNazerPishnevis, TarikheAnswerNazerPishnevis, ElamNazarAnswerNazerPishnevis, ShenaseAnswerNazerPishnevis2, TarikheAnswerNazerPishnevis2, ElamNazarAnswerNazerPishnevis2, ShenaseErsalTaeedNazer, TarikheErsalTaeedNazer, ShenaseErsalAdameTaeedNazer, TarikheErsalAdameTaeedNazer, MoedZamani3, ShenaseDaryaftAnswerPishnevis, TarikheDaryaftAnswerPishnevis, ShenaseEstelamMojadadNazer1, TarikheEstelamMojadadNazer1, MoedZamani4, ShenaseEstelamMojadadNazer2, TarikheEstelamMojadadNazer2, MoedZamani5, ShenaseAnswerMojadadNazer1, TarikheAnswerMojadadNazer1, ElamNazarAnswerMojadadNazer1, ShenaseAnswerMojadadNazer2, TarikheAnswerMojadadNazer2, ElamNazarAnswerMojadadNazer2, ShenaseNameSooratHesab, TarikhNameSooratHesab, YearSooratHesab, SomareSoorathesab, ShenaseSoorathesab, Vosool, ShenaseEstelamVahed, TarikheEstelamVahed, MoedEstelamVahed, ShenaseDaryaftAnswerNazer1, TarikheDaryaftAnswerNazer1, ElamNazarDaryaftAnswerNazer1, ShenaseDaryaftAnswerNazer2, TarikheDaryaftAnswerNazer2, ElamNazarDaryaftAnswerNazer2, SooratJalase, TarikheSooratJalase, ShenaseErsalBeSherkat, TarikheErsalBeSherkat, ShenaseDaryaftAnswerSHerkat, DateDaryaftAnswerSHerkat, EstelamMojadadVahed, EstelamMojadadVahedTarikh, ShenaseDaryaftMojaddVahed, VahedDaryaftMojaddVahed, ElamNazarDaryaftMojaddVahed, ShenaseErsalTadarokat, TarikheErsalTadarokat, ShenaseOdatTadarokat, TarikheOdatTadarokat, ShenaseErsalAzTadarokat, TarikheErsalAzTadarokat, ShenaseAnswerSherkatTadarokat, TarikheAnswerSherkatTadarokat, ShenaseErsalMojadad, TarikheErsalMojadad, shenasePeigiriEstelam, TarikhePeigiriEstelam, ShenaseErsalMali, TarikheErsalMali, BodyPapers, Body, id, step1, step2, step3, step4, step5, step6, step7, step8, step9, step10, step11, step12, step13 FROM tbSooratHesab">
+            <InsertParameters>
+                <asp:Parameter Name="ProjectName" />
+                <asp:Parameter Name="ProjectGharardad" />
+                <asp:Parameter Name="Nazer1" />
+                <asp:Parameter Name="CompanyName" />
+            </InsertParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourcePeymankar" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT infId, infTitle, infType FROM prInformation WHERE (infAct = 1) AND (infType = 5)">
+        </asp:SqlDataSource>
+    <telerik:RadNotification ID="RadNotification1" runat="server" Animation="Fade" Font-Names="vazir" Font-Size="15px" Skin="Sunset">
+    </telerik:RadNotification>
+        <telerik:RadWindowManager ID="RadWindowManager1" runat="server" Animation="Fade" Behaviors="Close" Skin="Sunset">
+            <Windows>
+                <telerik:RadWindow runat="server" NavigateUrl="RadWindow1" Animation="Fade" Behavior="Close" Behaviors="Close">
+                </telerik:RadWindow>
+                <telerik:RadWindow runat="server" NavigateUrl="RadWindow2" Animation="Fade" Behavior="Close" Behaviors="Close">
+                </telerik:RadWindow>
+                <telerik:RadWindow runat="server" NavigateUrl="RadWindow1">
+                </telerik:RadWindow>
+            </Windows>
+        </telerik:RadWindowManager>
+    </div>
+</asp:Content>

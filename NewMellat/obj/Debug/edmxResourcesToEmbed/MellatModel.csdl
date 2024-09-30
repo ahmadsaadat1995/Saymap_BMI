@@ -1,0 +1,1095 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewMellatModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="tbFile">
+    <Key>
+      <PropertyRef Name="fiId" />
+    </Key>
+    <Property Name="fiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fiAct" Type="Int32" />
+    <Property Name="fiData" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="fiDate" Type="DateTime" Precision="0" />
+    <Property Name="fiParent" Type="Int32" />
+    <Property Name="fiType" Type="Int32" />
+    <Property Name="fiTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fiExt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="NewMellatEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbFiles" EntityType="Self.tbFile" />
+    <EntitySet Name="tbProjects" EntityType="NewMellatModel.tbProject" />
+    <EntitySet Name="tbKhbregans" EntityType="NewMellatModel.tbKhbregan" />
+    <AssociationSet Name="FK_tbKhbregan_tbProjects" Association="NewMellatModel.FK_tbKhbregan_tbProjects">
+      <End Role="tbProject" EntitySet="tbProjects" />
+      <End Role="tbKhbregan" EntitySet="tbKhbregans" />
+    </AssociationSet>
+    <EntitySet Name="prInformations" EntityType="NewMellatModel.prInformation" />
+    <EntitySet Name="tbProjectPapers" EntityType="NewMellatModel.tbProjectPaper" />
+    <EntitySet Name="tbNazars" EntityType="NewMellatModel.tbNazar" />
+    <EntitySet Name="tbEstelamVaheds" EntityType="NewMellatModel.tbEstelamVahed" />
+    <EntitySet Name="tbKhobreganMosavabs" EntityType="NewMellatModel.tbKhobreganMosavab" />
+    <AssociationSet Name="FK_tbEstelamVahed_tbProjects" Association="NewMellatModel.FK_tbEstelamVahed_tbProjects">
+      <End Role="tbProject" EntitySet="tbProjects" />
+      <End Role="tbEstelamVahed" EntitySet="tbEstelamVaheds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbKhobreganMosavab_tbKhbregan" Association="NewMellatModel.FK_tbKhobreganMosavab_tbKhbregan">
+      <End Role="tbKhbregan" EntitySet="tbKhbregans" />
+      <End Role="tbKhobreganMosavab" EntitySet="tbKhobreganMosavabs" />
+    </AssociationSet>
+    <EntitySet Name="tbHeyatNezarats" EntityType="NewMellatModel.tbHeyatNezarat" />
+    <EntitySet Name="tbHeyatNezaratMosavabs" EntityType="NewMellatModel.tbHeyatNezaratMosavab" />
+    <EntitySet Name="tbShenaseNumbers" EntityType="NewMellatModel.tbShenaseNumber" />
+    <AssociationSet Name="FK_tbShenaseNumbers_tbHeyatNezarat" Association="NewMellatModel.FK_tbShenaseNumbers_tbHeyatNezarat">
+      <End Role="tbHeyatNezarat" EntitySet="tbHeyatNezarats" />
+      <End Role="tbShenaseNumber" EntitySet="tbShenaseNumbers" />
+    </AssociationSet>
+    <FunctionImport Name="spCountNazarGharardadOk" ReturnType="Collection(Int32)">
+      <Parameter Name="ghId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spCountNazarGharardadNotOk" ReturnType="Collection(Int32)">
+      <Parameter Name="ghId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="vwNoEstelams" EntityType="NewMellatModel.vwNoEstelam" />
+    <EntitySet Name="vwHeyatNezarats" EntityType="NewMellatModel.vwHeyatNezarat" />
+    <EntitySet Name="tbTemps" EntityType="NewMellatModel.tbTemp" />
+    <EntitySet Name="vwHeyatNezarat2" EntityType="NewMellatModel.vwHeyatNezarat2" />
+    <EntitySet Name="tbAccessPages" EntityType="NewMellatModel.tbAccessPage" />
+    <EntitySet Name="tbAdminInPages" EntityType="NewMellatModel.tbAdminInPage" />
+    <EntitySet Name="tbAdminPremissions" EntityType="NewMellatModel.tbAdminPremission" />
+    <EntitySet Name="tbAdminProjects" EntityType="NewMellatModel.tbAdminProject" />
+    <EntitySet Name="tbAdmins" EntityType="NewMellatModel.tbAdmin" />
+    <EntitySet Name="tbAminPremissionAccesses" EntityType="NewMellatModel.tbAminPremissionAccess" />
+    <AssociationSet Name="FK_tbAminPremissionAccess_tbAdminPremission" Association="NewMellatModel.FK_tbAminPremissionAccess_tbAdminPremission">
+      <End Role="tbAdminPremission" EntitySet="tbAdminPremissions" />
+      <End Role="tbAminPremissionAccess" EntitySet="tbAminPremissionAccesses" />
+    </AssociationSet>
+    <EntitySet Name="tbPages" EntityType="NewMellatModel.tbPage" />
+    <EntitySet Name="vwServerDates" EntityType="NewMellatModel.vwServerDate" />
+    <EntitySet Name="vwMosavabDashboards" EntityType="NewMellatModel.vwMosavabDashboard" />
+    <EntitySet Name="vwDashboardAmaliatiSarRedisNashodes" EntityType="NewMellatModel.vwDashboardAmaliatiSarRedisNashode" />
+    <EntitySet Name="tbSooratHesabs" EntityType="NewMellatModel.tbSooratHesab" />
+    <EntitySet Name="tbSooratPishNevis" EntityType="NewMellatModel.tbSooratPishNevi" />
+    <EntitySet Name="tbRevals" EntityType="NewMellatModel.tbReval" />
+    <EntitySet Name="vwMosavab2" EntityType="NewMellatModel.vwMosavab2" />
+    <EntitySet Name="vwMosavab4" EntityType="NewMellatModel.vwMosavab4" />
+    <EntitySet Name="vwMosavab5" EntityType="NewMellatModel.vwMosavab5" />
+    <EntitySet Name="vwMosavab6" EntityType="NewMellatModel.vwMosavab6" />
+    <EntitySet Name="vwMosavab7" EntityType="NewMellatModel.vwMosavab7" />
+    <EntitySet Name="tbCharts" EntityType="NewMellatModel.tbChart" />
+    <EntitySet Name="tbPaperProjects" EntityType="NewMellatModel.tbPaperProject" />
+    <EntitySet Name="tbIndex1" EntityType="NewMellatModel.tbIndex1" />
+    <EntitySet Name="tbElhaghies" EntityType="NewMellatModel.tbElhaghie" />
+    <EntitySet Name="vwGharardadIDs" EntityType="NewMellatModel.vwGharardadID" />
+    <EntitySet Name="tbGharardads" EntityType="NewMellatModel.tbGharardad" />
+    <EntitySet Name="tbTarhPishnehadis" EntityType="NewMellatModel.tbTarhPishnehadi" />
+    <EntitySet Name="vwMosavabDashboardAjams" EntityType="NewMellatModel.vwMosavabDashboardAjam" />
+    <EntitySet Name="vwMosavabDashboardAmaliatiAnjams" EntityType="NewMellatModel.vwMosavabDashboardAmaliatiAnjam" />
+    <EntitySet Name="vwMosavabDashboardAmaliatiTakhirs" EntityType="NewMellatModel.vwMosavabDashboardAmaliatiTakhir" />
+    <EntitySet Name="vwMosavabDashboardTakhirs" EntityType="NewMellatModel.vwMosavabDashboardTakhir" />
+    <EntitySet Name="SsoMapUsers" EntityType="NewMellatModel.SsoMapUser" />
+    <EntitySet Name="Commissions" EntityType="NewMellatModel.Commission" />
+    <EntitySet Name="vwMosavab3" EntityType="NewMellatModel.vwMosavab3" />
+    <EntitySet Name="Capacities" EntityType="NewMellatModel.Capacity" />
+    <EntitySet Name="CapacityCompanies" EntityType="NewMellatModel.CapacityCompany" />
+    <EntitySet Name="ProjectFinalizes" EntityType="NewMellatModel.ProjectFinalize" />
+    <EntitySet Name="tbUserDepartments" EntityType="NewMellatModel.tbUserDepartment" />
+  </EntityContainer>
+  <EntityType Name="tbProject">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prAct" Type="Int32" />
+    <Property Name="prRegDate" Type="DateTime" Precision="0" />
+    <Property Name="prRegUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prSanadType" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <NavigationProperty Name="tbKhbregans" Relationship="NewMellatModel.FK_tbKhbregan_tbProjects" FromRole="tbProject" ToRole="tbKhbregan" />
+    <NavigationProperty Name="tbEstelamVaheds" Relationship="NewMellatModel.FK_tbEstelamVahed_tbProjects" FromRole="tbProject" ToRole="tbEstelamVahed" />
+    <Property Name="status1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prStatus" Type="Int32" />
+    <Property Name="prISEstelam" Type="Int32" />
+    <Property Name="prIsMohtava" Type="Int32" />
+    <Property Name="irIsAnalyz" Type="Int32" />
+    <Property Name="prIsTarh" Type="Int32" />
+    <Property Name="prIsEstelamMohtavayi" Type="Int32" />
+    <Property Name="prEstelamIsSubmit" Type="Int32" />
+    <Property Name="prIsErsalBeSherkat" Type="Int32" />
+    <Property Name="prIsAnswerTadarokatPending" Type="Int32" />
+    <Property Name="prTarhJalasePending" Type="Int32" />
+    <Property Name="prPishnevisPending" Type="Int32" />
+    <Property Name="prEstelamPending" Type="Int32" />
+    <Property Name="prKhobreganStatusMosavab" Type="Int32" />
+    <Property Name="prTemp" Type="Int32" />
+    <Property Name="prBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prProjectStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prMainBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prProjectManager" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="prSt" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="prSt2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="prFinalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prRiskType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prRiskTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="prRiskDegree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prRiskEhtemal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prRiskPayamad" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="prRiskAnswer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TechnicalSuvisor" Type="Int32" />
+    <Property Name="PercentComplete" Type="Single" />
+    <Property Name="ServiceId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VersionNo" Type="Int32" />
+    <Property Name="changeDate" Type="DateTime" Precision="0" />
+    <Property Name="riskAgainst" Type="Int32" />
+    <Property Name="riskTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="riskStart" Type="DateTime" Precision="0" />
+    <Property Name="riskEnd" Type="DateTime" Precision="0" />
+    <Property Name="riskDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="riskSt" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbKhbregan">
+    <Key>
+      <PropertyRef Name="khId" />
+    </Key>
+    <Property Name="khId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="khProject" Type="Int32" />
+    <Property Name="khAct" Type="Int32" />
+    <Property Name="khJalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="khJalaseDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tbProject" Relationship="NewMellatModel.FK_tbKhbregan_tbProjects" FromRole="tbKhbregan" ToRole="tbProject" />
+    <NavigationProperty Name="tbKhobreganMosavabs" Relationship="NewMellatModel.FK_tbKhobreganMosavab_tbKhbregan" FromRole="tbKhbregan" ToRole="tbKhobreganMosavab" />
+    <Property Name="khStatus" Type="Int32" />
+    <Property Name="khIsTarh" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_tbKhbregan_tbProjects">
+    <End Type="NewMellatModel.tbProject" Role="tbProject" Multiplicity="0..1" />
+    <End Type="NewMellatModel.tbKhbregan" Role="tbKhbregan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProject">
+        <PropertyRef Name="prId" />
+      </Principal>
+      <Dependent Role="tbKhbregan">
+        <PropertyRef Name="khProject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="prInformation">
+    <Key>
+      <PropertyRef Name="infId" />
+    </Key>
+    <Property Name="infId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="infType" Type="Int32" />
+    <Property Name="infAct" Type="Int32" />
+    <Property Name="infTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbProjectPaper">
+    <Key>
+      <PropertyRef Name="paId" />
+    </Key>
+    <Property Name="paId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="paNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="paDate" Type="DateTime" Precision="0" />
+    <Property Name="paProject" Type="Int32" />
+    <Property Name="paAct" Type="Int32" />
+    <Property Name="paType" Type="Int32" />
+    <Property Name="paBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="paEdare" Type="Int32" />
+    <Property Name="paMainProjectId" Type="Int32" />
+    <Property Name="paStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbNazar">
+    <Key>
+      <PropertyRef Name="nzId" />
+    </Key>
+    <Property Name="nzId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nzAct" Type="Int32" />
+    <Property Name="nzShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nzNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nzBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nzType" Type="Int32" />
+    <Property Name="nzParent" Type="Int32" />
+    <Property Name="nzDate" Type="DateTime" Precision="0" />
+    <Property Name="nzStatus" Type="Int32" />
+    <Property Name="nzMainProjectId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbEstelamVahed">
+    <Key>
+      <PropertyRef Name="esId" />
+    </Key>
+    <Property Name="esId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="esProject" Type="Int32" />
+    <Property Name="esAct" Type="Int32" />
+    <Property Name="esVahed" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbProject" Relationship="NewMellatModel.FK_tbEstelamVahed_tbProjects" FromRole="tbEstelamVahed" ToRole="tbProject" />
+  </EntityType>
+  <EntityType Name="tbKhobreganMosavab">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mosAct" Type="Int32" />
+    <Property Name="mosKhob" Type="Int32" />
+    <Property Name="mosShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosErsalDate" Type="DateTime" Precision="0" />
+    <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+    <Property Name="mosbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mosType" Type="Int32" />
+    <NavigationProperty Name="tbKhbregan" Relationship="NewMellatModel.FK_tbKhobreganMosavab_tbKhbregan" FromRole="tbKhobreganMosavab" ToRole="tbKhbregan" />
+    <Property Name="mosPropozal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosProjectId" Type="Int32" />
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_tbEstelamVahed_tbProjects">
+    <End Type="NewMellatModel.tbProject" Role="tbProject" Multiplicity="0..1" />
+    <End Type="NewMellatModel.tbEstelamVahed" Role="tbEstelamVahed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbProject">
+        <PropertyRef Name="prId" />
+      </Principal>
+      <Dependent Role="tbEstelamVahed">
+        <PropertyRef Name="esProject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbKhobreganMosavab_tbKhbregan">
+    <End Type="NewMellatModel.tbKhbregan" Role="tbKhbregan" Multiplicity="0..1" />
+    <End Type="NewMellatModel.tbKhobreganMosavab" Role="tbKhobreganMosavab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbKhbregan">
+        <PropertyRef Name="khId" />
+      </Principal>
+      <Dependent Role="tbKhobreganMosavab">
+        <PropertyRef Name="mosKhob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbHeyatNezarat">
+    <Key>
+      <PropertyRef Name="heId" />
+    </Key>
+    <Property Name="heId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="heAct" Type="Int32" />
+    <Property Name="heProject" Type="Int32" />
+    <Property Name="heJalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="heJalaseDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbShenaseNumbers" Relationship="NewMellatModel.FK_tbShenaseNumbers_tbHeyatNezarat" FromRole="tbHeyatNezarat" ToRole="tbShenaseNumber" />
+    <Property Name="heIsElhaghie" Type="Boolean" />
+    <Property Name="ProposalId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbHeyatNezaratMosavab">
+    <Key>
+      <PropertyRef Name="hmId" />
+    </Key>
+    <Property Name="hmId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hmAct" Type="Int32" />
+    <Property Name="hmPriceTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hmPricePosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hmDateTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hmDatePosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hmGharardadType" Type="Int32" />
+    <Property Name="hmVahedType" Type="Int32" />
+    <Property Name="hmNezarat" Type="Int32" />
+    <Property Name="hmMainProjectId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbShenaseNumber">
+    <Key>
+      <PropertyRef Name="shId" />
+    </Key>
+    <Property Name="shId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="shHeyat" Type="Int32" />
+    <Property Name="shBody" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="shStatus" Type="Int32" />
+    <NavigationProperty Name="tbHeyatNezarat" Relationship="NewMellatModel.FK_tbShenaseNumbers_tbHeyatNezarat" FromRole="tbShenaseNumber" ToRole="tbHeyatNezarat" />
+    <Property Name="shMainProjectId" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_tbShenaseNumbers_tbHeyatNezarat">
+    <End Type="NewMellatModel.tbHeyatNezarat" Role="tbHeyatNezarat" Multiplicity="0..1" />
+    <End Type="NewMellatModel.tbShenaseNumber" Role="tbShenaseNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHeyatNezarat">
+        <PropertyRef Name="heId" />
+      </Principal>
+      <Dependent Role="tbShenaseNumber">
+        <PropertyRef Name="shHeyat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vwNoEstelam">
+    <Key>
+      <PropertyRef Name="thId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="thId" Type="Int32" Nullable="false" />
+    <Property Name="thProject" Type="Int32" />
+    <Property Name="thYear" Type="Int32" />
+    <Property Name="thHajmTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thHajmPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thPriceTolid" Type="Int64" />
+    <Property Name="thPricePosh" Type="Int64" />
+    <Property Name="thModatTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thModatPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thAct" Type="Int32" />
+    <Property Name="thMekanizmPosh" Type="Int32" />
+    <Property Name="thMekanizmtolid" Type="Int32" />
+    <Property Name="thIsEstelamPaper" Type="Int32" />
+    <Property Name="thIsCancle" Type="Int32" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prAct" Type="Int32" />
+    <Property Name="prRegDate" Type="DateTime" Precision="0" />
+    <Property Name="prRegUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prSanadType" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="status1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prStatus" Type="Int32" />
+    <Property Name="prISEstelam" Type="Int32" />
+    <Property Name="prIsMohtava" Type="Int32" />
+    <Property Name="irIsAnalyz" Type="Int32" />
+    <Property Name="prIsTarh" Type="Int32" />
+    <Property Name="prIsEstelamMohtavayi" Type="Int32" />
+    <Property Name="prEstelamIsSubmit" Type="Int32" />
+    <Property Name="prIsErsalBeSherkat" Type="Int32" />
+    <Property Name="prIsAnswerTadarokatPending" Type="Int32" />
+    <Property Name="prTarhJalasePending" Type="Int32" />
+    <Property Name="prPishnevisPending" Type="Int32" />
+    <Property Name="prEstelamPending" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vwHeyatNezarat">
+    <Key>
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prSanadType" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="thHajmTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thPriceTolid" Type="Int64" />
+    <Property Name="thPricePosh" Type="Int64" />
+    <Property Name="thHajmPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thModatTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thModatPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thMekanizmPosh" Type="Int32" />
+    <Property Name="thMekanizmtolid" Type="Int32" />
+    <Property Name="irIsAnalyz" Type="Int32" />
+    <Property Name="prIsEstelamMohtavayi" Type="Int32" />
+    <Property Name="prTemp" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbTemp">
+    <Key>
+      <PropertyRef Name="tmId" />
+    </Key>
+    <Property Name="tmId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tmData" Type="Int32" />
+    <Property Name="tmBody" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwHeyatNezarat2">
+    <Key>
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prSanadType" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="thHajmTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thPriceTolid" Type="Int64" />
+    <Property Name="thPricePosh" Type="Int64" />
+    <Property Name="thHajmPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thModatTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thModatPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thMekanizmPosh" Type="Int32" />
+    <Property Name="thMekanizmtolid" Type="Int32" />
+    <Property Name="irIsAnalyz" Type="Int32" />
+    <Property Name="prIsEstelamMohtavayi" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbAccessPage">
+    <Key>
+      <PropertyRef Name="acId" />
+    </Key>
+    <Property Name="acId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="acPageName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="acUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbAdminInPage">
+    <Key>
+      <PropertyRef Name="pgId" />
+    </Key>
+    <Property Name="pgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pgPageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pgCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbAdminPremission">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prAct" Type="Int32" />
+    <NavigationProperty Name="tbAminPremissionAccesses" Relationship="NewMellatModel.FK_tbAminPremissionAccess_tbAdminPremission" FromRole="tbAdminPremission" ToRole="tbAminPremissionAccess" />
+  </EntityType>
+  <EntityType Name="tbAdminProject">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prProject" Type="Int32" />
+    <Property Name="prCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prType" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbAdmin">
+    <Key>
+      <PropertyRef Name="adId" />
+    </Key>
+    <Property Name="adId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adPersonCode" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="adAct" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbAminPremissionAccess">
+    <Key>
+      <PropertyRef Name="acId" />
+    </Key>
+    <Property Name="acId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="acPremission" Type="Int32" />
+    <Property Name="acPage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="acAct" Type="Int32" />
+    <Property Name="acCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbAdminPremission" Relationship="NewMellatModel.FK_tbAminPremissionAccess_tbAdminPremission" FromRole="tbAminPremissionAccess" ToRole="tbAdminPremission" />
+  </EntityType>
+  <Association Name="FK_tbAminPremissionAccess_tbAdminPremission">
+    <End Type="NewMellatModel.tbAdminPremission" Role="tbAdminPremission" Multiplicity="0..1" />
+    <End Type="NewMellatModel.tbAminPremissionAccess" Role="tbAminPremissionAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAdminPremission">
+        <PropertyRef Name="prId" />
+      </Principal>
+      <Dependent Role="tbAminPremissionAccess">
+        <PropertyRef Name="acPremission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbPage">
+    <Key>
+      <PropertyRef Name="pgId" />
+    </Key>
+    <Property Name="pgName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pgTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwServerDate">
+    <Key>
+      <PropertyRef Name="serverdate" />
+    </Key>
+    <Property Name="serverdate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vwMosavabDashboard">
+    <Key>
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prAct" Type="Int32" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosErsalDate" Type="DateTime" Precision="0" />
+    <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+    <Property Name="mosbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mosType" Type="Int32" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosPropozal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="khJalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="khJalaseDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="vwDashboardAmaliatiSarRedisNashode">
+    <Key>
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prAct" Type="Int32" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosErsalDate" Type="DateTime" Precision="0" />
+    <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+    <Property Name="mosbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mosType" Type="Int32" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosPropozal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="khJalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="khJalaseDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tbSooratHesab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="ProjectName" Type="String" MaxLength="2555" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectGharardad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GharardadType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GharardadStart" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GharardadEnd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Gharardad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ElhaghieType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OnvanTahvili" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoedTahvili" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Vaziat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SoorathesbPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DoreErsali" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShomareNamePishnevisSoorathesab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheNamePishnevisSoorathesab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseNamePishnevisSoorathesab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseEstelamPishSoorathesabNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheEstelamPishSoorathesabNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoedZamani1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseEstelamPishSoorathesabNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheEstelamPishSoorathesabNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoedZamani2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseAnswerNazerPishnevis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheAnswerNazerPishnevis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ElamNazarAnswerNazerPishnevis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseAnswerNazerPishnevis2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheAnswerNazerPishnevis2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ElamNazarAnswerNazerPishnevis2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseErsalTaeedNazer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheErsalTaeedNazer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseErsalAdameTaeedNazer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheErsalAdameTaeedNazer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoedZamani3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseDaryaftAnswerPishnevis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheDaryaftAnswerPishnevis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseEstelamMojadadNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheEstelamMojadadNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoedZamani4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseEstelamMojadadNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheEstelamMojadadNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoedZamani5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseAnswerMojadadNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheAnswerMojadadNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ElamNazarAnswerMojadadNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseAnswerMojadadNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheAnswerMojadadNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ElamNazarAnswerMojadadNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseNameSooratHesab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikhNameSooratHesab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="YearSooratHesab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SomareSoorathesab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseSoorathesab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Vosool" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseEstelamVahed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheEstelamVahed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MoedEstelamVahed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseDaryaftAnswerNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheDaryaftAnswerNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ElamNazarDaryaftAnswerNazer1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseDaryaftAnswerNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheDaryaftAnswerNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ElamNazarDaryaftAnswerNazer2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SooratJalase" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheSooratJalase" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseErsalBeSherkat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheErsalBeSherkat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseDaryaftAnswerSHerkat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DateDaryaftAnswerSHerkat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EstelamMojadadVahed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EstelamMojadadVahedTarikh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseDaryaftMojaddVahed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="VahedDaryaftMojaddVahed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ElamNazarDaryaftMojaddVahed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseErsalTadarokat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheErsalTadarokat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseOdatTadarokat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheOdatTadarokat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseErsalAzTadarokat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheErsalAzTadarokat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseAnswerSherkatTadarokat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheAnswerSherkatTadarokat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseErsalMojadad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheErsalMojadad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="shenasePeigiriEstelam" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikhePeigiriEstelam" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ShenaseErsalMali" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TarikheErsalMali" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BodyPapers" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="step1" Type="Boolean" />
+    <Property Name="step2" Type="Boolean" />
+    <Property Name="step3" Type="Boolean" />
+    <Property Name="step4" Type="Boolean" />
+    <Property Name="step5" Type="Boolean" />
+    <Property Name="step6" Type="Boolean" />
+    <Property Name="step7" Type="Boolean" />
+    <Property Name="step8" Type="Boolean" />
+    <Property Name="step9" Type="Boolean" />
+    <Property Name="step10" Type="Boolean" />
+    <Property Name="step11" Type="Boolean" />
+    <Property Name="step12" Type="Boolean" />
+    <Property Name="step13" Type="Boolean" />
+    <Property Name="srCheck" Type="Boolean" />
+    <Property Name="prId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbSooratPishNevi">
+    <Key>
+      <PropertyRef Name="pishId" />
+    </Key>
+    <Property Name="pishId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pishProject" Type="Int32" />
+    <Property Name="pishAct" Type="Int32" />
+    <Property Name="pishPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pishPricePlus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pishSooratHesab" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="pishHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pishDore" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="pishType" Type="Int32" />
+    <Property Name="pishIsNazer" Type="Boolean" />
+    <Property Name="pishFinalPrice" Type="Int64" />
+    <Property Name="pishPriceArzeshAfzoode" Type="Int64" />
+    <Property Name="pishBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pishIsSabt" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbReval">
+    <Key>
+      <PropertyRef Name="reId" />
+    </Key>
+    <Property Name="reId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reType" Type="Int32" />
+    <Property Name="reAct" Type="Int32" />
+    <Property Name="reProject" Type="Int32" />
+    <Property Name="reVahed" Type="Int32" />
+    <Property Name="reSanadNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reOlaviat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reDateSRS" Type="DateTime" Precision="0" />
+    <Property Name="reDatePropozal" Type="DateTime" Precision="0" />
+    <Property Name="reMohlatZamani" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reSanadType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwMosavab2">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwMosavab4">
+    <Key>
+      <PropertyRef Name="mosid" />
+    </Key>
+    <Property Name="mosid" Type="Int32" Nullable="false" />
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosOlaviat" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vwMosavab5">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwMosavab6">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwMosavab7">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbChart">
+    <Key>
+      <PropertyRef Name="chId" />
+    </Key>
+    <Property Name="chId" Type="Int32" Nullable="false" />
+    <Property Name="chTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="chValue" Type="Int64" />
+    <Property Name="chAct" Type="Int32" />
+    <Property Name="chType" Type="Int32" />
+    <Property Name="chYear" Type="Int32" />
+    <Property Name="chBody" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbPaperProject">
+    <Key>
+      <PropertyRef Name="paId" />
+    </Key>
+    <Property Name="paId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paProject" Type="Int32" />
+    <Property Name="paAct" Type="Int32" />
+    <Property Name="paFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="paDate" Type="DateTime" Precision="0" />
+    <Property Name="paNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="paType" Type="Int32" />
+    <Property Name="paFilename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbIndex1">
+    <Key>
+      <PropertyRef Name="inId" />
+    </Key>
+    <Property Name="inVahedName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="inName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="inTell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="inTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="inMahdodeh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="inHadaf" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="inTeam" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="inVaheds" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="inZinaf" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="inBAzeh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="inFeatures" Type="String" MaxLength="555" FixedLength="false" Unicode="true" />
+    <Property Name="inTahlil" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="inFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="inAct" Type="Int32" />
+    <Property Name="inRegisterDate" Type="DateTime" Precision="0" />
+    <Property Name="inProject" Type="Int32" />
+    <Property Name="inId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="inFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbElhaghie">
+    <Key>
+      <PropertyRef Name="elId" />
+    </Key>
+    <Property Name="elId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="elProject" Type="Int32" />
+    <Property Name="elGharardad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="elBody" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="elDate1" Type="DateTime" Precision="0" />
+    <Property Name="elDate2" Type="DateTime" Precision="0" />
+    <Property Name="elPrice" Type="Int64" />
+    <Property Name="elType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="elPrice2" Type="Int64" />
+    <Property Name="elBody2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="elDate3" Type="DateTime" Precision="0" />
+    <Property Name="elDate4" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="vwGharardadID">
+    <Key>
+      <PropertyRef Name="ghId" />
+    </Key>
+    <Property Name="ghId" Type="Int32" Nullable="false" />
+    <Property Name="ghProject" Type="Int32" />
+    <Property Name="ghCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="isElhaghie" Type="Boolean" />
+    <Property Name="prId" Type="Int32" />
+    <Property Name="prTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbGharardad">
+    <Key>
+      <PropertyRef Name="ghId" />
+    </Key>
+    <Property Name="ghId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ghAct" Type="Int32" />
+    <Property Name="ghProject" Type="Int32" />
+    <Property Name="ghBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ghCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ghPriceTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ghPricePosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ghType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsElhaghie" Type="Boolean" />
+    <Property Name="ProposalId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbTarhPishnehadi">
+    <Key>
+      <PropertyRef Name="thId" />
+    </Key>
+    <Property Name="thId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="thProject" Type="Int32" />
+    <Property Name="thYear" Type="Int32" />
+    <Property Name="thHajmTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thHajmPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thPriceTolid" Type="Int64" />
+    <Property Name="thPricePosh" Type="Int64" />
+    <Property Name="thModatTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thModatPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thAct" Type="Int32" />
+    <Property Name="thMekanizmPosh" Type="Int32" />
+    <Property Name="thMekanizmtolid" Type="Int32" />
+    <Property Name="thIsEstelamPaper" Type="Int32" />
+    <Property Name="thIsCancle" Type="Int32" />
+    <Property Name="thIsEstelamRepeat" Type="Int32" />
+    <Property Name="thBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="thIsElhaghie" Type="Boolean" />
+    <Property Name="thRiskType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thRiskTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="thRiskDegree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thRiskEhtemal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thRiskPayamad" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="thRiskAnswer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="gPriceTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gPricePosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ElhaghieId" Type="Int32" />
+    <Property Name="NezaratMosavab" Type="Boolean" />
+    <Property Name="StartDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EndDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriceSecurity" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="vwMosavabDashboardAjam">
+    <Key>
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prAct" Type="Int32" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosErsalDate" Type="DateTime" Precision="0" />
+    <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+    <Property Name="mosbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mosType" Type="Int32" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosPropozal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="khJalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="khJalaseDate" Type="DateTime" Precision="0" />
+    <Property Name="prSanadType" Type="Int32" />
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="infTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwMosavabDashboardAmaliatiAnjam">
+    <Key>
+      <PropertyRef Name="khId" />
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="mosShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+    <Property Name="khAct" Type="Int32" />
+    <Property Name="mosAct" Type="Int32" />
+    <Property Name="khId" Type="Int32" Nullable="false" />
+    <Property Name="khProject" Type="Int32" />
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosPropozal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosErsalDate" Type="DateTime" Precision="0" />
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prSanadType" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosType" Type="Int32" />
+    <Property Name="mosbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="khJalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="infTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwMosavabDashboardAmaliatiTakhir">
+    <Key>
+      <PropertyRef Name="khId" />
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="mosShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+    <Property Name="khAct" Type="Int32" />
+    <Property Name="mosAct" Type="Int32" />
+    <Property Name="khId" Type="Int32" Nullable="false" />
+    <Property Name="khProject" Type="Int32" />
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosPropozal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosErsalDate" Type="DateTime" Precision="0" />
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prSanadType" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosType" Type="Int32" />
+    <Property Name="mosbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="khJalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="infTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwMosavabDashboardTakhir">
+    <Key>
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="prAct" Type="Int32" />
+    <Property Name="prVahed" Type="Int32" />
+    <Property Name="prOlaviat" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosShenase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosErsalDate" Type="DateTime" Precision="0" />
+    <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+    <Property Name="mosbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mosType" Type="Int32" />
+    <Property Name="mosOlaviat" Type="Int32" />
+    <Property Name="mosPropozal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="khJalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="khJalaseDate" Type="DateTime" Precision="0" />
+    <Property Name="prSanadType" Type="Int32" />
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="infTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SsoMapUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SsoLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Loginname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Commission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Act" Type="Int32" Nullable="false" />
+    <Property Name="ProjectId" Type="Int32" Nullable="false" />
+    <Property Name="JalaseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JalaseDate" Type="DateTime" Precision="0" />
+    <Property Name="IsElhaghie" Type="Boolean" />
+    <Property Name="ProposalId" Type="Int32" />
+    <Property Name="PriceTolid" Type="Int64" />
+    <Property Name="PricePosh" Type="Int64" />
+    <Property Name="DurationTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DurationPosh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GharardadType" Type="Int32" />
+    <Property Name="VahedType" Type="Int32" />
+    <Property Name="Vaziat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwMosavab3">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosId" Type="Int32" Nullable="false" />
+    <Property Name="mosSRS" Type="DateTime" Precision="0" />
+    <Property Name="mosSRSanswer" Type="DateTime" Precision="0" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosOlaviat" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Capacity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Season" Type="Int32" Nullable="false" />
+    <Property Name="CapacityTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CapacityValue" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CapacityCompany">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProjectFinalize">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int32" Nullable="false" />
+    <Property Name="IsUsing" Type="Boolean" Nullable="false" />
+    <Property Name="UserCount" Type="Int32" Nullable="false" />
+    <Property Name="Desciption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbUserDepartment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="departId" Type="Int32" />
+  </EntityType>
+</Schema>

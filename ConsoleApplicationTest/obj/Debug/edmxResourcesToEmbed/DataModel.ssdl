@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewMellatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HrEmployeeDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeCode" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+    <Property Name="DepartmentCode" Type="int" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="UnitCode" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="StatusCode" Type="int" />
+  </EntityType>
+  <EntityType Name="SsoMapUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SsoLogin" Type="nvarchar" MaxLength="50" />
+    <Property Name="Loginname" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="NewMellatModelStoreContainer">
+    <EntitySet Name="HrEmployeeDetail" EntityType="Self.HrEmployeeDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SsoMapUser" EntityType="Self.SsoMapUser" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

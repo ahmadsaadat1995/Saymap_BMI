@@ -1,0 +1,40 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PageGharardadCode.aspx.cs" Inherits="NewMellat.Content.PageGharardadCode" %>
+
+<%@ Register assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align="center" style="padding-top: 38px">
+    
+        <table align="center" cellpadding="0" cellspacing="0" dir="rtl">
+            <tr>
+                <td>
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Content/images/icons/Actions-document-save-icon.png"   OnClick="ImageButton1_Click" />
+                </td>
+                <td>
+                    <dx:ASPxTextBox ID="txtG" runat="server" Theme="SoftOrange" Width="100px">
+                    </dx:ASPxTextBox>
+                </td>
+                <td>-</td>
+                <td>
+                    <dx:ASPxComboBox ID="ASPxComboBox1" runat="server" AnimationType="Fade" RightToLeft="True" Theme="SoftOrange" ValueType="System.String" Width="75px">
+                    </dx:ASPxComboBox>
+                </td>
+                <td style="padding-right: 3px">&nbsp;</td>
+            </tr>
+        </table>
+    
+    </div>
+        <div align="center" style="padding: 4px; font-family: tahoma; color: #006600; font-size: 12px;">
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+        </div>
+    </form>
+</body>
+</html>

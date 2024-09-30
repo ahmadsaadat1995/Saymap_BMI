@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CapacityProject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Season" Type="int" Nullable="false" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="Days" Type="int" />
+          <Property Name="HasContract" Type="bit" />
+          <Property Name="CapacityTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="CapacityProjectDuration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="Duration" Type="int" Nullable="false" />
+          <Property Name="HasContract" Type="bit" Nullable="false" />
+          <Property Name="CapacityTypeId" Type="int" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="TotalNafarSaat" Type="int" />
+        </EntityType>
+        <EntityType Name="ServiceCatalog">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.CapacityView1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CapacityView1">
+          <Key>
+            <PropertyRef Name="thId" />
+            <PropertyRef Name="prId" />
+          </Key>
+          <Property Name="prId" Type="int" Nullable="false" />
+          <Property Name="prPeymankar" Type="int" />
+          <Property Name="GharardadStartTolid" Type="nvarchar" MaxLength="50" />
+          <Property Name="GharardadEndTolid" Type="nvarchar" MaxLength="50" />
+          <Property Name="prProjectType" Type="int" />
+          <Property Name="thHajmTolid" Type="nvarchar" MaxLength="50" />
+          <Property Name="thId" Type="int" Nullable="false" />
+          <Property Name="prTitle" Type="ntext" />
+          <Property Name="ElhaghieId" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.CapacityView2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CapacityView2">
+          <Key>
+            <PropertyRef Name="prId" />
+          </Key>
+          <Property Name="mosDate" Type="date" />
+          <Property Name="mosAmaliatiDate" Type="date" />
+          <Property Name="prId" Type="int" Nullable="false" />
+          <Property Name="prPeymankar" Type="int" />
+          <Property Name="prProjectType" Type="int" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CapacityProject" EntityType="Self.CapacityProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CapacityProjectDuration" EntityType="Self.CapacityProjectDuration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServiceCatalog" EntityType="Self.ServiceCatalog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CapacityView1" EntityType="Self.CapacityView1" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CapacityView1].[prId] AS [prId], 
+    [CapacityView1].[prPeymankar] AS [prPeymankar], 
+    [CapacityView1].[GharardadStartTolid] AS [GharardadStartTolid], 
+    [CapacityView1].[GharardadEndTolid] AS [GharardadEndTolid], 
+    [CapacityView1].[prProjectType] AS [prProjectType], 
+    [CapacityView1].[thHajmTolid] AS [thHajmTolid], 
+    [CapacityView1].[thId] AS [thId], 
+    [CapacityView1].[prTitle] AS [prTitle], 
+    [CapacityView1].[ElhaghieId] AS [ElhaghieId]
+    FROM [dbo].[CapacityView1] AS [CapacityView1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CapacityView2" EntityType="Self.CapacityView2" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CapacityView2].[mosDate] AS [mosDate], 
+    [CapacityView2].[mosAmaliatiDate] AS [mosAmaliatiDate], 
+    [CapacityView2].[prId] AS [prId], 
+    [CapacityView2].[prPeymankar] AS [prPeymankar], 
+    [CapacityView2].[prProjectType] AS [prProjectType]
+    FROM [dbo].[CapacityView2] AS [CapacityView2]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="CapacityView1" EntityType="Model.CapacityView1" />
+          <EntitySet Name="CapacityProjects" EntityType="Model.CapacityProject" />
+          <EntitySet Name="CapacityView2" EntityType="Model.CapacityView2" />
+          <EntitySet Name="CapacityProjectDurations" EntityType="Model.CapacityProjectDuration" />
+          <EntitySet Name="ServiceCatalogs" EntityType="Model.ServiceCatalog" />
+        </EntityContainer>
+        <EntityType Name="CapacityView1">
+          <Key>
+            <PropertyRef Name="prId" />
+            <PropertyRef Name="thId" />
+          </Key>
+          <Property Name="prId" Type="Int32" Nullable="false" />
+          <Property Name="prPeymankar" Type="Int32" />
+          <Property Name="GharardadStartTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GharardadEndTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prProjectType" Type="Int32" />
+          <Property Name="thHajmTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="thId" Type="Int32" Nullable="false" />
+          <Property Name="prTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ElhaghieId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CapacityProject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Season" Type="Int32" Nullable="false" />
+          <Property Name="ProjectId" Type="Int32" />
+          <Property Name="Days" Type="Int32" />
+          <Property Name="HasContract" Type="Boolean" />
+          <Property Name="CapacityTypeId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CapacityView2">
+          <Key>
+            <PropertyRef Name="prId" />
+          </Key>
+          <Property Name="mosDate" Type="DateTime" Precision="0" />
+          <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+          <Property Name="prId" Type="Int32" Nullable="false" />
+          <Property Name="prPeymankar" Type="Int32" />
+          <Property Name="prProjectType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CapacityProjectDuration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
+          <Property Name="HasContract" Type="Boolean" Nullable="false" />
+          <Property Name="CapacityTypeId" Type="Int32" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="TotalNafarSaat" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ServiceCatalog">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <Alias Key="Model" Value="Model" />
+        <Alias Key="Target" Value="Model.Store" />
+        <EntityContainerMapping CdmEntityContainer="ModelContainer" StorageEntityContainer="ModelStoreContainer">
+          <EntitySetMapping Name="CapacityView1">
+            <EntityTypeMapping TypeName="Model.CapacityView1">
+              <MappingFragment StoreEntitySet="CapacityView1">
+                <ScalarProperty Name="ElhaghieId" ColumnName="ElhaghieId" />
+                <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+                <ScalarProperty Name="thId" ColumnName="thId" />
+                <ScalarProperty Name="thHajmTolid" ColumnName="thHajmTolid" />
+                <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+                <ScalarProperty Name="GharardadEndTolid" ColumnName="GharardadEndTolid" />
+                <ScalarProperty Name="GharardadStartTolid" ColumnName="GharardadStartTolid" />
+                <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+                <ScalarProperty Name="prId" ColumnName="prId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CapacityProjects">
+            <EntityTypeMapping TypeName="Model.CapacityProject">
+              <MappingFragment StoreEntitySet="CapacityProject">
+                <ScalarProperty Name="CapacityTypeId" ColumnName="CapacityTypeId" />
+                <ScalarProperty Name="HasContract" ColumnName="HasContract" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Season" ColumnName="Season" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CapacityView2">
+            <EntityTypeMapping TypeName="Model.CapacityView2">
+              <MappingFragment StoreEntitySet="CapacityView2">
+                <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+                <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+                <ScalarProperty Name="prId" ColumnName="prId" />
+                <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+                <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CapacityProjectDurations">
+            <EntityTypeMapping TypeName="Model.CapacityProjectDuration">
+              <MappingFragment StoreEntitySet="CapacityProjectDuration">
+                <ScalarProperty Name="TotalNafarSaat" ColumnName="TotalNafarSaat" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="CapacityTypeId" ColumnName="CapacityTypeId" />
+                <ScalarProperty Name="HasContract" ColumnName="HasContract" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceCatalogs">
+            <EntityTypeMapping TypeName="Model.ServiceCatalog">
+              <MappingFragment StoreEntitySet="ServiceCatalog">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

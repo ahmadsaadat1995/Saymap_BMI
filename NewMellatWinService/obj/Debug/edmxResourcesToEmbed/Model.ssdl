@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CapacityProject">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Season" Type="int" Nullable="false" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="Days" Type="int" />
+    <Property Name="HasContract" Type="bit" />
+    <Property Name="CapacityTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="CapacityProjectDuration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Duration" Type="int" Nullable="false" />
+    <Property Name="HasContract" Type="bit" Nullable="false" />
+    <Property Name="CapacityTypeId" Type="int" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="TotalNafarSaat" Type="int" />
+  </EntityType>
+  <EntityType Name="ServiceCatalog">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.CapacityView1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CapacityView1">
+    <Key>
+      <PropertyRef Name="thId" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="GharardadStartTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="GharardadEndTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="thHajmTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thId" Type="int" Nullable="false" />
+    <Property Name="prTitle" Type="ntext" />
+    <Property Name="ElhaghieId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.CapacityView2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CapacityView2">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosAmaliatiDate" Type="date" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="CapacityProject" EntityType="Self.CapacityProject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CapacityProjectDuration" EntityType="Self.CapacityProjectDuration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceCatalog" EntityType="Self.ServiceCatalog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CapacityView1" EntityType="Self.CapacityView1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CapacityView1].[prId] AS [prId], 
+    [CapacityView1].[prPeymankar] AS [prPeymankar], 
+    [CapacityView1].[GharardadStartTolid] AS [GharardadStartTolid], 
+    [CapacityView1].[GharardadEndTolid] AS [GharardadEndTolid], 
+    [CapacityView1].[prProjectType] AS [prProjectType], 
+    [CapacityView1].[thHajmTolid] AS [thHajmTolid], 
+    [CapacityView1].[thId] AS [thId], 
+    [CapacityView1].[prTitle] AS [prTitle], 
+    [CapacityView1].[ElhaghieId] AS [ElhaghieId]
+    FROM [dbo].[CapacityView1] AS [CapacityView1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CapacityView2" EntityType="Self.CapacityView2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CapacityView2].[mosDate] AS [mosDate], 
+    [CapacityView2].[mosAmaliatiDate] AS [mosAmaliatiDate], 
+    [CapacityView2].[prId] AS [prId], 
+    [CapacityView2].[prPeymankar] AS [prPeymankar], 
+    [CapacityView2].[prProjectType] AS [prProjectType]
+    FROM [dbo].[CapacityView2] AS [CapacityView2]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

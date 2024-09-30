@@ -1,0 +1,397 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="PageElhaghNew.aspx.cs" Inherits="NewMellat.Content.PageElhaghNew" %>
+
+<%@ Register Assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="LavaControl" Namespace="LavaControl" TagPrefix="cc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+
+    <div style="height: 245px; padding-top: 9px;" class="box box-danger" dir="ltr">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <table cellpadding="0" cellspacing="0" align="right" width="100%">
+                    <tr>
+                        <td width="36%" style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbGharardad" runat="server"></asp:Label>
+                        </td>
+                        <td width="14%">
+                            <asp:Label ID="Label4" runat="server" Text=":شماره قرارداد"></asp:Label>
+                        </td>
+                        <td width="36%" align="right">
+                            <dx:ASPxComboBox ID="drpProjects" runat="server" AnimationType="Fade" AutoPostBack="True" DataSourceID="sourceProjects0" Font-Names="vazir" Font-Size="13px" RightToLeft="True" TextField="prTitle" Theme="SoftOrange" ValueField="ghCode" Width="95%" OnSelectedIndexChanged="drpProjects_SelectedIndexChanged">
+                                <Border BorderColor="#F8DF8E" />
+                            </dx:ASPxComboBox>
+                            <asp:SqlDataSource ID="sourceProjects0" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbGharardad.ghId, tbGharardad.ghAct, tbGharardad.ghProject, tbGharardad.ghBody, tbProjects.prTitle, tbProjects.prVahed, tbProjects.prId, tbGharardad.ghCode FROM tbGharardad INNER JOIN tbProjects ON tbGharardad.ghProject = tbProjects.prId WHERE (tbGharardad.ghAct = 1)
+and tbGharardad.ghCode is not null"></asp:SqlDataSource>
+                        </td>
+                        <td align="left" width="14%">
+                            <asp:Label ID="Label3" runat="server" Text=":نام پروژه"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbTolidEnd" runat="server"></asp:Label>
+                        </td>
+                        <td class="RightColumn">
+                            <asp:Label ID="Label6" runat="server" Text=":پایان قرارداد تولید"></asp:Label>
+                        </td>
+                        <td class="LeftColumn" style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbTolidStart" runat="server"></asp:Label>
+                        </td>
+                        <td align="left" class="RightColumn">
+                            <asp:Label ID="Label5" runat="server" Text=":شروع قرارداد تولید"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbPricePosh" runat="server"></asp:Label>
+                        </td>
+                        <td class="RightColumn">
+                            <asp:Label ID="Label38" runat="server" Text=":مبلغ پشتیبانی"></asp:Label>
+                        </td>
+                        <td class="LeftColumn" style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbPriceTolid" runat="server"></asp:Label>
+                        </td>
+                        <td align="left" class="RightColumn">
+                            <asp:Label ID="Label25" runat="server" Text=":مبلغ تولید"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="LeftColumn" style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbPoshEnd" runat="server"></asp:Label>
+                        </td>
+                        <td class="RightColumn">
+                            <asp:Label ID="Label7" runat="server" Text=":پایان قرارداد پشتیبانی"></asp:Label>
+                        </td>
+                        <td class="LeftColumn" style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbPoshStart" runat="server"></asp:Label>
+                        </td>
+                        <td align="left" class="RightColumn">
+                            <asp:Label ID="Label8" runat="server" Text=":شروع قرارداد پشتیبانی"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="LeftColumn" style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbCompany" runat="server"></asp:Label>
+                        </td>
+                        <td class="RightColumn">
+                            <asp:Label ID="Label10" runat="server" Text=":شرکت پیمانکار"></asp:Label>
+                        </td>
+                        <td class="LeftColumn" style="height: 35px; text-align: right; color: #993300;">
+                            <asp:Label ID="lbNazer" runat="server"></asp:Label>
+                        </td>
+                        <td align="left" class="RightColumn">
+                            <asp:Label ID="Label9" runat="server" Text=":ناظر قرارداد"></asp:Label>
+                        </td>
+                     
+
+                    </tr>
+                    <tr>
+                        <td class="LeftColumn">
+                            &nbsp;</td>
+                        <td class="RightColumn">&nbsp;</td>
+                        <td align="right">
+                            <dx:ASPxComboBox ID="drpElhaghie" runat="server" AnimationType="Fade" AutoPostBack="True" Font-Names="vazir" Font-Size="13px" OnSelectedIndexChanged="drpProjects_SelectedIndexChanged" RightToLeft="True" SelectedIndex="0" TextField="prTitle" Theme="SoftOrange" ValueField="ghCode" Width="95%">
+                                <Items>
+                                    <dx:ListEditItem Selected="True" Text="دارد" Value="0" />
+                                    <dx:ListEditItem Text="ندارد" Value="1" />
+                                </Items>
+                                <Border BorderColor="#F8DF8E" />
+                            </dx:ASPxComboBox>
+                        </td>
+                        <td align="left" class="RightColumn">
+                            <asp:Label ID="Label11" runat="server" Text=":الحاقیه"></asp:Label>
+                        </td>
+                     
+
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+
+
+
+
+    <div>
+        <dx:ASPxRoundPanel ID="ASPxRoundPanel2" runat="server" Width="100%" Font-Names="vazir" Font-Size="12px" HeaderText="درخواست الحاقیه" Theme="SoftOrange">
+            <HeaderStyle HorizontalAlign="Right" />
+            <PanelCollection>
+                <dx:PanelContent runat="server">
+                    <div align="center" style="padding: 8px">
+                        <dx:ASPxComboBox ID="ASPxComboBox1" runat="server" AnimationType="Fade" EnableTheming="True" Font-Names="vazir" Font-Size="14px" NullText="نوع درخواست الحاقیه" Theme="SoftOrange" Width="50%" AutoPostBack="True" OnSelectedIndexChanged="ASPxComboBox1_SelectedIndexChanged" RightToLeft="True">
+
+
+                            <Items>
+                                <dx:ListEditItem Text="افزایش مبلغ" Value="1" />
+                                <dx:ListEditItem Text="افزایش مبلغ / زمان" Value="2" />
+                                <dx:ListEditItem Text="افزایش زمان" Value="3" />
+                                <dx:ListEditItem Text="تنفس پروژه" Value="4" />
+                                <dx:ListEditItem Text="حذف المان" Value="5" />
+                                <dx:ListEditItem Text="تغییر تاریخ قرارداد " Value="6" />
+                            </Items>
+                            <Border BorderColor="#F8DF8E" />
+                        </dx:ASPxComboBox>
+                    </div>
+                    <div align="right">
+
+                        <div id="dv1" runat="server" style="height: 80px; padding-top: 9px;" class="box box-danger" dir="ltr">
+                            <table align="right" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="right" width="36%">
+                                        <asp:TextBox ID="txtBody1" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label12" runat="server" Text=":شرح خدمات اضافه"></asp:Label>
+                                    </td>
+                                    <td align="right" width="36%">
+                                        <asp:TextBox ID="txtPrice1" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label29" runat="server" Text=":مبلغ تولید"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;</td>
+                                    <td class="RightColumn">&nbsp;</td>
+                                    <td align="right" style="padding-top: 4px">
+                                        <asp:TextBox ID="txtPrice12" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label30" runat="server" Text=":مبلغ پشتیبانی"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="dv2" runat="server" style="height: 160px" dir="ltr" class="box box-danger">
+                            <table align="right" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                   
+                                    <td align="right" width="36%">
+                                        <asp:TextBox ID="txtPrice2" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label24" runat="server" Text=":مبلغ تولید"></asp:Label>
+                                    </td>
+                                    <td width="36%" align="right">
+                                        <cc1:PersianCalendar ID="pc2" runat="server" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td class="RightColumn" width="14%">
+                                        <asp:Label ID="Label15" runat="server" Text=":از تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                  
+                                    <td align="right" style="padding-top: 4px">
+                                        <asp:TextBox ID="txtBody2" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label14" runat="server" Text=":شرح"></asp:Label>
+                                    </td>
+                                    <td align="right">
+                                        <cc1:PersianCalendar ID="pc22" runat="server" Skin="win2k_cold_1" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label27" runat="server" Text=":تا تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                  
+                                    <td align="right" style="padding-top: 4px">
+                                        <asp:TextBox ID="txtPrice22" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label28" runat="server" Text=":مبلغ پشتیبانی"></asp:Label>
+                                    </td>
+                                    <td align="right">
+                                        <cc1:PersianCalendar ID="pc222" runat="server" Skin="win2k_cold_1" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label35" runat="server" Text=":از تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                  
+                                    <td align="right" style="padding-top: 4px">
+                                        <asp:TextBox ID="txtBody22" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label37" runat="server" Text=":شرح"></asp:Label>
+                                    </td>
+                                    <td align="right">
+                                        <cc1:PersianCalendar ID="pc2222" runat="server" Skin="win2k_cold_1" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label36" runat="server" Text=":تا تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="dv3" runat="server" style="height: 77px; padding-top: 9px;" class="box box-danger">
+                            <table align="right" cellpadding="0" cellspacing="0" dir="ltr" width="100%">
+                                <tr>
+                                    <td align="right" width="36%">
+                                        <asp:TextBox ID="txtBody33" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label16" runat="server" Text=":دلایل"></asp:Label>
+                                    </td>
+                                    <td width="36%">
+                                        <cc1:PersianCalendar ID="pc3" runat="server" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label17" runat="server" Text=":از تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;</td>
+                                    <td class="RightColumn">&nbsp;</td>
+                                    <td class="LeftColumn">
+                                        <cc1:PersianCalendar ID="pc33" runat="server" Skin="win2k_cold_1" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label33" runat="server" Text=":تا تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="dv4" runat="server" style="height: 78px; padding-top: 9px;" class="box box-danger">
+                            <table align="right" cellpadding="0" cellspacing="0" dir="ltr" width="100%">
+                                <tr>
+                                    <td align="right" width="36%">
+                                        <asp:TextBox ID="txtBody4" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label18" runat="server" Text=":دلایل"></asp:Label>
+                                    </td>
+                                    <td class="LeftColumn" width="36%">
+                                        <cc1:PersianCalendar ID="pc4" runat="server" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label19" runat="server" Text=":از تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;</td>
+                                    <td class="RightColumn">&nbsp;</td>
+                                    <td class="LeftColumn">
+                                        <cc1:PersianCalendar ID="pc44" runat="server" Skin="win2k_cold_1" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label34" runat="server" Text=":تا تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="dv5" runat="server" style="height: 80px; padding-top: 9px;" class="box box-danger">
+                            <table align="right" cellpadding="0" cellspacing="0" dir="ltr" width="100%">
+                                <tr>
+                                    <td align="right" width="36%">
+                                        <asp:TextBox ID="txtBody51" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label20" runat="server" Text=":دلایل"></asp:Label>
+                                    </td>
+                                    <td align="right" width="36%">
+                                        <asp:TextBox ID="txtPrice51" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label31" runat="server" Text=":مبلغ تولید"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;</td>
+                                    <td class="RightColumn">&nbsp;</td>
+                                    <td align="right" style="padding-top: 4px">
+                                        <asp:TextBox ID="txtPrice521" runat="server" CssClass="form-control" Width="95%"></asp:TextBox>
+                                    </td>
+                                    <td class="RightColumn">
+                                        <asp:Label ID="Label32" runat="server" Text=":مبلغ پشتیبانی"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="dv6" runat="server" style="height: 40px; padding-top: 9px;" class="box box-danger">
+                            <table align="right" cellpadding="0" cellspacing="0" dir="ltr" width="100%">
+                                <tr>
+                                    <td width="36%">
+                                        <cc1:PersianCalendar ID="pc66" runat="server" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td width="14%">
+                                        <asp:Label ID="Label21" runat="server" Text=":تا تاریخ"></asp:Label>
+                                    </td>
+                                    <td width="36%">
+                                        <cc1:PersianCalendar ID="pc6" runat="server" Width="87%"></cc1:PersianCalendar>
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="Label23" runat="server" Text=":از تاریخ"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div align="center" style="padding: 9px" class="box box-success">
+                        <dx:ASPxButton ID="ASPxButton1" runat="server" Font-Names="vazir" Text="ثبت اطلاعات" Theme="SoftOrange" Width="130px" OnClick="ASPxButton1_Click">
+                        </dx:ASPxButton>
+
+                        <asp:SqlDataSource ID="sourceTarh" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" InsertCommand="INSERT INTO tbTarhPishnehadi(thProject, thYear, thHajmTolid, thHajmPosh, thPriceTolid, thPricePosh, thModatTolid, thModatPosh, thAct, thMekanizmPosh, thMekanizmtolid, thBody, thIsElhaghie, thIsCancle) VALUES (@thProject, @thYear, @thHajmTolid, @thHajmPosh, @thPriceTolid, @thPricePosh, @thModatTolid, @thModatPosh, 1, @thMekanizmPosh, @thMekanizmtolid, @thBody, 1, 0)" SelectCommand=" 
+select *,
+(select top 1 tbProjectPaper.paNumber from tbProjectPaper where paProject=thId and paType=73 and paAct=1) as paNumber,
+( select top 1 tbProjectPaper.paDate from tbProjectPaper where paProject=thId and paType=73 and paAct=1) as paDate,
+(select top 1 tbProjectPaper.paShenase from tbProjectPaper where paProject=thId and paType=73 and paAct=1) as paShenase
+,
+(select top 1 tbProjects.prVahed from tbProjects where thProject=prId) as vahed,
+(select top 1 tbProjects.prPeymankar from tbProjects where thProject=prId) as company
+
+ from tbTarhPishnehadi where thAct=1">
+                            <InsertParameters>
+                                <asp:Parameter Name="thProject" />
+                                <asp:Parameter Name="thYear" />
+                                <asp:Parameter Name="thHajmTolid" />
+                                <asp:Parameter Name="thHajmPosh" />
+                                <asp:Parameter Name="thPriceTolid" />
+                                <asp:Parameter Name="thPricePosh" />
+                                <asp:Parameter Name="thModatTolid" />
+                                <asp:Parameter Name="thModatPosh" />
+                                <asp:Parameter Name="thMekanizmPosh" />
+                                <asp:Parameter Name="thMekanizmtolid" />
+                                <asp:Parameter Name="thBody" />
+                            </InsertParameters>
+                        </asp:SqlDataSource>
+
+                        <asp:SqlDataSource ID="sourceElhaghie" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" InsertCommand="INSERT INTO tbElhaghie(elProject, elGharardad, elBody, elDate1, elDate2, elPrice, elType, elPrice2, elBody2, elDate3, elDate4) VALUES (@elProject, @elGharardad, @elBody, @elDate1, @elDate2, @elPrice, @elType, @elPrice2, @elBody2, @elDate3, @elDate4)" SelectCommand="SELECT tbElhaghie.* FROM tbElhaghie">
+                            <InsertParameters>
+                                <asp:Parameter Name="elProject" />
+                                <asp:ControlParameter ControlID="drpProjects" Name="elGharardad" PropertyName="Value" />
+                                <asp:Parameter Name="elBody" />
+                                <asp:Parameter Name="elDate1" />
+                                <asp:Parameter Name="elDate2" />
+                                <asp:Parameter Name="elPrice" />
+                                <asp:Parameter Name="elType" />
+                                <asp:Parameter Name="elPrice2" />
+                                <asp:Parameter Name="elBody2" />
+                                <asp:Parameter Name="elDate3" />
+                                <asp:Parameter Name="elDate4" />
+                            </InsertParameters>
+                        </asp:SqlDataSource>
+
+                    </div>
+                    <div style="padding: 9px" align="center">
+
+
+                        <dx:ASPxButton ID="ASPxButton2" runat="server" Font-Names="vazir" OnClick="ASPxButton2_Click" Text="ثبت الحاقیه جدید" Theme="Youthful" Visible="False">
+                        </dx:ASPxButton>
+
+
+                    </div>
+                </dx:PanelContent>
+            </PanelCollection>
+        </dx:ASPxRoundPanel>
+
+    </div>
+
+
+
+
+</asp:Content>

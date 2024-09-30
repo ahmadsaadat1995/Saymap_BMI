@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="New Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="sqlDataSource1">
+      <Name>Simap</Name>
+      <Connection Name="NewMellatConnectionString" FromAppConfig="true" />
+      <Query Type="CustomSqlQuery" Name="پروژه ها">
+        <Sql>SELECT        tbProjects.prId N'کد سیستمی', tbProjects.prTitle N'عنوان پروژه', tbProjects.prRegUser N'کاربر ثبت کننده', tbProjects.prBody N'توضیحات پروژه',   tbProjects.prFinalCode N'کد پروژه',
+                             (SELECT        TOP (1) infTitle
+                               FROM            prInformation
+                               WHERE        (infId = tbProjects.prVahed)) AS N'واحد متولی',
+                             (SELECT        TOP (1) infTitle
+                               FROM            prInformation AS prInformation_4
+                               WHERE        (infId = tbProjects.prProjectType)) AS N'نوع پروژه',
+                             (SELECT        TOP (1) infTitle
+                               FROM            prInformation AS prInformation_3
+                               WHERE        (infId = tbProjects.prSanadType)) AS N'نوع سند',
+                             (SELECT        TOP (1) infTitle
+                               FROM            prInformation AS prInformation_2
+                               WHERE        (infId = tbProjects.prOlaviat)) AS N'اولویت' ,
+                             (SELECT        TOP (1) infTitle
+                               FROM            prInformation AS prInformation_1
+                               WHERE        (infId = tbProjects.prPeymankar)) AS N'پیمانکار', DimDate.PersianStr N'تاریخ ثبت', DimDate.PersianYearInt N'سال', DimDate.PersianMonthNo N'ماه', DimDate.PersianMonthName N'نام ماه', DimDate.PersianDayInMonth N'روز'
+FROM            tbProjects left JOIN
+                         DimDate ON tbProjects.prRegDate = DimDate.GregorianDate
+WHERE        (tbProjects.prAct = 1)
+ORDER BY tbProjects.prId DESC</Sql>
+      </Query>
+      <ConnectionOptions CloseConnection="true" CommandTimeout="0" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <ScatterChart ComponentName="scatterChartDashboardItem1" Name="ScatterChart 1" DataSource="sqlDataSource1" DataMember="پروژه ها">
+      <DataItems>
+        <Measure DataMember="پیمانکار" SummaryType="Count" DefaultId="DataItem0" />
+        <Measure DataMember="سال" DefaultId="DataItem1" />
+        <Measure DataMember="پیمانکار" SummaryType="Count" DefaultId="DataItem2" />
+      </DataItems>
+      <MeasureX DefaultId="DataItem2" />
+    </ScatterChart>
+    <Pie ComponentName="pieDashboardItem1" Name="Pie 1" DataSource="sqlDataSource1" DataMember="پروژه ها" PieType="Donut">
+      <DataItems>
+        <Dimension DataMember="پیمانکار" DefaultId="DataItem0" />
+        <Measure DataMember="عنوان پروژه" SummaryType="Count" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value DefaultId="DataItem1" />
+      </Values>
+    </Pie>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="sqlDataSource1" DataMember="پروژه ها">
+      <DataItems>
+        <Dimension DataMember="اولویت" DefaultId="DataItem0" />
+        <Dimension DataMember="پیمانکار" DefaultId="DataItem1" />
+        <Measure DataMember="سال" DefaultId="DataItem2" />
+        <Dimension DataMember="عنوان پروژه" DefaultId="DataItem3" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem2" />
+        </GridMeasureColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="scatterChartDashboardItem1" />
+        <LayoutItem DashboardItem="gridDashboardItem1" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="pieDashboardItem1" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

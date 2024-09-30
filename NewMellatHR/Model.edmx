@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProjectServer_Reporting_faModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HrEmployeeDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeCode" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="200" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Department" Type="nvarchar" MaxLength="200" />
+          <Property Name="DepartmentCode" Type="int" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="200" />
+          <Property Name="UnitCode" Type="int" />
+          <Property Name="Status" Type="nvarchar" MaxLength="200" />
+          <Property Name="StatusCode" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProjectServer_Reporting_fa.dbo.MSP_EpmResource_UserView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MSP_EpmResource_UserView">
+          <Key>
+            <PropertyRef Name="ResourceUID" />
+            <PropertyRef Name="ResourceName" />
+            <PropertyRef Name="ResourceStandardRate" />
+            <PropertyRef Name="ResourceOvertimeRate" />
+            <PropertyRef Name="ResourceStatusUID" />
+            <PropertyRef Name="ResourceCostPerUse" />
+            <PropertyRef Name="ResourceType" />
+            <PropertyRef Name="ResourceMaxUnits" />
+            <PropertyRef Name="ResourceCanLevel" />
+            <PropertyRef Name="ResourceIsActive" />
+            <PropertyRef Name="ResourceIsGeneric" />
+            <PropertyRef Name="ResourceIsTeam" />
+            <PropertyRef Name="ResourceClientUniqueId" />
+            <PropertyRef Name="ResourceCreatedRevisionCounter" />
+            <PropertyRef Name="ResourceModifiedRevisionCounter" />
+            <PropertyRef Name="ResourceCreatedDate" />
+            <PropertyRef Name="ResourceModifiedDate" />
+            <PropertyRef Name="ResourceCount" />
+          </Key>
+          <Property Name="ResourceUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ResourceName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ResourceStandardRate" Type="decimal" Precision="25" Scale="6" Nullable="false" />
+          <Property Name="ResourceOvertimeRate" Type="decimal" Precision="25" Scale="6" Nullable="false" />
+          <Property Name="ResourceStatusUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ResourceCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceCostPerUse" Type="decimal" Precision="25" Scale="6" Nullable="false" />
+          <Property Name="ResourceEmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceInitials" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceMaterialLabel" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceType" Type="smallint" Nullable="false" />
+          <Property Name="ResourceGroup" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceMaxUnits" Type="decimal" Precision="25" Scale="6" Nullable="false" />
+          <Property Name="ResourceBookingType" Type="tinyint" />
+          <Property Name="ResourceTimesheetManagerUID" Type="uniqueidentifier" />
+          <Property Name="ResourceEarliestAvailableFrom" Type="datetime" />
+          <Property Name="ResourceLatestAvailableTo" Type="datetime" />
+          <Property Name="ResourceCanLevel" Type="bit" Nullable="false" />
+          <Property Name="ResourceHyperlink" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ResourceHyperlinkHref" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceNTAccount" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceIsActive" Type="bit" Nullable="false" />
+          <Property Name="ResourceIsGeneric" Type="bit" Nullable="false" />
+          <Property Name="ResourceIsTeam" Type="bit" Nullable="false" />
+          <Property Name="ResourceBaseCalendar" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceWorkgroup" Type="smallint" />
+          <Property Name="ResourceClientUniqueId" Type="int" Nullable="false" />
+          <Property Name="ResourceCostCenter" Type="nvarchar" MaxLength="255" />
+          <Property Name="ResourceCreatedRevisionCounter" Type="int" Nullable="false" />
+          <Property Name="ResourceModifiedRevisionCounter" Type="int" Nullable="false" />
+          <Property Name="ResourceCreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ResourceModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ResourceCount" Type="int" Nullable="false" />
+          <Property Name="RBS" Type="nvarchar" MaxLength="4000" />
+          <Property Name="نوع هزینه" Type="nvarchar" MaxLength="4000" />
+          <Property Name="دپارتمان های منبع" Type="nvarchar" MaxLength="4000" />
+          <Property Name="نام و نام خانوادگی" Type="nvarchar" MaxLength="4000" />
+          <Property Name="کد پرسنلی" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityContainer Name="ProjectServer_Reporting_faModelStoreContainer">
+          <EntitySet Name="HrEmployeeDetails" EntityType="Self.HrEmployeeDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MSP_EpmResource_UserView" EntityType="Self.MSP_EpmResource_UserView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MSP_EpmResource_UserView].[ResourceUID] AS [ResourceUID], 
+    [MSP_EpmResource_UserView].[ResourceName] AS [ResourceName], 
+    [MSP_EpmResource_UserView].[ResourceStandardRate] AS [ResourceStandardRate], 
+    [MSP_EpmResource_UserView].[ResourceOvertimeRate] AS [ResourceOvertimeRate], 
+    [MSP_EpmResource_UserView].[ResourceStatusUID] AS [ResourceStatusUID], 
+    [MSP_EpmResource_UserView].[ResourceCode] AS [ResourceCode], 
+    [MSP_EpmResource_UserView].[ResourceCostPerUse] AS [ResourceCostPerUse], 
+    [MSP_EpmResource_UserView].[ResourceEmailAddress] AS [ResourceEmailAddress], 
+    [MSP_EpmResource_UserView].[ResourceInitials] AS [ResourceInitials], 
+    [MSP_EpmResource_UserView].[ResourceMaterialLabel] AS [ResourceMaterialLabel], 
+    [MSP_EpmResource_UserView].[ResourceType] AS [ResourceType], 
+    [MSP_EpmResource_UserView].[ResourceGroup] AS [ResourceGroup], 
+    [MSP_EpmResource_UserView].[ResourceMaxUnits] AS [ResourceMaxUnits], 
+    [MSP_EpmResource_UserView].[ResourceBookingType] AS [ResourceBookingType], 
+    [MSP_EpmResource_UserView].[ResourceTimesheetManagerUID] AS [ResourceTimesheetManagerUID], 
+    [MSP_EpmResource_UserView].[ResourceEarliestAvailableFrom] AS [ResourceEarliestAvailableFrom], 
+    [MSP_EpmResource_UserView].[ResourceLatestAvailableTo] AS [ResourceLatestAvailableTo], 
+    [MSP_EpmResource_UserView].[ResourceCanLevel] AS [ResourceCanLevel], 
+    [MSP_EpmResource_UserView].[ResourceHyperlink] AS [ResourceHyperlink], 
+    [MSP_EpmResource_UserView].[ResourceHyperlinkHref] AS [ResourceHyperlinkHref], 
+    [MSP_EpmResource_UserView].[ResourceNTAccount] AS [ResourceNTAccount], 
+    [MSP_EpmResource_UserView].[ResourceIsActive] AS [ResourceIsActive], 
+    [MSP_EpmResource_UserView].[ResourceIsGeneric] AS [ResourceIsGeneric], 
+    [MSP_EpmResource_UserView].[ResourceIsTeam] AS [ResourceIsTeam], 
+    [MSP_EpmResource_UserView].[ResourceBaseCalendar] AS [ResourceBaseCalendar], 
+    [MSP_EpmResource_UserView].[ResourceWorkgroup] AS [ResourceWorkgroup], 
+    [MSP_EpmResource_UserView].[ResourceClientUniqueId] AS [ResourceClientUniqueId], 
+    [MSP_EpmResource_UserView].[ResourceCostCenter] AS [ResourceCostCenter], 
+    [MSP_EpmResource_UserView].[ResourceCreatedRevisionCounter] AS [ResourceCreatedRevisionCounter], 
+    [MSP_EpmResource_UserView].[ResourceModifiedRevisionCounter] AS [ResourceModifiedRevisionCounter], 
+    [MSP_EpmResource_UserView].[ResourceCreatedDate] AS [ResourceCreatedDate], 
+    [MSP_EpmResource_UserView].[ResourceModifiedDate] AS [ResourceModifiedDate], 
+    [MSP_EpmResource_UserView].[ResourceCount] AS [ResourceCount], 
+    [MSP_EpmResource_UserView].[RBS] AS [RBS], 
+    [MSP_EpmResource_UserView].[نوع هزینه] AS [نوع هزینه], 
+    [MSP_EpmResource_UserView].[دپارتمان های منبع] AS [دپارتمان های منبع], 
+    [MSP_EpmResource_UserView].[نام و نام خانوادگی] AS [نام و نام خانوادگی], 
+    [MSP_EpmResource_UserView].[کد پرسنلی] AS [کد پرسنلی]
+    FROM [dbo].[MSP_EpmResource_UserView] AS [MSP_EpmResource_UserView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjectServer_Reporting_faModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MSP_EpmResource_UserView">
+          <Key>
+            <PropertyRef Name="ResourceUID" />
+            <PropertyRef Name="ResourceName" />
+            <PropertyRef Name="ResourceStandardRate" />
+            <PropertyRef Name="ResourceOvertimeRate" />
+            <PropertyRef Name="ResourceStatusUID" />
+            <PropertyRef Name="ResourceCostPerUse" />
+            <PropertyRef Name="ResourceType" />
+            <PropertyRef Name="ResourceMaxUnits" />
+            <PropertyRef Name="ResourceCanLevel" />
+            <PropertyRef Name="ResourceIsActive" />
+            <PropertyRef Name="ResourceIsGeneric" />
+            <PropertyRef Name="ResourceIsTeam" />
+            <PropertyRef Name="ResourceClientUniqueId" />
+            <PropertyRef Name="ResourceCreatedRevisionCounter" />
+            <PropertyRef Name="ResourceModifiedRevisionCounter" />
+            <PropertyRef Name="ResourceCreatedDate" />
+            <PropertyRef Name="ResourceModifiedDate" />
+            <PropertyRef Name="ResourceCount" />
+          </Key>
+          <Property Name="ResourceUID" Type="Guid" Nullable="false" />
+          <Property Name="ResourceName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResourceStandardRate" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+          <Property Name="ResourceOvertimeRate" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+          <Property Name="ResourceStatusUID" Type="Guid" Nullable="false" />
+          <Property Name="ResourceCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceCostPerUse" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+          <Property Name="ResourceEmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceInitials" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceMaterialLabel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceType" Type="Int16" Nullable="false" />
+          <Property Name="ResourceGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceMaxUnits" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+          <Property Name="ResourceBookingType" Type="Byte" />
+          <Property Name="ResourceTimesheetManagerUID" Type="Guid" />
+          <Property Name="ResourceEarliestAvailableFrom" Type="DateTime" Precision="3" />
+          <Property Name="ResourceLatestAvailableTo" Type="DateTime" Precision="3" />
+          <Property Name="ResourceCanLevel" Type="Boolean" Nullable="false" />
+          <Property Name="ResourceHyperlink" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceHyperlinkHref" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceNTAccount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceIsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ResourceIsGeneric" Type="Boolean" Nullable="false" />
+          <Property Name="ResourceIsTeam" Type="Boolean" Nullable="false" />
+          <Property Name="ResourceBaseCalendar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceWorkgroup" Type="Int16" />
+          <Property Name="ResourceClientUniqueId" Type="Int32" Nullable="false" />
+          <Property Name="ResourceCostCenter" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceCreatedRevisionCounter" Type="Int32" Nullable="false" />
+          <Property Name="ResourceModifiedRevisionCounter" Type="Int32" Nullable="false" />
+          <Property Name="ResourceCreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ResourceModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ResourceCount" Type="Int32" Nullable="false" />
+          <Property Name="RBS" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="نوع_هزینه" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="دپارتمان_های_منبع" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="نام_و_نام_خانوادگی" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="کد_پرسنلی" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ProjectServer_Reporting_faEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MSP_EpmResource_UserView" EntityType="Self.MSP_EpmResource_UserView" />
+          <EntitySet Name="HrEmployeeDetails" EntityType="ProjectServer_Reporting_faModel.HrEmployeeDetail" />
+        </EntityContainer>
+        <EntityType Name="HrEmployeeDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeCode" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentCode" Type="Int32" />
+          <Property Name="Unit" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UnitCode" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="StatusCode" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectServer_Reporting_faModelStoreContainer" CdmEntityContainer="ProjectServer_Reporting_faEntities">
+          <EntitySetMapping Name="MSP_EpmResource_UserView">
+            <EntityTypeMapping TypeName="ProjectServer_Reporting_faModel.MSP_EpmResource_UserView">
+              <MappingFragment StoreEntitySet="MSP_EpmResource_UserView">
+                <ScalarProperty Name="ResourceUID" ColumnName="ResourceUID" />
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="ResourceStandardRate" ColumnName="ResourceStandardRate" />
+                <ScalarProperty Name="ResourceOvertimeRate" ColumnName="ResourceOvertimeRate" />
+                <ScalarProperty Name="ResourceStatusUID" ColumnName="ResourceStatusUID" />
+                <ScalarProperty Name="ResourceCode" ColumnName="ResourceCode" />
+                <ScalarProperty Name="ResourceCostPerUse" ColumnName="ResourceCostPerUse" />
+                <ScalarProperty Name="ResourceEmailAddress" ColumnName="ResourceEmailAddress" />
+                <ScalarProperty Name="ResourceInitials" ColumnName="ResourceInitials" />
+                <ScalarProperty Name="ResourceMaterialLabel" ColumnName="ResourceMaterialLabel" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="ResourceGroup" ColumnName="ResourceGroup" />
+                <ScalarProperty Name="ResourceMaxUnits" ColumnName="ResourceMaxUnits" />
+                <ScalarProperty Name="ResourceBookingType" ColumnName="ResourceBookingType" />
+                <ScalarProperty Name="ResourceTimesheetManagerUID" ColumnName="ResourceTimesheetManagerUID" />
+                <ScalarProperty Name="ResourceEarliestAvailableFrom" ColumnName="ResourceEarliestAvailableFrom" />
+                <ScalarProperty Name="ResourceLatestAvailableTo" ColumnName="ResourceLatestAvailableTo" />
+                <ScalarProperty Name="ResourceCanLevel" ColumnName="ResourceCanLevel" />
+                <ScalarProperty Name="ResourceHyperlink" ColumnName="ResourceHyperlink" />
+                <ScalarProperty Name="ResourceHyperlinkHref" ColumnName="ResourceHyperlinkHref" />
+                <ScalarProperty Name="ResourceNTAccount" ColumnName="ResourceNTAccount" />
+                <ScalarProperty Name="ResourceIsActive" ColumnName="ResourceIsActive" />
+                <ScalarProperty Name="ResourceIsGeneric" ColumnName="ResourceIsGeneric" />
+                <ScalarProperty Name="ResourceIsTeam" ColumnName="ResourceIsTeam" />
+                <ScalarProperty Name="ResourceBaseCalendar" ColumnName="ResourceBaseCalendar" />
+                <ScalarProperty Name="ResourceWorkgroup" ColumnName="ResourceWorkgroup" />
+                <ScalarProperty Name="ResourceClientUniqueId" ColumnName="ResourceClientUniqueId" />
+                <ScalarProperty Name="ResourceCostCenter" ColumnName="ResourceCostCenter" />
+                <ScalarProperty Name="ResourceCreatedRevisionCounter" ColumnName="ResourceCreatedRevisionCounter" />
+                <ScalarProperty Name="ResourceModifiedRevisionCounter" ColumnName="ResourceModifiedRevisionCounter" />
+                <ScalarProperty Name="ResourceCreatedDate" ColumnName="ResourceCreatedDate" />
+                <ScalarProperty Name="ResourceModifiedDate" ColumnName="ResourceModifiedDate" />
+                <ScalarProperty Name="ResourceCount" ColumnName="ResourceCount" />
+                <ScalarProperty Name="RBS" ColumnName="RBS" />
+                <ScalarProperty Name="نوع_هزینه" ColumnName="نوع هزینه" />
+                <ScalarProperty Name="دپارتمان_های_منبع" ColumnName="دپارتمان های منبع" />
+                <ScalarProperty Name="نام_و_نام_خانوادگی" ColumnName="نام و نام خانوادگی" />
+                <ScalarProperty Name="کد_پرسنلی" ColumnName="کد پرسنلی" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HrEmployeeDetails">
+            <EntityTypeMapping TypeName="ProjectServer_Reporting_faModel.HrEmployeeDetail">
+              <MappingFragment StoreEntitySet="HrEmployeeDetails">
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UnitCode" ColumnName="UnitCode" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

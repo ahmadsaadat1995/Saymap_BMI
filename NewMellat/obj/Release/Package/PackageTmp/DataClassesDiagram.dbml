@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NewMellatTest" Class="DataClassesDiagramDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=172.22.65.20;Initial Catalog=NewMellatTest;Persist Security Info=True;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NewMellatConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vwDiag1" Member="vwDiag1s">
+    <Type Name="vwDiag1">
+      <Column Name="prTitle" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="prId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="prStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paShenase" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="paDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="paType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="paAct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prVahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prSanadType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prPeymankar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwDiag8" Member="vwDiag8s">
+    <Type Name="vwDiag8">
+      <Column Name="ghId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ghAct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ghProject" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ghBody" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ghCode" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="prTitle" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="prVahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prProjectType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prSanadType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prOlaviat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prPeymankar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="prAct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="years" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

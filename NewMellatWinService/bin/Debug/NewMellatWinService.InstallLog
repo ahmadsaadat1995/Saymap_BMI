@@ -1,0 +1,98 @@
+﻿Uninstalling assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Uninstalling assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Installing service Service1...
+Creating EventLog source Service1 in log Application...
+Rolling back assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Restoring event log to previous state for source Service1.
+Uninstalling assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Attempt to stop service Service1.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Uninstalling assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+   logfile = D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.InstallLog

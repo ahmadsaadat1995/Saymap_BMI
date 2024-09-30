@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NewMellat.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NewMellat_SsoService_SsoClientWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://webservice.login.bm/WebService/sso/SsoClientWebService.asmx</Value>
+    </Setting>
+    <Setting Name="NewMellat_bm_automation_jey1_LetterService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://jey1.automation.bm:80/secsws/LetterService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

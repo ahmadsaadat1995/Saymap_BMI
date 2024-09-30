@@ -1,0 +1,376 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteRibbon.master.cs" Inherits="NewMellat.SiteRibbon" %>
+
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>::: گزارشات سایمپ :::</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Content/Dashboads.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+        </div>
+        <div align="center">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div align="center"></div>
+            <dx:ASPxRibbon ID="ASPxRibbon1" runat="server" AllowMinimize="False" EnableTheming="True" Theme="SoftOrange" Font-Names="vazir" ShowFileTab="False">
+                <Tabs>
+                    <dx:RibbonTab Name="گزارشات خبرگان" Text="گزارشات کارگروه توسعه فرآیندهای جاری">
+                     
+                        <Groups>
+                            <dx:RibbonGroup Name="پروژه ها و قراردادها" Text="پروژه ها و قراردادها">
+                                <Items>
+                                    <dx:RibbonButtonItem Name="سند نیازمندیها (SRS)" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=Reval2&amp;tab=1" Size="Large" Text="سند نیازمندیها (SRS)">
+                                        <LargeImage Url="~/Content/images/icons/Reports/product-sales-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="پروتوتایپ" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=Reval&amp;tab=1" Size="Large" Text="پروتوتایپ">
+                                        <LargeImage Url="~/Content/images/icons/Reports/reports-icon.png">
+                                        </LargeImage>
+                                    </dx:RibbonButtonItem>
+                                    
+                                    <dx:RibbonButtonItem Name="روال اجرایی در انتظار پاسخ SRS" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=RevalWaitingSrs&amp;?tab=1" Size="Large" Text="روال اجرایی" Target="_blank">
+                                        <LargeImage Url="~/Content/images/icons/Reports/Product-sale-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="روال اجرایی در انتظار ناظر " NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=RevalWaitingSrsAnswer&amp;?tab=1" Size="Large" Text="روال اجرایی" Target="_blank">
+                                        <LargeImage Url="~/Content/images/icons/Reports/Product-sale-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="170px" />
+                                        </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="روال اجرایی در انتظار پاسخ پروتوتایپ" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=RevalWaitingProto&amp;?tab=1" Size="Large" Text="روال اجرایی" Target="_blank">
+                                        <LargeImage Url="~/Content/images/icons/Reports/Product-sale-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="270px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="روال اجرایی در انتظار ناظر پروتوتایپ " NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=RevalWaitingProtoAnswer&amp;?tab=1" Size="Large" Text="روال اجرایی" Target="_blank">
+                                        <LargeImage Url="~/Content/images/icons/Reports/Product-sale-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="270px" />
+                                        </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="روال اجرایی" NavigateUrl="~/Content/PageDashboardMosavab2.aspx?tab=1" Size="Large" Text="روال اجرایی" Target="_blank">
+                                        <LargeImage Url="~/Content/images/icons/Reports/Product-sale-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="80px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="لیست انتظار خبرگان" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=KhobreganPending&tab=1" Size="Large" Text=" لیست انتظار کارگروه توسعه فرآیندهای جاری">
+                                        <LargeImage Url="~/Content/images/icons/Reports/product-sales-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="110px"/>
+                                    </dx:RibbonButtonItem>
+
+                                    <dx:RibbonButtonItem NavigateUrl="~/Content/PageDashboardMosavab.aspx?tab=1" Name="مصوبات خبرگان" Size="Large" Text="مصوبات کارگروه توسعه فرآیندهای جاری" Target="_blank">
+                                        <LargeImage Url="~/Content/images/icons/Reports/sales-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="90px" />
+                                    </dx:RibbonButtonItem>
+
+                                    <dx:RibbonButtonItem NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=KhobreganEtmam&tab=1" Name="مصوبات خبرگان اتمام یافته" Size="Large" Text="مصوبات کارگروه توسعه فرآیندهای جاری اتمام یافته">
+                                        <LargeImage Url="~/Content/images/icons/Reports/report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="145px" />
+                                    </dx:RibbonButtonItem>
+
+                                    <dx:RibbonButtonItem NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=KhobreganEdgham&tab=1" Name="مصوبات خبرگان ادغام شده" Size="Large" Text="مصوبات کارگروه توسعه فرآیندهای جاری ادغام شده">
+                                        <LargeImage Url="~/Content/images/icons/Reports/Reports-icon (1).png">
+                                        </LargeImage>
+                                        <ItemStyle Width="145px" />
+                                    </dx:RibbonButtonItem>
+
+                                    <dx:RibbonButtonItem NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=KhobreganLaghv&tab=1" Name="مصوبات خبرگان لغو شده" Size="Large" Text="مصوبات کارگروه توسعه فرآیندهای جاری لغو شده">
+                                        <LargeImage Url="~/Content/images/icons/Reports/reports-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="135px" />
+                                    </dx:RibbonButtonItem>
+
+                                    <dx:RibbonButtonItem NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=KhobreganRad&tab=1" Name="پروژه های ردشده خبرگان" Size="Large" Text="پروژه های ردشده کارگروه توسعه فرآیندهای جاری">
+                                        <LargeImage Url="~/Content/images/icons/Reports/Product-sale-report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="135px" />
+                                    </dx:RibbonButtonItem>
+
+
+
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="گزارشات پروپوزال و قرارداد" Text="گزارشات پروپوزال و قرارداد">
+                        <Groups>
+                            <dx:RibbonGroup Name="گزارشات قرارداد و پروپوزال" Text="گزارشات قرارداد و پروپوزال">
+                                <Items>
+                                   <%-- <dx:RibbonButtonItem Name="قراردادها به تفکیک سال" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=ReportGharardad&tab=2" Size="Large" Text="قراردادها به تفکیک سال">
+                                        <LargeImage Url="~/Content/images/icons/Reports/report-icon.png">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>--%>
+                                    <dx:RibbonButtonItem Name="گزارش منتظر پاسخ استعلام" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=1&tab=2" Size="Large" Text="گزارش منتظر پاسخ استعلام">
+                                        <LargeImage IconID="reports_insertheader_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش انصراف" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=Cancle&tab=2" Size="Large" Text="گزارش انصراف">
+                                        <LargeImage IconID="reports_insertfooter_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش منتظر پاسخ شرکت" Size="Large" Text="گزارش منتظر پاسخ شرکت" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=WaitingAnswers&tab=2">
+                                        <LargeImage IconID="reports_groupheader_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش منتظر آنالیز قیمت" Size="Large" Text="گزارش منتظر آنالیز قیمت" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=AnalyzWaiting&amp;tab=2">
+                                        <LargeImage IconID="reports_insertfooter_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش منتظر پیش نویس قرارداد" Size="Large" Text="گزارش منتظر پیش نویس قرارداد" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=WaitingPishnevis&amp;tab=2">
+                                        <LargeImage IconID="reports_editpagehf_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="180px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش منتظر پاسخ استعلام پیش نویس قرارداد" Size="Large" Text="گزارش منتظر پاسخ استعلام پیش نویس قرارداد" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=WaitingEstelamAnswers&amp;tab=2">
+                                        <LargeImage IconID="reports_editpagehf_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="250px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش منتظر ابلاغ قرارداد" Size="Large" Text="گزارش منتظر ابلاغ قرارداد" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=GharardadEblagh&amp;tab=2">
+                                        <LargeImage IconID="reports_groupheader_32x32office2013">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش ظرفیت پروژه های بهسازان" Size="Large" Text="گزارش ظرفیت پروژه های بهسازان" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=BehCapacity&amp;tab=2">
+                                        <LargeImage IconID="reports_groupheader_32x32office2013">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="گزارشات صورتحساب" Text="گزارشات صورتحساب">
+                        <Groups>
+                            <dx:RibbonGroup Name="گزارشات صورتحساب" Text="گزارشات صورتحساب">
+                                <Items>
+                                    <%--<dx:RibbonButtonItem Name="گزارش پرداختی صورتحساب" Size="Large" Text="گزارش پرداختی صورتحساب" NavigateUrl="~/Content/Reports/ReportSooratList.aspx?tab=3">
+                                        <LargeImage IconID="programming_showtestreport_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>--%>
+                                    <dx:RibbonButtonItem Name="لیست صورتحساب ها" NavigateUrl="~/Content/PageSooratList.aspx" Size="Large" Text="لیست صورتحساب ها">
+                                        <LargeImage Url="~/Content/images/icons/Reports/Product-sale-report-icon.png">
+                                        </LargeImage>
+                                            <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large" Name="گزارش منتظر پاسخ ناظر" Text="گزارش منتظر پاسخ ناظر" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=SooratHesabWaitAnswerNazer&amp;tab=2">
+                                        <LargeImage IconID="support_knowledgebasearticle_32x32">
+                                        </LargeImage>
+                                         <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large" Name="گزارش منتظر پاسخ شرکت" Text="گزارش منتظر پاسخ شرکت" NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=SooratHesabWaitAnswerCompany&amp;tab=2">
+                                        <LargeImage IconID="programming_showtestreport_32x32">
+                                        </LargeImage>
+                                          
+                                        <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش تحویلی " Size="Large" Text="گزارش تحویلی " NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=SooratHesabTahvili&amp;tab=2">
+                                        <LargeImage IconID="other_protectdocument_32x32gray">
+                                        </LargeImage>
+                                        <ItemStyle Width="140px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش مالی " Size="Large" Text="گزارش مالی " NavigateUrl="~/Content/Reports/ReportLoader.aspx?act=SooratMaliTadarokat&amp;tab=2">
+                                        <LargeImage IconID="other_protectdocument_32x32gray">
+                                        </LargeImage>
+                                        <ItemStyle Width="140px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="داشبوردهای مدیریتی" Text="داشبوردهای مدیریتی">
+                        <Groups>
+                            <dx:RibbonGroup Name="داشبوردهای مدیریتی" Text="داشبوردهای مدیریتی">
+                                <Items>
+                                    <dx:RibbonButtonItem Size="Large" Name="داشبورد پیمانکاران"  NavigateUrl="~/Content/Reports/DashboardProjecta.aspx" Text="داشبورد وضعیت پروژه ها">
+                                        <LargeImage IconID="chart_pielabelsdatalabels_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large" Name="داشپورد پروپوزال"  NavigateUrl="~/Content/Reports/DashBoardPropozal.aspx" Text="داشپورد پروپوزال">
+                                        <LargeImage IconID="chart_openhighlowclosecandlestick_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem  Size="Large" Name="داشبورد استعلام صورتحساب"  NavigateUrl="~/Content/Reports/DashboardSooratHesab.aspx" Text="داشبورد استعلام صورتحساب" Visible="False">
+                                        <LargeImage IconID="gauges_gaugeshowcaptions_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large" Name="داشبورد قراردادها"  NavigateUrl="~/Content/Reports/DashboardContracts.aspx" Text="داشبورد قراردادها" Visible="False">
+                                        <LargeImage IconID="chart_sidebysiderangebar_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="داشبورد خبرگان" NavigateUrl="~/Content/Reports/DashboardKhobregan.aspx" Size="Large" Text="داشبورد خبرگان">
+                                        <LargeImage IconID="chart_kpi_32x32office2013">
+                                        </LargeImage>
+                                        <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="گزارش ساز هوشمند" Text="گزارش ساز هوشمند">
+                        <Groups>
+                            <dx:RibbonGroup Name="گزارش ساز هوشمند" Text="گزارش ساز هوشمند">
+                                <Items>
+                                    <dx:RibbonButtonItem Name="گزارش ساز صورتحساب" NavigateUrl="~/Content/Reports/ReportBuilderSooratHesab.aspx" Size="Large" Text="گزارش ساز صورتحساب">
+                                        <LargeImage IconID="programming_showtestreport_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="گزارش ساز پروژه ها" NavigateUrl="~/Content/Reports/ReportBuilderProjects.aspx" Size="Large" Text="گزارش ساز پروژه ها">
+                                        <LargeImage IconID="reports_parameters_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="150px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="داشبورد ساز هوشمند" Text="داشبورد ساز هوشمند">
+                        <Groups>
+                            <dx:RibbonGroup Name="داشبوردساز هوشمند" Text="داشبوردساز هوشمند">
+                                <Items>
+                                    <dx:RibbonButtonItem Name="داشبورد ساز پروژه ها" NavigateUrl="~/Content/Reports/DashboardBuilderProjects.aspx" Size="Large" Text="داشبورد ساز پروژه ها">
+                                        <LargeImage IconID="chart_kpi_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="200px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Name="داشبوردساز صورتحساب " NavigateUrl="~/Content/Reports/DashboardBuilderSooratHesab.aspx" Size="Large" Text="داشبوردساز صورتحساب ">
+                                        <LargeImage IconID="businessobjects_bopivotchart_32x32">
+                                        </LargeImage>
+                                        <ItemStyle Width="200px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="گزارشات تحلیل وابستگی" Text="گزارشات تحلیل وابستگی">
+                        <Groups>
+                            <dx:RibbonGroup Name="گزارشات تحلیل وابستگی" Text="گزارشات تحلیل وابستگی">
+                                <Items>
+                                    <dx:RibbonButtonItem Size="Large" Name="گزارش تحلیل وابستگی استعلام محتوایی "  NavigateUrl="~/Content/Reports/ReportMiningLoader.aspx?rpt=ReportEstelamRules&amp;vr=2" Text="گزارش تحلیل وابستگی استعلام محتوایی ">
+                                        <LargeImage IconID="reports_designreport_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="230px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large" Name="گزارش تحلیل وابستگی درخواستها "  NavigateUrl="~/Content/Reports/ReportMiningLoader.aspx?rpt=ReportVahedsRules&amp;vr=2" Text="گزارش تحلیل وابستگی درخواستها ">
+                                        <LargeImage IconID="functionlibrary_recentlyuse_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="190px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="گزارشات تحلیل وابستگی" Text="گزارشات تحلیل وابستگی">
+                        <Groups>
+                            <dx:RibbonGroup Name="گزارشات تحلیل وابستگی" Text="گزارشات تحلیل وابستگی">
+                                <Items>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="Content/Reports/analys.aspx" Name="گزارش اعلام نظر واحدها" Text="گزارش اعلام نظر واحدها">
+                                        <LargeImage IconID="chart_topleftverticaloutside_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="190px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="Content/Reports/analys.aspx" Name="گزارش تحلیل پیمانکاران" Text="گزارش تحلیل پیمانکاران">
+                                        <LargeImage IconID="analysis_updownbarsnone_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="190px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="Content/Reports/analys.aspx" Name="گزارش ابلاغ قرارداد پیمانکاران" Text="گزارش ابلاغ قرارداد پیمانکاران">
+                                        <LargeImage IconID="actions_costanalysis_32x32devav">
+                                        </LargeImage>
+                                          <ItemStyle Width="190px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="Content/Reports/analys.aspx" Name="گزارش تحلیل درخواست" Text="گزارش تحلیل درخواست">
+                                        <LargeImage IconID="analysis_errorbars_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="190px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="گزارشات پیش بینی زمانی" Text="گزارشات پیش بینی زمانی">
+                        <Groups>
+                            <dx:RibbonGroup Name="گزارشات پیش بینی زمانی" Text="گزارشات پیش بینی زمانی">
+                                <Items>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="~/Content/Reports/ReportMiningLoader.aspx?rpt=ReportSooratHesabMiningYears&amp;vr=2" Name="گزارش مبلغ صورتحساب" Text="گزارش مبلغ صورتحساب">
+                                        <LargeImage IconID="setup_properties_32x32office2013">
+                                        </LargeImage>
+                                          <ItemStyle Width="190px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="~/Content/Reports/ReportMiningLoader.aspx?rpt=ReportKhobreganMosavabMiingCount&amp;vr=2" Name="گزارش مصوبات خبرگان" Text="گزارش مصوبات خبرگان">
+                                        <LargeImage IconID="businessobjects_bodetails_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="250px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="~/Content/Reports/ReportMiningLoader.aspx?rpt=ReportGharardadMiningCount&amp;vr=2" Name="گزارش وضعبت قراردادها" Text="گزارش وضعیت قراردادها">
+                                        <LargeImage IconID="miscellaneous_design_32x32office2013">
+                                        </LargeImage>
+                                          <ItemStyle Width="190px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="~/Content/Reports/ReportMiningLoader.aspx?rpt=ReportTathPishnehadiMiningCounts&amp;vr=2" Name="گزارش طرحهای پیشنهادی" Text="گزارش طرحهای پیشنهادی">
+                                        <LargeImage IconID="actions_removeitem_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="190px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                    <dx:RibbonTab Name="گزارشات آماری و منطقی" Text="گزارشات آماری و منطقی">
+                        <Groups>
+                            <dx:RibbonGroup Name="گزارشات آماری و منطقی" Text="گزارشات آماری و منطقی">
+                                <Items>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="~/Content/Reports/ReportMiningLoader.aspx?rpt=ReportSooratHesabMiningYears&amp;vr=2" Name="گزارش وضعیت پیمانکاران" Text="گزارش تحلیل و مقایسه پیمانکاران">
+                                        <LargeImage IconID="math_calculationoptions_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="~/Content/Reports/ReportMiningLoader.aspx?rpt=ReportMiningVaheds&amp;vr=1" Name="گزارش وضعیت واحدها" Text="گزارش تحلیل و مقایسه واحدها">
+                                        <LargeImage IconID="scheduling_switchtimescalesto_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="Content/Reports/analys.aspx" Name="گزارش آنالیز عملکرد پیمانکاران در تدارکات" Text="گزارش آنالیز عملکرد پیمانکاران در تدارکات" Visible="False">
+                                        <LargeImage IconID="chart_openhighlowclosecandlestick_32x32">
+                                        </LargeImage>
+                                          <ItemStyle Width="260px" />
+                                    </dx:RibbonButtonItem>
+                                    <dx:RibbonButtonItem Size="Large"  NavigateUrl="Content/Reports/analys.aspx" Name="تحلیل قرارداد بر مبنای نوع پروژه" Text="تحلیل قرارداد بر مبنای نوع پروژه" Visible="False">
+                                        <LargeImage IconID="grid_customizegrid_32x32gray">
+                                        </LargeImage>
+                                          <ItemStyle Width="170px" />
+                                    </dx:RibbonButtonItem>
+                                </Items>
+                            </dx:RibbonGroup>
+                        </Groups>
+                    </dx:RibbonTab>
+                </Tabs>
+            </dx:ASPxRibbon>
+    </form>
+</body>
+</html>

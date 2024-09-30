@@ -1,0 +1,11 @@
+D:\Projects\NewMellat\NewMellat\serviceForGam\bin\Release\serviceForGam.exe.config
+D:\Projects\NewMellat\NewMellat\serviceForGam\bin\Release\serviceForGam.exe
+D:\Projects\NewMellat\NewMellat\serviceForGam\bin\Release\serviceForGam.pdb
+D:\Projects\NewMellat\NewMellat\serviceForGam\bin\Release\OfficeAutomationServiceClient.dll
+D:\Projects\NewMellat\NewMellat\serviceForGam\obj\Release\serviceForGam.csprojResolveAssemblyReference.cache
+D:\Projects\NewMellat\NewMellat\serviceForGam\obj\Release\serviceForGam.Form1.resources
+D:\Projects\NewMellat\NewMellat\serviceForGam\obj\Release\serviceForGam.formTest.resources
+D:\Projects\NewMellat\NewMellat\serviceForGam\obj\Release\serviceForGam.Properties.Resources.resources
+D:\Projects\NewMellat\NewMellat\serviceForGam\obj\Release\serviceForGam.csproj.GenerateResource.Cache
+D:\Projects\NewMellat\NewMellat\serviceForGam\obj\Release\serviceForGam.exe
+D:\Projects\NewMellat\NewMellat\serviceForGam\obj\Release\serviceForGam.pdb

@@ -1,0 +1,311 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Rep11.aspx.cs" Inherits="NewMellat.Content.Rep11" %>
+
+<%@ Register assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" EnableTheming="True" KeyFieldName="mosId" OnHtmlDataCellPrepared="ASPxGridView1_HtmlDataCellPrepared" RightToLeft="True" Theme="SoftOrange" Width="100%">
+            <SettingsPager Mode="ShowAllRecords" Visible="False">
+            </SettingsPager>
+            <SettingsSearchPanel Visible="True" />
+            <SettingsText SearchPanelEditorNullText="متن مورد جستجو را وارد نمایید" />
+            <Columns>
+                <dx:GridViewDataTextColumn Caption="شناسه نامه مصوب" FieldName="mosShenase" VisibleIndex="5">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label6" runat="server" Text='<%# Eval("mosShenase") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataDateColumn Caption="تاریخ ارسال پروپوزال" FieldName="mosErsalDate" VisibleIndex="8">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("mosErsalDate") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataDateColumn>
+                <dx:GridViewDataDateColumn Caption="تاریخ عملیاتی شدن" FieldName="mosAmaliatiDate" VisibleIndex="7">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label5" runat="server" Text='<%# Eval("mosAmaliatiDate") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataDateColumn>
+                <dx:GridViewDataTextColumn Caption="نام پروژه" FieldName="prTitle" VisibleIndex="1">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="واحد متولی" FieldName="prVahed" VisibleIndex="3">
+                    <PropertiesComboBox DataSourceID="sourceInfo" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataComboBoxColumn Caption="شرکت پیمانکار" FieldName="prPeymankar" VisibleIndex="2">
+                    <PropertiesComboBox DataSourceID="sourceInfo" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn Caption="ردیف" VisibleIndex="0">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="اولویت" FieldName="mosOlaviat" VisibleIndex="9">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("mosOlaviat") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="تاریخ نامه" FieldName="mosDate" VisibleIndex="6">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("mosDate") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="نوع سند" FieldName="prSanadType" VisibleIndex="4">
+                    <PropertiesComboBox DataSourceID="sourceInfo" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn Caption="srs تاریخ " FieldName="mosSRS" VisibleIndex="10">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label7" runat="server" Text='<%# Eval("mosSRS") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="srs پاسخ " FieldName="mosSRSanswer" VisibleIndex="11">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label8" runat="server" Text='<%# Eval("mosSRSanswer") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+            </Columns>
+        </dx:ASPxGridView>
+        <asp:SqlDataSource ID="source1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbKhobreganMosavab.mosId, tbKhobreganMosavab.mosAct, tbKhobreganMosavab.mosKhob, tbKhobreganMosavab.mosShenase, mosSRS,mosSRSanswer,tbKhobreganMosavab.mosNumber, tbKhobreganMosavab.mosDate, tbKhobreganMosavab.mosErsalDate, tbKhobreganMosavab.mosAmaliatiDate, tbKhobreganMosavab.mosbody, tbKhobreganMosavab.mosType, tbKhobreganMosavab.mosPropozal, tbKhobreganMosavab.mosOlaviat, tbKhobreganMosavab.mosProjectId, tbProjects.prTitle, tbProjects.prVahed, tbProjects.prPeymankar, tbProjects.prSanadType FROM tbKhobreganMosavab INNER JOIN tbKhbregan ON tbKhobreganMosavab.mosKhob = tbKhbregan.khId INNER JOIN tbProjects ON tbKhbregan.khProject = tbProjects.prId WHERE (tbKhobreganMosavab.mosAct = 1) AND (tbKhobreganMosavab.mosOlaviat IS NOT NULL) AND (tbKhobreganMosavab.mosErsalDate IS NOT NULL) AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed) AND (tbProjects.prAct = 1)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source2" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbKhobreganMosavab.mosId, tbKhobreganMosavab.mosAct, tbKhobreganMosavab.mosKhob, tbKhobreganMosavab.mosShenase, mosSRS,mosSRSanswer,tbKhobreganMosavab.mosNumber, tbKhobreganMosavab.mosDate, tbKhobreganMosavab.mosErsalDate, tbKhobreganMosavab.mosAmaliatiDate, tbKhobreganMosavab.mosbody, tbKhobreganMosavab.mosType, tbKhobreganMosavab.mosPropozal, tbKhobreganMosavab.mosOlaviat, tbKhobreganMosavab.mosProjectId, tbProjects.prTitle, tbProjects.prVahed, tbProjects.prPeymankar, tbProjects.prSanadType FROM tbKhobreganMosavab INNER JOIN tbKhbregan ON tbKhobreganMosavab.mosKhob = tbKhbregan.khId INNER JOIN tbProjects ON tbKhbregan.khProject = tbProjects.prId WHERE (tbKhobreganMosavab.mosAct = 1) AND (tbKhobreganMosavab.mosOlaviat IS NOT NULL) AND (tbKhobreganMosavab.mosAmaliatiDate IS NOT NULL) AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed)
+ AND (tbProjects.prAct = 1)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source3" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbKhobreganMosavab.mosId, tbProjects.prId, tbProjects.prTitle, tbProjects.prAct, tbProjects.prVahed, tbProjects.prOlaviat, mosSRS,mosSRSanswer,tbProjects.prProjectType, tbProjects.prPeymankar, tbKhobreganMosavab.mosNumber, tbKhobreganMosavab.mosShenase, tbKhobreganMosavab.mosErsalDate, tbKhobreganMosavab.mosAmaliatiDate, tbKhobreganMosavab.mosbody, tbKhobreganMosavab.mosType, tbKhobreganMosavab.mosOlaviat, tbKhobreganMosavab.mosPropozal, tbKhobreganMosavab.mosDate, tbKhbregan.khJalaseNumber, tbKhbregan.khJalaseDate, tbProjects.prSanadType FROM tbKhobreganMosavab INNER JOIN tbKhbregan ON tbKhobreganMosavab.mosKhob = tbKhbregan.khId INNER JOIN tbProjects ON tbKhbregan.khProject = tbProjects.prId WHERE (tbKhobreganMosavab.mosAct = 1) AND (tbProjects.prAct = 1) AND (tbProjects.prIsTarh &lt;&gt; 1) AND (tbProjects.prEstelamIsSubmit &lt;&gt; 1) AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbKhobreganMosavab.mosErsalDate &gt; GETDATE()) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source4" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbKhobreganMosavab.mosId, tbProjects.prId, tbProjects.prTitle, tbProjects.prAct, tbProjects.prVahed, tbProjects.prOlaviat, mosSRS,mosSRSanswer,tbProjects.prProjectType, tbProjects.prPeymankar, tbKhobreganMosavab.mosNumber, tbKhobreganMosavab.mosShenase, tbKhobreganMosavab.mosErsalDate, tbKhobreganMosavab.mosAmaliatiDate, tbKhobreganMosavab.mosbody, tbKhobreganMosavab.mosType, tbKhobreganMosavab.mosOlaviat, tbKhobreganMosavab.mosPropozal, tbKhobreganMosavab.mosDate, tbKhbregan.khJalaseNumber, tbKhbregan.khJalaseDate, tbProjects.prSanadType FROM tbKhobreganMosavab INNER JOIN tbKhbregan ON tbKhobreganMosavab.mosKhob = tbKhbregan.khId INNER JOIN tbProjects ON tbKhbregan.khProject = tbProjects.prId WHERE (tbKhobreganMosavab.mosAct = 1) AND (tbProjects.prAct = 1) AND (tbProjects.prId NOT IN (SELECT paProject FROM tbProjectPaper WHERE (paType IN (101, 102, 303)))) AND (tbKhobreganMosavab.mosAmaliatiDate &gt; GETDATE()) AND (tbProjects.prIsTarh &lt;&gt; 1) AND (tbProjects.prEstelamIsSubmit &lt;&gt; 1) AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbKhobreganMosavab.mosAmaliatiDate &gt; GETDATE()) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source12" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT       *
+FROM            dbo.tbKhobreganMosavab INNER JOIN
+                         dbo.tbKhbregan ON dbo.tbKhobreganMosavab.mosKhob = dbo.tbKhbregan.khId INNER JOIN
+                         dbo.tbProjects ON dbo.tbKhbregan.khProject = dbo.tbProjects.prId
+WHERE        (dbo.tbKhobreganMosavab.mosAct = 1) AND (dbo.tbKhobreganMosavab.mosSRS IS NOT NULL) AND (dbo.tbKhobreganMosavab.mosSRS &gt;= GETDATE())
+AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed) AND (tbProjects.prAct = 1)
+ and
+						 khProject not  in (select reProject from tbReval where reSanadType=3000 and reAct=1)
+
+">  <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source17" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT      *
+FROM            dbo.tbKhobreganMosavab INNER JOIN
+                         dbo.tbKhbregan ON dbo.tbKhobreganMosavab.mosKhob = dbo.tbKhbregan.khId INNER JOIN
+                         dbo.tbProjects ON dbo.tbKhbregan.khProject = dbo.tbProjects.prId
+WHERE        (dbo.tbKhobreganMosavab.mosAct = 1)
+ 
+ AND (dbo.tbKhobreganMosavab.mosSRSanswer IS NOT NULL) AND (dbo.tbKhobreganMosavab.mosSRSanswer &lt; GETDATE())
+and
+khProject not in (select nzParent from tbNazar where nzType=4001)
+
+
+
+ 						 and
+
+   (dbo.tbKhobreganMosavab.mosAct = 1) 
+AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed) AND (tbProjects.prAct = 1)
+
+
+
+">  <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source5" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT vwMosavabDashboardAjam.* FROM vwMosavabDashboardAjam WHERE (mosOlaviat = @mosOlaviat)
+and
+(prPeymankar=@peymankar)
+and 
+(mosDate between @sd and @ed)">
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="" Name="mosOlaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source13" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="
+SELECT     *
+FROM            tbKhobreganMosavab INNER JOIN
+                         tbKhbregan ON tbKhobreganMosavab.mosKhob = tbKhbregan.khId INNER JOIN
+                         tbProjects ON tbKhbregan.khProject = tbProjects.prId
+						 where mosAct=1 
+											 and
+						 khProject    in (select reProject from tbReval where reSanadType=3000 and reAct=1)
+ 						 and
+
+   (dbo.tbKhobreganMosavab.mosAct = 1) 
+AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed) AND (tbProjects.prAct = 1)
+
+
+
+">  <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source6" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT vwMosavabDashboardTakhir.* FROM vwMosavabDashboardTakhir WHERE (mosOlaviat = @mosOlaviat)
+and
+(prPeymankar=@peymankar)
+and 
+(mosDate between @sd and @ed)">
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="" Name="mosOlaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source14" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT      *
+FROM            tbKhobreganMosavab INNER JOIN
+                         tbKhbregan ON tbKhobreganMosavab.mosKhob = tbKhbregan.khId INNER JOIN
+                         tbProjects ON tbKhbregan.khProject = tbProjects.prId
+						 where mosAct=1 
+						 and mosSRS is not null 
+						 and mosSRS &lt; getdate()
+						 and
+						 khProject not  in (select reProject from tbReval where reSanadType=3000 and reAct=1)
+
+ 						 and
+
+   (dbo.tbKhobreganMosavab.mosAct = 1) 
+AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed) AND (tbProjects.prAct = 1)
+
+
+
+">  <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source7" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT vwMosavabDashboardAmaliatiAnjam.* FROM vwMosavabDashboardAmaliatiAnjam WHERE (mosOlaviat = @mosOlaviat)
+and
+(prPeymankar=@peymankar)
+and 
+(mosDate between @sd and @ed)">
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="" Name="mosOlaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source16" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT      *
+FROM            dbo.tbKhobreganMosavab INNER JOIN
+                         dbo.tbKhbregan ON dbo.tbKhobreganMosavab.mosKhob = dbo.tbKhbregan.khId INNER JOIN
+                         dbo.tbProjects ON dbo.tbKhbregan.khProject = dbo.tbProjects.prId
+WHERE        (dbo.tbKhobreganMosavab.mosAct = 1)
+and
+khProject in 
+(select nzParent from tbNazar where  nzType=4000 and nzId in (select nzParent from tbNazar where nzType=4001))
+
+
+ 						 and
+
+   (dbo.tbKhobreganMosavab.mosAct = 1) 
+AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed) AND (tbProjects.prAct = 1)
+
+
+
+">  <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source15" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT       *
+                         
+FROM            dbo.tbKhobreganMosavab INNER JOIN
+                         dbo.tbKhbregan ON dbo.tbKhobreganMosavab.mosKhob = dbo.tbKhbregan.khId INNER JOIN
+                         dbo.tbProjects ON dbo.tbKhbregan.khProject = dbo.tbProjects.prId
+WHERE        (dbo.tbKhobreganMosavab.mosAct = 1) AND (dbo.tbKhobreganMosavab.mosSRSanswer IS NOT NULL) AND (dbo.tbKhobreganMosavab.mosSRSanswer &gt;= GETDATE())
+
+ 						 and
+
+   (dbo.tbKhobreganMosavab.mosAct = 1) 
+AND (tbKhobreganMosavab.mosOlaviat = @olaviat) AND (tbProjects.prPeymankar = @peymankar) AND (tbKhobreganMosavab.mosDate BETWEEN @sd AND @ed) AND (tbProjects.prAct = 1)
+
+and
+khProject not in 
+(select nzParent from tbNazar where  nzType=4000 and nzId in (select nzParent from tbNazar where nzType=4001))
+
+
+
+">  <SelectParameters>
+                <asp:QueryStringParameter Name="olaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="source8" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT vwMosavabDashboardAmaliatiTakhir.* FROM vwMosavabDashboardAmaliatiTakhir WHERE (mosOlaviat = @mosOlaviat)
+and
+(prPeymankar=@peymankar)
+and 
+(mosDate between @sd and @ed)">
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="" Name="mosOlaviat" QueryStringField="olv" />
+                <asp:QueryStringParameter Name="peymankar" QueryStringField="peymankar" />
+                <asp:QueryStringParameter Name="sd" QueryStringField="sd" />
+                <asp:QueryStringParameter Name="ed" QueryStringField="ed" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceInfo" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT infId, infTitle FROM prInformation"></asp:SqlDataSource>
+    
+    </div>
+          <div>
+    
+    </div>
+          <div>
+    
+    </div>
+          <div>
+    
+    </div>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectServer_Reporting_faModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HrEmployeeDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeCode" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="200" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Department" Type="nvarchar" MaxLength="200" />
+    <Property Name="DepartmentCode" Type="int" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="200" />
+    <Property Name="UnitCode" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="200" />
+    <Property Name="StatusCode" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ProjectServer_Reporting_fa.dbo.MSP_EpmResource_UserView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSP_EpmResource_UserView">
+    <Key>
+      <PropertyRef Name="ResourceUID" />
+      <PropertyRef Name="ResourceName" />
+      <PropertyRef Name="ResourceStandardRate" />
+      <PropertyRef Name="ResourceOvertimeRate" />
+      <PropertyRef Name="ResourceStatusUID" />
+      <PropertyRef Name="ResourceCostPerUse" />
+      <PropertyRef Name="ResourceType" />
+      <PropertyRef Name="ResourceMaxUnits" />
+      <PropertyRef Name="ResourceCanLevel" />
+      <PropertyRef Name="ResourceIsActive" />
+      <PropertyRef Name="ResourceIsGeneric" />
+      <PropertyRef Name="ResourceIsTeam" />
+      <PropertyRef Name="ResourceClientUniqueId" />
+      <PropertyRef Name="ResourceCreatedRevisionCounter" />
+      <PropertyRef Name="ResourceModifiedRevisionCounter" />
+      <PropertyRef Name="ResourceCreatedDate" />
+      <PropertyRef Name="ResourceModifiedDate" />
+      <PropertyRef Name="ResourceCount" />
+    </Key>
+    <Property Name="ResourceUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ResourceName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ResourceStandardRate" Type="decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="ResourceOvertimeRate" Type="decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="ResourceStatusUID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ResourceCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceCostPerUse" Type="decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="ResourceEmailAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceInitials" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceMaterialLabel" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceType" Type="smallint" Nullable="false" />
+    <Property Name="ResourceGroup" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceMaxUnits" Type="decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="ResourceBookingType" Type="tinyint" />
+    <Property Name="ResourceTimesheetManagerUID" Type="uniqueidentifier" />
+    <Property Name="ResourceEarliestAvailableFrom" Type="datetime" />
+    <Property Name="ResourceLatestAvailableTo" Type="datetime" />
+    <Property Name="ResourceCanLevel" Type="bit" Nullable="false" />
+    <Property Name="ResourceHyperlink" Type="nvarchar" MaxLength="1024" />
+    <Property Name="ResourceHyperlinkHref" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceNTAccount" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceIsActive" Type="bit" Nullable="false" />
+    <Property Name="ResourceIsGeneric" Type="bit" Nullable="false" />
+    <Property Name="ResourceIsTeam" Type="bit" Nullable="false" />
+    <Property Name="ResourceBaseCalendar" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceWorkgroup" Type="smallint" />
+    <Property Name="ResourceClientUniqueId" Type="int" Nullable="false" />
+    <Property Name="ResourceCostCenter" Type="nvarchar" MaxLength="255" />
+    <Property Name="ResourceCreatedRevisionCounter" Type="int" Nullable="false" />
+    <Property Name="ResourceModifiedRevisionCounter" Type="int" Nullable="false" />
+    <Property Name="ResourceCreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ResourceModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="ResourceCount" Type="int" Nullable="false" />
+    <Property Name="RBS" Type="nvarchar" MaxLength="4000" />
+    <Property Name="نوع هزینه" Type="nvarchar" MaxLength="4000" />
+    <Property Name="دپارتمان های منبع" Type="nvarchar" MaxLength="4000" />
+    <Property Name="نام و نام خانوادگی" Type="nvarchar" MaxLength="4000" />
+    <Property Name="کد پرسنلی" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityContainer Name="ProjectServer_Reporting_faModelStoreContainer">
+    <EntitySet Name="HrEmployeeDetails" EntityType="Self.HrEmployeeDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSP_EpmResource_UserView" EntityType="Self.MSP_EpmResource_UserView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MSP_EpmResource_UserView].[ResourceUID] AS [ResourceUID], 
+    [MSP_EpmResource_UserView].[ResourceName] AS [ResourceName], 
+    [MSP_EpmResource_UserView].[ResourceStandardRate] AS [ResourceStandardRate], 
+    [MSP_EpmResource_UserView].[ResourceOvertimeRate] AS [ResourceOvertimeRate], 
+    [MSP_EpmResource_UserView].[ResourceStatusUID] AS [ResourceStatusUID], 
+    [MSP_EpmResource_UserView].[ResourceCode] AS [ResourceCode], 
+    [MSP_EpmResource_UserView].[ResourceCostPerUse] AS [ResourceCostPerUse], 
+    [MSP_EpmResource_UserView].[ResourceEmailAddress] AS [ResourceEmailAddress], 
+    [MSP_EpmResource_UserView].[ResourceInitials] AS [ResourceInitials], 
+    [MSP_EpmResource_UserView].[ResourceMaterialLabel] AS [ResourceMaterialLabel], 
+    [MSP_EpmResource_UserView].[ResourceType] AS [ResourceType], 
+    [MSP_EpmResource_UserView].[ResourceGroup] AS [ResourceGroup], 
+    [MSP_EpmResource_UserView].[ResourceMaxUnits] AS [ResourceMaxUnits], 
+    [MSP_EpmResource_UserView].[ResourceBookingType] AS [ResourceBookingType], 
+    [MSP_EpmResource_UserView].[ResourceTimesheetManagerUID] AS [ResourceTimesheetManagerUID], 
+    [MSP_EpmResource_UserView].[ResourceEarliestAvailableFrom] AS [ResourceEarliestAvailableFrom], 
+    [MSP_EpmResource_UserView].[ResourceLatestAvailableTo] AS [ResourceLatestAvailableTo], 
+    [MSP_EpmResource_UserView].[ResourceCanLevel] AS [ResourceCanLevel], 
+    [MSP_EpmResource_UserView].[ResourceHyperlink] AS [ResourceHyperlink], 
+    [MSP_EpmResource_UserView].[ResourceHyperlinkHref] AS [ResourceHyperlinkHref], 
+    [MSP_EpmResource_UserView].[ResourceNTAccount] AS [ResourceNTAccount], 
+    [MSP_EpmResource_UserView].[ResourceIsActive] AS [ResourceIsActive], 
+    [MSP_EpmResource_UserView].[ResourceIsGeneric] AS [ResourceIsGeneric], 
+    [MSP_EpmResource_UserView].[ResourceIsTeam] AS [ResourceIsTeam], 
+    [MSP_EpmResource_UserView].[ResourceBaseCalendar] AS [ResourceBaseCalendar], 
+    [MSP_EpmResource_UserView].[ResourceWorkgroup] AS [ResourceWorkgroup], 
+    [MSP_EpmResource_UserView].[ResourceClientUniqueId] AS [ResourceClientUniqueId], 
+    [MSP_EpmResource_UserView].[ResourceCostCenter] AS [ResourceCostCenter], 
+    [MSP_EpmResource_UserView].[ResourceCreatedRevisionCounter] AS [ResourceCreatedRevisionCounter], 
+    [MSP_EpmResource_UserView].[ResourceModifiedRevisionCounter] AS [ResourceModifiedRevisionCounter], 
+    [MSP_EpmResource_UserView].[ResourceCreatedDate] AS [ResourceCreatedDate], 
+    [MSP_EpmResource_UserView].[ResourceModifiedDate] AS [ResourceModifiedDate], 
+    [MSP_EpmResource_UserView].[ResourceCount] AS [ResourceCount], 
+    [MSP_EpmResource_UserView].[RBS] AS [RBS], 
+    [MSP_EpmResource_UserView].[نوع هزینه] AS [نوع هزینه], 
+    [MSP_EpmResource_UserView].[دپارتمان های منبع] AS [دپارتمان های منبع], 
+    [MSP_EpmResource_UserView].[نام و نام خانوادگی] AS [نام و نام خانوادگی], 
+    [MSP_EpmResource_UserView].[کد پرسنلی] AS [کد پرسنلی]
+    FROM [dbo].[MSP_EpmResource_UserView] AS [MSP_EpmResource_UserView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

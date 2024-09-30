@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewMellatModel1StoreContainer" CdmEntityContainer="NewMellatEntities1">
+    <EntitySetMapping Name="Definitions">
+      <EntityTypeMapping TypeName="NewMellatModel1.Definition">
+        <MappingFragment StoreEntitySet="Definition">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ConditionType" ColumnName="ConditionType" />
+          <ScalarProperty Name="PersonType" ColumnName="PersonType" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="QueryPerson" ColumnName="QueryPerson" />
+          <ScalarProperty Name="Bahavior" ColumnName="Bahavior" />
+          <ScalarProperty Name="AutomationTemplateId" ColumnName="AutomationTemplateId" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="QueryId" ColumnName="QueryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DefinitionParams">
+      <EntityTypeMapping TypeName="NewMellatModel1.DefinitionParam">
+        <MappingFragment StoreEntitySet="DefinitionParam">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DefinitionId" ColumnName="DefinitionId" />
+          <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
+          <ScalarProperty Name="ParamName" ColumnName="ParamName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="NewMellatModel1.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DefinitionId" ColumnName="DefinitionId" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="ItemDate" ColumnName="ItemDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="LetterId" ColumnName="LetterId" />
+          <ScalarProperty Name="VisitedDate" ColumnName="VisitedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Queries">
+      <EntityTypeMapping TypeName="NewMellatModel1.Query">
+        <MappingFragment StoreEntitySet="Query">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="QueryText" ColumnName="QueryText" />
+          <ScalarProperty Name="DateField" ColumnName="DateField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QueryParameters">
+      <EntityTypeMapping TypeName="NewMellatModel1.QueryParameter">
+        <MappingFragment StoreEntitySet="QueryParameter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ParamField" ColumnName="ParamField" />
+          <ScalarProperty Name="QueryId" ColumnName="QueryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

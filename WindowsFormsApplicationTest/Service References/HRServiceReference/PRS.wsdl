@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PRS" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://074-002-001-203.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://074-002-001-203.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://074-002-001-203.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Parstasmim.BusinessLayer.PRS" />
+      <xsd:import schemaLocation="http://074-002-001-203.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+      <xsd:import schemaLocation="http://074-002-001-203.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPRS_get_WorkHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_WorkHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_WorkHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_WorkHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_EnfesalHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_EnfesalHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_EnfesalHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_EnfesalHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_NoWorkHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_NoWorkHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_NoWorkHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_NoWorkHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_IsarHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_IsarHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_IsarHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_IsarHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getVazKhedmatKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVazKhedmatKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getVazKhedmatKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVazKhedmatKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getHozehKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getHozehKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getHozehKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getHozehKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getVazKhedmat_Changes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVazKhedmat_Changes" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getVazKhedmat_Changes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVazKhedmat_ChangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getVazKhedmatAllPrs_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVazKhedmatAllPrs" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getVazKhedmatAllPrs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVazKhedmatAllPrsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getFinancialReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFinancialReport" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getFinancialReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFinancialReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeImage" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_BranchDegreeHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:BranchDegreeHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_BranchDegreeHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BranchDegreeHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeGrantedHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeGrantedHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeGrantedHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeGrantedHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSignature_ByShmEmz_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSignature_ByShmEmz" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSignature_ByShmEmz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSignature_ByShmEmzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSignature_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSignature" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSignature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSalaryGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSalaryGroup" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSalaryGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSalaryGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSalary_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSalary" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSalary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSalaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSpecGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSpecGroup" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSpecGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSpecGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getPrivateEmployeeSpecGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPrivateEmployeeSpecGroup" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getPrivateEmployeeSpecGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPrivateEmployeeSpecGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeTotalWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeTotalWork" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeTotalWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeTotalWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeTotalWorkGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeTotalWorkGroup" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeTotalWorkGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeTotalWorkGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSpec_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSpec" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeSpec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeSpecResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeCell_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeCell" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeCell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeCellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeCellGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeCellGroup" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeCellGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeCellGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getChartKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getChartKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getChartKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getChartKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getChartKind_RecCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:getChartKind_RecCount" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getChartKind_RecCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getChartKind_RecCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getRecruitmentStatusKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRecruitmentStatusKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getRecruitmentStatusKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRecruitmentStatusKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getOstanKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOstanKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getOstanKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOstanKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getCityKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCityKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getCityKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCityKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getJobTitleKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getJobTitleKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getJobTitleKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getJobTitleKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getIDN_112Kind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getIDN_112Kind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getIDN_112Kind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getIDN_112KindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getIDN_113Kind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getIDN_113Kind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getIDN_113Kind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getIDN_113KindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEduLevelKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEduLevelKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEduLevelKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEduLevelKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getFieldKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFieldKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getFieldKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFieldKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getRadehKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRadehKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getRadehKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRadehKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getNoePostKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNoePostKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getNoePostKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNoePostKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_EmtiazAmoozeshi_History_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_EmtiazAmoozeshi_History" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_EmtiazAmoozeshi_History_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_EmtiazAmoozeshi_HistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getMostamaryInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMostamaryInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getMostamaryInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMostamaryInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeePassedCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeePassedCourses" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeePassedCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeePassedCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getVazKhedmat_ForLoan_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVazKhedmat_ForLoan" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getVazKhedmat_ForLoan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVazKhedmat_ForLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getArzeshyabi_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArzeshyabi" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getArzeshyabi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArzeshyabiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeBoss_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeBoss" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_getEmployeeBoss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEmployeeBossResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_ComHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_ComHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_ComHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_ComHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_ComRewardHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_ComRewardHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_ComRewardHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_ComRewardHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_ComKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_ComKind" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_ComKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_ComKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_EduHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_EduHistory" />
+  </wsdl:message>
+  <wsdl:message name="IPRS_get_EduHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_EduHistoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPRS">
+    <wsdl:operation name="get_WorkHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_WorkHistory" message="tns:IPRS_get_WorkHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_WorkHistoryResponse" message="tns:IPRS_get_WorkHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_EnfesalHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_EnfesalHistory" message="tns:IPRS_get_EnfesalHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_EnfesalHistoryResponse" message="tns:IPRS_get_EnfesalHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_NoWorkHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_NoWorkHistory" message="tns:IPRS_get_NoWorkHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_NoWorkHistoryResponse" message="tns:IPRS_get_NoWorkHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_IsarHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_IsarHistory" message="tns:IPRS_get_IsarHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_IsarHistoryResponse" message="tns:IPRS_get_IsarHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVazKhedmatKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getVazKhedmatKind" message="tns:IPRS_getVazKhedmatKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getVazKhedmatKindResponse" message="tns:IPRS_getVazKhedmatKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getHozehKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getHozehKind" message="tns:IPRS_getHozehKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getHozehKindResponse" message="tns:IPRS_getHozehKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVazKhedmat_Changes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getVazKhedmat_Changes" message="tns:IPRS_getVazKhedmat_Changes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getVazKhedmat_ChangesResponse" message="tns:IPRS_getVazKhedmat_Changes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVazKhedmatAllPrs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getVazKhedmatAllPrs" message="tns:IPRS_getVazKhedmatAllPrs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getVazKhedmatAllPrsResponse" message="tns:IPRS_getVazKhedmatAllPrs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFinancialReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getFinancialReport" message="tns:IPRS_getFinancialReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getFinancialReportResponse" message="tns:IPRS_getFinancialReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeImage" message="tns:IPRS_getEmployeeImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeImageResponse" message="tns:IPRS_getEmployeeImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BranchDegreeHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/BranchDegreeHistory" message="tns:IPRS_BranchDegreeHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/BranchDegreeHistoryResponse" message="tns:IPRS_BranchDegreeHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeGrantedHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeGrantedHistory" message="tns:IPRS_getEmployeeGrantedHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeGrantedHistoryResponse" message="tns:IPRS_getEmployeeGrantedHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSignature_ByShmEmz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeSignature_ByShmEmz" message="tns:IPRS_getEmployeeSignature_ByShmEmz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeSignature_ByShmEmzResponse" message="tns:IPRS_getEmployeeSignature_ByShmEmz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSignature">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeSignature" message="tns:IPRS_getEmployeeSignature_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeSignatureResponse" message="tns:IPRS_getEmployeeSignature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSalaryGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeSalaryGroup" message="tns:IPRS_getEmployeeSalaryGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeSalaryGroupResponse" message="tns:IPRS_getEmployeeSalaryGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSalary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeSalary" message="tns:IPRS_getEmployeeSalary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeSalaryResponse" message="tns:IPRS_getEmployeeSalary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSpecGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeSpecGroup" message="tns:IPRS_getEmployeeSpecGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeSpecGroupResponse" message="tns:IPRS_getEmployeeSpecGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateEmployeeSpecGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getPrivateEmployeeSpecGroup" message="tns:IPRS_getPrivateEmployeeSpecGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getPrivateEmployeeSpecGroupResponse" message="tns:IPRS_getPrivateEmployeeSpecGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeTotalWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeTotalWork" message="tns:IPRS_getEmployeeTotalWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeTotalWorkResponse" message="tns:IPRS_getEmployeeTotalWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeTotalWorkGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeTotalWorkGroup" message="tns:IPRS_getEmployeeTotalWorkGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeTotalWorkGroupResponse" message="tns:IPRS_getEmployeeTotalWorkGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSpec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeSpec" message="tns:IPRS_getEmployeeSpec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeSpecResponse" message="tns:IPRS_getEmployeeSpec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeCell">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeCell" message="tns:IPRS_getEmployeeCell_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeCellResponse" message="tns:IPRS_getEmployeeCell_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeCellGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeCellGroup" message="tns:IPRS_getEmployeeCellGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeCellGroupResponse" message="tns:IPRS_getEmployeeCellGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getChartKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getChartKind" message="tns:IPRS_getChartKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getChartKindResponse" message="tns:IPRS_getChartKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getChartKind_RecCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getChartKind_RecCount" message="tns:IPRS_getChartKind_RecCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getChartKind_RecCountResponse" message="tns:IPRS_getChartKind_RecCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRecruitmentStatusKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getRecruitmentStatusKind" message="tns:IPRS_getRecruitmentStatusKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getRecruitmentStatusKindResponse" message="tns:IPRS_getRecruitmentStatusKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOstanKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getOstanKind" message="tns:IPRS_getOstanKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getOstanKindResponse" message="tns:IPRS_getOstanKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCityKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getCityKind" message="tns:IPRS_getCityKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getCityKindResponse" message="tns:IPRS_getCityKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getJobTitleKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getJobTitleKind" message="tns:IPRS_getJobTitleKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getJobTitleKindResponse" message="tns:IPRS_getJobTitleKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getIDN_112Kind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getIDN_112Kind" message="tns:IPRS_getIDN_112Kind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getIDN_112KindResponse" message="tns:IPRS_getIDN_112Kind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getIDN_113Kind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getIDN_113Kind" message="tns:IPRS_getIDN_113Kind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getIDN_113KindResponse" message="tns:IPRS_getIDN_113Kind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEduLevelKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEduLevelKind" message="tns:IPRS_getEduLevelKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEduLevelKindResponse" message="tns:IPRS_getEduLevelKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFieldKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getFieldKind" message="tns:IPRS_getFieldKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getFieldKindResponse" message="tns:IPRS_getFieldKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRadehKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getRadehKind" message="tns:IPRS_getRadehKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getRadehKindResponse" message="tns:IPRS_getRadehKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNoePostKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getNoePostKind" message="tns:IPRS_getNoePostKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getNoePostKindResponse" message="tns:IPRS_getNoePostKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_EmtiazAmoozeshi_History">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_EmtiazAmoozeshi_History" message="tns:IPRS_get_EmtiazAmoozeshi_History_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_EmtiazAmoozeshi_HistoryResponse" message="tns:IPRS_get_EmtiazAmoozeshi_History_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMostamaryInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getMostamaryInfo" message="tns:IPRS_getMostamaryInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getMostamaryInfoResponse" message="tns:IPRS_getMostamaryInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeePassedCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeePassedCourses" message="tns:IPRS_getEmployeePassedCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeePassedCoursesResponse" message="tns:IPRS_getEmployeePassedCourses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVazKhedmat_ForLoan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getVazKhedmat_ForLoan" message="tns:IPRS_getVazKhedmat_ForLoan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getVazKhedmat_ForLoanResponse" message="tns:IPRS_getVazKhedmat_ForLoan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArzeshyabi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getArzeshyabi" message="tns:IPRS_getArzeshyabi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getArzeshyabiResponse" message="tns:IPRS_getArzeshyabi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeBoss">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/getEmployeeBoss" message="tns:IPRS_getEmployeeBoss_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/getEmployeeBossResponse" message="tns:IPRS_getEmployeeBoss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_ComHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_ComHistory" message="tns:IPRS_get_ComHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_ComHistoryResponse" message="tns:IPRS_get_ComHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_ComRewardHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_ComRewardHistory" message="tns:IPRS_get_ComRewardHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_ComRewardHistoryResponse" message="tns:IPRS_get_ComRewardHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_ComKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_ComKind" message="tns:IPRS_get_ComKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_ComKindResponse" message="tns:IPRS_get_ComKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_EduHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPRS/get_EduHistory" message="tns:IPRS_get_EduHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPRS/get_EduHistoryResponse" message="tns:IPRS_get_EduHistory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPRS" type="tns:IPRS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_WorkHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_WorkHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_EnfesalHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_EnfesalHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_NoWorkHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_NoWorkHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_IsarHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_IsarHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVazKhedmatKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getVazKhedmatKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHozehKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getHozehKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVazKhedmat_Changes">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getVazKhedmat_Changes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVazKhedmatAllPrs">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getVazKhedmatAllPrs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFinancialReport">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getFinancialReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeImage">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BranchDegreeHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/BranchDegreeHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeGrantedHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeGrantedHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSignature_ByShmEmz">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeSignature_ByShmEmz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSignature">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeSignature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSalaryGroup">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeSalaryGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSalary">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeSalary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSpecGroup">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeSpecGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateEmployeeSpecGroup">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getPrivateEmployeeSpecGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeTotalWork">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeTotalWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeTotalWorkGroup">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeTotalWorkGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeSpec">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeSpec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeCell">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeCell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeCellGroup">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeCellGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChartKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getChartKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChartKind_RecCount">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getChartKind_RecCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecruitmentStatusKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getRecruitmentStatusKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOstanKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getOstanKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCityKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getCityKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getJobTitleKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getJobTitleKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIDN_112Kind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getIDN_112Kind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIDN_113Kind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getIDN_113Kind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEduLevelKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEduLevelKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFieldKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getFieldKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRadehKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getRadehKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNoePostKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getNoePostKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_EmtiazAmoozeshi_History">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_EmtiazAmoozeshi_History" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMostamaryInfo">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getMostamaryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeePassedCourses">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeePassedCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVazKhedmat_ForLoan">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getVazKhedmat_ForLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArzeshyabi">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getArzeshyabi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeBoss">
+      <soap:operation soapAction="http://tempuri.org/IPRS/getEmployeeBoss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_ComHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_ComHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_ComRewardHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_ComRewardHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_ComKind">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_ComKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_EduHistory">
+      <soap:operation soapAction="http://tempuri.org/IPRS/get_EduHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PRS">
+    <wsdl:port name="BasicHttpBinding_IPRS" binding="tns:BasicHttpBinding_IPRS">
+      <soap:address location="http://074-002-001-203.mellat.bm/Mellat_WS_Final/PRS/PRS.svc/Basic" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

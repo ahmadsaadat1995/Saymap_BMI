@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NewMellat" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.22.65.20;Initial Catalog=NewMellat;User ID=sa" SettingsObjectName="ConsoleApplicationDate.Properties.Settings" SettingsPropertyName="NewMellatConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DimDate" Member="DimDates">
+    <Type Name="DimDate">
+      <Column Name="DateKey" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GregorianDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GregorianYearInt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GregorianMonthNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="GregorianDayInMonth" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="GregorianMonthDayInt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="GregorianDayOfWeekInt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="GregorianMonthName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GregorianStr" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GregorianYearMonthInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GregorianYearMonthStr" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="GregorianDayOfWeekName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GrgorianWeekOfYearName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GregorianWeekOfYearNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PersianInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PersianYearInt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PersianMonthNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="PersianDayInMonth" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="PersianMonthDayInt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PersianDayOfWeekInt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="PersianMonthName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PersianStr" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PersianYearMonthInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PersianYearMonthStr" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="PersianDayOfWeekName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PersianWeekOfYearName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PersianWeekOfYearNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PersianFullName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HijriInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HijriYearInt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HijriMonthNo" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="HijriDayInMonth" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="HijriMonthDayInt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HijriDayOfWeekInt" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="HijriMonthName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HijriStr" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="HijriYearMonthInt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HijriYearMonthStr" Type="System.String" DbType="NVarChar(7)" CanBeNull="true" />
+      <Column Name="HijriDayOfWeekName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HijriWeekOfYearName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="HijriWeekOfYearNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SeasonCode" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SeasonName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsGregorianLeap" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsPersianLeap" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsOneDayBefore_PersianHoliday" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsOneDayBefore_HijriHoliday" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

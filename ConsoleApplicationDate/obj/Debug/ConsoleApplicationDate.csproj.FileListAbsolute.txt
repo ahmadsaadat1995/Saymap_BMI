@@ -1,0 +1,12 @@
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationDate\bin\Debug\ConsoleApplicationDate.exe.config
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationDate\bin\Debug\ConsoleApplicationDate.exe
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationDate\bin\Debug\ConsoleApplicationDate.pdb
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationDate\obj\Debug\ConsoleApplicationDate.csprojResolveAssemblyReference.cache
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationDate\obj\Debug\ConsoleApplicationDate.exe
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\ConsoleApplicationDate\obj\Debug\ConsoleApplicationDate.pdb
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationDate\bin\Debug\ConsoleApplicationDate.exe.config
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationDate\bin\Debug\ConsoleApplicationDate.exe
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationDate\bin\Debug\ConsoleApplicationDate.pdb
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationDate\obj\Debug\ConsoleApplicationDate.csprojResolveAssemblyReference.cache
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationDate\obj\Debug\ConsoleApplicationDate.exe
+D:\Projects\NewMellat\NewMellat\ConsoleApplicationDate\obj\Debug\ConsoleApplicationDate.pdb

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewMellatTestModelStoreContainer" CdmEntityContainer="NewMellatEntities">
+    <EntitySetMapping Name="tbProjects">
+      <EntityTypeMapping TypeName="NewMellatTestModel.tbProject">
+        <MappingFragment StoreEntitySet="tbProjects">
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="prAct" ColumnName="prAct" />
+          <ScalarProperty Name="prRegDate" ColumnName="prRegDate" />
+          <ScalarProperty Name="prRegUser" ColumnName="prRegUser" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="status1" ColumnName="status1" />
+          <ScalarProperty Name="status2" ColumnName="status2" />
+          <ScalarProperty Name="status3" ColumnName="status3" />
+          <ScalarProperty Name="prStatus" ColumnName="prStatus" />
+          <ScalarProperty Name="prISEstelam" ColumnName="prISEstelam" />
+          <ScalarProperty Name="prIsMohtava" ColumnName="prIsMohtava" />
+          <ScalarProperty Name="irIsAnalyz" ColumnName="irIsAnalyz" />
+          <ScalarProperty Name="prIsTarh" ColumnName="prIsTarh" />
+          <ScalarProperty Name="prIsEstelamMohtavayi" ColumnName="prIsEstelamMohtavayi" />
+          <ScalarProperty Name="prEstelamIsSubmit" ColumnName="prEstelamIsSubmit" />
+          <ScalarProperty Name="prIsErsalBeSherkat" ColumnName="prIsErsalBeSherkat" />
+          <ScalarProperty Name="prIsAnswerTadarokatPending" ColumnName="prIsAnswerTadarokatPending" />
+          <ScalarProperty Name="prTarhJalasePending" ColumnName="prTarhJalasePending" />
+          <ScalarProperty Name="prPishnevisPending" ColumnName="prPishnevisPending" />
+          <ScalarProperty Name="prEstelamPending" ColumnName="prEstelamPending" />
+          <ScalarProperty Name="prKhobreganStatusMosavab" ColumnName="prKhobreganStatusMosavab" />
+          <ScalarProperty Name="prTemp" ColumnName="prTemp" />
+          <ScalarProperty Name="prBody" ColumnName="prBody" />
+          <ScalarProperty Name="prProjectStatus" ColumnName="prProjectStatus" />
+          <ScalarProperty Name="prMainBody" ColumnName="prMainBody" />
+          <ScalarProperty Name="prProjectManager" ColumnName="prProjectManager" />
+          <ScalarProperty Name="prSt" ColumnName="prSt" />
+          <ScalarProperty Name="prSt2" ColumnName="prSt2" />
+          <ScalarProperty Name="prFinalCode" ColumnName="prFinalCode" />
+          <ScalarProperty Name="prRiskType" ColumnName="prRiskType" />
+          <ScalarProperty Name="prRiskTitle" ColumnName="prRiskTitle" />
+          <ScalarProperty Name="prRiskDegree" ColumnName="prRiskDegree" />
+          <ScalarProperty Name="prRiskEhtemal" ColumnName="prRiskEhtemal" />
+          <ScalarProperty Name="prRiskPayamad" ColumnName="prRiskPayamad" />
+          <ScalarProperty Name="prRiskAnswer" ColumnName="prRiskAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewProjectSearches">
+      <EntityTypeMapping TypeName="NewMellatTestModel.ViewProjectSearch">
+        <MappingFragment StoreEntitySet="ViewProjectSearch">
+          <ScalarProperty Name="Hadaf" ColumnName="Hadaf" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewGharardads">
+      <EntityTypeMapping TypeName="NewMellatTestModel.ViewGharardad">
+        <MappingFragment StoreEntitySet="ViewGharardad">
+          <ScalarProperty Name="ghId" ColumnName="ghId" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="prFinalCode" ColumnName="prFinalCode" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="ghCode" ColumnName="ghCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,535 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="PageProjectList.aspx.cs" Inherits="NewMellat.Content.PageProjectList"  %>
+
+<%@ Register Assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+
+        function loadDoc(parent) {
+
+            var oWnd = radopen("PageAttach.aspx?Parent=" + parent + "&Type=1", "RadWindow1");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+        
+
+        function loadDoc2(parent) {
+
+            var oWnd = radopen("Pagepages.aspx?Project=" + parent + "&Type=1", "RadWindow2");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+        function loadDoc3(parent) {
+
+            var oWnd = radopen("PageDiagram.aspx?id=" + parent , "RadWindow1");
+            oWnd.setSize(950, 600);
+            oWnd.Center();
+        }
+        
+
+        function loadDoc4(parent) {
+
+            var oWnd = radopen("pageBody.aspx?id=" + parent, "RadWindow3");
+            oWnd.setSize(500, 250);
+            oWnd.Center();
+        }</script></asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="box box-danger" align="center">
+        <dx:ASPxCheckBoxList ID="chkColumns" runat="server" Font-Names="vazir" RepeatColumns="5" RightToLeft="True" Theme="SoftOrange" ValueType="System.String" Width="100%">
+            <Border BorderStyle="None" />
+        </dx:ASPxCheckBoxList>
+
+    </div>
+       <div class="box box-warning" align="center" style="padding: 2px">        
+
+           <table align="center" cellpadding="2" cellspacing="1">
+               <tr>
+                   <td><asp:ImageButton ID="ImageButton4" runat="server" OnClick="ImageButton4_Click" ImageUrl="~/Content/images/refresh-icon.png" ToolTip="لود مجدد" /></td>
+                   <td>
+<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Content/images/Select-icon.png" OnClick="ImageButton1_Click" ToolTip="انتخاب همه" />
+
+                   </td>
+                   
+               
+
+               </tr>
+           </table>
+
+           </div>
+    <div class="box box-danger">
+        <dx:ASPxGridView ID="ASPxGridView1" runat="server" Theme="Office2010Silver" AutoGenerateColumns="False" DataSourceID="sourceProjects" KeyFieldName="prId" RightToLeft="True" Width="100%" OnHtmlDataCellPrepared="ASPxGridView1_HtmlDataCellPrepared" OnCommandButtonInitialize="ASPxGridView1_CommandButtonInitialize" OnHtmlRowCreated="ASPxGridView1_HtmlRowCreated" OnDataBound="ASPxGridView1_DataBound" OnPageIndexChanged="ASPxGridView1_PageIndexChanged" OnProcessColumnAutoFilter="ASPxGridView1_ProcessColumnAutoFilter" Font-Names="vazir">
+            <SettingsEditing Mode="EditForm">
+            </SettingsEditing>
+            <Settings ShowFilterRow="True" ShowGroupPanel="True" HorizontalScrollBarMode="Auto" ShowFilterRowMenu="True" />
+            <SettingsBehavior ConfirmDelete="True" EnableRowHotTrack="True" />
+            <SettingsCommandButton>
+                <ClearFilterButton ButtonType="Image">
+                    <Image IconID="filter_clearfilter_16x16">
+                    </Image>
+                </ClearFilterButton>
+                <UpdateButton ButtonType="Image">
+                    <Image Url="~/Content/images/icons/Actions-document-save-icon.png">
+                    </Image>
+                </UpdateButton>
+                <CancelButton ButtonType="Image">
+                    <Image Url="~/Content/images/icons/Close-2-icon.png">
+                    </Image>
+                </CancelButton>
+                <EditButton ButtonType="Image">
+                    <Image Url="~/Content/images/icons/edit-icon.png">
+                    </Image>
+                </EditButton>
+                <DeleteButton ButtonType="Image">
+                    <Image Url="~/Content/images/icons/Close-2-icon.png">
+                    </Image>
+                </DeleteButton>
+            </SettingsCommandButton>
+            <SettingsSearchPanel Visible="True" />
+            <SettingsLoadingPanel Text="در حال اجرا..." />
+            <SettingsText ConfirmDelete="آیا ردیف انتخابی حذف شود؟" EmptyDataRow="اطلاعات موجود نمی باشد" GroupPanel="ستون مورد نظر جهت گروه بندی اطلاعات را وارد نمایید" SearchPanelEditorNullText="متن مورد جستجو را وارد نمایید" />
+            <Columns>
+                <dx:GridViewCommandColumn ShowClearFilterButton="True" ShowDeleteButton="True" VisibleIndex="0" ShowEditButton="True" Caption="ویرایش">
+                </dx:GridViewCommandColumn>
+                <dx:GridViewDataTextColumn Caption="شماره شناسایی پروژه " FieldName="prFinalCode" ReadOnly="True" VisibleIndex="1" Width="150px">
+                    <Settings AutoFilterCondition="Contains" />
+                    <EditFormSettings Visible="False" />
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="عنوان پروژه" FieldName="prTitle" VisibleIndex="2" Width="250px">
+                    <Settings AutoFilterCondition="Contains" />
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataDateColumn Caption="تاریخ ثبت" FieldName="prRegDate" VisibleIndex="3" Visible="False">
+                    <Settings AllowAutoFilter="False" AutoFilterCondition="Contains" />
+                    <DataItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("prRegDate") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataDateColumn>
+                <dx:GridViewDataTextColumn Caption="کاربر ثبت کننده" FieldName="prRegUser" VisibleIndex="4" Visible="False">
+                    <Settings AutoFilterCondition="Contains" />
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="پیمانکار" FieldName="prPeymankar" VisibleIndex="9">
+                    <PropertiesComboBox DataSourceID="sourcePeymankar" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                    <Settings AllowAutoFilter="False" />
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataComboBoxColumn Caption="اولویت" FieldName="prOlaviat" VisibleIndex="8">
+                    <PropertiesComboBox DataSourceID="sourceOlaviat" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                    <Settings AllowAutoFilter="False" />
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataComboBoxColumn Caption="نوع سند" FieldName="prSanadType" VisibleIndex="7">
+                    <PropertiesComboBox DataSourceID="sourceSanad0" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                    <Settings AllowAutoFilter="False" />
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataComboBoxColumn Caption="نوع پروژه" FieldName="prProjectType" VisibleIndex="6">
+                    <PropertiesComboBox DataSourceID="sourceProjectType" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                    <Settings AllowAutoFilter="False" />
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataComboBoxColumn Caption="واحد متولی" FieldName="prVahed" VisibleIndex="5" Width="150px">
+                    <PropertiesComboBox DataSourceID="sourceVahed" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                    <Settings AllowAutoFilter="False" />
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn Caption="ضمایم" VisibleIndex="10" ShowInCustomizationForm="False">
+                    <EditFormSettings Visible="False" />
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink1" runat="server" Target="_blank" ImageUrl="~/Content/images/icons/attachment-icon24.png" NavigateUrl='<%# Eval("prId","~/content/PageAttach.aspx?Parent={0}") %>'></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="نامه ها" VisibleIndex="11" ShowInCustomizationForm="False">
+                    <EditFormSettings Visible="False" />
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Content/images/icons/Documents-icon24.png" NavigateUrl='<%# Eval("prId","~/content/PagePages.aspx?project={0}") %>' Target="_blank"></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn VisibleIndex="12" ShowInCustomizationForm="False" Caption="گردش کار">
+                    <EditFormSettings Visible="False" />
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink3" runat="server" ImageUrl="~/Content/images/icons/diagram-icon.png" NavigateUrl='<%# Eval("prId","~/content/PageDiagram.aspx?id={0}") %>' Target="_blank"></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="توضیحات" VisibleIndex="13" ShowInCustomizationForm="False">
+                    <EditFormSettings Visible="False" />
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink4" runat="server" ImageUrl="~/Content/images/icons/pencil-red-icon.png" NavigateUrl='<%# Eval("prId","~/content/pageBody.aspx?id={0}") %>' Target="_blank"></asp:HyperLink>
+                        <asp:HiddenField ID="HiddenField1" runat="server" Value='<%# Eval("prVahed") %>' />
+                        <asp:HiddenField ID="HiddenField2" runat="server" Value='<%# Eval("prPeymankar") %>' />
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="شناسه نامه" FieldName="paShenase" VisibleIndex="14">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="شماره نامه" FieldName="paNumber" VisibleIndex="15">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="تاریخ نامه" FieldName="paDate" VisibleIndex="16">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("paDate") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="آخرین وضعیت اجرا" FieldName="prProjectStatus" VisibleIndex="17">
+                    <PropertiesComboBox DataSourceID="sourceLastStatus" TextField="infTitle" ValueField="infTitle">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn Caption="خلاصه درخواست" FieldName="prMainBody" VisibleIndex="18" Width="185px">
+                    <Settings AutoFilterCondition="Contains" />
+                    <DataItemTemplate>
+                        <dx:ASPxMemo ID="ASPxMemo1" runat="server" EnableTheming="True" Height="60px" ReadOnly="True" RightToLeft="True" Text='<%# Eval("prMainBody") %>' Theme="SoftOrange" Width="160px">
+                        </dx:ASPxMemo>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption=" مدیر پروژه" FieldName="prProjectManager" VisibleIndex="19">
+                    <Settings AutoFilterCondition="Contains" />
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="شروع قرارداد تولید" VisibleIndex="20" Width="120px">
+                    <EditFormSettings Visible="False" />
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#006600" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:BoundField DataField="GharardadStart" HeaderText="شروع قرارداد" SortExpression="GharardadStart" />
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT top 1 tbSooratHesab.GharardadStart, tbSooratHesab.GharardadEnd FROM tbSooratHesab INNER JOIN tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode WHERE (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%تولید%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="شروع قرارداد پشتیبانی" VisibleIndex="22" Width="125px">
+                    <EditFormSettings Visible="False" />
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#CC3300" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:BoundField DataField="GharardadStart" HeaderText="GharardadStart" SortExpression="GharardadStart" />
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT top 1 tbSooratHesab.GharardadStart, tbSooratHesab.GharardadEnd FROM tbSooratHesab INNER JOIN tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode WHERE (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%پشتیبانی%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="عنوان تحویل تولید" VisibleIndex="24" Width="120px">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#006600" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText="عنوان تحویل" SortExpression="OnvanTahvili">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("OnvanTahvili") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("OnvanTahvili") %>'></asp:Label>
+                                        </div>
+                                        <div align="center" style="padding: 1px">
+                                            ...............</div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT  tbSooratHesab.OnvanTahvili, tbSooratHesab.MoedTahvili, tbSooratHesab.Price
+FROM            tbSooratHesab INNER JOIN
+                         tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode
+WHERE        (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%تولید%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="عنوان تحویل پشتیبانی" VisibleIndex="27" Width="120px">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#CC3300" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText="عنوان تحویل" SortExpression="OnvanTahvili">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("OnvanTahvili") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("OnvanTahvili") %>'></asp:Label>
+                                        </div>
+                                        <div align="center" style="padding: 1px">
+                                            ...............</div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT  tbSooratHesab.OnvanTahvili, tbSooratHesab.MoedTahvili, tbSooratHesab.Price
+FROM            tbSooratHesab INNER JOIN
+                         tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode
+WHERE        (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%پشتیبانی%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="پایان قرارداد تولید" VisibleIndex="21" Width="120px">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#006600" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:BoundField DataField="GharardadEnd" HeaderText="GharardadEnd" SortExpression="GharardadEnd" />
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT top 1 tbSooratHesab.GharardadStart, tbSooratHesab.GharardadEnd FROM tbSooratHesab INNER JOIN tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode WHERE (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%تولید%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="پایان قرارداد پشتیبانی" VisibleIndex="23" Width="120px">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#CC3300" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:BoundField DataField="GharardadEnd" HeaderText="GharardadEnd" SortExpression="GharardadEnd" />
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT top 1 tbSooratHesab.GharardadStart, tbSooratHesab.GharardadEnd FROM tbSooratHesab INNER JOIN tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode WHERE (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%پشتیبانی%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="مبلغ تولید" VisibleIndex="26" Width="120px">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#006600" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText="مبلغ" SortExpression="Price">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Price") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <div align="right">
+                                                <table align="center" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="90">
+                                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("Price") %>'></asp:Label>
+                                                        </td>
+                                                        <td align="left" style="padding-right: 5px; padding-left: 5px" width="30">
+                                                            <dx:ASPxCheckBox ID="ASPxCheckBox1" runat="server" Checked='<%# Bind("srCheck") %>' CheckState="Unchecked" ReadOnly="True" Theme="SoftOrange">
+                                                            </dx:ASPxCheckBox>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div align="center" style="padding: 1px">
+                                            <asp:Label ID="Label5" runat="server" Text="..............."></asp:Label>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbSooratHesab.OnvanTahvili, tbSooratHesab.MoedTahvili, tbSooratHesab.Price, tbSooratHesab.srCheck FROM tbSooratHesab INNER JOIN tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode WHERE (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%تولید%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="موعد تحویل تولید" VisibleIndex="25" Width="120px">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#006600" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText="موعد تحویل" SortExpression="MoedTahvili">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("MoedTahvili") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("MoedTahvili") %>'></asp:Label>
+                                        </div>
+                                        <div align="center" style="padding: 1px">
+                                            ...............</div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT  tbSooratHesab.OnvanTahvili, tbSooratHesab.MoedTahvili, tbSooratHesab.Price
+FROM            tbSooratHesab INNER JOIN
+                         tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode
+WHERE        (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%تولید%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="موعد تحویل پشتیبانی" VisibleIndex="28" Width="120px">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#CC3300" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText="MoedTahvili" SortExpression="MoedTahvili">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("MoedTahvili") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("MoedTahvili") %>'></asp:Label>
+                                        </div>
+                                        <div align="center" style="padding: 1px">
+                                            ...............</div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT  tbSooratHesab.OnvanTahvili, tbSooratHesab.MoedTahvili, tbSooratHesab.Price
+FROM            tbSooratHesab INNER JOIN
+                         tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode
+WHERE        (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%پشتیبانی%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="مبلغ پشتیبانی" VisibleIndex="29" Width="120px">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("prId") %>' Visible="False"></asp:Label>
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" ForeColor="#CC3300" GridLines="None" HorizontalAlign="Center" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Price" SortExpression="Price">
+                                    <EditItemTemplate>
+                                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Price") %>'></asp:TextBox>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <div align="right">
+                                                <table align="center" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="90">
+                                                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("Price") %>'></asp:Label>
+                                                        </td>
+                                                        <td align="left" style="padding-right: 5px; padding-left: 5px" width="30">
+                                                            <dx:ASPxCheckBox ID="ASPxCheckBox1" runat="server" Checked='<%# Bind("srCheck") %>' CheckState="Unchecked" ReadOnly="True" Theme="SoftOrange">
+                                                            </dx:ASPxCheckBox>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div align="center" style="padding: 1px">
+                                            ...............</div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbSooratHesab.OnvanTahvili, tbSooratHesab.MoedTahvili, tbSooratHesab.Price, tbSooratHesab.srCheck FROM tbSooratHesab INNER JOIN tbGharardad ON tbSooratHesab.ProjectGharardad = tbGharardad.ghCode WHERE (tbGharardad.ghProject = @ghProject) AND (tbSooratHesab.Gharardad LIKE N'%پشتیبانی%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="Label4" Name="ghProject" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="آخرین وضعیت قراردادی" FieldName="prSt" VisibleIndex="30">
+                    <PropertiesComboBox AnimationType="Slide" DataSourceID="sourceSt" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataComboBoxColumn Caption="در حال اجرا" FieldName="prSt2" VisibleIndex="31">
+                    <PropertiesComboBox DataSourceID="sourceSt0" TextField="infTitle" ValueField="infTitle">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn Caption="شماره قرارداد" FieldName="ghCode" VisibleIndex="32">
+                </dx:GridViewDataTextColumn>
+            </Columns>
+            <Styles>
+                <Header Font-Names="vazir" Font-Size="13px" HorizontalAlign="Center">
+                </Header>
+                <Row HorizontalAlign="Center" Font-Names="vazir">
+                </Row>
+            </Styles>
+        </dx:ASPxGridView>
+        <asp:SqlDataSource ID="sourceProjects" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" DeleteCommand="UPDATE tbProjects SET prAct = 0 WHERE (prId = @prId)" SelectCommand="SELECT        tbProjects.prProjectManager, tbProjects.prId, tbProjects.prTitle, tbProjects.prAct, tbProjects.prRegDate, tbProjects.prRegUser, tbProjects.prVahed, tbProjects.prProjectType, tbProjects.prSanadType, 
+                         tbProjects.prOlaviat, tbProjects.prPeymankar, tbProjects.status1, tbProjects.status2, tbProjects.status3, tbProjects.prStatus, tbProjects.prISEstelam, tbProjects.prIsMohtava, tbProjects.irIsAnalyz, 
+                         tbProjects.prIsTarh, tbProjects.prIsEstelamMohtavayi, tbProjects.prEstelamIsSubmit, tbProjects.prIsErsalBeSherkat, tbProjects.prIsAnswerTadarokatPending, tbProjects.prTarhJalasePending, 
+                         tbProjects.prPishnevisPending, tbProjects.prEstelamPending, tbProjects.prKhobreganStatusMosavab, tbProjects.prTemp, tbProjects.prBody, tbProjects.prProjectStatus, tbProjects.prMainBody,
+                             (SELECT        TOP (1) paDate
+                               FROM            tbProjectPaper
+                               WHERE        (paType = 1) AND (paAct = 1) AND (paProject = tbProjects.prId)) AS paDate,
+                             (SELECT        TOP (1) paShenase
+                               FROM            tbProjectPaper AS tbProjectPaper_2
+                               WHERE        (paType = 1) AND (paAct = 1) AND (paProject = tbProjects.prId)) AS paShenase,
+                             (SELECT        TOP (1) paNumber
+                               FROM            tbProjectPaper AS tbProjectPaper_1
+                               WHERE        (paType = 1) AND (paAct = 1) AND (paProject = tbProjects.prId)) AS paNumber, tbProjects.prSt, tbProjects.prSt2, tbProjects.prFinalCode, tbGharardad.ghCode
+FROM            tbProjects LEFT OUTER JOIN
+                         tbGharardad ON tbProjects.prId = tbGharardad.ghProject WHERE (prVahed IN (SELECT prProject FROM tbAdminProjects WHERE (prType = 2) AND (prCode = @prCode))) AND (prPeymankar IN (SELECT prProject FROM tbAdminProjects AS tbAdminProjects_1 WHERE (prType = 1) AND (prCode = @prCode))) AND (prAct = 1)
+order by prid desc" UpdateCommand="UPDATE tbProjects SET prTitle = @prTitle, prVahed = @prVahed, prProjectType = @prProjectType, prSanadType = @prSanadType, prOlaviat = @prOlaviat, prPeymankar = @prPeymankar, status1 = @status1, status2 = @status2, status3 = @status3, prProjectStatus = @prProjectStatus, prMainBody = @prMainBody, prProjectManager = @prProjectManager, prSt = @prSt, prSt2 = @prSt2 WHERE (prId = @prId)">
+            <DeleteParameters>
+                <asp:Parameter Name="prId" />
+            </DeleteParameters>
+            <SelectParameters>
+                <asp:Parameter Name="prCode" />
+            </SelectParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="prTitle" />
+                <asp:Parameter Name="prVahed" />
+                <asp:Parameter Name="prProjectType" />
+                <asp:Parameter Name="prSanadType" />
+                <asp:Parameter Name="prOlaviat" />
+                <asp:Parameter Name="prPeymankar" />
+                <asp:Parameter Name="status1" />
+                <asp:Parameter Name="status2" />
+                <asp:Parameter Name="status3" />
+                <asp:Parameter Name="prProjectStatus" />
+                <asp:Parameter Name="prMainBody" />
+                <asp:Parameter Name="prProjectManager" />
+                <asp:Parameter Name="prSt" />
+                <asp:Parameter Name="prSt2" />
+                <asp:Parameter Name="prId" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceInfo" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT prInformation.* FROM prInformation"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sourceSt" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT infId, infTitle FROM prInformation WHERE (infAct = 1) AND (infType = 11)"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sourceSt0" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT infId, infTitle FROM prInformation WHERE (infAct = 1) AND (infType = 12)"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sourceVahed" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT prInformation.infId, prInformation.infTitle, tbAdminProjects.prProject, tbAdminProjects.prCode, tbAdminProjects.prType, tbAdminProjects.prId, prInformation.infType FROM prInformation INNER JOIN tbAdminProjects ON prInformation.infId = tbAdminProjects.prProject WHERE (prInformation.infAct = 1)  AND (prInformation.infType = 1)">
+                </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceSanad" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="spSelectInfo" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="3" Name="infType" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceSanad0" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT prInformation.* FROM prInformation WHERE (infType = 3)">
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceOlaviat" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="spSelectInfo" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="4" Name="infType" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourcePeymankar" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT prInformation.infId, prInformation.infTitle, tbAdminProjects.prProject, tbAdminProjects.prCode, tbAdminProjects.prType, tbAdminProjects.prId, prInformation.infType FROM prInformation INNER JOIN tbAdminProjects ON prInformation.infId = tbAdminProjects.prProject WHERE (prInformation.infAct = 1)  AND (prInformation.infType = 5)">
+        </asp:SqlDataSource>
+        <telerik:RadWindowManager ID="RadWindowManager1" runat="server" Animation="Fade" Behaviors="Close" Skin="Sunset">
+            <Windows>
+                <telerik:RadWindow runat="server" NavigateUrl="RadWindow1" Animation="Fade" Behavior="Close" Behaviors="Close">
+                </telerik:RadWindow>
+                <telerik:RadWindow runat="server" NavigateUrl="RadWindow2" Animation="Fade" Behavior="Close" Behaviors="Close">
+                </telerik:RadWindow>
+            </Windows>
+        </telerik:RadWindowManager>
+        <asp:SqlDataSource ID="sourceProjectType" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="spSelectInfo" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="2" Name="infType" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceLastStatus" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT infId, infTitle FROM prInformation WHERE (infType = 9)"></asp:SqlDataSource>
+    </div>
+    <div align="center">
+        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" FileName="لیست پروژه ها" GridViewID="ASPxGridView1" Landscape="True" PaperKind="A4">
+        </dx:ASPxGridViewExporter>
+        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Content/images/icons/Excel-icon.png" OnClick="ImageButton3_Click" />
+    </div>
+</asp:Content>

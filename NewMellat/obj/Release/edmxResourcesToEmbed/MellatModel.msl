@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NewMellatModelStoreContainer" CdmEntityContainer="NewMellatEntities">
+    <EntitySetMapping Name="tbFiles">
+      <EntityTypeMapping TypeName="NewMellatModel.tbFile">
+        <MappingFragment StoreEntitySet="tbFiles">
+          <ScalarProperty Name="fiId" ColumnName="fiId" />
+          <ScalarProperty Name="fiAct" ColumnName="fiAct" />
+          <ScalarProperty Name="fiData" ColumnName="fiData" />
+          <ScalarProperty Name="fiDate" ColumnName="fiDate" />
+          <ScalarProperty Name="fiParent" ColumnName="fiParent" />
+          <ScalarProperty Name="fiType" ColumnName="fiType" />
+          <ScalarProperty Name="fiTitle" ColumnName="fiTitle" />
+          <ScalarProperty Name="fiExt" ColumnName="fiExt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProjects">
+      <EntityTypeMapping TypeName="NewMellatModel.tbProject">
+        <MappingFragment StoreEntitySet="tbProjects">
+          <ScalarProperty Name="riskSt" ColumnName="riskSt" />
+          <ScalarProperty Name="riskDesc" ColumnName="riskDesc" />
+          <ScalarProperty Name="riskEnd" ColumnName="riskEnd" />
+          <ScalarProperty Name="riskStart" ColumnName="riskStart" />
+          <ScalarProperty Name="riskTitle" ColumnName="riskTitle" />
+          <ScalarProperty Name="riskAgainst" ColumnName="riskAgainst" />
+          <ScalarProperty Name="changeDate" ColumnName="changeDate" />
+          <ScalarProperty Name="VersionNo" ColumnName="VersionNo" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="PercentComplete" ColumnName="PercentComplete" />
+          <ScalarProperty Name="TechnicalSuvisor" ColumnName="TechnicalSuvisor" />
+          <ScalarProperty Name="prRiskAnswer" ColumnName="prRiskAnswer" />
+          <ScalarProperty Name="prRiskPayamad" ColumnName="prRiskPayamad" />
+          <ScalarProperty Name="prRiskEhtemal" ColumnName="prRiskEhtemal" />
+          <ScalarProperty Name="prRiskDegree" ColumnName="prRiskDegree" />
+          <ScalarProperty Name="prRiskTitle" ColumnName="prRiskTitle" />
+          <ScalarProperty Name="prRiskType" ColumnName="prRiskType" />
+          <ScalarProperty Name="prFinalCode" ColumnName="prFinalCode" />
+          <ScalarProperty Name="prSt2" ColumnName="prSt2" />
+          <ScalarProperty Name="prSt" ColumnName="prSt" />
+          <ScalarProperty Name="prProjectManager" ColumnName="prProjectManager" />
+          <ScalarProperty Name="prMainBody" ColumnName="prMainBody" />
+          <ScalarProperty Name="prProjectStatus" ColumnName="prProjectStatus" />
+          <ScalarProperty Name="prBody" ColumnName="prBody" />
+          <ScalarProperty Name="prTemp" ColumnName="prTemp" />
+          <ScalarProperty Name="prKhobreganStatusMosavab" ColumnName="prKhobreganStatusMosavab" />
+          <ScalarProperty Name="prEstelamPending" ColumnName="prEstelamPending" />
+          <ScalarProperty Name="prPishnevisPending" ColumnName="prPishnevisPending" />
+          <ScalarProperty Name="prTarhJalasePending" ColumnName="prTarhJalasePending" />
+          <ScalarProperty Name="prIsAnswerTadarokatPending" ColumnName="prIsAnswerTadarokatPending" />
+          <ScalarProperty Name="prIsErsalBeSherkat" ColumnName="prIsErsalBeSherkat" />
+          <ScalarProperty Name="prEstelamIsSubmit" ColumnName="prEstelamIsSubmit" />
+          <ScalarProperty Name="prIsEstelamMohtavayi" ColumnName="prIsEstelamMohtavayi" />
+          <ScalarProperty Name="prIsTarh" ColumnName="prIsTarh" />
+          <ScalarProperty Name="irIsAnalyz" ColumnName="irIsAnalyz" />
+          <ScalarProperty Name="prIsMohtava" ColumnName="prIsMohtava" />
+          <ScalarProperty Name="prISEstelam" ColumnName="prISEstelam" />
+          <ScalarProperty Name="prStatus" ColumnName="prStatus" />
+          <ScalarProperty Name="status3" ColumnName="status3" />
+          <ScalarProperty Name="status2" ColumnName="status2" />
+          <ScalarProperty Name="status1" ColumnName="status1" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prRegUser" ColumnName="prRegUser" />
+          <ScalarProperty Name="prRegDate" ColumnName="prRegDate" />
+          <ScalarProperty Name="prAct" ColumnName="prAct" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbKhbregans">
+      <EntityTypeMapping TypeName="NewMellatModel.tbKhbregan">
+        <MappingFragment StoreEntitySet="tbKhbregan">
+          <ScalarProperty Name="khIsTarh" ColumnName="khIsTarh" />
+          <ScalarProperty Name="khStatus" ColumnName="khStatus" />
+          <ScalarProperty Name="khJalaseDate" ColumnName="khJalaseDate" />
+          <ScalarProperty Name="khJalaseNumber" ColumnName="khJalaseNumber" />
+          <ScalarProperty Name="khAct" ColumnName="khAct" />
+          <ScalarProperty Name="khProject" ColumnName="khProject" />
+          <ScalarProperty Name="khId" ColumnName="khId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prInformations">
+      <EntityTypeMapping TypeName="NewMellatModel.prInformation">
+        <MappingFragment StoreEntitySet="prInformation">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="infTitle" ColumnName="infTitle" />
+          <ScalarProperty Name="infAct" ColumnName="infAct" />
+          <ScalarProperty Name="infType" ColumnName="infType" />
+          <ScalarProperty Name="infId" ColumnName="infId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbProjectPapers">
+      <EntityTypeMapping TypeName="NewMellatModel.tbProjectPaper">
+        <MappingFragment StoreEntitySet="tbProjectPaper">
+          <ScalarProperty Name="paStatus" ColumnName="paStatus" />
+          <ScalarProperty Name="paMainProjectId" ColumnName="paMainProjectId" />
+          <ScalarProperty Name="paEdare" ColumnName="paEdare" />
+          <ScalarProperty Name="paBody" ColumnName="paBody" />
+          <ScalarProperty Name="paType" ColumnName="paType" />
+          <ScalarProperty Name="paAct" ColumnName="paAct" />
+          <ScalarProperty Name="paProject" ColumnName="paProject" />
+          <ScalarProperty Name="paDate" ColumnName="paDate" />
+          <ScalarProperty Name="paNumber" ColumnName="paNumber" />
+          <ScalarProperty Name="paShenase" ColumnName="paShenase" />
+          <ScalarProperty Name="paId" ColumnName="paId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbNazars">
+      <EntityTypeMapping TypeName="NewMellatModel.tbNazar">
+        <MappingFragment StoreEntitySet="tbNazar">
+          <ScalarProperty Name="nzMainProjectId" ColumnName="nzMainProjectId" />
+          <ScalarProperty Name="nzStatus" ColumnName="nzStatus" />
+          <ScalarProperty Name="nzDate" ColumnName="nzDate" />
+          <ScalarProperty Name="nzParent" ColumnName="nzParent" />
+          <ScalarProperty Name="nzType" ColumnName="nzType" />
+          <ScalarProperty Name="nzBody" ColumnName="nzBody" />
+          <ScalarProperty Name="nzNumber" ColumnName="nzNumber" />
+          <ScalarProperty Name="nzShenase" ColumnName="nzShenase" />
+          <ScalarProperty Name="nzAct" ColumnName="nzAct" />
+          <ScalarProperty Name="nzId" ColumnName="nzId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbEstelamVaheds">
+      <EntityTypeMapping TypeName="NewMellatModel.tbEstelamVahed">
+        <MappingFragment StoreEntitySet="tbEstelamVahed">
+          <ScalarProperty Name="esVahed" ColumnName="esVahed" />
+          <ScalarProperty Name="esAct" ColumnName="esAct" />
+          <ScalarProperty Name="esProject" ColumnName="esProject" />
+          <ScalarProperty Name="esId" ColumnName="esId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbKhobreganMosavabs">
+      <EntityTypeMapping TypeName="NewMellatModel.tbKhobreganMosavab">
+        <MappingFragment StoreEntitySet="tbKhobreganMosavab">
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+          <ScalarProperty Name="mosProjectId" ColumnName="mosProjectId" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosPropozal" ColumnName="mosPropozal" />
+          <ScalarProperty Name="mosType" ColumnName="mosType" />
+          <ScalarProperty Name="mosbody" ColumnName="mosbody" />
+          <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+          <ScalarProperty Name="mosErsalDate" ColumnName="mosErsalDate" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="mosNumber" ColumnName="mosNumber" />
+          <ScalarProperty Name="mosShenase" ColumnName="mosShenase" />
+          <ScalarProperty Name="mosKhob" ColumnName="mosKhob" />
+          <ScalarProperty Name="mosAct" ColumnName="mosAct" />
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbHeyatNezarats">
+      <EntityTypeMapping TypeName="NewMellatModel.tbHeyatNezarat">
+        <MappingFragment StoreEntitySet="tbHeyatNezarat">
+          <ScalarProperty Name="ProposalId" ColumnName="ProposalId" />
+          <ScalarProperty Name="heIsElhaghie" ColumnName="heIsElhaghie" />
+          <ScalarProperty Name="heJalaseDate" ColumnName="heJalaseDate" />
+          <ScalarProperty Name="heJalaseNumber" ColumnName="heJalaseNumber" />
+          <ScalarProperty Name="heProject" ColumnName="heProject" />
+          <ScalarProperty Name="heAct" ColumnName="heAct" />
+          <ScalarProperty Name="heId" ColumnName="heId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbHeyatNezaratMosavabs">
+      <EntityTypeMapping TypeName="NewMellatModel.tbHeyatNezaratMosavab">
+        <MappingFragment StoreEntitySet="tbHeyatNezaratMosavab">
+          <ScalarProperty Name="hmMainProjectId" ColumnName="hmMainProjectId" />
+          <ScalarProperty Name="hmNezarat" ColumnName="hmNezarat" />
+          <ScalarProperty Name="hmVahedType" ColumnName="hmVahedType" />
+          <ScalarProperty Name="hmGharardadType" ColumnName="hmGharardadType" />
+          <ScalarProperty Name="hmDatePosh" ColumnName="hmDatePosh" />
+          <ScalarProperty Name="hmDateTolid" ColumnName="hmDateTolid" />
+          <ScalarProperty Name="hmPricePosh" ColumnName="hmPricePosh" />
+          <ScalarProperty Name="hmPriceTolid" ColumnName="hmPriceTolid" />
+          <ScalarProperty Name="hmAct" ColumnName="hmAct" />
+          <ScalarProperty Name="hmId" ColumnName="hmId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbShenaseNumbers">
+      <EntityTypeMapping TypeName="NewMellatModel.tbShenaseNumber">
+        <MappingFragment StoreEntitySet="tbShenaseNumbers">
+          <ScalarProperty Name="shMainProjectId" ColumnName="shMainProjectId" />
+          <ScalarProperty Name="shStatus" ColumnName="shStatus" />
+          <ScalarProperty Name="shBody" ColumnName="shBody" />
+          <ScalarProperty Name="shHeyat" ColumnName="shHeyat" />
+          <ScalarProperty Name="shId" ColumnName="shId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spCountNazarGharardadOk" FunctionName="NewMellatModel.Store.spCountNazarGharardadOk" />
+    <FunctionImportMapping FunctionImportName="spCountNazarGharardadNotOk" FunctionName="NewMellatModel.Store.spCountNazarGharardadNotOk" />
+    <EntitySetMapping Name="vwNoEstelams">
+      <EntityTypeMapping TypeName="NewMellatModel.vwNoEstelam">
+        <MappingFragment StoreEntitySet="vwNoEstelam">
+          <ScalarProperty Name="prEstelamPending" ColumnName="prEstelamPending" />
+          <ScalarProperty Name="prPishnevisPending" ColumnName="prPishnevisPending" />
+          <ScalarProperty Name="prTarhJalasePending" ColumnName="prTarhJalasePending" />
+          <ScalarProperty Name="prIsAnswerTadarokatPending" ColumnName="prIsAnswerTadarokatPending" />
+          <ScalarProperty Name="prIsErsalBeSherkat" ColumnName="prIsErsalBeSherkat" />
+          <ScalarProperty Name="prEstelamIsSubmit" ColumnName="prEstelamIsSubmit" />
+          <ScalarProperty Name="prIsEstelamMohtavayi" ColumnName="prIsEstelamMohtavayi" />
+          <ScalarProperty Name="prIsTarh" ColumnName="prIsTarh" />
+          <ScalarProperty Name="irIsAnalyz" ColumnName="irIsAnalyz" />
+          <ScalarProperty Name="prIsMohtava" ColumnName="prIsMohtava" />
+          <ScalarProperty Name="prISEstelam" ColumnName="prISEstelam" />
+          <ScalarProperty Name="prStatus" ColumnName="prStatus" />
+          <ScalarProperty Name="status3" ColumnName="status3" />
+          <ScalarProperty Name="status2" ColumnName="status2" />
+          <ScalarProperty Name="status1" ColumnName="status1" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prRegUser" ColumnName="prRegUser" />
+          <ScalarProperty Name="prRegDate" ColumnName="prRegDate" />
+          <ScalarProperty Name="prAct" ColumnName="prAct" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="thIsCancle" ColumnName="thIsCancle" />
+          <ScalarProperty Name="thIsEstelamPaper" ColumnName="thIsEstelamPaper" />
+          <ScalarProperty Name="thMekanizmtolid" ColumnName="thMekanizmtolid" />
+          <ScalarProperty Name="thMekanizmPosh" ColumnName="thMekanizmPosh" />
+          <ScalarProperty Name="thAct" ColumnName="thAct" />
+          <ScalarProperty Name="thModatPosh" ColumnName="thModatPosh" />
+          <ScalarProperty Name="thModatTolid" ColumnName="thModatTolid" />
+          <ScalarProperty Name="thPricePosh" ColumnName="thPricePosh" />
+          <ScalarProperty Name="thPriceTolid" ColumnName="thPriceTolid" />
+          <ScalarProperty Name="thHajmPosh" ColumnName="thHajmPosh" />
+          <ScalarProperty Name="thHajmTolid" ColumnName="thHajmTolid" />
+          <ScalarProperty Name="thYear" ColumnName="thYear" />
+          <ScalarProperty Name="thProject" ColumnName="thProject" />
+          <ScalarProperty Name="thId" ColumnName="thId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwHeyatNezarats">
+      <EntityTypeMapping TypeName="NewMellatModel.vwHeyatNezarat">
+        <MappingFragment StoreEntitySet="vwHeyatNezarat">
+          <ScalarProperty Name="prTemp" ColumnName="prTemp" />
+          <ScalarProperty Name="prIsEstelamMohtavayi" ColumnName="prIsEstelamMohtavayi" />
+          <ScalarProperty Name="irIsAnalyz" ColumnName="irIsAnalyz" />
+          <ScalarProperty Name="thMekanizmtolid" ColumnName="thMekanizmtolid" />
+          <ScalarProperty Name="thMekanizmPosh" ColumnName="thMekanizmPosh" />
+          <ScalarProperty Name="thModatPosh" ColumnName="thModatPosh" />
+          <ScalarProperty Name="thModatTolid" ColumnName="thModatTolid" />
+          <ScalarProperty Name="thHajmPosh" ColumnName="thHajmPosh" />
+          <ScalarProperty Name="thPricePosh" ColumnName="thPricePosh" />
+          <ScalarProperty Name="thPriceTolid" ColumnName="thPriceTolid" />
+          <ScalarProperty Name="thHajmTolid" ColumnName="thHajmTolid" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTemps">
+      <EntityTypeMapping TypeName="NewMellatModel.tbTemp">
+        <MappingFragment StoreEntitySet="tbTemp">
+          <ScalarProperty Name="tmBody" ColumnName="tmBody" />
+          <ScalarProperty Name="tmData" ColumnName="tmData" />
+          <ScalarProperty Name="tmId" ColumnName="tmId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwHeyatNezarat2">
+      <EntityTypeMapping TypeName="NewMellatModel.vwHeyatNezarat2">
+        <MappingFragment StoreEntitySet="vwHeyatNezarat2">
+          <ScalarProperty Name="prIsEstelamMohtavayi" ColumnName="prIsEstelamMohtavayi" />
+          <ScalarProperty Name="irIsAnalyz" ColumnName="irIsAnalyz" />
+          <ScalarProperty Name="thMekanizmtolid" ColumnName="thMekanizmtolid" />
+          <ScalarProperty Name="thMekanizmPosh" ColumnName="thMekanizmPosh" />
+          <ScalarProperty Name="thModatPosh" ColumnName="thModatPosh" />
+          <ScalarProperty Name="thModatTolid" ColumnName="thModatTolid" />
+          <ScalarProperty Name="thHajmPosh" ColumnName="thHajmPosh" />
+          <ScalarProperty Name="thPricePosh" ColumnName="thPricePosh" />
+          <ScalarProperty Name="thPriceTolid" ColumnName="thPriceTolid" />
+          <ScalarProperty Name="thHajmTolid" ColumnName="thHajmTolid" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAccessPages">
+      <EntityTypeMapping TypeName="NewMellatModel.tbAccessPage">
+        <MappingFragment StoreEntitySet="tbAccessPages">
+          <ScalarProperty Name="acUser" ColumnName="acUser" />
+          <ScalarProperty Name="acPageName" ColumnName="acPageName" />
+          <ScalarProperty Name="acId" ColumnName="acId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAdminInPages">
+      <EntityTypeMapping TypeName="NewMellatModel.tbAdminInPage">
+        <MappingFragment StoreEntitySet="tbAdminInPages">
+          <ScalarProperty Name="pgCode" ColumnName="pgCode" />
+          <ScalarProperty Name="pgPageName" ColumnName="pgPageName" />
+          <ScalarProperty Name="pgId" ColumnName="pgId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAdminPremissions">
+      <EntityTypeMapping TypeName="NewMellatModel.tbAdminPremission">
+        <MappingFragment StoreEntitySet="tbAdminPremission">
+          <ScalarProperty Name="prAct" ColumnName="prAct" />
+          <ScalarProperty Name="prName" ColumnName="prName" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAdminProjects">
+      <EntityTypeMapping TypeName="NewMellatModel.tbAdminProject">
+        <MappingFragment StoreEntitySet="tbAdminProjects">
+          <ScalarProperty Name="prType" ColumnName="prType" />
+          <ScalarProperty Name="prCode" ColumnName="prCode" />
+          <ScalarProperty Name="prProject" ColumnName="prProject" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAdmins">
+      <EntityTypeMapping TypeName="NewMellatModel.tbAdmin">
+        <MappingFragment StoreEntitySet="tbAdmins">
+          <ScalarProperty Name="adAct" ColumnName="adAct" />
+          <ScalarProperty Name="adPersonCode" ColumnName="adPersonCode" />
+          <ScalarProperty Name="adId" ColumnName="adId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAminPremissionAccesses">
+      <EntityTypeMapping TypeName="NewMellatModel.tbAminPremissionAccess">
+        <MappingFragment StoreEntitySet="tbAminPremissionAccess">
+          <ScalarProperty Name="acCode" ColumnName="acCode" />
+          <ScalarProperty Name="acAct" ColumnName="acAct" />
+          <ScalarProperty Name="acPage" ColumnName="acPage" />
+          <ScalarProperty Name="acPremission" ColumnName="acPremission" />
+          <ScalarProperty Name="acId" ColumnName="acId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPages">
+      <EntityTypeMapping TypeName="NewMellatModel.tbPage">
+        <MappingFragment StoreEntitySet="tbPages">
+          <ScalarProperty Name="pgTitle" ColumnName="pgTitle" />
+          <ScalarProperty Name="pgId" ColumnName="pgId" />
+          <ScalarProperty Name="pgName" ColumnName="pgName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwServerDates">
+      <EntityTypeMapping TypeName="NewMellatModel.vwServerDate">
+        <MappingFragment StoreEntitySet="vwServerDate">
+          <ScalarProperty Name="serverdate" ColumnName="serverdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavabDashboards">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavabDashboard">
+        <MappingFragment StoreEntitySet="vwMosavabDashboard">
+          <ScalarProperty Name="khJalaseDate" ColumnName="khJalaseDate" />
+          <ScalarProperty Name="khJalaseNumber" ColumnName="khJalaseNumber" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="mosPropozal" ColumnName="mosPropozal" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosType" ColumnName="mosType" />
+          <ScalarProperty Name="mosbody" ColumnName="mosbody" />
+          <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+          <ScalarProperty Name="mosErsalDate" ColumnName="mosErsalDate" />
+          <ScalarProperty Name="mosShenase" ColumnName="mosShenase" />
+          <ScalarProperty Name="mosNumber" ColumnName="mosNumber" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prAct" ColumnName="prAct" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwDashboardAmaliatiSarRedisNashodes">
+      <EntityTypeMapping TypeName="NewMellatModel.vwDashboardAmaliatiSarRedisNashode">
+        <MappingFragment StoreEntitySet="vwDashboardAmaliatiSarRedisNashode">
+          <ScalarProperty Name="khJalaseDate" ColumnName="khJalaseDate" />
+          <ScalarProperty Name="khJalaseNumber" ColumnName="khJalaseNumber" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="mosPropozal" ColumnName="mosPropozal" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosType" ColumnName="mosType" />
+          <ScalarProperty Name="mosbody" ColumnName="mosbody" />
+          <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+          <ScalarProperty Name="mosErsalDate" ColumnName="mosErsalDate" />
+          <ScalarProperty Name="mosShenase" ColumnName="mosShenase" />
+          <ScalarProperty Name="mosNumber" ColumnName="mosNumber" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prAct" ColumnName="prAct" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSooratHesabs">
+      <EntityTypeMapping TypeName="NewMellatModel.tbSooratHesab">
+        <MappingFragment StoreEntitySet="tbSooratHesab">
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="srCheck" ColumnName="srCheck" />
+          <ScalarProperty Name="step13" ColumnName="step13" />
+          <ScalarProperty Name="step12" ColumnName="step12" />
+          <ScalarProperty Name="step11" ColumnName="step11" />
+          <ScalarProperty Name="step10" ColumnName="step10" />
+          <ScalarProperty Name="step9" ColumnName="step9" />
+          <ScalarProperty Name="step8" ColumnName="step8" />
+          <ScalarProperty Name="step7" ColumnName="step7" />
+          <ScalarProperty Name="step6" ColumnName="step6" />
+          <ScalarProperty Name="step5" ColumnName="step5" />
+          <ScalarProperty Name="step4" ColumnName="step4" />
+          <ScalarProperty Name="step3" ColumnName="step3" />
+          <ScalarProperty Name="step2" ColumnName="step2" />
+          <ScalarProperty Name="step1" ColumnName="step1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="BodyPapers" ColumnName="BodyPapers" />
+          <ScalarProperty Name="TarikheErsalMali" ColumnName="TarikheErsalMali" />
+          <ScalarProperty Name="ShenaseErsalMali" ColumnName="ShenaseErsalMali" />
+          <ScalarProperty Name="TarikhePeigiriEstelam" ColumnName="TarikhePeigiriEstelam" />
+          <ScalarProperty Name="shenasePeigiriEstelam" ColumnName="shenasePeigiriEstelam" />
+          <ScalarProperty Name="TarikheErsalMojadad" ColumnName="TarikheErsalMojadad" />
+          <ScalarProperty Name="ShenaseErsalMojadad" ColumnName="ShenaseErsalMojadad" />
+          <ScalarProperty Name="TarikheAnswerSherkatTadarokat" ColumnName="TarikheAnswerSherkatTadarokat" />
+          <ScalarProperty Name="ShenaseAnswerSherkatTadarokat" ColumnName="ShenaseAnswerSherkatTadarokat" />
+          <ScalarProperty Name="TarikheErsalAzTadarokat" ColumnName="TarikheErsalAzTadarokat" />
+          <ScalarProperty Name="ShenaseErsalAzTadarokat" ColumnName="ShenaseErsalAzTadarokat" />
+          <ScalarProperty Name="TarikheOdatTadarokat" ColumnName="TarikheOdatTadarokat" />
+          <ScalarProperty Name="ShenaseOdatTadarokat" ColumnName="ShenaseOdatTadarokat" />
+          <ScalarProperty Name="TarikheErsalTadarokat" ColumnName="TarikheErsalTadarokat" />
+          <ScalarProperty Name="ShenaseErsalTadarokat" ColumnName="ShenaseErsalTadarokat" />
+          <ScalarProperty Name="ElamNazarDaryaftMojaddVahed" ColumnName="ElamNazarDaryaftMojaddVahed" />
+          <ScalarProperty Name="VahedDaryaftMojaddVahed" ColumnName="VahedDaryaftMojaddVahed" />
+          <ScalarProperty Name="ShenaseDaryaftMojaddVahed" ColumnName="ShenaseDaryaftMojaddVahed" />
+          <ScalarProperty Name="EstelamMojadadVahedTarikh" ColumnName="EstelamMojadadVahedTarikh" />
+          <ScalarProperty Name="EstelamMojadadVahed" ColumnName="EstelamMojadadVahed" />
+          <ScalarProperty Name="DateDaryaftAnswerSHerkat" ColumnName="DateDaryaftAnswerSHerkat" />
+          <ScalarProperty Name="ShenaseDaryaftAnswerSHerkat" ColumnName="ShenaseDaryaftAnswerSHerkat" />
+          <ScalarProperty Name="TarikheErsalBeSherkat" ColumnName="TarikheErsalBeSherkat" />
+          <ScalarProperty Name="ShenaseErsalBeSherkat" ColumnName="ShenaseErsalBeSherkat" />
+          <ScalarProperty Name="TarikheSooratJalase" ColumnName="TarikheSooratJalase" />
+          <ScalarProperty Name="SooratJalase" ColumnName="SooratJalase" />
+          <ScalarProperty Name="ElamNazarDaryaftAnswerNazer2" ColumnName="ElamNazarDaryaftAnswerNazer2" />
+          <ScalarProperty Name="TarikheDaryaftAnswerNazer2" ColumnName="TarikheDaryaftAnswerNazer2" />
+          <ScalarProperty Name="ShenaseDaryaftAnswerNazer2" ColumnName="ShenaseDaryaftAnswerNazer2" />
+          <ScalarProperty Name="ElamNazarDaryaftAnswerNazer1" ColumnName="ElamNazarDaryaftAnswerNazer1" />
+          <ScalarProperty Name="TarikheDaryaftAnswerNazer1" ColumnName="TarikheDaryaftAnswerNazer1" />
+          <ScalarProperty Name="ShenaseDaryaftAnswerNazer1" ColumnName="ShenaseDaryaftAnswerNazer1" />
+          <ScalarProperty Name="MoedEstelamVahed" ColumnName="MoedEstelamVahed" />
+          <ScalarProperty Name="TarikheEstelamVahed" ColumnName="TarikheEstelamVahed" />
+          <ScalarProperty Name="ShenaseEstelamVahed" ColumnName="ShenaseEstelamVahed" />
+          <ScalarProperty Name="Vosool" ColumnName="Vosool" />
+          <ScalarProperty Name="ShenaseSoorathesab" ColumnName="ShenaseSoorathesab" />
+          <ScalarProperty Name="SomareSoorathesab" ColumnName="SomareSoorathesab" />
+          <ScalarProperty Name="YearSooratHesab" ColumnName="YearSooratHesab" />
+          <ScalarProperty Name="TarikhNameSooratHesab" ColumnName="TarikhNameSooratHesab" />
+          <ScalarProperty Name="ShenaseNameSooratHesab" ColumnName="ShenaseNameSooratHesab" />
+          <ScalarProperty Name="ElamNazarAnswerMojadadNazer2" ColumnName="ElamNazarAnswerMojadadNazer2" />
+          <ScalarProperty Name="TarikheAnswerMojadadNazer2" ColumnName="TarikheAnswerMojadadNazer2" />
+          <ScalarProperty Name="ShenaseAnswerMojadadNazer2" ColumnName="ShenaseAnswerMojadadNazer2" />
+          <ScalarProperty Name="ElamNazarAnswerMojadadNazer1" ColumnName="ElamNazarAnswerMojadadNazer1" />
+          <ScalarProperty Name="TarikheAnswerMojadadNazer1" ColumnName="TarikheAnswerMojadadNazer1" />
+          <ScalarProperty Name="ShenaseAnswerMojadadNazer1" ColumnName="ShenaseAnswerMojadadNazer1" />
+          <ScalarProperty Name="MoedZamani5" ColumnName="MoedZamani5" />
+          <ScalarProperty Name="TarikheEstelamMojadadNazer2" ColumnName="TarikheEstelamMojadadNazer2" />
+          <ScalarProperty Name="ShenaseEstelamMojadadNazer2" ColumnName="ShenaseEstelamMojadadNazer2" />
+          <ScalarProperty Name="MoedZamani4" ColumnName="MoedZamani4" />
+          <ScalarProperty Name="TarikheEstelamMojadadNazer1" ColumnName="TarikheEstelamMojadadNazer1" />
+          <ScalarProperty Name="ShenaseEstelamMojadadNazer1" ColumnName="ShenaseEstelamMojadadNazer1" />
+          <ScalarProperty Name="TarikheDaryaftAnswerPishnevis" ColumnName="TarikheDaryaftAnswerPishnevis" />
+          <ScalarProperty Name="ShenaseDaryaftAnswerPishnevis" ColumnName="ShenaseDaryaftAnswerPishnevis" />
+          <ScalarProperty Name="MoedZamani3" ColumnName="MoedZamani3" />
+          <ScalarProperty Name="TarikheErsalAdameTaeedNazer" ColumnName="TarikheErsalAdameTaeedNazer" />
+          <ScalarProperty Name="ShenaseErsalAdameTaeedNazer" ColumnName="ShenaseErsalAdameTaeedNazer" />
+          <ScalarProperty Name="TarikheErsalTaeedNazer" ColumnName="TarikheErsalTaeedNazer" />
+          <ScalarProperty Name="ShenaseErsalTaeedNazer" ColumnName="ShenaseErsalTaeedNazer" />
+          <ScalarProperty Name="ElamNazarAnswerNazerPishnevis2" ColumnName="ElamNazarAnswerNazerPishnevis2" />
+          <ScalarProperty Name="TarikheAnswerNazerPishnevis2" ColumnName="TarikheAnswerNazerPishnevis2" />
+          <ScalarProperty Name="ShenaseAnswerNazerPishnevis2" ColumnName="ShenaseAnswerNazerPishnevis2" />
+          <ScalarProperty Name="ElamNazarAnswerNazerPishnevis" ColumnName="ElamNazarAnswerNazerPishnevis" />
+          <ScalarProperty Name="TarikheAnswerNazerPishnevis" ColumnName="TarikheAnswerNazerPishnevis" />
+          <ScalarProperty Name="ShenaseAnswerNazerPishnevis" ColumnName="ShenaseAnswerNazerPishnevis" />
+          <ScalarProperty Name="MoedZamani2" ColumnName="MoedZamani2" />
+          <ScalarProperty Name="TarikheEstelamPishSoorathesabNazer2" ColumnName="TarikheEstelamPishSoorathesabNazer2" />
+          <ScalarProperty Name="ShenaseEstelamPishSoorathesabNazer2" ColumnName="ShenaseEstelamPishSoorathesabNazer2" />
+          <ScalarProperty Name="MoedZamani1" ColumnName="MoedZamani1" />
+          <ScalarProperty Name="TarikheEstelamPishSoorathesabNazer1" ColumnName="TarikheEstelamPishSoorathesabNazer1" />
+          <ScalarProperty Name="ShenaseEstelamPishSoorathesabNazer1" ColumnName="ShenaseEstelamPishSoorathesabNazer1" />
+          <ScalarProperty Name="ShenaseNamePishnevisSoorathesab" ColumnName="ShenaseNamePishnevisSoorathesab" />
+          <ScalarProperty Name="TarikheNamePishnevisSoorathesab" ColumnName="TarikheNamePishnevisSoorathesab" />
+          <ScalarProperty Name="ShomareNamePishnevisSoorathesab" ColumnName="ShomareNamePishnevisSoorathesab" />
+          <ScalarProperty Name="DoreErsali" ColumnName="DoreErsali" />
+          <ScalarProperty Name="SoorathesbPrice" ColumnName="SoorathesbPrice" />
+          <ScalarProperty Name="Vaziat" ColumnName="Vaziat" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="MoedTahvili" ColumnName="MoedTahvili" />
+          <ScalarProperty Name="OnvanTahvili" ColumnName="OnvanTahvili" />
+          <ScalarProperty Name="ElhaghieType" ColumnName="ElhaghieType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Gharardad" ColumnName="Gharardad" />
+          <ScalarProperty Name="GharardadEnd" ColumnName="GharardadEnd" />
+          <ScalarProperty Name="GharardadStart" ColumnName="GharardadStart" />
+          <ScalarProperty Name="GharardadType" ColumnName="GharardadType" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Nazer2" ColumnName="Nazer2" />
+          <ScalarProperty Name="Nazer1" ColumnName="Nazer1" />
+          <ScalarProperty Name="ProjectGharardad" ColumnName="ProjectGharardad" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSooratPishNevis">
+      <EntityTypeMapping TypeName="NewMellatModel.tbSooratPishNevi">
+        <MappingFragment StoreEntitySet="tbSooratPishNevis">
+          <ScalarProperty Name="pishIsSabt" ColumnName="pishIsSabt" />
+          <ScalarProperty Name="pishBody" ColumnName="pishBody" />
+          <ScalarProperty Name="pishPriceArzeshAfzoode" ColumnName="pishPriceArzeshAfzoode" />
+          <ScalarProperty Name="pishFinalPrice" ColumnName="pishFinalPrice" />
+          <ScalarProperty Name="pishIsNazer" ColumnName="pishIsNazer" />
+          <ScalarProperty Name="pishType" ColumnName="pishType" />
+          <ScalarProperty Name="pishDore" ColumnName="pishDore" />
+          <ScalarProperty Name="pishHours" ColumnName="pishHours" />
+          <ScalarProperty Name="pishSooratHesab" ColumnName="pishSooratHesab" />
+          <ScalarProperty Name="pishPricePlus" ColumnName="pishPricePlus" />
+          <ScalarProperty Name="pishPrice" ColumnName="pishPrice" />
+          <ScalarProperty Name="pishAct" ColumnName="pishAct" />
+          <ScalarProperty Name="pishProject" ColumnName="pishProject" />
+          <ScalarProperty Name="pishId" ColumnName="pishId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRevals">
+      <EntityTypeMapping TypeName="NewMellatModel.tbReval">
+        <MappingFragment StoreEntitySet="tbReval">
+          <ScalarProperty Name="reSanadType" ColumnName="reSanadType" />
+          <ScalarProperty Name="reMohlatZamani" ColumnName="reMohlatZamani" />
+          <ScalarProperty Name="reDatePropozal" ColumnName="reDatePropozal" />
+          <ScalarProperty Name="reDateSRS" ColumnName="reDateSRS" />
+          <ScalarProperty Name="reOlaviat" ColumnName="reOlaviat" />
+          <ScalarProperty Name="reSanadNumber" ColumnName="reSanadNumber" />
+          <ScalarProperty Name="reVahed" ColumnName="reVahed" />
+          <ScalarProperty Name="reProject" ColumnName="reProject" />
+          <ScalarProperty Name="reAct" ColumnName="reAct" />
+          <ScalarProperty Name="reType" ColumnName="reType" />
+          <ScalarProperty Name="reId" ColumnName="reId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavab2">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavab2">
+        <MappingFragment StoreEntitySet="vwMosavab2">
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavab4">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavab4">
+        <MappingFragment StoreEntitySet="vwMosavab4">
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+          <ScalarProperty Name="mosid" ColumnName="mosid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavab5">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavab5">
+        <MappingFragment StoreEntitySet="vwMosavab5">
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavab6">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavab6">
+        <MappingFragment StoreEntitySet="vwMosavab6">
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavab7">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavab7">
+        <MappingFragment StoreEntitySet="vwMosavab7">
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCharts">
+      <EntityTypeMapping TypeName="NewMellatModel.tbChart">
+        <MappingFragment StoreEntitySet="tbChart">
+          <ScalarProperty Name="chBody" ColumnName="chBody" />
+          <ScalarProperty Name="chYear" ColumnName="chYear" />
+          <ScalarProperty Name="chType" ColumnName="chType" />
+          <ScalarProperty Name="chAct" ColumnName="chAct" />
+          <ScalarProperty Name="chValue" ColumnName="chValue" />
+          <ScalarProperty Name="chTitle" ColumnName="chTitle" />
+          <ScalarProperty Name="chId" ColumnName="chId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPaperProjects">
+      <EntityTypeMapping TypeName="NewMellatModel.tbPaperProject">
+        <MappingFragment StoreEntitySet="tbPaperProjects">
+          <ScalarProperty Name="paFilename" ColumnName="paFilename" />
+          <ScalarProperty Name="paType" ColumnName="paType" />
+          <ScalarProperty Name="paNumber" ColumnName="paNumber" />
+          <ScalarProperty Name="paDate" ColumnName="paDate" />
+          <ScalarProperty Name="paFile" ColumnName="paFile" />
+          <ScalarProperty Name="paAct" ColumnName="paAct" />
+          <ScalarProperty Name="paProject" ColumnName="paProject" />
+          <ScalarProperty Name="paId" ColumnName="paId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbIndex1">
+      <EntityTypeMapping TypeName="NewMellatModel.tbIndex1">
+        <MappingFragment StoreEntitySet="tbIndex1">
+          <ScalarProperty Name="inFileName" ColumnName="inFileName" />
+          <ScalarProperty Name="inId" ColumnName="inId" />
+          <ScalarProperty Name="inProject" ColumnName="inProject" />
+          <ScalarProperty Name="inRegisterDate" ColumnName="inRegisterDate" />
+          <ScalarProperty Name="inAct" ColumnName="inAct" />
+          <ScalarProperty Name="inFile" ColumnName="inFile" />
+          <ScalarProperty Name="inTahlil" ColumnName="inTahlil" />
+          <ScalarProperty Name="inFeatures" ColumnName="inFeatures" />
+          <ScalarProperty Name="inBAzeh" ColumnName="inBAzeh" />
+          <ScalarProperty Name="inZinaf" ColumnName="inZinaf" />
+          <ScalarProperty Name="inVaheds" ColumnName="inVaheds" />
+          <ScalarProperty Name="inTeam" ColumnName="inTeam" />
+          <ScalarProperty Name="inHadaf" ColumnName="inHadaf" />
+          <ScalarProperty Name="inMahdodeh" ColumnName="inMahdodeh" />
+          <ScalarProperty Name="inTitle" ColumnName="inTitle" />
+          <ScalarProperty Name="inTell" ColumnName="inTell" />
+          <ScalarProperty Name="inName" ColumnName="inName" />
+          <ScalarProperty Name="inVahedName" ColumnName="inVahedName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbElhaghies">
+      <EntityTypeMapping TypeName="NewMellatModel.tbElhaghie">
+        <MappingFragment StoreEntitySet="tbElhaghie">
+          <ScalarProperty Name="elDate4" ColumnName="elDate4" />
+          <ScalarProperty Name="elDate3" ColumnName="elDate3" />
+          <ScalarProperty Name="elBody2" ColumnName="elBody2" />
+          <ScalarProperty Name="elPrice2" ColumnName="elPrice2" />
+          <ScalarProperty Name="elType" ColumnName="elType" />
+          <ScalarProperty Name="elPrice" ColumnName="elPrice" />
+          <ScalarProperty Name="elDate2" ColumnName="elDate2" />
+          <ScalarProperty Name="elDate1" ColumnName="elDate1" />
+          <ScalarProperty Name="elBody" ColumnName="elBody" />
+          <ScalarProperty Name="elGharardad" ColumnName="elGharardad" />
+          <ScalarProperty Name="elProject" ColumnName="elProject" />
+          <ScalarProperty Name="elId" ColumnName="elId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwGharardadIDs">
+      <EntityTypeMapping TypeName="NewMellatModel.vwGharardadID">
+        <MappingFragment StoreEntitySet="vwGharardadID">
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="isElhaghie" ColumnName="isElhaghie" />
+          <ScalarProperty Name="ghCode" ColumnName="ghCode" />
+          <ScalarProperty Name="ghProject" ColumnName="ghProject" />
+          <ScalarProperty Name="ghId" ColumnName="ghId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbGharardads">
+      <EntityTypeMapping TypeName="NewMellatModel.tbGharardad">
+        <MappingFragment StoreEntitySet="tbGharardad">
+          <ScalarProperty Name="ProposalId" ColumnName="ProposalId" />
+          <ScalarProperty Name="IsElhaghie" ColumnName="IsElhaghie" />
+          <ScalarProperty Name="ghType" ColumnName="ghType" />
+          <ScalarProperty Name="ghPricePosh" ColumnName="ghPricePosh" />
+          <ScalarProperty Name="ghPriceTolid" ColumnName="ghPriceTolid" />
+          <ScalarProperty Name="ghCode" ColumnName="ghCode" />
+          <ScalarProperty Name="ghBody" ColumnName="ghBody" />
+          <ScalarProperty Name="ghProject" ColumnName="ghProject" />
+          <ScalarProperty Name="ghAct" ColumnName="ghAct" />
+          <ScalarProperty Name="ghId" ColumnName="ghId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTarhPishnehadis">
+      <EntityTypeMapping TypeName="NewMellatModel.tbTarhPishnehadi">
+        <MappingFragment StoreEntitySet="tbTarhPishnehadi">
+          <ScalarProperty Name="PriceSecurity" ColumnName="PriceSecurity" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="NezaratMosavab" ColumnName="NezaratMosavab" />
+          <ScalarProperty Name="ElhaghieId" ColumnName="ElhaghieId" />
+          <ScalarProperty Name="gType" ColumnName="gType" />
+          <ScalarProperty Name="gPricePosh" ColumnName="gPricePosh" />
+          <ScalarProperty Name="gPriceTolid" ColumnName="gPriceTolid" />
+          <ScalarProperty Name="thRiskAnswer" ColumnName="thRiskAnswer" />
+          <ScalarProperty Name="thRiskPayamad" ColumnName="thRiskPayamad" />
+          <ScalarProperty Name="thRiskEhtemal" ColumnName="thRiskEhtemal" />
+          <ScalarProperty Name="thRiskDegree" ColumnName="thRiskDegree" />
+          <ScalarProperty Name="thRiskTitle" ColumnName="thRiskTitle" />
+          <ScalarProperty Name="thRiskType" ColumnName="thRiskType" />
+          <ScalarProperty Name="thIsElhaghie" ColumnName="thIsElhaghie" />
+          <ScalarProperty Name="thBody" ColumnName="thBody" />
+          <ScalarProperty Name="thIsEstelamRepeat" ColumnName="thIsEstelamRepeat" />
+          <ScalarProperty Name="thIsCancle" ColumnName="thIsCancle" />
+          <ScalarProperty Name="thIsEstelamPaper" ColumnName="thIsEstelamPaper" />
+          <ScalarProperty Name="thMekanizmtolid" ColumnName="thMekanizmtolid" />
+          <ScalarProperty Name="thMekanizmPosh" ColumnName="thMekanizmPosh" />
+          <ScalarProperty Name="thAct" ColumnName="thAct" />
+          <ScalarProperty Name="thModatPosh" ColumnName="thModatPosh" />
+          <ScalarProperty Name="thModatTolid" ColumnName="thModatTolid" />
+          <ScalarProperty Name="thPricePosh" ColumnName="thPricePosh" />
+          <ScalarProperty Name="thPriceTolid" ColumnName="thPriceTolid" />
+          <ScalarProperty Name="thHajmPosh" ColumnName="thHajmPosh" />
+          <ScalarProperty Name="thHajmTolid" ColumnName="thHajmTolid" />
+          <ScalarProperty Name="thYear" ColumnName="thYear" />
+          <ScalarProperty Name="thProject" ColumnName="thProject" />
+          <ScalarProperty Name="thId" ColumnName="thId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavabDashboardAjams">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavabDashboardAjam">
+        <MappingFragment StoreEntitySet="vwMosavabDashboardAjam">
+          <ScalarProperty Name="infTitle" ColumnName="infTitle" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="khJalaseDate" ColumnName="khJalaseDate" />
+          <ScalarProperty Name="khJalaseNumber" ColumnName="khJalaseNumber" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="mosPropozal" ColumnName="mosPropozal" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosType" ColumnName="mosType" />
+          <ScalarProperty Name="mosbody" ColumnName="mosbody" />
+          <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+          <ScalarProperty Name="mosErsalDate" ColumnName="mosErsalDate" />
+          <ScalarProperty Name="mosShenase" ColumnName="mosShenase" />
+          <ScalarProperty Name="mosNumber" ColumnName="mosNumber" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prAct" ColumnName="prAct" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavabDashboardAmaliatiAnjams">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavabDashboardAmaliatiAnjam">
+        <MappingFragment StoreEntitySet="vwMosavabDashboardAmaliatiAnjam">
+          <ScalarProperty Name="infTitle" ColumnName="infTitle" />
+          <ScalarProperty Name="khJalaseNumber" ColumnName="khJalaseNumber" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+          <ScalarProperty Name="mosbody" ColumnName="mosbody" />
+          <ScalarProperty Name="mosType" ColumnName="mosType" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="mosErsalDate" ColumnName="mosErsalDate" />
+          <ScalarProperty Name="mosPropozal" ColumnName="mosPropozal" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+          <ScalarProperty Name="khProject" ColumnName="khProject" />
+          <ScalarProperty Name="khId" ColumnName="khId" />
+          <ScalarProperty Name="mosAct" ColumnName="mosAct" />
+          <ScalarProperty Name="khAct" ColumnName="khAct" />
+          <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+          <ScalarProperty Name="mosNumber" ColumnName="mosNumber" />
+          <ScalarProperty Name="mosShenase" ColumnName="mosShenase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavabDashboardAmaliatiTakhirs">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavabDashboardAmaliatiTakhir">
+        <MappingFragment StoreEntitySet="vwMosavabDashboardAmaliatiTakhir">
+          <ScalarProperty Name="infTitle" ColumnName="infTitle" />
+          <ScalarProperty Name="khJalaseNumber" ColumnName="khJalaseNumber" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+          <ScalarProperty Name="mosbody" ColumnName="mosbody" />
+          <ScalarProperty Name="mosType" ColumnName="mosType" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="mosErsalDate" ColumnName="mosErsalDate" />
+          <ScalarProperty Name="mosPropozal" ColumnName="mosPropozal" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+          <ScalarProperty Name="khProject" ColumnName="khProject" />
+          <ScalarProperty Name="khId" ColumnName="khId" />
+          <ScalarProperty Name="mosAct" ColumnName="mosAct" />
+          <ScalarProperty Name="khAct" ColumnName="khAct" />
+          <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+          <ScalarProperty Name="mosNumber" ColumnName="mosNumber" />
+          <ScalarProperty Name="mosShenase" ColumnName="mosShenase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavabDashboardTakhirs">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavabDashboardTakhir">
+        <MappingFragment StoreEntitySet="vwMosavabDashboardTakhir">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="infTitle" ColumnName="infTitle" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+          <ScalarProperty Name="prSanadType" ColumnName="prSanadType" />
+          <ScalarProperty Name="khJalaseDate" ColumnName="khJalaseDate" />
+          <ScalarProperty Name="khJalaseNumber" ColumnName="khJalaseNumber" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="mosPropozal" ColumnName="mosPropozal" />
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosType" ColumnName="mosType" />
+          <ScalarProperty Name="mosbody" ColumnName="mosbody" />
+          <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+          <ScalarProperty Name="mosErsalDate" ColumnName="mosErsalDate" />
+          <ScalarProperty Name="mosShenase" ColumnName="mosShenase" />
+          <ScalarProperty Name="mosNumber" ColumnName="mosNumber" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prOlaviat" ColumnName="prOlaviat" />
+          <ScalarProperty Name="prVahed" ColumnName="prVahed" />
+          <ScalarProperty Name="prAct" ColumnName="prAct" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SsoMapUsers">
+      <EntityTypeMapping TypeName="NewMellatModel.SsoMapUser">
+        <MappingFragment StoreEntitySet="SsoMapUser">
+          <ScalarProperty Name="Loginname" ColumnName="Loginname" />
+          <ScalarProperty Name="SsoLogin" ColumnName="SsoLogin" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commissions">
+      <EntityTypeMapping TypeName="NewMellatModel.Commission">
+        <MappingFragment StoreEntitySet="Commission">
+          <ScalarProperty Name="Vaziat" ColumnName="Vaziat" />
+          <ScalarProperty Name="VahedType" ColumnName="VahedType" />
+          <ScalarProperty Name="GharardadType" ColumnName="GharardadType" />
+          <ScalarProperty Name="DurationPosh" ColumnName="DurationPosh" />
+          <ScalarProperty Name="DurationTolid" ColumnName="DurationTolid" />
+          <ScalarProperty Name="PricePosh" ColumnName="PricePosh" />
+          <ScalarProperty Name="PriceTolid" ColumnName="PriceTolid" />
+          <ScalarProperty Name="ProposalId" ColumnName="ProposalId" />
+          <ScalarProperty Name="IsElhaghie" ColumnName="IsElhaghie" />
+          <ScalarProperty Name="JalaseDate" ColumnName="JalaseDate" />
+          <ScalarProperty Name="JalaseNumber" ColumnName="JalaseNumber" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Act" ColumnName="Act" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwMosavab3">
+      <EntityTypeMapping TypeName="NewMellatModel.vwMosavab3">
+        <MappingFragment StoreEntitySet="vwMosavab3">
+          <ScalarProperty Name="mosOlaviat" ColumnName="mosOlaviat" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="mosSRSanswer" ColumnName="mosSRSanswer" />
+          <ScalarProperty Name="mosSRS" ColumnName="mosSRS" />
+          <ScalarProperty Name="mosId" ColumnName="mosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Capacities">
+      <EntityTypeMapping TypeName="NewMellatModel.Capacity">
+        <MappingFragment StoreEntitySet="Capacity">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CapacityValue" ColumnName="CapacityValue" />
+          <ScalarProperty Name="CapacityTypeId" ColumnName="CapacityTypeId" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapacityCompanies">
+      <EntityTypeMapping TypeName="NewMellatModel.CapacityCompany">
+        <MappingFragment StoreEntitySet="CapacityCompany">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectFinalizes">
+      <EntityTypeMapping TypeName="NewMellatModel.ProjectFinalize">
+        <MappingFragment StoreEntitySet="ProjectFinalize">
+          <ScalarProperty Name="Desciption" ColumnName="Desciption" />
+          <ScalarProperty Name="UserCount" ColumnName="UserCount" />
+          <ScalarProperty Name="IsUsing" ColumnName="IsUsing" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUserDepartments">
+      <EntityTypeMapping TypeName="NewMellatModel.tbUserDepartment">
+        <MappingFragment StoreEntitySet="tbUserDepartment">
+          <ScalarProperty Name="departId" ColumnName="departId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

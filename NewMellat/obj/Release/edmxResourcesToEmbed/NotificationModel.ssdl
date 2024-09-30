@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewMellatModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Definition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConditionType" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="PersonType" Type="int" Nullable="false" />
+    <Property Name="Person" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="QueryPerson" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Bahavior" Type="int" Nullable="false" />
+    <Property Name="AutomationTemplateId" Type="int" Nullable="false" />
+    <Property Name="Body" Type="ntext" Nullable="false" />
+    <Property Name="QueryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DefinitionParam">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DefinitionId" Type="int" Nullable="false" />
+    <Property Name="ParameterId" Type="int" Nullable="false" />
+    <Property Name="ParamName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DefinitionId" Type="int" Nullable="false" />
+    <Property Name="Person" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemDate" Type="date" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Body" Type="ntext" />
+    <Property Name="LetterId" Type="int" />
+    <Property Name="VisitedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Query">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="QueryText" Type="ntext" Nullable="false" />
+    <Property Name="DateField" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QueryParameter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParamField" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="QueryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="NewMellatModel1StoreContainer">
+    <EntitySet Name="Definition" EntityType="Self.Definition" Schema="Notification" store:Type="Tables" />
+    <EntitySet Name="DefinitionParam" EntityType="Self.DefinitionParam" Schema="Notification" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="Notification" store:Type="Tables" />
+    <EntitySet Name="Query" EntityType="Self.Query" Schema="Notification" store:Type="Tables" />
+    <EntitySet Name="QueryParameter" EntityType="Self.QueryParameter" Schema="Notification" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

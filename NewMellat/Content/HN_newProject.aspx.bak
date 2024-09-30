@@ -1,0 +1,232 @@
+﻿<%@ page title="" language="C#" masterpagefile="~/Site2.Master" autoeventwireup="true" codebehind="HN_newProject.aspx.cs" inherits="NewMellat.Content.HN_newProject" %>
+
+<%@ register assembly="LavaControl" namespace="LavaControl" tagprefix="cc1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+.nav-item{
+    padding: 13px;
+    color: #646567;
+    font-weight: 500;
+    font-size: 18px;
+}
+/*.nav-link.active{border: solid 2px #DD4B39;
+	border-bottom: none;
+   	 border-top-left-radius: 5px;
+    	border-top-right-radius: 5px;}*/
+
+.nav-tabs{    border-bottom: solid 2px #DD4B39}
+
+#col11,#col12,#col13{
+    width:33.33%
+}
+
+input[title="برای باز کردن تقويم کليک نماييد"] {
+      width: 61px;
+    border: none;
+    margin-top: -55px;
+    
+    left: 0px;
+    position: absolute;
+}
+.wrapper{
+    margin-top: -90px;
+}
+</style>
+</asp:Content>
+<asp:content id="Content2" contentplaceholderid="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="assets/css/form.css" />
+    <link rel="stylesheet" href="assets/fonts/material-icon/css/material-design-iconic-font.min.css" />
+    <script src="../../assets/js/bootstrap.js"></script>
+    <div dir="rtl">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-main-tab" data-toggle="tab" href="#nav-main" role="tab" aria-controls="nav-main" aria-selected="true">عملیات پروژه</a>
+                  <a class="nav-item nav-link active" id="nav-risk-tab" data-toggle="tab" href="#nav-risk" role="tab" aria-controls="nav-risk" aria-selected="true">ریسک</a>
+                <a class="nav-item nav-link" id="nav-team-tab" data-toggle="tab" href="#nav-team" role="tab" aria-controls="nav-team" aria-selected="false">تیم پروژه </a>
+                <a class="nav-item nav-link" id="nav-doc-tab" data-toggle="tab" href="#nav-doc" role="tab" aria-controls="nav-doc" aria-selected="false">تاییده سند</a>
+                <a class="nav-item nav-link" id="nav-detail1-tab" data-toggle="tab" href="#nav-detail1" role="tab" aria-controls="nav-detail1" aria-selected="false">جزئیات طرح</a>
+                <a class="nav-item nav-link" id="nav-detail2-tab" data-toggle="tab" href="#nav-detail2" role="tab" aria-controls="nav-detail2" aria-selected="false">جرئیات درخواست</a>
+                <a class="nav-item nav-link" id="nav-corr-tab" data-toggle="tab" href="#nav-corr" role="tab" aria-controls="nav-corr" aria-selected="false">همپوشانی</a>
+                <a class="nav-item nav-link" id="nav-benefit-tab" data-toggle="tab" href="#nav-benefit" role="tab" aria-controls="nav-benefit" aria-selected="false">عواید</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-main" role="tabpanel" aria-labelledby="nav-main-tab">
+                <div class="main">
+                    <div class="container">
+                        <div class="signup-content">
+
+                            <div class="signup-form">
+                                <form method="POST" class="register-form" id="register-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="address">عنوان پروژه :</label>                                        
+                                            <asp:TextBox runat="server" ID="prTitle"></asp:TextBox>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="state">نوع درخواست :</label>
+                                            <div class="form-select">
+                                                <asp:DropDownList runat="server" ID="reqType"  >
+                                                     <asp:ListItem Value="179">تولید محصول جدید</asp:ListItem>
+                                                     <asp:ListItem Value="178">تغییر / بهبود (توسعه نرم افزار )</asp:ListItem>
+                                                     <asp:ListItem Value="2">مشاوره و آموزش</asp:ListItem>
+                                                     <asp:ListItem Value="3">پشتیبانی</asp:ListItem>
+                                                    <asp:ListItem Value="5">خرید</asp:ListItem>                                                
+                                                </asp:DropDownList>
+ 
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">واحد درخواست کننده :</label>
+                                            <div class="form-select">
+                                                <asp:DropDownList runat="server" ID="vahed" DataSourceID="vahedDS" DataTextField="infTitle"     DataValueField="infId"> </asp:DropDownList>
+                                             <asp:SqlDataSource ID="vahedDS" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT prInformation.infId, prInformation.infTitle, tbAdminProjects.prProject, tbAdminProjects.prCode, tbAdminProjects.prType, tbAdminProjects.prId, prInformation.infType FROM prInformation INNER JOIN tbAdminProjects ON prInformation.infId = tbAdminProjects.prProject WHERE (prInformation.infAct = 1) AND (tbAdminProjects.prCode = @prCode) AND (prInformation.infType = 1) And (prType =2)">
+                                            <SelectParameters>
+                                                <asp:Parameter DefaultValue="" Name="prCode" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">ناظر فنی :</label>
+                                            <div class="form-select">
+                                                    <asp:DropDownList runat="server" ID="nazer" > 
+                                                        <asp:ListItem Value="354">اداره کل آمار و فرآوری داده</asp:ListItem>
+                                                        <asp:ListItem Value="19">اداره کل زیر ساخت و نرم افزار</asp:ListItem>
+                                                        <asp:ListItem Value="355">اداره کل امنیت اطلاعات</asp:ListItem>
+                                                        
+                                                    </asp:DropDownList>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="state">نوع پروژه :</label>
+                                            <div class="form-select">
+                                                 <asp:DropDownList runat="server" ID="prType" DataSourceID="prTypeDS" DataTextField="infTitle" DataValueField="infId" ></asp:DropDownList>
+                                                <asp:SqlDataSource ID="prTypeDS" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT * FROM prInformation WHERE (infAct = 1) AND (infType =2)"></asp:SqlDataSource>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="form-group">
+                                            <label for="city">شرکت پیمانکار :</label>
+                                            <div class="form-select">
+                                                <asp:DropDownList runat="server" ID="peymankar" DataSourceID="peymankarDS" DataTextField="infTitle"     DataValueField="infId"> </asp:DropDownList>
+                                             <asp:SqlDataSource ID="peymankarDS" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT prInformation.infId, prInformation.infTitle, tbAdminProjects.prProject, tbAdminProjects.prCode, tbAdminProjects.prType, tbAdminProjects.prId, prInformation.infType FROM prInformation INNER JOIN tbAdminProjects ON prInformation.infId = tbAdminProjects.prProject WHERE (prInformation.infAct = 1) AND (tbAdminProjects.prCode = @prCode) AND (prInformation.infType = 5)">
+                                            <SelectParameters>
+                                                <asp:Parameter DefaultValue="" Name="prCode" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                          <div class="form-group">
+                                            <label for="city">نوع سند :</label>
+                                            <div class="form-select">
+                                                 <asp:DropDownList runat="server" ID="sanadType" DataSourceID="sanadTypeDS" DataTextField="infTitle" DataValueField="infId" ></asp:DropDownList>
+                                                <asp:SqlDataSource ID="sanadTypeDS" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT * FROM prInformation WHERE (infAct = 1) AND (infType =3)"></asp:SqlDataSource>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row " id="row1">
+                                        <div class="form-group" id="col11">
+                                            <label for="city">شناسه نامه صورتجلسه کمیته راهبری :</label>
+                                             <asp:TextBox runat="server" ID="letterShenase1"></asp:TextBox>
+                                        </div>
+                                        <div class="form-group" id="col13">
+                                            <label for="city">شماره قرارداد قبلی :</label>
+                                               <asp:TextBox runat="server" ID="prevContractNo"></asp:TextBox>
+                                        </div>
+                                        <div class="form-group" id="col12">
+                                            <label for="city">تاریخ نامه صورتجلسه کمیته راهبری :</label>
+                                            <%--  <asp:TextBox runat="server" ID="letterDate"></asp:TextBox>--%>
+                                             <cc1:PersianCalendar ID="letterDate1" runat="server" TabIndex="9" Width="88%" BorderColor="#F8DF8E"></cc1:PersianCalendar>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="state">اولویت :</label>
+                                            <div class="form-select">
+                                               <asp:DropDownList runat="server" ID="olaviat" DataSourceID="olaviatTypeDS" DataTextField="infTitle" DataValueField="infId" ></asp:DropDownList>
+                                                <asp:SqlDataSource ID="olaviatTypeDS" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT * FROM prInformation WHERE (infAct = 1) AND (infType =4)"></asp:SqlDataSource>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">سرویس مرتبط :</label>
+                                            <div class="form-select">
+                                                 <asp:DropDownList runat="server" ID="ServiceCatalog" DataSourceID="ServiceCatalogDS" DataTextField="Description" DataValueField="ServiceId" ></asp:DropDownList>
+                                                <asp:SqlDataSource ID="ServiceCatalogDS" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT ServiceId, Description FROM ServiceCatalog"></asp:SqlDataSource>
+                                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"> </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="city">شناسه نامه :</label>
+                                             <asp:TextBox runat="server" ID="letterShenase"></asp:TextBox>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">شماره نامه :</label>
+                                               <asp:TextBox runat="server" ID="letterNo"></asp:TextBox>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">تاریخ نامه :</label>
+                                            <%--  <asp:TextBox runat="server" ID="letterDate"></asp:TextBox>--%>
+                                             <cc1:PersianCalendar ID="letterDate" runat="server" TabIndex="9" Width="88%" BorderColor="#F8DF8E"></cc1:PersianCalendar>
+                                        </div>
+                                    </div>
+                                    <div class="form-submit">
+                                        <input type="button" value="لغو" class="submit" id="close" />
+                                        <input type="button" value="ثبت" class="submit" id="level1" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-team" role="tabpanel" aria-labelledby="nav-team-tab">team</div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#row1').hide();
+            $('#col11').hide();
+            $('#col12').hide();
+            $('#col13').hide();
+            $('#ContentPlaceHolder1_sanadType').change(function () {
+                val = $(this).val();
+                $('#row1').hide();
+                $('#col11').hide();
+                $('#col12').hide();
+                $('#col13').hide();
+
+                if (val == 413) {
+                    $('#row1').show();
+                    $('#col13').show();
+                }
+                else if (val == 414) {
+                    $('#row1').show();
+                    $('#col11').show();
+                    $('#col12').show();
+                }
+                
+            })
+        })
+    </script>
+</asp:content>

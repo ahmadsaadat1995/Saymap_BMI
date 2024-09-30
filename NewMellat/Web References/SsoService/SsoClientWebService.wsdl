@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUsernameByTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="wsPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsernameByTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsernameByTicketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckIsOnline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="wsPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckIsOnlineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckIsOnlineResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUsernameByTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsernameByTicket" />
+  </wsdl:message>
+  <wsdl:message name="GetUsernameByTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsernameByTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckIsOnlineSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckIsOnline" />
+  </wsdl:message>
+  <wsdl:message name="CheckIsOnlineSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckIsOnlineResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SsoClientWebServiceSoap">
+    <wsdl:operation name="GetUsernameByTicket">
+      <wsdl:input message="tns:GetUsernameByTicketSoapIn" />
+      <wsdl:output message="tns:GetUsernameByTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsOnline">
+      <wsdl:input message="tns:CheckIsOnlineSoapIn" />
+      <wsdl:output message="tns:CheckIsOnlineSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SsoClientWebServiceSoap" type="tns:SsoClientWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsernameByTicket">
+      <soap:operation soapAction="http://tempuri.org/GetUsernameByTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsOnline">
+      <soap:operation soapAction="http://tempuri.org/CheckIsOnline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SsoClientWebServiceSoap12" type="tns:SsoClientWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsernameByTicket">
+      <soap12:operation soapAction="http://tempuri.org/GetUsernameByTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsOnline">
+      <soap12:operation soapAction="http://tempuri.org/CheckIsOnline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SsoClientWebService">
+    <wsdl:port name="SsoClientWebServiceSoap" binding="tns:SsoClientWebServiceSoap">
+      <soap:address location="http://webservice.login.bm/WebService/sso/SsoClientWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SsoClientWebServiceSoap12" binding="tns:SsoClientWebServiceSoap12">
+      <soap12:address location="http://webservice.login.bm/WebService/sso/SsoClientWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

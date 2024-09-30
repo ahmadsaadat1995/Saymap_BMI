@@ -1,0 +1,96 @@
+﻿@font-face {
+    font-family: 'byekan';
+    src: url('../fonts/WebYekan.eot');
+    src: url('../fonts/WebYekan.eot?#iefix') format('embedded-opentype'), url('../fonts/WebYekan.woff') format('woff'), url('../fonts/WebYekan.ttf') format('truetype'), url('../fonts/WebYekan.svg#WebYekan') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0600–06FF;
+}
+
+@font-face {
+    font-family: "BBCNassim";
+    src: url("../fonts/bbc-nassim-regular.eot");
+    src: url("../fonts/bbc-nassim-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.kadrImage {
+    border: 1px dotted white;
+    background-color: #F5F5F5;
+    height: 75px;
+    padding: 2px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    font-family: "b yekan", tahoma;
+    font-size: 13px;
+    color: #666666;
+}
+
+
+@font-face {
+    font-family: 'bmitra';
+    src: url('../fonts/BMitra.eot?#') format('eot'), /* IE6–8 */
+    url('../fonts/BMitra.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/BMitra.ttf') format('truetype'); /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+body {
+    /*background-image: url('/Content/images/header_bg.jpg');*/
+     margin: 0px;
+}
+
+.RightColumn {
+    font-family: "b yekan";
+    font-size: 16px;
+    color: #444444;
+    text-decoration: none;
+    font-style: normal;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 2px;
+    width: 150px;
+    height: 35px;
+}
+
+
+.RightColumn2 {
+    font-family: "b yekan";
+    font-size: 14px;
+    color: #8b4513;
+    text-decoration: none;
+    font-style: normal;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 2px;
+    width: 150px;
+    height: 35px;
+}
+
+.LeftColumn {
+    font-family: "b yekan";
+    font-size: 14px;
+    color: #444444;
+    text-decoration: none;
+    font-style: normal;
+    vertical-align: middle;
+    text-align: right;
+    padding-left: 2px;
+    width: 200px;
+    height: 35px;
+}
+.FontStyle1 {
+    font-family: "b yekan";
+    font-size: 14px;
+    color: #575757;
+    text-decoration: none;
+}
+.FontStyle2 {
+    font-family: "b yekan";
+    font-size: 12px;
+    color: #666666;
+    text-decoration: none;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="489943a3-79ba-4e60-af30-5fcaf682a339" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.22.29.209/mellat_ws_final/prs/prs.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PRS.xsd" MetadataType="Schema" ID="c854957b-a225-4544-b148-9c2b7e41aea3" SourceId="1" SourceUrl="http://074-002-001-203.hq.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd1" />
+    <MetadataFile FileName="PRS1.xsd" MetadataType="Schema" ID="0987f7d6-eb9d-4870-bcc8-1b5c60ff243d" SourceId="1" SourceUrl="http://074-002-001-203.hq.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd0" />
+    <MetadataFile FileName="PRS2.xsd" MetadataType="Schema" ID="140c5a24-88d4-4ae1-93f3-274128aa8bd9" SourceId="1" SourceUrl="http://074-002-001-203.hq.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd2" />
+    <MetadataFile FileName="PRS3.xsd" MetadataType="Schema" ID="70924324-b6f6-4afa-8448-437fc9681d05" SourceId="1" SourceUrl="http://074-002-001-203.hq.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd3" />
+    <MetadataFile FileName="PRS4.xsd" MetadataType="Schema" ID="91db23e4-6d1a-4dc0-b9c7-e75af5941d1c" SourceId="1" SourceUrl="http://074-002-001-203.hq.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd4" />
+    <MetadataFile FileName="PRS.wsdl" MetadataType="Wsdl" ID="16236eb0-e8f8-45c8-9408-69f16e6992ca" SourceId="1" SourceUrl="http://172.22.29.209/mellat_ws_final/prs/prs.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

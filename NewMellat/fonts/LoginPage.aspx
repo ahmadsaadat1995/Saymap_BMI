@@ -1,0 +1,38 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="NewMellat.LoginPage" %>
+
+<%@ Register assembly="DevExpress.Web.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        body {
+            background-image: url('Content/images/bg.jpg');
+        }
+    </style>
+</head><body style="margin: 0px;background-image: url(Content/images/bg.jpg)">
+    <form id="form1" runat="server">
+        <div align="center">
+    <div style="width: 1150px; height: 700px;margin: 0px; background-image: url('Content/images/mellatLogin.jpg')">
+    
+        <div style="height: 425px">
+            <div style="padding-top: 235px">
+                <asp:TextBox ID="txtUserName" runat="server" BackColor="Transparent" BorderStyle="None" BorderWidth="0px" Font-Bold="True" ForeColor="White" Height="30px" Width="240px"></asp:TextBox>
+            </div>
+            <div style="padding-top: 60px">
+                <asp:TextBox ID="txtPass" runat="server" BackColor="Transparent" BorderStyle="None" BorderWidth="0px" Font-Bold="True" ForeColor="White" Height="30px" TextMode="Password" Width="240px"></asp:TextBox>
+            </div>
+            <div align="center" style="padding-top: 19px">
+                <asp:Label ID="Label1" runat="server" Font-Names="tahoma" Font-Size="12px" ForeColor="#FFD291"></asp:Label>
+            </div>
+        </div>
+        <div align="center" style="padding-right: 160px">
+            <asp:ImageButton ID="ImageButton1" runat="server" Height="25px" ImageUrl="~/Content/images/bt.gif" OnClick="ImageButton1_Click" Width="90px" />
+        </div>
+    
+    </div></div>
+    </form>
+</body>
+</html>

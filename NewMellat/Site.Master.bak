@@ -1,0 +1,434 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="NewMellat.Site" %>
+
+<%@ Register Assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <style type="text/css">
+       .dxnbLite .dxnb-header.dxnb-header-left, .dxnbLite .dxnb-headerCollapsed.dxnb-header-left, .dxnbLite .dxnb-rtlHeader {
+            background-image: url('images/DXR.axd.gif') ; 
+            color: #FFFFFF;
+            /*background: #D45582 ;*/
+            border: 1px Solid #8A0A37;
+            margin: 0;
+            padding: 4px 4px 4px 8px;
+            white-space: nowrap;
+        }
+    </style>
+
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Content/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-position: center; background-image: url('/Content/images/header_bg.jpg'); background-repeat: repeat; height: 102px;" align="center">
+
+         
+
+            <div align="right">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td align="left" valign="top" width="35%">
+                            <div align="right">
+                                <table align="left" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="right" style="font-family: 'b yekan'; font-size: 16px; color: #FFFFFF; padding-right: 1px;" width="200">
+                                            <asp:Label ID="lbDate" runat="server" CssClass="kadrImage" Height="20px" Width="150px"></asp:Label>
+                                        </td>
+                                        <td align="left" height="35" style="font-family: 'b yekan'; font-size: 16px; color: #FFFFFF" width="100">
+                                            <asp:Label ID="Label2" runat="server" Text=":امروز"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" height="60" style="font-family: 'b yekan'; font-size: 16px; color: #FFFFFF;" valign="bottom" width="200">
+                                            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Content/images/icons/Register-icon.png" PostBackUrl="~/Content/PageChangePwd.aspx" ToolTip="تغییر رمز عبور" />
+                                        </td>
+                                        <td align="left" height="35" style="font-family: 'b yekan'; font-size: 16px; color: #FFFFFF; padding-left: 5px;" valign="bottom" width="100">
+                                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Content/images/icons/logout-icon.png" OnClick="ImageButton1_Click" ToolTip="خروج از سیستم" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td align="center" valign="top" width="30%">
+
+         
+
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Content/images/logo-area-bg.jpg" />
+
+                        </td>
+                        <td align="right" valign="top" width="35%">
+                            <div align="right">
+                                <table align="right" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="right" style="font-family: 'b yekan'; font-size: 16px; color: #FFFFFF" width="200">
+                                            <asp:Label ID="lbUserName" runat="server" CssClass="kadrImage" Height="20px" Text="مهمان" Width="150px"></asp:Label>
+                                        </td>
+                                        <td align="left" height="35" style="font-family: 'b yekan'; font-size: 16px; color: #FFFFFF" width="100">
+                                            <asp:Label ID="Label1" runat="server" Text=":نام کاربری"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" style="font-family: 'b yekan'; font-size: 16px; color: #FFFFFF" width="200">&nbsp;</td>
+                                        <td align="left" height="35" style="font-family: 'b yekan'; font-size: 16px; color: #FFFFFF" width="100">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <div>
+   <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+
+                <telerik:RadSkinManager ID="RadSkinManager1" Runat="server">
+                </telerik:RadSkinManager>
+            <div>
+                <table align="center" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td style="padding: 6px" valign="top">
+                            <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" Font-Names="bbcnassim" Font-Size="16px" RightToLeft="True" Theme="SoftOrange" Width="100%">
+                                <PanelCollection>
+                                    <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                                        <div dir="ltr">
+                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                <div>
+                                                </div>
+                                                <div>
+                                                </div>
+                                            </asp:ContentPlaceHolder>
+                                        </div>
+                                    </dx:PanelContent>
+                                </PanelCollection>
+                            </dx:ASPxRoundPanel>
+                        </td>
+                        <td style="padding: 6px 6px 6px 0px" valign="top" width="250">
+                            <dx:ASPxNavBar ID="ASPxNavBar1" runat="server" Font-Bold="False" Font-Names="B Yekan" Font-Size="13px" OnItemClick="ASPxNavBar1_ItemClick" RightToLeft="True" Theme="Default" Width="250px" EnableTheming="True" AutoCollapse="True" EnableAnimation="True">
+                                <Groups>
+                                    <dx:NavBarGroup Text="مدیریت درخواست ها" Expanded="False">
+                                        <Items>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageNewProject.aspx" Text="ثبت درخواست جدید">
+                                                <Image Url="~/Content/images/icons/Actions-tab-new-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageProjectList.aspx" Text="لیست درخواست ها">
+                                                <Image Url="~/Content/images/icons/folder-documents-icon24.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Text="ارزش گذاری طرح ها و ابلاغ مصوبات" Expanded="False">
+                                        <Items>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageEstelamVahed.aspx" Text="استعلام سند چشم انداز کسب و کار">
+                                                <Image Url="~/Content/images/icons/Mimetypes-document-seal-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageKhobregan.aspx" Text="طرح در جلسه خبرگان">
+                                                <Image Url="~/Content/images/icons/Users-icon2.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageReval.aspx" Text="روال اجرایی">
+                                                <Image Url="~/Content/images/icons/edit-validated-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/pageMosavabat.aspx" Text="مصوبات خبرگان">
+                                                <Image Url="~/Content/images/icons/check-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Text="طرح های پیشنهادی و نظارت بر پروژه ها" Expanded="False">
+                                        <Items>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PagetarhPishnehadi.aspx" Text="تعریف طرح پیشنهادی">
+                                                <Image Url="~/Content/images/icons/Mimetypes-document-seal-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageElhaghNew.aspx" Text="ثبت الحاقیه ">
+                                                <Image IconID="chart_addchartpane_16x16">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageEstelamMohtavayi.aspx" Text="استعلام محتوایی و قیمتی طرح پیشنهادی ">
+                                                <Image Url="~/Content/images/icons/image-edit-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Text="طرح در جلسه هیات نظارت و قرارداد">
+                                        <Items>
+                                            <dx:NavBarItem Text=" طرح در جلسه هیات نظارت" NavigateUrl="~/Content/PageHeyatNezarat.aspx">
+                                                <Image Url="~/Content/images/icons/file-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageGharardad.aspx" Text="فرآیند انعقاد قرارداد">
+                                                <Image Url="~/Content/images/icons/wood-folder-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Text="اطلاعات پایه" Visible="False" Expanded="False">
+                                        <Items>
+                                            <dx:NavBarItem NavigateUrl="~/Content/SettingInfo.aspx" Text="ویرایش عناوین">
+                                                <Image Url="~/Content/images/icons/edit-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                        <ContentTemplate>
+                                            <asp:Button ID="Button1" runat="server" Text="Button" />
+                                        </ContentTemplate>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Text="صورتحساب" Expanded="False">
+                                        <Items>
+                                            <dx:NavBarItem>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                        <ContentTemplate>
+                                            <dx:ASPxMenu ID="ASPxMenu1" runat="server" EnableTheming="True" Orientation="Vertical" RightToLeft="True" Theme="SoftOrange">
+                                                <Items>
+                                                    <dx:MenuItem Text="پیش نویس صورت حساب">
+                                                        <Items>
+                                                            <dx:MenuItem Text="ثبت" NavigateUrl="~/Content/PageSooratInsert.aspx?type=1">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem Text="صدور استعلام / استعلام مجدد" NavigateUrl="~/Content/PageSooratEstelam.aspx?type=1">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem NavigateUrl="~/Content/PageSooratNazerAnswer.aspx" Text="پاسخ ناظر">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem NavigateUrl="~/Content/PageSooratErsalSHerkat.aspx" Text="ارسال به شرکت">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem NavigateUrl="~/Content/PageSooratSherkatAnswer.aspx" Text="پاسخ شرکت">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem Text="ارسال به شرکت جهت دریافت صورتحساب" NavigateUrl="~/Content/PageSooratAnswers.aspx" Visible="False">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem NavigateUrl="~/Content/PageSooratAnswers.aspx" Text="ارسال به تدارکات ">
+                                                            </dx:MenuItem>
+                                                        </Items>
+                                                    </dx:MenuItem>
+                                                    <dx:MenuItem Text="صدور صورتحساب">
+                                                        <Items>
+                                                            <dx:MenuItem Text="ثبت صورتحساب" NavigateUrl="~/Content/PageSooratNew.aspx">
+                                                            </dx:MenuItem>
+                                                        </Items>
+                                                    </dx:MenuItem>
+                                                    <dx:MenuItem Text="تدارکات و ممیزی">
+                                                        <Items>
+                                                            <dx:MenuItem Text="ارسال به مالی / عودت" NavigateUrl="~/Content/PageSooratMali.aspx">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem NavigateUrl="~/Content/PageSooratPardakht.aspx" Text="تعیین تکلیف عودتی ها">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem Text="بررسی عودت ها" NavigateUrl="~/Content/PageSooratOdats.aspx">
+                                                            </dx:MenuItem>
+                                                        </Items>
+                                                    </dx:MenuItem>
+                                                    <dx:MenuItem Text="پرداخت و مالی">
+                                                        <Items>
+                                                            <dx:MenuItem Text="تایید پرداخت / عودت" NavigateUrl="~/Content/PageTaeefPardakht.aspx">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem Text="تعیین تکلیف عودتی ها" NavigateUrl="~/Content/PageSooratMaliOdats.aspx">
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem NavigateUrl="~/Content/PageSooratOdatsMali.aspx" Text="بررسی عودتی ها و پرداخت">
+                                                            </dx:MenuItem>
+                                                        </Items>
+                                                    </dx:MenuItem>
+                                                    <dx:MenuItem NavigateUrl="~/Content/PageSooratPays.aspx" Text="لیست پرداخت ها">
+                                                    </dx:MenuItem>
+                                                    <dx:MenuItem Text="گزارشات">
+                                                        <Items>
+                                                            <dx:MenuItem NavigateUrl="~/Content/PageSooratList.aspx" Text="گزارش کلی صورتحساب">
+                                                                <Image IconID="content_textbox_16x16">
+                                                                </Image>
+                                                            </dx:MenuItem>
+                                                            <dx:MenuItem NavigateUrl="~/Content/PageSooratFull.aspx" Text="لیست کامل صورتحساب" Visible="False">
+                                                                <Image IconID="alignment_contentarrangeincolums_16x16">
+                                                                </Image>
+                                                            </dx:MenuItem>
+                                                        </Items>
+                                                    </dx:MenuItem>
+                                                </Items>
+                                                <ItemStyle Font-Names="B Yekan" Font-Size="13px" Width="200px" />
+                                                <SubMenuItemStyle Font-Names="B Yekan" Font-Size="13px">
+                                                </SubMenuItemStyle>
+                                            </dx:ASPxMenu>
+                                        </ContentTemplate>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Text="گزارشات" Expanded="False">
+                                        <Items>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportNoEstelam.aspx" Text="گزارش منتظر ثبت استعلام">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportEstelamPending.aspx" Text="گزارش منتظر پاسخ استعلام">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportCancle.aspx" Text="گزارش انصراف از استعلام">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportErsalBeSherkat.aspx" Text="گزارش منتظر پاسخ شرکت">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportTadarokatPending.aspx" Text="گزارش منتظر  تدارکات - آنالیز قیمت">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportKhobreganPending.aspx" Text="گزارش لیست انتظار خبرگان">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportGharardadPishnevis.aspx" Text="گزارش منتظر دریافت پیش نویس قرارداد">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportGharardadEstelamPending.aspx" Text="گزارش منتظر استعلام پیش نویس قرارداد">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportGharardadEstelamAnswerPending.aspx" Text="گزارش منتظر پاسخ استعلام پیش نویس قرارداد">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportGharardadTadarokPending.aspx" Text="گزارش منتظر نامه تدارکات جهت ابلاغ قرارداد">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportGharardadEblaghPening.aspx" Text="گزارش منتظر ابلاغ قرارداد">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportKhobreganEtmam.aspx?type=101" Text="گزارش مصوبات خبرگان اتمام یافته">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportKhobreganEtmam.aspx?type=102" Text="گزارش مصوبات خبرگان ادغام شده">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportKhobreganEtmam.aspx?type=303" Text="گزارش مصوبات خبرگان لغو شده">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportKhobreganMosavab.aspx" Text="گزارش مصوبات خبرگان">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportGharardad.aspx" Text="گزارش قرارداد به تفکیک سال">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportKhobreganRad.aspx" Text="گزارش ردشدگان خبرگان">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageReportFull.aspx" Text="ویرایشگر جامع اطلاعات">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportBuilders.aspx" Text="گزارش ساز جامع">
+                                                <Image IconID="programming_showtestreport_32x32">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Expanded="False" Text="گزارشات مدیریتی">
+                                        <Items>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportDiagram.aspx" Target="_blank" Text="گزارش فرآیند">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem Text="گزارش پروژه ها" NavigateUrl="~/Content/ReportProjectKhobregan.aspx">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/Dashboard.aspx" Text="داشبورد">
+                                                <Image Url="~/Content/images/icons/chart-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem Text="گزارش پایان سال 93" NavigateUrl="~/Content/gozaresh.pptx" Target="_blank">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem Text="گزارش پایان سال 94" NavigateUrl="~/Content/gazaresh94.pptx" Target="_blank">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/gazaresh95.pptx" Target="_blank" Text="گزارش پایان سال 95">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/ReportDiagramr3.aspx" Text="فرم گزارش ساز" Visible="False">
+                                                <Image Url="~/Content/images/icons/product-sales-report-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageDiagram3.aspx" Text="داشبورد مدیریتی" Visible="False">
+                                                <Image Url="~/Content/images/icons/chart-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageDashboardMosavab.aspx" Text="گزارش مصوبات خبرگان" Target="_blank">
+                                                <Image IconID="dashboards_pielabelsdatalabels2_32x32">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageDashboardMosavab2.aspx" Target="_blank" Text="گزارش روال اجرایی">
+                                                <Image IconID="databars_gradientreddatabar_32x32">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageZarfiatReport.aspx" Text="گزارش ظرفیت سنجی" Visible="False">
+                                                <Image IconID="spreadsheet_createfromselection_32x32">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageFinalDashboard.aspx" Text="داشبورد ظرفیت سنجی" Target="_blank">
+                                                <Image IconID="gauges_gaugeshowcaptions_32x32">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                    <dx:NavBarGroup Text="تنظیمات" Expanded="False">
+                                        <Items>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageCreateUser.aspx" Text="مدیریت کاربران">
+                                                <Image IconID="businessobjects_bouser_32x32">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageAdmins.aspx" Text="مدیران سیستم">
+                                                <Image Url="~/Content/images/icons/Gallery-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageAdminPages.aspx" Text="دسترسی به صفحات">
+                                                <Image Url="~/Content/images/icons/Eye-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageAdminPremission.aspx" Text="دسترسی کاربران">
+                                                <Image Url="~/Content/images/icons/Users-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageAdminProject.aspx" Text="دسترسی پروژه ها">
+                                                <Image Url="~/Content/images/icons/pencil-red-icon.png">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                            <dx:NavBarItem NavigateUrl="~/Content/PageInfoSetting.aspx" Text="اطلاعات پایه">
+                                                <Image IconID="chart_chartyaxissettings_32x32">
+                                                </Image>
+                                            </dx:NavBarItem>
+                                        </Items>
+                                    </dx:NavBarGroup>
+                                </Groups>
+                            </dx:ASPxNavBar>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectServer_Reporting_faModelStoreContainer" CdmEntityContainer="ProjectServer_Reporting_faEntities">
+    <EntitySetMapping Name="DimDates">
+      <EntityTypeMapping TypeName="ProjectServer_Reporting_faModel.DimDate">
+        <MappingFragment StoreEntitySet="DimDate">
+          <ScalarProperty Name="IsOneDayBefore_HijriHoliday" ColumnName="IsOneDayBefore_HijriHoliday" />
+          <ScalarProperty Name="IsOneDayBefore_PersianHoliday" ColumnName="IsOneDayBefore_PersianHoliday" />
+          <ScalarProperty Name="IsPersianLeap" ColumnName="IsPersianLeap" />
+          <ScalarProperty Name="IsGregorianLeap" ColumnName="IsGregorianLeap" />
+          <ScalarProperty Name="SeasonName" ColumnName="SeasonName" />
+          <ScalarProperty Name="SeasonCode" ColumnName="SeasonCode" />
+          <ScalarProperty Name="HijriWeekOfYearNo" ColumnName="HijriWeekOfYearNo" />
+          <ScalarProperty Name="HijriWeekOfYearName" ColumnName="HijriWeekOfYearName" />
+          <ScalarProperty Name="HijriDayOfWeekName" ColumnName="HijriDayOfWeekName" />
+          <ScalarProperty Name="HijriYearMonthStr" ColumnName="HijriYearMonthStr" />
+          <ScalarProperty Name="HijriYearMonthInt" ColumnName="HijriYearMonthInt" />
+          <ScalarProperty Name="HijriStr" ColumnName="HijriStr" />
+          <ScalarProperty Name="HijriMonthName" ColumnName="HijriMonthName" />
+          <ScalarProperty Name="HijriDayOfWeekInt" ColumnName="HijriDayOfWeekInt" />
+          <ScalarProperty Name="HijriMonthDayInt" ColumnName="HijriMonthDayInt" />
+          <ScalarProperty Name="HijriDayInMonth" ColumnName="HijriDayInMonth" />
+          <ScalarProperty Name="HijriMonthNo" ColumnName="HijriMonthNo" />
+          <ScalarProperty Name="HijriYearInt" ColumnName="HijriYearInt" />
+          <ScalarProperty Name="HijriInt" ColumnName="HijriInt" />
+          <ScalarProperty Name="PersianFullName" ColumnName="PersianFullName" />
+          <ScalarProperty Name="PersianWeekOfYearNo" ColumnName="PersianWeekOfYearNo" />
+          <ScalarProperty Name="PersianWeekOfYearName" ColumnName="PersianWeekOfYearName" />
+          <ScalarProperty Name="PersianDayOfWeekName" ColumnName="PersianDayOfWeekName" />
+          <ScalarProperty Name="PersianYearMonthStr" ColumnName="PersianYearMonthStr" />
+          <ScalarProperty Name="PersianYearMonthInt" ColumnName="PersianYearMonthInt" />
+          <ScalarProperty Name="PersianStr" ColumnName="PersianStr" />
+          <ScalarProperty Name="PersianMonthName" ColumnName="PersianMonthName" />
+          <ScalarProperty Name="PersianDayOfWeekInt" ColumnName="PersianDayOfWeekInt" />
+          <ScalarProperty Name="PersianMonthDayInt" ColumnName="PersianMonthDayInt" />
+          <ScalarProperty Name="PersianDayInMonth" ColumnName="PersianDayInMonth" />
+          <ScalarProperty Name="PersianMonthNo" ColumnName="PersianMonthNo" />
+          <ScalarProperty Name="PersianYearInt" ColumnName="PersianYearInt" />
+          <ScalarProperty Name="PersianInt" ColumnName="PersianInt" />
+          <ScalarProperty Name="GregorianWeekOfYearNo" ColumnName="GregorianWeekOfYearNo" />
+          <ScalarProperty Name="GrgorianWeekOfYearName" ColumnName="GrgorianWeekOfYearName" />
+          <ScalarProperty Name="GregorianDayOfWeekName" ColumnName="GregorianDayOfWeekName" />
+          <ScalarProperty Name="GregorianYearMonthStr" ColumnName="GregorianYearMonthStr" />
+          <ScalarProperty Name="GregorianYearMonthInt" ColumnName="GregorianYearMonthInt" />
+          <ScalarProperty Name="GregorianStr" ColumnName="GregorianStr" />
+          <ScalarProperty Name="GregorianMonthName" ColumnName="GregorianMonthName" />
+          <ScalarProperty Name="GregorianDayOfWeekInt" ColumnName="GregorianDayOfWeekInt" />
+          <ScalarProperty Name="GregorianMonthDayInt" ColumnName="GregorianMonthDayInt" />
+          <ScalarProperty Name="GregorianDayInMonth" ColumnName="GregorianDayInMonth" />
+          <ScalarProperty Name="GregorianMonthNo" ColumnName="GregorianMonthNo" />
+          <ScalarProperty Name="GregorianYearInt" ColumnName="GregorianYearInt" />
+          <ScalarProperty Name="GregorianDate" ColumnName="GregorianDate" />
+          <ScalarProperty Name="DateKey" ColumnName="DateKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

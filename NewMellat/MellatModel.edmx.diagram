@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7dfcfa37258f4541b137c16c83967966" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="NewMellatModel.tbFile" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewMellatModel.tbProject" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbKhbregan" Width="1.5" PointX="5.625" PointY="1.25" />
+        <AssociationConnector Association="NewMellatModel.FK_tbKhbregan_tbProjects" />
+        <EntityTypeShape EntityType="NewMellatModel.prInformation" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbProjectPaper" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbNazar" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbEstelamVahed" Width="1.5" PointX="5.625" PointY="8.625" />
+        <EntityTypeShape EntityType="NewMellatModel.tbKhobreganMosavab" Width="1.5" PointX="7.875" PointY="0.875" />
+        <AssociationConnector Association="NewMellatModel.FK_tbEstelamVahed_tbProjects" />
+        <AssociationConnector Association="NewMellatModel.FK_tbKhobreganMosavab_tbKhbregan" />
+        <EntityTypeShape EntityType="NewMellatModel.tbHeyatNezarat" Width="1.5" PointX="8.375" PointY="9.875" />
+        <EntityTypeShape EntityType="NewMellatModel.tbHeyatNezaratMosavab" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbShenaseNumber" Width="1.5" PointX="10.625" PointY="10" />
+        <AssociationConnector Association="NewMellatModel.FK_tbShenaseNumbers_tbHeyatNezarat" />
+        <EntityTypeShape EntityType="NewMellatModel.vwNoEstelam" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwHeyatNezarat" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbTemp" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwHeyatNezarat2" Width="1.5" PointX="8.375" PointY="13.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbAccessPage" Width="1.5" PointX="10.375" PointY="13.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbAdminInPage" Width="1.5" PointX="12.375" PointY="13.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbAdminPremission" Width="1.5" PointX="13.375" PointY="10.125" />
+        <EntityTypeShape EntityType="NewMellatModel.tbAdminProject" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbAdmin" Width="1.5" PointX="14.375" PointY="3.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbAminPremissionAccess" Width="1.5" PointX="15.625" PointY="9.875" />
+        <AssociationConnector Association="NewMellatModel.FK_tbAminPremissionAccess_tbAdminPremission" />
+        <EntityTypeShape EntityType="NewMellatModel.tbPage" Width="1.5" PointX="3.375" PointY="14.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwServerDate" Width="1.5" PointX="5.375" PointY="14.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavabDashboard" Width="1.5" PointX="16.375" PointY="13.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwDashboardAmaliatiSarRedisNashode" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbSooratHesab" Width="1.5" PointX="18.375" PointY="6.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbSooratPishNevi" Width="1.5" PointX="7.375" PointY="19.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbReval" Width="1.5" PointX="12.375" PointY="19.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavab2" Width="1.5" PointX="3.375" PointY="11.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavab4" Width="1.5" PointX="14.375" PointY="6.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavab5" Width="1.5" PointX="14.375" PointY="19.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavab6" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavab7" Width="1.5" PointX="20.375" PointY="3.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbChart" Width="1.5" PointX="20.375" PointY="6.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbPaperProject" Width="1.5" PointX="20.375" PointY="9.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbIndex1" Width="1.5" PointX="20.375" PointY="13.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbElhaghie" Width="1.5" PointX="20.375" PointY="19.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwGharardadID" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbGharardad" Width="1.5" PointX="22.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbTarhPishnehadi" Width="1.5" PointX="22.375" PointY="4.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavabDashboardAjam" Width="1.5" PointX="22.375" PointY="11.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavabDashboardAmaliatiAnjam" Width="1.5" PointX="3.375" PointY="17.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavabDashboardAmaliatiTakhir" Width="1.5" PointX="9.375" PointY="19.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavabDashboardTakhir" Width="1.5" PointX="14.375" PointY="22.75" />
+        <EntityTypeShape EntityType="NewMellatModel.SsoMapUser" Width="1.5" PointX="7.375" PointY="5.75" />
+        <EntityTypeShape EntityType="NewMellatModel.Commission" Width="1.5" PointX="9.375" PointY="5.75" />
+        <EntityTypeShape EntityType="NewMellatModel.vwMosavab3" Width="1.5" PointX="5.375" PointY="11.75" />
+        <EntityTypeShape EntityType="NewMellatModel.Capacity" Width="1.5" PointX="5.375" PointY="16.75" />
+        <EntityTypeShape EntityType="NewMellatModel.CapacityCompany" Width="1.5" PointX="10.375" PointY="16.75" />
+        <EntityTypeShape EntityType="NewMellatModel.ProjectFinalize" Width="1.5" PointX="12.375" PointY="16.75" />
+        <EntityTypeShape EntityType="NewMellatModel.tbUserDepartment" Width="1.5" PointX="22.375" PointY="18.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

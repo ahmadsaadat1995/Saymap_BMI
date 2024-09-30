@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <Alias Key="Model" Value="Model" />
+  <Alias Key="Target" Value="Model.Store" />
+  <EntityContainerMapping CdmEntityContainer="ModelContainer" StorageEntityContainer="ModelStoreContainer">
+    <EntitySetMapping Name="CapacityView1">
+      <EntityTypeMapping TypeName="Model.CapacityView1">
+        <MappingFragment StoreEntitySet="CapacityView1">
+          <ScalarProperty Name="ElhaghieId" ColumnName="ElhaghieId" />
+          <ScalarProperty Name="prTitle" ColumnName="prTitle" />
+          <ScalarProperty Name="thId" ColumnName="thId" />
+          <ScalarProperty Name="thHajmTolid" ColumnName="thHajmTolid" />
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="GharardadEndTolid" ColumnName="GharardadEndTolid" />
+          <ScalarProperty Name="GharardadStartTolid" ColumnName="GharardadStartTolid" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapacityProjects">
+      <EntityTypeMapping TypeName="Model.CapacityProject">
+        <MappingFragment StoreEntitySet="CapacityProject">
+          <ScalarProperty Name="CapacityTypeId" ColumnName="CapacityTypeId" />
+          <ScalarProperty Name="HasContract" ColumnName="HasContract" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapacityView2">
+      <EntityTypeMapping TypeName="Model.CapacityView2">
+        <MappingFragment StoreEntitySet="CapacityView2">
+          <ScalarProperty Name="prProjectType" ColumnName="prProjectType" />
+          <ScalarProperty Name="prPeymankar" ColumnName="prPeymankar" />
+          <ScalarProperty Name="prId" ColumnName="prId" />
+          <ScalarProperty Name="mosAmaliatiDate" ColumnName="mosAmaliatiDate" />
+          <ScalarProperty Name="mosDate" ColumnName="mosDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapacityProjectDurations">
+      <EntityTypeMapping TypeName="Model.CapacityProjectDuration">
+        <MappingFragment StoreEntitySet="CapacityProjectDuration">
+          <ScalarProperty Name="TotalNafarSaat" ColumnName="TotalNafarSaat" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CapacityTypeId" ColumnName="CapacityTypeId" />
+          <ScalarProperty Name="HasContract" ColumnName="HasContract" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceCatalogs">
+      <EntityTypeMapping TypeName="Model.ServiceCatalog">
+        <MappingFragment StoreEntitySet="ServiceCatalog">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

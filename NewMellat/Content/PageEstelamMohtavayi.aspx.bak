@@ -1,0 +1,290 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="PageEstelamMohtavayi.aspx.cs" Inherits="NewMellat.Content.PageEstelamMohtavayi" %>
+
+<%@ Register Assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGauges" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGauges.Gauges" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGauges.Gauges.Linear" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGauges.Gauges.Circular" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGauges.Gauges.State" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGauges.Gauges.Digital" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        
+       
+        function loadDoc7(parent) {
+
+            var oWnd = radopen("PageAttach.aspx?Parent=" + parent + "&Type=7", "RadWindow3");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+
+
+        function loadDoc(parent) {
+
+            var oWnd = radopen("PageEdarat.aspx?project=" + parent + "&Type=8", "RadWindow1");
+            oWnd.setSize(1050, 600);
+            oWnd.Center();
+        }
+        function loadDoc2(parent) {
+
+            var oWnd = radopen("../Pagepages2.aspx?project=" + parent + "&Type=9", "RadWindow2");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+
+        function loadDoc3(parent) {
+
+            var oWnd = radopen("PageAnswerAnalyz.aspx?project=" + parent + "&Type=10", "RadWindow3");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+        function loadDoc4(parent) {
+
+            var oWnd = radopen("Pagepages.aspx?project=" + parent + "&Type=11", "RadWindow3");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+        
+        function loadDoc5(parent) {
+
+            var oWnd = radopen("Pagepages.aspx?project=" + parent + "&Type=91", "RadWindow3");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+
+
+        function loadDoc6(parent) {
+
+            var oWnd = radopen("Pagepages.aspx?project=" + parent + "&Type=92", "RadWindow2");
+            oWnd.setSize(910, 500);
+            oWnd.Center();
+        }
+
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div align="center" style="width: 100%">
+        <div align="center" class="box box-warning" style="width: 100%">
+            <table align="center" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td align="center">&nbsp;</td>
+                    <td align="center" width="200">
+                        <asp:Label ID="Label5" runat="server" Text="منتظر پاسخ تدارکات"></asp:Label>
+                    </td>
+                    <td align="center" width="200">
+                        <asp:Label ID="Label4" runat="server" Text="منتظر پاسخ شرکت"></asp:Label>
+                    </td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center" width="200">
+                        <asp:Label ID="Label2" runat="server" Text="منتظر پاسخ استعلام"></asp:Label>
+                    </td>
+                    <td align="center" width="200">
+                        <asp:Label ID="Label1" runat="server" Text="تعداد طرح پیشنهادی"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" height="45">&nbsp;</td>
+                    <td align="center" height="45" width="25%">
+                        <dx:ASPxGaugeControl ID="g5" runat="server" BackColor="White" Height="40px" Value="6" Width="120px">
+                            <Gauges>
+                                <dx:DigitalGauge AppearanceOff-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:#00FFFFFF&quot;/&gt;" AppearanceOn-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:WhiteSmoke&quot;/&gt;" Bounds="0, 0, 120, 40" DigitCount="5" Name="Gauge0" Padding="20, 20, 20, 20" Text="6">
+                                    <backgroundlayers>
+                                        <dx:DigitalBackgroundLayerComponent AcceptOrder="-1000" BottomRight="259.8125, 99.9625" Name="digitalBackgroundLayerComponent7" ShapeType="Style7" TopLeft="20, 0" ZOrder="1000" />
+                                    </backgroundlayers>
+                                </dx:DigitalGauge>
+                            </Gauges>
+                            <LayoutPadding All="0" Left="0" Top="0" Right="0" Bottom="0"></LayoutPadding>
+                        </dx:ASPxGaugeControl>
+                    </td>
+                    <td align="center" height="45" width="25%">
+                        <dx:ASPxGaugeControl ID="g4" runat="server" BackColor="White" Height="40px" Value="13" Width="120px">
+                            <Gauges>
+                                <dx:DigitalGauge AppearanceOff-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:#00FFFFFF&quot;/&gt;" AppearanceOn-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:WhiteSmoke&quot;/&gt;" Bounds="0, 0, 120, 40" DigitCount="5" Name="Gauge0" Padding="20, 20, 20, 20" Text="13">
+                                    <backgroundlayers>
+                                        <dx:DigitalBackgroundLayerComponent AcceptOrder="-1000" BottomRight="259.8125, 99.9625" Name="digitalBackgroundLayerComponent7" ShapeType="Style7" TopLeft="20, 0" ZOrder="1000" />
+                                    </backgroundlayers>
+                                </dx:DigitalGauge>
+                            </Gauges>
+                            <LayoutPadding All="0" Left="0" Top="0" Right="0" Bottom="0"></LayoutPadding>
+                        </dx:ASPxGaugeControl>
+                    </td>
+                    <td align="center" height="45">&nbsp;</td>
+                    <td align="center" height="45" width="25%">
+                        <dx:ASPxGaugeControl ID="g2" runat="server" BackColor="White" Height="40px" Value="12" Width="120px">
+                            <Gauges>
+                                <dx:DigitalGauge AppearanceOff-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:#00FFFFFF&quot;/&gt;" AppearanceOn-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:WhiteSmoke&quot;/&gt;" Bounds="0, 0, 120, 40" DigitCount="5" Name="Gauge0" Padding="20, 20, 20, 20" Text="12">
+                                    <backgroundlayers>
+                                        <dx:DigitalBackgroundLayerComponent AcceptOrder="-1000" BottomRight="259.8125, 99.9625" Name="digitalBackgroundLayerComponent7" ShapeType="Style7" TopLeft="20, 0" ZOrder="1000" />
+                                    </backgroundlayers>
+                                </dx:DigitalGauge>
+                            </Gauges>
+                            <LayoutPadding All="0" Left="0" Top="0" Right="0" Bottom="0"></LayoutPadding>
+                        </dx:ASPxGaugeControl>
+                    </td>
+                    <td align="center" height="45" width="25%">
+                        <dx:ASPxGaugeControl ID="g1" runat="server" BackColor="White" Height="40px" Value="00,000" Width="120px">
+                            <Gauges>
+                                <dx:DigitalGauge AppearanceOff-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:#00FFFFFF&quot;/&gt;" AppearanceOn-ContentBrush="&lt;BrushObject Type=&quot;Solid&quot; Data=&quot;Color:WhiteSmoke&quot;/&gt;" Bounds="0, 0, 120, 40" DigitCount="5" Name="Gauge0" Padding="20, 20, 20, 20" Text="00,000">
+                                    <backgroundlayers>
+                                        <dx:DigitalBackgroundLayerComponent AcceptOrder="-1000" BottomRight="259.8125, 99.9625" Name="digitalBackgroundLayerComponent7" ShapeType="Style7" TopLeft="20, 0" ZOrder="1000" />
+                                    </backgroundlayers>
+                                </dx:DigitalGauge>
+                            </Gauges>
+                            <LayoutPadding All="0" Left="0" Top="0" Right="0" Bottom="0"></LayoutPadding>
+                        </dx:ASPxGaugeControl>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="box box-danger">
+        <dx:ASPxGridView ID="ASPxGridView1" runat="server" Theme="Office2010Silver" AutoGenerateColumns="False" DataSourceID="sourceMohtava0" KeyFieldName="thId" RightToLeft="True" Width="100%" OnHtmlDataCellPrepared="ASPxGridView1_HtmlDataCellPrepared" OnCommandButtonInitialize="ASPxGridView1_CommandButtonInitialize" Font-Names="vazir">
+            <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+            <SettingsBehavior ConfirmDelete="True" EnableRowHotTrack="True" />
+            <SettingsCommandButton>
+                <DeleteButton ButtonType="Image">
+                    <Image Url="~/Content/images/icons/Close-2-icon.png">
+                    </Image>
+                </DeleteButton>
+            </SettingsCommandButton>
+            <SettingsSearchPanel Visible="True" />
+            <SettingsLoadingPanel Text="در حال اجرا..." />
+            <SettingsText ConfirmDelete="آیا ردیف انتخابی حذف شود؟" EmptyDataRow="اطلاعات موجود نمی باشد" GroupPanel="ستون مورد نظر جهت گروه بندی اطلاعات را وارد نمایید" SearchPanelEditorNullText="متن مورد جستجو را وارد نمایید" />
+            <Columns>
+                <dx:GridViewCommandColumn ShowDeleteButton="True" VisibleIndex="0">
+                </dx:GridViewCommandColumn>
+                <dx:GridViewDataTextColumn Caption="استعلام" VisibleIndex="3">
+                    <DataItemTemplate>
+                        <div align="center" dir="rtl">
+                            <table align="right" cellpadding="2" cellspacing="0" dir="ltr">
+                                <tr>
+                                    <td>
+                                        <asp:Image ID="img3" runat="server" ImageUrl="~/Content/images/icons/email-alert-icon.png" ToolTip="ارسال به شرکت" Width="25px" />
+                                    </td>
+                                    <td width="25">
+                                        <asp:Image ID="img2" runat="server" ImageUrl="~/Content/images/icons/email-receive-icon.png" ToolTip="پاسخ استعلام" />
+                                    </td>
+                                    <td width="25">
+                                        <asp:Image ID="img1" runat="server" ImageUrl="~/Content/images/icons/email-send-icon.png" ToolTip="استعلام" />
+                                    </td>
+                                    <td width="25">
+                                        <asp:HyperLink ID="HyperLink4" runat="server" ImageUrl="~/Content/images/icons/mp3tag-icon.png" NavigateUrl='<%# Eval("thId", "~/content/PageEdarat.aspx?project={0}") %>' Target="_blank"></asp:HyperLink>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <asp:HiddenField ID="HiddenField4" runat="server" Value='<%# Eval("thId") %>' />
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="تدارکات - آنالیز قیمت" VisibleIndex="5">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink6" runat="server" ImageUrl="~/Content/images/icons/message-bubble-send-icon.png" NavigateUrl='<%# Eval("thId", "~/content/PagePages2.aspx?project={0}") %>' Target="_blank"></asp:HyperLink>
+                        <asp:HiddenField ID="HiddenField1" runat="server" Value='<%# Eval("thId") %>' />
+                        <asp:HiddenField ID="HiddenField2" runat="server" Value='<%# Eval("prVahed") %>' />
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption=" پاسخ تدارکات - آنالیز قیمت" VisibleIndex="6">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink7" runat="server" ImageUrl="~/Content/images/icons/message-bubble-show-icon.png" NavigateUrl='<%# Eval("thId","~/content/PageAnswerAnalyz.aspx?project={0}") %>' Target="_blank"></asp:HyperLink>
+                        <asp:HiddenField ID="HiddenField3" runat="server" Value='<%# Eval("thId") %>' />
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="پروژه" FieldName="thProject" VisibleIndex="1">
+                    <PropertiesComboBox DataSourceID="sourceProjects" TextField="prTitle" ValueField="prId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn Caption="ضمایم" VisibleIndex="7">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/Content/images/icons/attachment-icon24.png" Target="_blank" NavigateUrl='<%# Eval("thId", "~/content/PageAttach.aspx?Parent={0}") %>'></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="نامه ها" VisibleIndex="8">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Content/images/icons/Documents-icon24.png" NavigateUrl='<%# Eval("thId","~/content/PagePages.aspx?project={0}") %>' Target="_blank"></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="ارسال به شرکت" VisibleIndex="4" Visible="False">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink5" runat="server" ImageUrl="~/Content/images/icons/Mimetypes-document-seal-icon.png" NavigateUrl='<%# Eval("thId","~/content/PagePages.aspx?project={0}") %>' Target="_blank"></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="واحد متولی" FieldName="prVahed" VisibleIndex="2">
+                    <PropertiesComboBox DataSourceID="sourceInfo" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn Caption="انصراف" VisibleIndex="9">
+                    <DataItemTemplate>
+                        <asp:HyperLink ID="HyperLink8" runat="server" ImageUrl="~/Content/images/icons/missed-calls-icon.png" NavigateUrl='<%# Eval("thId","~/content/PagePages.aspx?project={0}") %>'></asp:HyperLink>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn VisibleIndex="10">
+                    <DataItemTemplate>
+                        <table align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    &nbsp;</td>
+                                <td>
+                                    <asp:HyperLink ID="HyperLink8" runat="server" ImageUrl="~/Content/images/icons/refresh-icon.png"></asp:HyperLink>
+                                </td>
+                            </tr>
+                        </table>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="نوع درخواست" FieldName="thIsElhaghie" VisibleIndex="11">
+                    <DataItemTemplate>
+                        <asp:Label ID="Label6" runat="server" Font-Names="vazir" Font-Size="12px" ForeColor="#006600" Text="الحاقیه" Visible='<%# Eval("thIsElhaghie") %>'></asp:Label>
+                        <asp:Label ID="Label7" runat="server" Font-Names="vazir" Font-Size="12px" ForeColor="#003366" Text="پروپوزال" Visible='<%# !(bool)Eval("thIsElhaghie") %>'></asp:Label>
+                    </DataItemTemplate>
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn Caption="شرکت" FieldName="prPeymankar" VisibleIndex="12">
+                    <PropertiesComboBox DataSourceID="sourcePeymankar" TextField="infTitle" ValueField="infId">
+                    </PropertiesComboBox>
+                    <Settings AllowAutoFilter="False" />
+                </dx:GridViewDataComboBoxColumn>
+            </Columns>
+            <Styles>
+                <Header Font-Names="vazir" Font-Size="13px" HorizontalAlign="Center">
+                </Header>
+                <Row HorizontalAlign="Center">
+                </Row>
+            </Styles>
+        </dx:ASPxGridView>
+    </div>
+    <div>
+        <asp:SqlDataSource ID="sourceInfo" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT infId, infType, infAct, infTitle FROM prInformation WHERE (infType = 1)"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceMohtava" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" DeleteCommand="UPDATE tbTarhPishnehadi SET thAct = 0 WHERE (thId = @thId)" SelectCommand="SELECT tbTarhPishnehadi.thId, tbTarhPishnehadi.thProject, tbTarhPishnehadi.thYear, tbTarhPishnehadi.thHajmTolid, tbTarhPishnehadi.thHajmPosh, tbTarhPishnehadi.thPriceTolid, tbTarhPishnehadi.thPricePosh, tbTarhPishnehadi.thModatTolid, tbTarhPishnehadi.thModatPosh, tbTarhPishnehadi.thAct, tbTarhPishnehadi.thMekanizmPosh, tbTarhPishnehadi.thMekanizmtolid, tbProjects.prVahed, tbProjects.prIsMohtava, tbProjects.irIsAnalyz FROM tbTarhPishnehadi INNER JOIN tbProjects ON tbTarhPishnehadi.thProject = tbProjects.prId WHERE (tbTarhPishnehadi.thAct = 1) AND (tbProjects.irIsAnalyz = 0) AND (tbProjects.prIsMohtava = 0) ORDER BY tbTarhPishnehadi.thId DESC">
+            <DeleteParameters>
+                <asp:Parameter Name="thId" />
+            </DeleteParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourcePeymankar" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT infId, infTitle, infType FROM prInformation WHERE (infAct = 1) AND (infType = 5)">
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceMohtava0" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" DeleteCommand="UPDATE tbTarhPishnehadi SET thAct = 0 WHERE (thId = @thId)" SelectCommand="SELECT tbTarhPishnehadi.thId, tbTarhPishnehadi.thProject, tbTarhPishnehadi.thYear, prPeymankar, thIsElhaghie,tbTarhPishnehadi.thHajmTolid, tbTarhPishnehadi.thHajmPosh, tbTarhPishnehadi.thPriceTolid, tbTarhPishnehadi.thPricePosh, tbTarhPishnehadi.thModatTolid, tbTarhPishnehadi.thModatPosh, tbTarhPishnehadi.thAct, tbTarhPishnehadi.thMekanizmPosh, tbTarhPishnehadi.thMekanizmtolid, tbProjects.prVahed, tbProjects.prIsMohtava, tbProjects.irIsAnalyz, tbProjects.prIsEstelamMohtavayi, tbProjects.prEstelamIsSubmit, tbTarhPishnehadi.thIsCancle FROM tbTarhPishnehadi INNER JOIN tbProjects ON tbTarhPishnehadi.thProject = tbProjects.prId WHERE (tbTarhPishnehadi.thAct = 1) AND (tbProjects.irIsAnalyz = 0) AND (tbProjects.prIsMohtava = 0)  AND (((tbProjects.prEstelamIsSubmit = 1) or thIsElhaghie=1)) AND (tbTarhPishnehadi.thIsCancle = 0) 
+ 
+
+ORDER BY tbTarhPishnehadi.thId DESC">
+            <DeleteParameters>
+                <asp:Parameter Name="thId" />
+            </DeleteParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sourceProjects" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="spSelectProjects" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+        <telerik:RadWindowManager ID="RadWindowManager1" runat="server" Animation="Fade" Behaviors="Close" Skin="Sunset">
+            <Windows>
+                <telerik:RadWindow runat="server" NavigateUrl="RadWindow1" Animation="Fade" Behavior="Close" Behaviors="Close">
+                </telerik:RadWindow>
+                <telerik:RadWindow runat="server" NavigateUrl="RadWindow2" Animation="Fade" Behavior="Close" Behaviors="Close">
+                </telerik:RadWindow>
+                <telerik:RadWindow runat="server" NavigateUrl="RadWindow1">
+                </telerik:RadWindow>
+            </Windows>
+        </telerik:RadWindowManager>
+    </div>
+    <div>
+    </div>
+</asp:Content>

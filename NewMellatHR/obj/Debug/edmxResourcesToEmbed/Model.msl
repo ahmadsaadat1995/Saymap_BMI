@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectServer_Reporting_faModelStoreContainer" CdmEntityContainer="ProjectServer_Reporting_faEntities">
+    <EntitySetMapping Name="MSP_EpmResource_UserView">
+      <EntityTypeMapping TypeName="ProjectServer_Reporting_faModel.MSP_EpmResource_UserView">
+        <MappingFragment StoreEntitySet="MSP_EpmResource_UserView">
+          <ScalarProperty Name="ResourceUID" ColumnName="ResourceUID" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="ResourceStandardRate" ColumnName="ResourceStandardRate" />
+          <ScalarProperty Name="ResourceOvertimeRate" ColumnName="ResourceOvertimeRate" />
+          <ScalarProperty Name="ResourceStatusUID" ColumnName="ResourceStatusUID" />
+          <ScalarProperty Name="ResourceCode" ColumnName="ResourceCode" />
+          <ScalarProperty Name="ResourceCostPerUse" ColumnName="ResourceCostPerUse" />
+          <ScalarProperty Name="ResourceEmailAddress" ColumnName="ResourceEmailAddress" />
+          <ScalarProperty Name="ResourceInitials" ColumnName="ResourceInitials" />
+          <ScalarProperty Name="ResourceMaterialLabel" ColumnName="ResourceMaterialLabel" />
+          <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+          <ScalarProperty Name="ResourceGroup" ColumnName="ResourceGroup" />
+          <ScalarProperty Name="ResourceMaxUnits" ColumnName="ResourceMaxUnits" />
+          <ScalarProperty Name="ResourceBookingType" ColumnName="ResourceBookingType" />
+          <ScalarProperty Name="ResourceTimesheetManagerUID" ColumnName="ResourceTimesheetManagerUID" />
+          <ScalarProperty Name="ResourceEarliestAvailableFrom" ColumnName="ResourceEarliestAvailableFrom" />
+          <ScalarProperty Name="ResourceLatestAvailableTo" ColumnName="ResourceLatestAvailableTo" />
+          <ScalarProperty Name="ResourceCanLevel" ColumnName="ResourceCanLevel" />
+          <ScalarProperty Name="ResourceHyperlink" ColumnName="ResourceHyperlink" />
+          <ScalarProperty Name="ResourceHyperlinkHref" ColumnName="ResourceHyperlinkHref" />
+          <ScalarProperty Name="ResourceNTAccount" ColumnName="ResourceNTAccount" />
+          <ScalarProperty Name="ResourceIsActive" ColumnName="ResourceIsActive" />
+          <ScalarProperty Name="ResourceIsGeneric" ColumnName="ResourceIsGeneric" />
+          <ScalarProperty Name="ResourceIsTeam" ColumnName="ResourceIsTeam" />
+          <ScalarProperty Name="ResourceBaseCalendar" ColumnName="ResourceBaseCalendar" />
+          <ScalarProperty Name="ResourceWorkgroup" ColumnName="ResourceWorkgroup" />
+          <ScalarProperty Name="ResourceClientUniqueId" ColumnName="ResourceClientUniqueId" />
+          <ScalarProperty Name="ResourceCostCenter" ColumnName="ResourceCostCenter" />
+          <ScalarProperty Name="ResourceCreatedRevisionCounter" ColumnName="ResourceCreatedRevisionCounter" />
+          <ScalarProperty Name="ResourceModifiedRevisionCounter" ColumnName="ResourceModifiedRevisionCounter" />
+          <ScalarProperty Name="ResourceCreatedDate" ColumnName="ResourceCreatedDate" />
+          <ScalarProperty Name="ResourceModifiedDate" ColumnName="ResourceModifiedDate" />
+          <ScalarProperty Name="ResourceCount" ColumnName="ResourceCount" />
+          <ScalarProperty Name="RBS" ColumnName="RBS" />
+          <ScalarProperty Name="نوع_هزینه" ColumnName="نوع هزینه" />
+          <ScalarProperty Name="دپارتمان_های_منبع" ColumnName="دپارتمان های منبع" />
+          <ScalarProperty Name="نام_و_نام_خانوادگی" ColumnName="نام و نام خانوادگی" />
+          <ScalarProperty Name="کد_پرسنلی" ColumnName="کد پرسنلی" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HrEmployeeDetails">
+      <EntityTypeMapping TypeName="ProjectServer_Reporting_faModel.HrEmployeeDetail">
+        <MappingFragment StoreEntitySet="HrEmployeeDetails">
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UnitCode" ColumnName="UnitCode" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,1393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewMellatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Capacity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="Season" Type="int" Nullable="false" />
+    <Property Name="CapacityTypeId" Type="int" Nullable="false" />
+    <Property Name="CapacityValue" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CapacityCompany">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Commission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Act" Type="int" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="JalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="JalaseDate" Type="date" />
+    <Property Name="IsElhaghie" Type="bit" />
+    <Property Name="ProposalId" Type="int" />
+    <Property Name="PriceTolid" Type="bigint" />
+    <Property Name="PricePosh" Type="bigint" />
+    <Property Name="DurationTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="DurationPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="GharardadType" Type="int" />
+    <Property Name="VahedType" Type="int" />
+    <Property Name="Vaziat" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="prInformation">
+    <Key>
+      <PropertyRef Name="infId" />
+    </Key>
+    <Property Name="infId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="infType" Type="int" />
+    <Property Name="infAct" Type="int" />
+    <Property Name="infTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProjectFinalize">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="IsUsing" Type="bit" Nullable="false" />
+    <Property Name="UserCount" Type="int" Nullable="false" />
+    <Property Name="Desciption" Type="ntext" />
+  </EntityType>
+  <EntityType Name="SsoMapUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SsoLogin" Type="nvarchar" MaxLength="50" />
+    <Property Name="Loginname" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbAccessPages">
+    <Key>
+      <PropertyRef Name="acId" />
+    </Key>
+    <Property Name="acId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="acPageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="acUser" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbAdminInPages">
+    <Key>
+      <PropertyRef Name="pgId" />
+    </Key>
+    <Property Name="pgId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pgPageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="pgCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbAdminPremission">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prName" Type="nvarchar" MaxLength="50" />
+    <Property Name="prAct" Type="int" />
+  </EntityType>
+  <EntityType Name="tbAdminProjects">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prProject" Type="int" />
+    <Property Name="prCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="prType" Type="int" />
+  </EntityType>
+  <EntityType Name="tbAdmins">
+    <Key>
+      <PropertyRef Name="adId" />
+    </Key>
+    <Property Name="adId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adPersonCode" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="adAct" Type="int" />
+  </EntityType>
+  <EntityType Name="tbAminPremissionAccess">
+    <Key>
+      <PropertyRef Name="acId" />
+    </Key>
+    <Property Name="acId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="acPremission" Type="int" />
+    <Property Name="acPage" Type="nvarchar" MaxLength="50" />
+    <Property Name="acAct" Type="int" />
+    <Property Name="acCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbChart">
+    <Key>
+      <PropertyRef Name="chId" />
+    </Key>
+    <Property Name="chId" Type="int" Nullable="false" />
+    <Property Name="chTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="chValue" Type="bigint" />
+    <Property Name="chAct" Type="int" />
+    <Property Name="chType" Type="int" />
+    <Property Name="chYear" Type="int" />
+    <Property Name="chBody" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbElhaghie">
+    <Key>
+      <PropertyRef Name="elId" />
+    </Key>
+    <Property Name="elId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="elProject" Type="int" />
+    <Property Name="elGharardad" Type="nvarchar" MaxLength="50" />
+    <Property Name="elBody" Type="nvarchar" MaxLength="50" />
+    <Property Name="elDate1" Type="date" />
+    <Property Name="elDate2" Type="date" />
+    <Property Name="elPrice" Type="bigint" />
+    <Property Name="elType" Type="nvarchar" MaxLength="50" />
+    <Property Name="elPrice2" Type="bigint" />
+    <Property Name="elBody2" Type="nvarchar" MaxLength="50" />
+    <Property Name="elDate3" Type="date" />
+    <Property Name="elDate4" Type="date" />
+  </EntityType>
+  <EntityType Name="tbEstelamVahed">
+    <Key>
+      <PropertyRef Name="esId" />
+    </Key>
+    <Property Name="esId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="esProject" Type="int" />
+    <Property Name="esAct" Type="int" />
+    <Property Name="esVahed" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tbFiles">
+    <Key>
+      <PropertyRef Name="fiId" />
+    </Key>
+    <Property Name="fiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fiAct" Type="int" />
+    <Property Name="fiData" Type="image" />
+    <Property Name="fiDate" Type="date" />
+    <Property Name="fiParent" Type="int" />
+    <Property Name="fiType" Type="int" />
+    <Property Name="fiTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="fiExt" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbGharardad">
+    <Key>
+      <PropertyRef Name="ghId" />
+    </Key>
+    <Property Name="ghId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ghAct" Type="int" />
+    <Property Name="ghProject" Type="int" />
+    <Property Name="ghBody" Type="ntext" />
+    <Property Name="ghCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="ghPriceTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="ghPricePosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="ghType" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsElhaghie" Type="bit" />
+    <Property Name="ProposalId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbHeyatNezarat">
+    <Key>
+      <PropertyRef Name="heId" />
+    </Key>
+    <Property Name="heId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="heAct" Type="int" />
+    <Property Name="heProject" Type="int" />
+    <Property Name="heJalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="heJalaseDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="heIsElhaghie" Type="bit" />
+    <Property Name="ProposalId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbHeyatNezaratMosavab">
+    <Key>
+      <PropertyRef Name="hmId" />
+    </Key>
+    <Property Name="hmId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hmAct" Type="int" />
+    <Property Name="hmPriceTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="hmPricePosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="hmDateTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="hmDatePosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="hmGharardadType" Type="int" />
+    <Property Name="hmVahedType" Type="int" />
+    <Property Name="hmNezarat" Type="int" />
+    <Property Name="hmMainProjectId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbIndex1">
+    <Key>
+      <PropertyRef Name="inId" />
+    </Key>
+    <Property Name="inVahedName" Type="nvarchar" MaxLength="50" />
+    <Property Name="inName" Type="nvarchar" MaxLength="50" />
+    <Property Name="inTell" Type="nvarchar" MaxLength="50" />
+    <Property Name="inTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="inMahdodeh" Type="nvarchar" MaxLength="500" />
+    <Property Name="inHadaf" Type="nvarchar" MaxLength="550" />
+    <Property Name="inTeam" Type="nvarchar" MaxLength="450" />
+    <Property Name="inVaheds" Type="nvarchar" MaxLength="350" />
+    <Property Name="inZinaf" Type="nvarchar" MaxLength="350" />
+    <Property Name="inBAzeh" Type="nvarchar" MaxLength="50" />
+    <Property Name="inFeatures" Type="nvarchar" MaxLength="555" />
+    <Property Name="inTahlil" Type="nvarchar" MaxLength="550" />
+    <Property Name="inFile" Type="image" />
+    <Property Name="inAct" Type="int" />
+    <Property Name="inRegisterDate" Type="date" />
+    <Property Name="inProject" Type="int" />
+    <Property Name="inId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inFileName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbKhbregan">
+    <Key>
+      <PropertyRef Name="khId" />
+    </Key>
+    <Property Name="khId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="khProject" Type="int" />
+    <Property Name="khAct" Type="int" />
+    <Property Name="khJalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="khJalaseDate" Type="date" />
+    <Property Name="khStatus" Type="int" />
+    <Property Name="khIsTarh" Type="int" />
+  </EntityType>
+  <EntityType Name="tbKhobreganMosavab">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mosAct" Type="int" />
+    <Property Name="mosKhob" Type="int" />
+    <Property Name="mosShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosErsalDate" Type="date" />
+    <Property Name="mosAmaliatiDate" Type="date" />
+    <Property Name="mosbody" Type="ntext" />
+    <Property Name="mosType" Type="int" />
+    <Property Name="mosPropozal" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosProjectId" Type="int" />
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+  </EntityType>
+  <EntityType Name="tbNazar">
+    <Key>
+      <PropertyRef Name="nzId" />
+    </Key>
+    <Property Name="nzId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nzAct" Type="int" />
+    <Property Name="nzShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="nzNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="nzBody" Type="ntext" />
+    <Property Name="nzType" Type="int" />
+    <Property Name="nzParent" Type="int" />
+    <Property Name="nzDate" Type="date" />
+    <Property Name="nzStatus" Type="int" />
+    <Property Name="nzMainProjectId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbPages">
+    <Key>
+      <PropertyRef Name="pgId" />
+    </Key>
+    <Property Name="pgName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pgId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pgTitle" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbPaperProjects">
+    <Key>
+      <PropertyRef Name="paId" />
+    </Key>
+    <Property Name="paId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="paProject" Type="int" />
+    <Property Name="paAct" Type="int" />
+    <Property Name="paFile" Type="image" />
+    <Property Name="paDate" Type="date" />
+    <Property Name="paNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="paType" Type="int" />
+    <Property Name="paFilename" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbProjectPaper">
+    <Key>
+      <PropertyRef Name="paId" />
+    </Key>
+    <Property Name="paId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="paShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="paNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="paDate" Type="date" />
+    <Property Name="paProject" Type="int" />
+    <Property Name="paAct" Type="int" />
+    <Property Name="paType" Type="int" />
+    <Property Name="paBody" Type="ntext" />
+    <Property Name="paEdare" Type="int" />
+    <Property Name="paMainProjectId" Type="int" />
+    <Property Name="paStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="tbProjects">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prAct" Type="int" />
+    <Property Name="prRegDate" Type="date" />
+    <Property Name="prRegUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="status1" Type="nvarchar" MaxLength="50" />
+    <Property Name="status2" Type="nvarchar" MaxLength="50" />
+    <Property Name="status3" Type="nvarchar" MaxLength="50" />
+    <Property Name="prStatus" Type="int" />
+    <Property Name="prISEstelam" Type="int" />
+    <Property Name="prIsMohtava" Type="int" />
+    <Property Name="irIsAnalyz" Type="int" />
+    <Property Name="prIsTarh" Type="int" />
+    <Property Name="prIsEstelamMohtavayi" Type="int" />
+    <Property Name="prEstelamIsSubmit" Type="int" />
+    <Property Name="prIsErsalBeSherkat" Type="int" />
+    <Property Name="prIsAnswerTadarokatPending" Type="int" />
+    <Property Name="prTarhJalasePending" Type="int" />
+    <Property Name="prPishnevisPending" Type="int" />
+    <Property Name="prEstelamPending" Type="int" />
+    <Property Name="prKhobreganStatusMosavab" Type="int" />
+    <Property Name="prTemp" Type="int" />
+    <Property Name="prBody" Type="ntext" />
+    <Property Name="prProjectStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="prMainBody" Type="ntext" />
+    <Property Name="prProjectManager" Type="nvarchar" MaxLength="150" />
+    <Property Name="prSt" Type="nvarchar" MaxLength="150" />
+    <Property Name="prSt2" Type="nvarchar" MaxLength="150" />
+    <Property Name="prFinalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="prRiskType" Type="nvarchar" MaxLength="50" />
+    <Property Name="prRiskTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="prRiskDegree" Type="nvarchar" MaxLength="50" />
+    <Property Name="prRiskEhtemal" Type="nvarchar" MaxLength="50" />
+    <Property Name="prRiskPayamad" Type="nvarchar" MaxLength="250" />
+    <Property Name="prRiskAnswer" Type="nvarchar" MaxLength="250" />
+    <Property Name="TechnicalSuvisor" Type="int" />
+    <Property Name="PercentComplete" Type="real" />
+    <Property Name="ServiceId" Type="nvarchar" MaxLength="50" />
+    <Property Name="VersionNo" Type="int" />
+    <Property Name="changeDate" Type="date" />
+    <Property Name="riskAgainst" Type="int" />
+    <Property Name="riskTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="riskStart" Type="date" />
+    <Property Name="riskEnd" Type="date" />
+    <Property Name="riskDesc" Type="nvarchar(max)" />
+    <Property Name="riskSt" Type="int" />
+  </EntityType>
+  <EntityType Name="tbReval">
+    <Key>
+      <PropertyRef Name="reId" />
+    </Key>
+    <Property Name="reId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reType" Type="int" />
+    <Property Name="reAct" Type="int" />
+    <Property Name="reProject" Type="int" />
+    <Property Name="reVahed" Type="int" />
+    <Property Name="reSanadNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="reOlaviat" Type="nvarchar" MaxLength="50" />
+    <Property Name="reDateSRS" Type="date" />
+    <Property Name="reDatePropozal" Type="date" />
+    <Property Name="reMohlatZamani" Type="nvarchar" MaxLength="50" />
+    <Property Name="reSanadType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbShenaseNumbers">
+    <Key>
+      <PropertyRef Name="shId" />
+    </Key>
+    <Property Name="shId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="shHeyat" Type="int" />
+    <Property Name="shBody" Type="nvarchar" MaxLength="150" />
+    <Property Name="shStatus" Type="int" />
+    <Property Name="shMainProjectId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbSooratHesab">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="prId" Type="int" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="2555" />
+    <Property Name="ProjectGharardad" Type="nvarchar" MaxLength="255" />
+    <Property Name="Nazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Nazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="GharardadType" Type="nvarchar" MaxLength="255" />
+    <Property Name="GharardadStart" Type="nvarchar" MaxLength="255" />
+    <Property Name="GharardadEnd" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gharardad" Type="nvarchar" MaxLength="255" />
+    <Property Name="Type" Type="nvarchar" MaxLength="255" />
+    <Property Name="ElhaghieType" Type="nvarchar" MaxLength="255" />
+    <Property Name="OnvanTahvili" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoedTahvili" Type="nvarchar" MaxLength="255" />
+    <Property Name="Price" Type="nvarchar" MaxLength="255" />
+    <Property Name="Vaziat" Type="nvarchar" MaxLength="255" />
+    <Property Name="SoorathesbPrice" Type="nvarchar" MaxLength="255" />
+    <Property Name="DoreErsali" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShomareNamePishnevisSoorathesab" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheNamePishnevisSoorathesab" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseNamePishnevisSoorathesab" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseEstelamPishSoorathesabNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheEstelamPishSoorathesabNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoedZamani1" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseEstelamPishSoorathesabNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheEstelamPishSoorathesabNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoedZamani2" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseAnswerNazerPishnevis" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheAnswerNazerPishnevis" Type="nvarchar" MaxLength="255" />
+    <Property Name="ElamNazarAnswerNazerPishnevis" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseAnswerNazerPishnevis2" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheAnswerNazerPishnevis2" Type="nvarchar" MaxLength="255" />
+    <Property Name="ElamNazarAnswerNazerPishnevis2" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseErsalTaeedNazer" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheErsalTaeedNazer" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseErsalAdameTaeedNazer" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheErsalAdameTaeedNazer" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoedZamani3" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseDaryaftAnswerPishnevis" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheDaryaftAnswerPishnevis" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseEstelamMojadadNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheEstelamMojadadNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoedZamani4" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseEstelamMojadadNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheEstelamMojadadNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoedZamani5" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseAnswerMojadadNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheAnswerMojadadNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="ElamNazarAnswerMojadadNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseAnswerMojadadNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheAnswerMojadadNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="ElamNazarAnswerMojadadNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseNameSooratHesab" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikhNameSooratHesab" Type="nvarchar" MaxLength="255" />
+    <Property Name="YearSooratHesab" Type="nvarchar" MaxLength="255" />
+    <Property Name="SomareSoorathesab" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseSoorathesab" Type="nvarchar" MaxLength="255" />
+    <Property Name="Vosool" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseEstelamVahed" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheEstelamVahed" Type="nvarchar" MaxLength="255" />
+    <Property Name="MoedEstelamVahed" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseDaryaftAnswerNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheDaryaftAnswerNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="ElamNazarDaryaftAnswerNazer1" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseDaryaftAnswerNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheDaryaftAnswerNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="ElamNazarDaryaftAnswerNazer2" Type="nvarchar" MaxLength="255" />
+    <Property Name="SooratJalase" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheSooratJalase" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseErsalBeSherkat" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheErsalBeSherkat" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseDaryaftAnswerSHerkat" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateDaryaftAnswerSHerkat" Type="nvarchar" MaxLength="255" />
+    <Property Name="EstelamMojadadVahed" Type="nvarchar" MaxLength="255" />
+    <Property Name="EstelamMojadadVahedTarikh" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseDaryaftMojaddVahed" Type="nvarchar" MaxLength="255" />
+    <Property Name="VahedDaryaftMojaddVahed" Type="nvarchar" MaxLength="255" />
+    <Property Name="ElamNazarDaryaftMojaddVahed" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseErsalTadarokat" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheErsalTadarokat" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseOdatTadarokat" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheOdatTadarokat" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseErsalAzTadarokat" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheErsalAzTadarokat" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseAnswerSherkatTadarokat" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheAnswerSherkatTadarokat" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseErsalMojadad" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheErsalMojadad" Type="nvarchar" MaxLength="255" />
+    <Property Name="shenasePeigiriEstelam" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikhePeigiriEstelam" Type="nvarchar" MaxLength="255" />
+    <Property Name="ShenaseErsalMali" Type="nvarchar" MaxLength="255" />
+    <Property Name="TarikheErsalMali" Type="nvarchar" MaxLength="255" />
+    <Property Name="BodyPapers" Type="nvarchar" MaxLength="255" />
+    <Property Name="Body" Type="nvarchar" MaxLength="255" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="step1" Type="bit" />
+    <Property Name="step2" Type="bit" />
+    <Property Name="step3" Type="bit" />
+    <Property Name="step4" Type="bit" />
+    <Property Name="step5" Type="bit" />
+    <Property Name="step6" Type="bit" />
+    <Property Name="step7" Type="bit" />
+    <Property Name="step8" Type="bit" />
+    <Property Name="step9" Type="bit" />
+    <Property Name="step10" Type="bit" />
+    <Property Name="step11" Type="bit" />
+    <Property Name="step12" Type="bit" />
+    <Property Name="step13" Type="bit" />
+    <Property Name="srCheck" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbSooratPishNevis">
+    <Key>
+      <PropertyRef Name="pishId" />
+    </Key>
+    <Property Name="pishId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pishProject" Type="int" />
+    <Property Name="pishAct" Type="int" />
+    <Property Name="pishPrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="pishPricePlus" Type="nvarchar" MaxLength="50" />
+    <Property Name="pishSooratHesab" Type="nvarchar" MaxLength="250" />
+    <Property Name="pishHours" Type="nvarchar" MaxLength="50" />
+    <Property Name="pishDore" Type="nvarchar" MaxLength="150" />
+    <Property Name="pishType" Type="int" />
+    <Property Name="pishIsNazer" Type="bit" />
+    <Property Name="pishFinalPrice" Type="bigint" />
+    <Property Name="pishPriceArzeshAfzoode" Type="bigint" />
+    <Property Name="pishBody" Type="nvarchar(max)" />
+    <Property Name="pishIsSabt" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbTarhPishnehadi">
+    <Key>
+      <PropertyRef Name="thId" />
+    </Key>
+    <Property Name="thId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="thProject" Type="int" />
+    <Property Name="thYear" Type="int" />
+    <Property Name="thHajmTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thHajmPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thPriceTolid" Type="bigint" />
+    <Property Name="thPricePosh" Type="bigint" />
+    <Property Name="thModatTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thModatPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thAct" Type="int" />
+    <Property Name="thMekanizmPosh" Type="int" />
+    <Property Name="thMekanizmtolid" Type="int" />
+    <Property Name="thIsEstelamPaper" Type="int" />
+    <Property Name="thIsCancle" Type="int" />
+    <Property Name="thIsEstelamRepeat" Type="int" />
+    <Property Name="thBody" Type="ntext" />
+    <Property Name="thIsElhaghie" Type="bit" />
+    <Property Name="thRiskType" Type="nvarchar" MaxLength="50" />
+    <Property Name="thRiskTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="thRiskDegree" Type="nvarchar" MaxLength="50" />
+    <Property Name="thRiskEhtemal" Type="nvarchar" MaxLength="50" />
+    <Property Name="thRiskPayamad" Type="nvarchar" MaxLength="250" />
+    <Property Name="thRiskAnswer" Type="nvarchar" MaxLength="250" />
+    <Property Name="gPriceTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="gPricePosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="gType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ElhaghieId" Type="int" />
+    <Property Name="NezaratMosavab" Type="bit" />
+    <Property Name="StartDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="EndDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="PriceSecurity" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tbTemp">
+    <Key>
+      <PropertyRef Name="tmId" />
+    </Key>
+    <Property Name="tmId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tmData" Type="int" />
+    <Property Name="tmBody" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbUserDepartment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="500" />
+    <Property Name="departId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwDashboardAmaliatiSarRedisNashode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwDashboardAmaliatiSarRedisNashode">
+    <Key>
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="mosId" Type="int" Nullable="false" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prAct" Type="int" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosErsalDate" Type="date" />
+    <Property Name="mosAmaliatiDate" Type="date" />
+    <Property Name="mosbody" Type="ntext" />
+    <Property Name="mosType" Type="int" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosPropozal" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="khJalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="khJalaseDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwGharardadID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwGharardadID">
+    <Key>
+      <PropertyRef Name="ghId" />
+    </Key>
+    <Property Name="ghId" Type="int" Nullable="false" />
+    <Property Name="ghProject" Type="int" />
+    <Property Name="ghCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="isElhaghie" Type="bit" />
+    <Property Name="prId" Type="int" />
+    <Property Name="prTitle" Type="ntext" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwHeyatNezarat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwHeyatNezarat">
+    <Key>
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="thHajmTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thPriceTolid" Type="bigint" />
+    <Property Name="thPricePosh" Type="bigint" />
+    <Property Name="thHajmPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thModatTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thModatPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thMekanizmPosh" Type="int" />
+    <Property Name="thMekanizmtolid" Type="int" />
+    <Property Name="irIsAnalyz" Type="int" />
+    <Property Name="prIsEstelamMohtavayi" Type="int" />
+    <Property Name="prTemp" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwHeyatNezarat2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwHeyatNezarat2">
+    <Key>
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="thHajmTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thPriceTolid" Type="bigint" />
+    <Property Name="thPricePosh" Type="bigint" />
+    <Property Name="thHajmPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thModatTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thModatPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thMekanizmPosh" Type="int" />
+    <Property Name="thMekanizmtolid" Type="int" />
+    <Property Name="irIsAnalyz" Type="int" />
+    <Property Name="prIsEstelamMohtavayi" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavab2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavab2">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavab3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavab3">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosId" Type="int" Nullable="false" />
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosOlaviat" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavab4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavab4">
+    <Key>
+      <PropertyRef Name="mosid" />
+    </Key>
+    <Property Name="mosid" Type="int" Nullable="false" />
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosOlaviat" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavab5' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavab5">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavab6' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavab6">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavab7' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavab7">
+    <Key>
+      <PropertyRef Name="mosId" />
+    </Key>
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavabDashboard' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavabDashboard">
+    <Key>
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="mosId" Type="int" Nullable="false" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prAct" Type="int" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosErsalDate" Type="date" />
+    <Property Name="mosAmaliatiDate" Type="date" />
+    <Property Name="mosbody" Type="ntext" />
+    <Property Name="mosType" Type="int" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosPropozal" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="khJalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="khJalaseDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavabDashboardAjam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavabDashboardAjam">
+    <Key>
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="mosId" Type="int" Nullable="false" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prAct" Type="int" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosErsalDate" Type="date" />
+    <Property Name="mosAmaliatiDate" Type="date" />
+    <Property Name="mosbody" Type="ntext" />
+    <Property Name="mosType" Type="int" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosPropozal" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="khJalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="khJalaseDate" Type="date" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="infTitle" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavabDashboardAmaliatiAnjam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavabDashboardAmaliatiAnjam">
+    <Key>
+      <PropertyRef Name="khId" />
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="mosShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosAmaliatiDate" Type="date" />
+    <Property Name="khAct" Type="int" />
+    <Property Name="mosAct" Type="int" />
+    <Property Name="khId" Type="int" Nullable="false" />
+    <Property Name="khProject" Type="int" />
+    <Property Name="mosId" Type="int" Nullable="false" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosPropozal" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosErsalDate" Type="date" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosType" Type="int" />
+    <Property Name="mosbody" Type="ntext" />
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="khJalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="infTitle" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavabDashboardAmaliatiTakhir' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavabDashboardAmaliatiTakhir">
+    <Key>
+      <PropertyRef Name="khId" />
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="mosShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosAmaliatiDate" Type="date" />
+    <Property Name="khAct" Type="int" />
+    <Property Name="mosAct" Type="int" />
+    <Property Name="khId" Type="int" Nullable="false" />
+    <Property Name="khProject" Type="int" />
+    <Property Name="mosId" Type="int" Nullable="false" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="mosPropozal" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosErsalDate" Type="date" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosType" Type="int" />
+    <Property Name="mosbody" Type="ntext" />
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="khJalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="infTitle" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwMosavabDashboardTakhir' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwMosavabDashboardTakhir">
+    <Key>
+      <PropertyRef Name="mosId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="mosId" Type="int" Nullable="false" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prAct" Type="int" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="mosNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosShenase" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosErsalDate" Type="date" />
+    <Property Name="mosAmaliatiDate" Type="date" />
+    <Property Name="mosbody" Type="ntext" />
+    <Property Name="mosType" Type="int" />
+    <Property Name="mosOlaviat" Type="int" />
+    <Property Name="mosPropozal" Type="nvarchar" MaxLength="50" />
+    <Property Name="mosDate" Type="date" />
+    <Property Name="khJalaseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="khJalaseDate" Type="date" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="mosSRS" Type="date" />
+    <Property Name="mosSRSanswer" Type="date" />
+    <Property Name="infTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="Year" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwNoEstelam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwNoEstelam">
+    <Key>
+      <PropertyRef Name="thId" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="prTitle" />
+    </Key>
+    <Property Name="thId" Type="int" Nullable="false" />
+    <Property Name="thProject" Type="int" />
+    <Property Name="thYear" Type="int" />
+    <Property Name="thHajmTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thHajmPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thPriceTolid" Type="bigint" />
+    <Property Name="thPricePosh" Type="bigint" />
+    <Property Name="thModatTolid" Type="nvarchar" MaxLength="50" />
+    <Property Name="thModatPosh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thAct" Type="int" />
+    <Property Name="thMekanizmPosh" Type="int" />
+    <Property Name="thMekanizmtolid" Type="int" />
+    <Property Name="thIsEstelamPaper" Type="int" />
+    <Property Name="thIsCancle" Type="int" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prAct" Type="int" />
+    <Property Name="prRegDate" Type="date" />
+    <Property Name="prRegUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="status1" Type="nvarchar" MaxLength="50" />
+    <Property Name="status2" Type="nvarchar" MaxLength="50" />
+    <Property Name="status3" Type="nvarchar" MaxLength="50" />
+    <Property Name="prStatus" Type="int" />
+    <Property Name="prISEstelam" Type="int" />
+    <Property Name="prIsMohtava" Type="int" />
+    <Property Name="irIsAnalyz" Type="int" />
+    <Property Name="prIsTarh" Type="int" />
+    <Property Name="prIsEstelamMohtavayi" Type="int" />
+    <Property Name="prEstelamIsSubmit" Type="int" />
+    <Property Name="prIsErsalBeSherkat" Type="int" />
+    <Property Name="prIsAnswerTadarokatPending" Type="int" />
+    <Property Name="prTarhJalasePending" Type="int" />
+    <Property Name="prPishnevisPending" Type="int" />
+    <Property Name="prEstelamPending" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.vwServerDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwServerDate">
+    <Key>
+      <PropertyRef Name="serverdate" />
+    </Key>
+    <Property Name="serverdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbAminPremissionAccess_tbAdminPremission">
+    <End Role="tbAdminPremission" Type="Self.tbAdminPremission" Multiplicity="0..1" />
+    <End Role="tbAminPremissionAccess" Type="Self.tbAminPremissionAccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAdminPremission">
+        <PropertyRef Name="prId" />
+      </Principal>
+      <Dependent Role="tbAminPremissionAccess">
+        <PropertyRef Name="acPremission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbKhobreganMosavab_tbKhbregan">
+    <End Role="tbKhbregan" Type="Self.tbKhbregan" Multiplicity="0..1" />
+    <End Role="tbKhobreganMosavab" Type="Self.tbKhobreganMosavab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbKhbregan">
+        <PropertyRef Name="khId" />
+      </Principal>
+      <Dependent Role="tbKhobreganMosavab">
+        <PropertyRef Name="mosKhob" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbShenaseNumbers_tbHeyatNezarat">
+    <End Role="tbHeyatNezarat" Type="Self.tbHeyatNezarat" Multiplicity="0..1" />
+    <End Role="tbShenaseNumbers" Type="Self.tbShenaseNumbers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbHeyatNezarat">
+        <PropertyRef Name="heId" />
+      </Principal>
+      <Dependent Role="tbShenaseNumbers">
+        <PropertyRef Name="shHeyat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="spCountNazarGharardadNotOk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ghId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCountNazarGharardadOk" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ghId" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="NewMellatModelStoreContainer">
+    <EntitySet Name="Capacity" EntityType="Self.Capacity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CapacityCompany" EntityType="Self.CapacityCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Commission" EntityType="Self.Commission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prInformation" EntityType="Self.prInformation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectFinalize" EntityType="Self.ProjectFinalize" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SsoMapUser" EntityType="Self.SsoMapUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAccessPages" EntityType="Self.tbAccessPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAdminInPages" EntityType="Self.tbAdminInPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAdminPremission" EntityType="Self.tbAdminPremission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAdminProjects" EntityType="Self.tbAdminProjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAdmins" EntityType="Self.tbAdmins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbAminPremissionAccess" EntityType="Self.tbAminPremissionAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbChart" EntityType="Self.tbChart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbElhaghie" EntityType="Self.tbElhaghie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbEstelamVahed" EntityType="Self.tbEstelamVahed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbFiles" EntityType="Self.tbFiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbGharardad" EntityType="Self.tbGharardad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbHeyatNezarat" EntityType="Self.tbHeyatNezarat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbHeyatNezaratMosavab" EntityType="Self.tbHeyatNezaratMosavab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbIndex1" EntityType="Self.tbIndex1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbKhbregan" EntityType="Self.tbKhbregan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbKhobreganMosavab" EntityType="Self.tbKhobreganMosavab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbNazar" EntityType="Self.tbNazar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbPages" EntityType="Self.tbPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbPaperProjects" EntityType="Self.tbPaperProjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbProjectPaper" EntityType="Self.tbProjectPaper" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbProjects" EntityType="Self.tbProjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbReval" EntityType="Self.tbReval" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbShenaseNumbers" EntityType="Self.tbShenaseNumbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSooratHesab" EntityType="Self.tbSooratHesab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSooratPishNevis" EntityType="Self.tbSooratPishNevis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTarhPishnehadi" EntityType="Self.tbTarhPishnehadi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTemp" EntityType="Self.tbTemp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUserDepartment" EntityType="Self.tbUserDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwDashboardAmaliatiSarRedisNashode" EntityType="Self.vwDashboardAmaliatiSarRedisNashode" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwDashboardAmaliatiSarRedisNashode].[mosId] AS [mosId], 
+[vwDashboardAmaliatiSarRedisNashode].[prId] AS [prId], 
+[vwDashboardAmaliatiSarRedisNashode].[prTitle] AS [prTitle], 
+[vwDashboardAmaliatiSarRedisNashode].[prAct] AS [prAct], 
+[vwDashboardAmaliatiSarRedisNashode].[prVahed] AS [prVahed], 
+[vwDashboardAmaliatiSarRedisNashode].[prOlaviat] AS [prOlaviat], 
+[vwDashboardAmaliatiSarRedisNashode].[prProjectType] AS [prProjectType], 
+[vwDashboardAmaliatiSarRedisNashode].[prPeymankar] AS [prPeymankar], 
+[vwDashboardAmaliatiSarRedisNashode].[mosNumber] AS [mosNumber], 
+[vwDashboardAmaliatiSarRedisNashode].[mosShenase] AS [mosShenase], 
+[vwDashboardAmaliatiSarRedisNashode].[mosErsalDate] AS [mosErsalDate], 
+[vwDashboardAmaliatiSarRedisNashode].[mosAmaliatiDate] AS [mosAmaliatiDate], 
+[vwDashboardAmaliatiSarRedisNashode].[mosbody] AS [mosbody], 
+[vwDashboardAmaliatiSarRedisNashode].[mosType] AS [mosType], 
+[vwDashboardAmaliatiSarRedisNashode].[mosOlaviat] AS [mosOlaviat], 
+[vwDashboardAmaliatiSarRedisNashode].[mosPropozal] AS [mosPropozal], 
+[vwDashboardAmaliatiSarRedisNashode].[mosDate] AS [mosDate], 
+[vwDashboardAmaliatiSarRedisNashode].[khJalaseNumber] AS [khJalaseNumber], 
+[vwDashboardAmaliatiSarRedisNashode].[khJalaseDate] AS [khJalaseDate]
+FROM [dbo].[vwDashboardAmaliatiSarRedisNashode] AS [vwDashboardAmaliatiSarRedisNashode]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwGharardadID" EntityType="Self.vwGharardadID" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwGharardadID].[ghId] AS [ghId], 
+[vwGharardadID].[ghProject] AS [ghProject], 
+[vwGharardadID].[ghCode] AS [ghCode], 
+[vwGharardadID].[isElhaghie] AS [isElhaghie], 
+[vwGharardadID].[prId] AS [prId], 
+[vwGharardadID].[prTitle] AS [prTitle], 
+[vwGharardadID].[prVahed] AS [prVahed], 
+[vwGharardadID].[prPeymankar] AS [prPeymankar], 
+[vwGharardadID].[prProjectType] AS [prProjectType]
+FROM [dbo].[vwGharardadID] AS [vwGharardadID]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwHeyatNezarat" EntityType="Self.vwHeyatNezarat" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwHeyatNezarat].[prTitle] AS [prTitle], 
+[vwHeyatNezarat].[prId] AS [prId], 
+[vwHeyatNezarat].[prVahed] AS [prVahed], 
+[vwHeyatNezarat].[prProjectType] AS [prProjectType], 
+[vwHeyatNezarat].[prSanadType] AS [prSanadType], 
+[vwHeyatNezarat].[prOlaviat] AS [prOlaviat], 
+[vwHeyatNezarat].[prPeymankar] AS [prPeymankar], 
+[vwHeyatNezarat].[thHajmTolid] AS [thHajmTolid], 
+[vwHeyatNezarat].[thPriceTolid] AS [thPriceTolid], 
+[vwHeyatNezarat].[thPricePosh] AS [thPricePosh], 
+[vwHeyatNezarat].[thHajmPosh] AS [thHajmPosh], 
+[vwHeyatNezarat].[thModatTolid] AS [thModatTolid], 
+[vwHeyatNezarat].[thModatPosh] AS [thModatPosh], 
+[vwHeyatNezarat].[thMekanizmPosh] AS [thMekanizmPosh], 
+[vwHeyatNezarat].[thMekanizmtolid] AS [thMekanizmtolid], 
+[vwHeyatNezarat].[irIsAnalyz] AS [irIsAnalyz], 
+[vwHeyatNezarat].[prIsEstelamMohtavayi] AS [prIsEstelamMohtavayi], 
+[vwHeyatNezarat].[prTemp] AS [prTemp]
+FROM [dbo].[vwHeyatNezarat] AS [vwHeyatNezarat]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwHeyatNezarat2" EntityType="Self.vwHeyatNezarat2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwHeyatNezarat2].[prTitle] AS [prTitle], 
+[vwHeyatNezarat2].[prId] AS [prId], 
+[vwHeyatNezarat2].[prVahed] AS [prVahed], 
+[vwHeyatNezarat2].[prProjectType] AS [prProjectType], 
+[vwHeyatNezarat2].[prSanadType] AS [prSanadType], 
+[vwHeyatNezarat2].[prOlaviat] AS [prOlaviat], 
+[vwHeyatNezarat2].[prPeymankar] AS [prPeymankar], 
+[vwHeyatNezarat2].[thHajmTolid] AS [thHajmTolid], 
+[vwHeyatNezarat2].[thPriceTolid] AS [thPriceTolid], 
+[vwHeyatNezarat2].[thPricePosh] AS [thPricePosh], 
+[vwHeyatNezarat2].[thHajmPosh] AS [thHajmPosh], 
+[vwHeyatNezarat2].[thModatTolid] AS [thModatTolid], 
+[vwHeyatNezarat2].[thModatPosh] AS [thModatPosh], 
+[vwHeyatNezarat2].[thMekanizmPosh] AS [thMekanizmPosh], 
+[vwHeyatNezarat2].[thMekanizmtolid] AS [thMekanizmtolid], 
+[vwHeyatNezarat2].[irIsAnalyz] AS [irIsAnalyz], 
+[vwHeyatNezarat2].[prIsEstelamMohtavayi] AS [prIsEstelamMohtavayi]
+FROM [dbo].[vwHeyatNezarat2] AS [vwHeyatNezarat2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavab2" EntityType="Self.vwMosavab2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavab2].[mosSRS] AS [mosSRS], 
+[vwMosavab2].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavab2].[prPeymankar] AS [prPeymankar], 
+[vwMosavab2].[mosDate] AS [mosDate], 
+[vwMosavab2].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavab2].[mosId] AS [mosId]
+FROM [dbo].[vwMosavab2] AS [vwMosavab2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavab3" EntityType="Self.vwMosavab3" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavab3].[mosId] AS [mosId], 
+[vwMosavab3].[mosSRS] AS [mosSRS], 
+[vwMosavab3].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavab3].[prPeymankar] AS [prPeymankar], 
+[vwMosavab3].[mosDate] AS [mosDate], 
+[vwMosavab3].[mosOlaviat] AS [mosOlaviat]
+FROM [dbo].[vwMosavab3] AS [vwMosavab3]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavab4" EntityType="Self.vwMosavab4" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavab4].[mosid] AS [mosid], 
+[vwMosavab4].[mosSRS] AS [mosSRS], 
+[vwMosavab4].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavab4].[prPeymankar] AS [prPeymankar], 
+[vwMosavab4].[mosDate] AS [mosDate], 
+[vwMosavab4].[mosOlaviat] AS [mosOlaviat]
+FROM [dbo].[vwMosavab4] AS [vwMosavab4]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavab5" EntityType="Self.vwMosavab5" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavab5].[mosSRS] AS [mosSRS], 
+[vwMosavab5].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavab5].[prPeymankar] AS [prPeymankar], 
+[vwMosavab5].[mosDate] AS [mosDate], 
+[vwMosavab5].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavab5].[mosId] AS [mosId]
+FROM [dbo].[vwMosavab5] AS [vwMosavab5]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavab6" EntityType="Self.vwMosavab6" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavab6].[mosSRS] AS [mosSRS], 
+[vwMosavab6].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavab6].[prPeymankar] AS [prPeymankar], 
+[vwMosavab6].[mosDate] AS [mosDate], 
+[vwMosavab6].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavab6].[mosId] AS [mosId]
+FROM [dbo].[vwMosavab6] AS [vwMosavab6]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavab7" EntityType="Self.vwMosavab7" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavab7].[mosSRS] AS [mosSRS], 
+[vwMosavab7].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavab7].[prPeymankar] AS [prPeymankar], 
+[vwMosavab7].[mosDate] AS [mosDate], 
+[vwMosavab7].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavab7].[mosId] AS [mosId]
+FROM [dbo].[vwMosavab7] AS [vwMosavab7]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavabDashboard" EntityType="Self.vwMosavabDashboard" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavabDashboard].[mosId] AS [mosId], 
+[vwMosavabDashboard].[prId] AS [prId], 
+[vwMosavabDashboard].[prTitle] AS [prTitle], 
+[vwMosavabDashboard].[prAct] AS [prAct], 
+[vwMosavabDashboard].[prVahed] AS [prVahed], 
+[vwMosavabDashboard].[prOlaviat] AS [prOlaviat], 
+[vwMosavabDashboard].[prProjectType] AS [prProjectType], 
+[vwMosavabDashboard].[prPeymankar] AS [prPeymankar], 
+[vwMosavabDashboard].[mosNumber] AS [mosNumber], 
+[vwMosavabDashboard].[mosShenase] AS [mosShenase], 
+[vwMosavabDashboard].[mosErsalDate] AS [mosErsalDate], 
+[vwMosavabDashboard].[mosAmaliatiDate] AS [mosAmaliatiDate], 
+[vwMosavabDashboard].[mosbody] AS [mosbody], 
+[vwMosavabDashboard].[mosType] AS [mosType], 
+[vwMosavabDashboard].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavabDashboard].[mosPropozal] AS [mosPropozal], 
+[vwMosavabDashboard].[mosDate] AS [mosDate], 
+[vwMosavabDashboard].[khJalaseNumber] AS [khJalaseNumber], 
+[vwMosavabDashboard].[khJalaseDate] AS [khJalaseDate]
+FROM [dbo].[vwMosavabDashboard] AS [vwMosavabDashboard]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavabDashboardAjam" EntityType="Self.vwMosavabDashboardAjam" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavabDashboardAjam].[mosId] AS [mosId], 
+[vwMosavabDashboardAjam].[prId] AS [prId], 
+[vwMosavabDashboardAjam].[prTitle] AS [prTitle], 
+[vwMosavabDashboardAjam].[prAct] AS [prAct], 
+[vwMosavabDashboardAjam].[prVahed] AS [prVahed], 
+[vwMosavabDashboardAjam].[prOlaviat] AS [prOlaviat], 
+[vwMosavabDashboardAjam].[prProjectType] AS [prProjectType], 
+[vwMosavabDashboardAjam].[prPeymankar] AS [prPeymankar], 
+[vwMosavabDashboardAjam].[mosNumber] AS [mosNumber], 
+[vwMosavabDashboardAjam].[mosShenase] AS [mosShenase], 
+[vwMosavabDashboardAjam].[mosErsalDate] AS [mosErsalDate], 
+[vwMosavabDashboardAjam].[mosAmaliatiDate] AS [mosAmaliatiDate], 
+[vwMosavabDashboardAjam].[mosbody] AS [mosbody], 
+[vwMosavabDashboardAjam].[mosType] AS [mosType], 
+[vwMosavabDashboardAjam].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavabDashboardAjam].[mosPropozal] AS [mosPropozal], 
+[vwMosavabDashboardAjam].[mosDate] AS [mosDate], 
+[vwMosavabDashboardAjam].[khJalaseNumber] AS [khJalaseNumber], 
+[vwMosavabDashboardAjam].[khJalaseDate] AS [khJalaseDate], 
+[vwMosavabDashboardAjam].[prSanadType] AS [prSanadType], 
+[vwMosavabDashboardAjam].[mosSRS] AS [mosSRS], 
+[vwMosavabDashboardAjam].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavabDashboardAjam].[infTitle] AS [infTitle]
+FROM [dbo].[vwMosavabDashboardAjam] AS [vwMosavabDashboardAjam]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavabDashboardAmaliatiAnjam" EntityType="Self.vwMosavabDashboardAmaliatiAnjam" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavabDashboardAmaliatiAnjam].[mosShenase] AS [mosShenase], 
+[vwMosavabDashboardAmaliatiAnjam].[mosNumber] AS [mosNumber], 
+[vwMosavabDashboardAmaliatiAnjam].[mosAmaliatiDate] AS [mosAmaliatiDate], 
+[vwMosavabDashboardAmaliatiAnjam].[khAct] AS [khAct], 
+[vwMosavabDashboardAmaliatiAnjam].[mosAct] AS [mosAct], 
+[vwMosavabDashboardAmaliatiAnjam].[khId] AS [khId], 
+[vwMosavabDashboardAmaliatiAnjam].[khProject] AS [khProject], 
+[vwMosavabDashboardAmaliatiAnjam].[mosId] AS [mosId], 
+[vwMosavabDashboardAmaliatiAnjam].[mosDate] AS [mosDate], 
+[vwMosavabDashboardAmaliatiAnjam].[mosPropozal] AS [mosPropozal], 
+[vwMosavabDashboardAmaliatiAnjam].[mosErsalDate] AS [mosErsalDate], 
+[vwMosavabDashboardAmaliatiAnjam].[prTitle] AS [prTitle], 
+[vwMosavabDashboardAmaliatiAnjam].[prVahed] AS [prVahed], 
+[vwMosavabDashboardAmaliatiAnjam].[prProjectType] AS [prProjectType], 
+[vwMosavabDashboardAmaliatiAnjam].[prSanadType] AS [prSanadType], 
+[vwMosavabDashboardAmaliatiAnjam].[prOlaviat] AS [prOlaviat], 
+[vwMosavabDashboardAmaliatiAnjam].[prPeymankar] AS [prPeymankar], 
+[vwMosavabDashboardAmaliatiAnjam].[prId] AS [prId], 
+[vwMosavabDashboardAmaliatiAnjam].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavabDashboardAmaliatiAnjam].[mosType] AS [mosType], 
+[vwMosavabDashboardAmaliatiAnjam].[mosbody] AS [mosbody], 
+[vwMosavabDashboardAmaliatiAnjam].[mosSRS] AS [mosSRS], 
+[vwMosavabDashboardAmaliatiAnjam].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavabDashboardAmaliatiAnjam].[khJalaseNumber] AS [khJalaseNumber], 
+[vwMosavabDashboardAmaliatiAnjam].[infTitle] AS [infTitle]
+FROM [dbo].[vwMosavabDashboardAmaliatiAnjam] AS [vwMosavabDashboardAmaliatiAnjam]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavabDashboardAmaliatiTakhir" EntityType="Self.vwMosavabDashboardAmaliatiTakhir" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavabDashboardAmaliatiTakhir].[mosShenase] AS [mosShenase], 
+[vwMosavabDashboardAmaliatiTakhir].[mosNumber] AS [mosNumber], 
+[vwMosavabDashboardAmaliatiTakhir].[mosAmaliatiDate] AS [mosAmaliatiDate], 
+[vwMosavabDashboardAmaliatiTakhir].[khAct] AS [khAct], 
+[vwMosavabDashboardAmaliatiTakhir].[mosAct] AS [mosAct], 
+[vwMosavabDashboardAmaliatiTakhir].[khId] AS [khId], 
+[vwMosavabDashboardAmaliatiTakhir].[khProject] AS [khProject], 
+[vwMosavabDashboardAmaliatiTakhir].[mosId] AS [mosId], 
+[vwMosavabDashboardAmaliatiTakhir].[mosDate] AS [mosDate], 
+[vwMosavabDashboardAmaliatiTakhir].[mosPropozal] AS [mosPropozal], 
+[vwMosavabDashboardAmaliatiTakhir].[mosErsalDate] AS [mosErsalDate], 
+[vwMosavabDashboardAmaliatiTakhir].[prTitle] AS [prTitle], 
+[vwMosavabDashboardAmaliatiTakhir].[prVahed] AS [prVahed], 
+[vwMosavabDashboardAmaliatiTakhir].[prProjectType] AS [prProjectType], 
+[vwMosavabDashboardAmaliatiTakhir].[prSanadType] AS [prSanadType], 
+[vwMosavabDashboardAmaliatiTakhir].[prOlaviat] AS [prOlaviat], 
+[vwMosavabDashboardAmaliatiTakhir].[prPeymankar] AS [prPeymankar], 
+[vwMosavabDashboardAmaliatiTakhir].[prId] AS [prId], 
+[vwMosavabDashboardAmaliatiTakhir].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavabDashboardAmaliatiTakhir].[mosType] AS [mosType], 
+[vwMosavabDashboardAmaliatiTakhir].[mosbody] AS [mosbody], 
+[vwMosavabDashboardAmaliatiTakhir].[mosSRS] AS [mosSRS], 
+[vwMosavabDashboardAmaliatiTakhir].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavabDashboardAmaliatiTakhir].[khJalaseNumber] AS [khJalaseNumber], 
+[vwMosavabDashboardAmaliatiTakhir].[infTitle] AS [infTitle]
+FROM [dbo].[vwMosavabDashboardAmaliatiTakhir] AS [vwMosavabDashboardAmaliatiTakhir]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwMosavabDashboardTakhir" EntityType="Self.vwMosavabDashboardTakhir" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwMosavabDashboardTakhir].[mosId] AS [mosId], 
+[vwMosavabDashboardTakhir].[prId] AS [prId], 
+[vwMosavabDashboardTakhir].[prTitle] AS [prTitle], 
+[vwMosavabDashboardTakhir].[prAct] AS [prAct], 
+[vwMosavabDashboardTakhir].[prVahed] AS [prVahed], 
+[vwMosavabDashboardTakhir].[prOlaviat] AS [prOlaviat], 
+[vwMosavabDashboardTakhir].[prProjectType] AS [prProjectType], 
+[vwMosavabDashboardTakhir].[prPeymankar] AS [prPeymankar], 
+[vwMosavabDashboardTakhir].[mosNumber] AS [mosNumber], 
+[vwMosavabDashboardTakhir].[mosShenase] AS [mosShenase], 
+[vwMosavabDashboardTakhir].[mosErsalDate] AS [mosErsalDate], 
+[vwMosavabDashboardTakhir].[mosAmaliatiDate] AS [mosAmaliatiDate], 
+[vwMosavabDashboardTakhir].[mosbody] AS [mosbody], 
+[vwMosavabDashboardTakhir].[mosType] AS [mosType], 
+[vwMosavabDashboardTakhir].[mosOlaviat] AS [mosOlaviat], 
+[vwMosavabDashboardTakhir].[mosPropozal] AS [mosPropozal], 
+[vwMosavabDashboardTakhir].[mosDate] AS [mosDate], 
+[vwMosavabDashboardTakhir].[khJalaseNumber] AS [khJalaseNumber], 
+[vwMosavabDashboardTakhir].[khJalaseDate] AS [khJalaseDate], 
+[vwMosavabDashboardTakhir].[prSanadType] AS [prSanadType], 
+[vwMosavabDashboardTakhir].[mosSRS] AS [mosSRS], 
+[vwMosavabDashboardTakhir].[mosSRSanswer] AS [mosSRSanswer], 
+[vwMosavabDashboardTakhir].[infTitle] AS [infTitle], 
+[vwMosavabDashboardTakhir].[Year] AS [Year]
+FROM [dbo].[vwMosavabDashboardTakhir] AS [vwMosavabDashboardTakhir]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwNoEstelam" EntityType="Self.vwNoEstelam" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwNoEstelam].[thId] AS [thId], 
+[vwNoEstelam].[thProject] AS [thProject], 
+[vwNoEstelam].[thYear] AS [thYear], 
+[vwNoEstelam].[thHajmTolid] AS [thHajmTolid], 
+[vwNoEstelam].[thHajmPosh] AS [thHajmPosh], 
+[vwNoEstelam].[thPriceTolid] AS [thPriceTolid], 
+[vwNoEstelam].[thPricePosh] AS [thPricePosh], 
+[vwNoEstelam].[thModatTolid] AS [thModatTolid], 
+[vwNoEstelam].[thModatPosh] AS [thModatPosh], 
+[vwNoEstelam].[thAct] AS [thAct], 
+[vwNoEstelam].[thMekanizmPosh] AS [thMekanizmPosh], 
+[vwNoEstelam].[thMekanizmtolid] AS [thMekanizmtolid], 
+[vwNoEstelam].[thIsEstelamPaper] AS [thIsEstelamPaper], 
+[vwNoEstelam].[thIsCancle] AS [thIsCancle], 
+[vwNoEstelam].[prId] AS [prId], 
+[vwNoEstelam].[prTitle] AS [prTitle], 
+[vwNoEstelam].[prAct] AS [prAct], 
+[vwNoEstelam].[prRegDate] AS [prRegDate], 
+[vwNoEstelam].[prRegUser] AS [prRegUser], 
+[vwNoEstelam].[prVahed] AS [prVahed], 
+[vwNoEstelam].[prProjectType] AS [prProjectType], 
+[vwNoEstelam].[prSanadType] AS [prSanadType], 
+[vwNoEstelam].[prOlaviat] AS [prOlaviat], 
+[vwNoEstelam].[prPeymankar] AS [prPeymankar], 
+[vwNoEstelam].[status1] AS [status1], 
+[vwNoEstelam].[status2] AS [status2], 
+[vwNoEstelam].[status3] AS [status3], 
+[vwNoEstelam].[prStatus] AS [prStatus], 
+[vwNoEstelam].[prISEstelam] AS [prISEstelam], 
+[vwNoEstelam].[prIsMohtava] AS [prIsMohtava], 
+[vwNoEstelam].[irIsAnalyz] AS [irIsAnalyz], 
+[vwNoEstelam].[prIsTarh] AS [prIsTarh], 
+[vwNoEstelam].[prIsEstelamMohtavayi] AS [prIsEstelamMohtavayi], 
+[vwNoEstelam].[prEstelamIsSubmit] AS [prEstelamIsSubmit], 
+[vwNoEstelam].[prIsErsalBeSherkat] AS [prIsErsalBeSherkat], 
+[vwNoEstelam].[prIsAnswerTadarokatPending] AS [prIsAnswerTadarokatPending], 
+[vwNoEstelam].[prTarhJalasePending] AS [prTarhJalasePending], 
+[vwNoEstelam].[prPishnevisPending] AS [prPishnevisPending], 
+[vwNoEstelam].[prEstelamPending] AS [prEstelamPending]
+FROM [dbo].[vwNoEstelam] AS [vwNoEstelam]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwServerDate" EntityType="Self.vwServerDate" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vwServerDate].[serverdate] AS [serverdate]
+FROM [dbo].[vwServerDate] AS [vwServerDate]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_tbAminPremissionAccess_tbAdminPremission" Association="Self.FK_tbAminPremissionAccess_tbAdminPremission">
+      <End Role="tbAdminPremission" EntitySet="tbAdminPremission" />
+      <End Role="tbAminPremissionAccess" EntitySet="tbAminPremissionAccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbKhobreganMosavab_tbKhbregan" Association="Self.FK_tbKhobreganMosavab_tbKhbregan">
+      <End Role="tbKhbregan" EntitySet="tbKhbregan" />
+      <End Role="tbKhobreganMosavab" EntitySet="tbKhobreganMosavab" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbShenaseNumbers_tbHeyatNezarat" Association="Self.FK_tbShenaseNumbers_tbHeyatNezarat">
+      <End Role="tbHeyatNezarat" EntitySet="tbHeyatNezarat" />
+      <End Role="tbShenaseNumbers" EntitySet="tbShenaseNumbers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,30 @@
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe.config
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.pdb
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\bin\Debug\EntityFramework.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\bin\Debug\EntityFramework.SqlServer.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\bin\Debug\EntityFramework.xml
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\bin\Debug\EntityFramework.SqlServer.xml
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.csprojResolveAssemblyReference.cache
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.ProjectInstaller.resources
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.csproj.GenerateResource.Cache
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.exe
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.pdb
+D:\Projects\NewMellat\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.csprojResolveAssemblyReference.cache
+D:\Projects\NewMellat\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.ProjectInstaller.resources
+D:\Projects\NewMellat\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.csproj.GenerateResource.Cache
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe.config
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe.manifest
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.application
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.exe
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\NewMellatHR.pdb
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\EntityFramework.dll
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\EntityFramework.xml
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\NewMellat\NewMellat\NewMellatHR\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\NewMellat\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.exe.manifest
+D:\Projects\NewMellat\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.application
+D:\Projects\NewMellat\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.exe
+D:\Projects\NewMellat\NewMellat\NewMellatHR\obj\Debug\NewMellatHR.pdb

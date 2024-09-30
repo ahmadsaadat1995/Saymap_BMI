@@ -1,0 +1,6 @@
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\bin\MellatSymapVService.dll.config
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\bin\MellatSymapVService.dll
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\bin\MellatSymapVService.pdb
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\obj\Release\MellatSymapVService.dll
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\obj\Release\MellatSymapVService.pdb
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\obj\Release\MellatSymapVService.csprojResolveAssemblyReference.cache

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="CapacityView1" EntityType="Model.CapacityView1" />
+    <EntitySet Name="CapacityProjects" EntityType="Model.CapacityProject" />
+    <EntitySet Name="CapacityView2" EntityType="Model.CapacityView2" />
+    <EntitySet Name="CapacityProjectDurations" EntityType="Model.CapacityProjectDuration" />
+    <EntitySet Name="ServiceCatalogs" EntityType="Model.ServiceCatalog" />
+  </EntityContainer>
+  <EntityType Name="CapacityView1">
+    <Key>
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="thId" />
+    </Key>
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="GharardadStartTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GharardadEndTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prProjectType" Type="Int32" />
+    <Property Name="thHajmTolid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thId" Type="Int32" Nullable="false" />
+    <Property Name="prTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ElhaghieId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CapacityProject">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Season" Type="Int32" Nullable="false" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="HasContract" Type="Boolean" />
+    <Property Name="CapacityTypeId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CapacityView2">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="mosDate" Type="DateTime" Precision="0" />
+    <Property Name="mosAmaliatiDate" Type="DateTime" Precision="0" />
+    <Property Name="prId" Type="Int32" Nullable="false" />
+    <Property Name="prPeymankar" Type="Int32" />
+    <Property Name="prProjectType" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CapacityProjectDuration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int32" Nullable="false" />
+    <Property Name="Duration" Type="Int32" Nullable="false" />
+    <Property Name="HasContract" Type="Boolean" Nullable="false" />
+    <Property Name="CapacityTypeId" Type="Int32" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="TotalNafarSaat" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ServiceCatalog">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

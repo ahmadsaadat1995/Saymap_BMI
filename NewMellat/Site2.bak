@@ -1,0 +1,645 @@
+﻿<%@ master language="C#" autoeventwireup="true" codebehind="Site2.master.cs" inherits="NewMellat.Site2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>::: سامانه سایمپ ::: </title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/BootStrapTheme/dist/css/bootstrap-theme.css">
+    <!-- Bootstrap rtl -->
+    <link rel="stylesheet" href="/BootStrapTheme/dist/css/rtl.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/BootStrapTheme/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/BootStrapTheme/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/BootStrapTheme/dist/css/AdminLTE.css">
+
+    <%--  <link rel="stylesheet" href="BootStrapTheme/dist/css/skins/skin-red.min.css">--%>
+    <link rel="stylesheet" href="/BootStrapTheme/dist/css/skins/_all-skins.min.css">
+
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="/Scripts/Css/jquery-ui.css" />
+    <script type="text/javascript" src="/Scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/CommonFunctions-1.0.js"></script>
+    <style>
+        .badj {
+            background-color: green;
+            color: white;
+            /*float:right;*/
+            padding-top: 2px;
+            margin-top: 6px;
+            min-width: 17px;
+            height: 17px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .badj-warning {
+            background-color: #F39C12;
+        }
+
+        .badj-error {
+            background-color: #DD4B39;
+            margin-right: 10px;
+        }
+        /*.treeview-menu li ,.treeview-menu,.treeview{
+        clear:both;
+        }*/
+        .treeview-menu li a {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body class="hold-transition skin-red sidebar-mini">
+    <script>
+        $(document).ready(function () {
+
+            var notify = JSON.parse(loadRestRequest("http://172.22.65.16:4581/SqlOData.svc/GetData/tbNotification?$filter=userName eq '" + $('#lbName3').text() + "'")).d.results[0];
+            console.log(notify)
+            $('#projectList').html(notify.projectListCount);
+            $('#Khobregan').html(notify.khobreganJalase);
+            $('#reval1').html(notify.reval3);
+            $('#reval2').html(notify.reval4);
+            $('#reval1W').html(notify.reval3W);
+            $('#reval2W').html(notify.reval4W);
+            $('#mosavabatKhobregan').html(notify.mosavabatKhobregan);
+
+            $('#posokhDadeNashode').html(notify.posokhDadeNashode);
+            $('#posokhDadeNashodeW').html(notify.posokhDadeNashodeW);
+            $('#ersalBeSherkatShode').html(notify.ersalBeSherkatShode);
+            $('#ersalBeSherkatShodeW').html(notify.ersalBeSherkatShodeW);
+            $('#montazerePasokh').html(notify.montazerePasokh);
+            $('#montazerePasokhW').html(notify.montazerePasokhW);
+            $('#tadarokatAnalyzGheymat').html(notify.tadarokatAnalyzGheymat);
+            $('#tadarokatAnalyzGheymatW').html(notify.tadarokatAnalyzGheymatW);
+            $('#pasokhTadarokat').html(notify.pasokhTadarokat);
+            $('#pasokhTadarokatW').html(notify.pasokhTadarokatW);
+
+            $('#nezarat').html(notify.nezarat);
+            $('#commission').html(notify.commission);
+            $('#gharardad').html(notify.gharardad);
+            $('#gharardadW').html(notify.gharardadW);
+
+            $('#pasokhNazer'). html(notify.pasokhNazer);
+            $('#pasokhNazerW').html(notify.pasokhNazerW);
+            $('#pasokhSherkat'). html(notify.pasokhSherkat);
+            $('#pasokhSherkatW').html(notify.pasokhSherkatW);
+            $('#ersalBeMali'). html(notify.ersalBeMali);
+            $('#ersalBeMaliW').html(notify.ersalBeMaliW);
+                pasokhSherkat
+        });
+    </script>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+
+            <!-- Main Header -->
+            <header class="main-header">
+
+                <a href="#" class="logo">
+
+                    <span class="logo-mini">پنل</span>
+
+                    <span class="logo-lg" style="background-image: 1.png"><b>
+                        <small style="padding-left: 7px">
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/1.png" Width="35px" />
+                        </small>
+                        سامانه سایمپ</b>
+                    </span>
+
+                </a>
+
+                <nav class="navbar navbar-static-top">
+
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">منوی کاربری</span>
+                    </a>
+
+
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+
+                            <li class="dropdown messages-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <%--              <span class="label label-success">4</span>--%>
+                                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                    </asp:ScriptManager>
+                                </a>
+
+                            </li>
+
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-bell-o"></i>
+
+                                </a>
+
+                            </li>
+
+
+
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/BootStrapTheme/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+
+                                    <%--                                    <asp:Label ID="lbUserName" CssClass="hidden-xs" runat="server" Text=""></asp:Label>--%>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- User image -->
+                                    <li class="user-header">
+                                        <img src="/BootStrapTheme/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                                        <p>
+                                            <%--                                            <asp:Label ID="lbName2" runat="server" Text=""></asp:Label>--%>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    <li class="user-body">
+
+                                        <!-- /.row -->
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+
+                                        <div class="pull-right">
+                                            <asp:LinkButton ID="LinkButton1" CssClass="btn btn-default btn-flat" runat="server" OnClick="LinkButton1_Click">خروج از سامانه</asp:LinkButton>
+
+                                        </div>
+                                        <div class="pull-left">
+                                            <asp:LinkButton ID="LinkButton2" CssClass="btn btn-default btn-flat" runat="server" PostBackUrl="~/Content/PageChangePwd.aspx">تغییر رمز عبور</asp:LinkButton>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- right side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel">
+                        <div class="pull-right image">
+                            <img src="/BootStrapTheme/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-right info">
+                            <p>
+                                <asp:Label ID="lbName3" runat="server" Text=""></asp:Label>
+                            </p>
+                            <!-- Status -->
+                            <a href="#"><i class="fa fa-circle text-success"></i>آنلاین</a>
+                        </div>
+                    </div>
+
+                    <!-- search form (Optional) -->
+                    <%--                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="جستجو">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>--%>
+                    <!-- /.search form -->
+
+                    <!-- Sidebar Menu -->
+                    <ul class="sidebar-menu" data-widget="tree">
+                        <li class="header">منوی کاربری</li>
+                     <%--   <li class="treeview" style="text-align: center;">
+                            <span style="display: inline-block; color: #b8c7ce">تعداد کل آیتم ها</span>
+                            <div class="badj" style="color: #008000;">0</div>
+                        </li>
+                        <li class="treeview" style="text-align: center;">
+                            <span style="display: inline-block; color: #b8c7ce">نزدیک به تاخیر</span>
+                            <div class="badj badj-warning" style="color: #F39C12;">0</div>
+                        </li>
+                        <li class="treeview" style="text-align: center;">
+                            <span style="display: inline-block; color: #b8c7ce">دارای تاخیر </span>
+                            <div class="badj" style="background-color: #DD4B39; color: #DD4B39">0</div>
+                        </li>
+                        <hr />--%>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>مدیریت درخواست ها</span>
+                                <span class="pull-left-container">
+                                    <i class="fa fa-angle-right pull-left"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PageProjectCheck.aspx"><i class="fa fa-circle-o"></i>ثبت درخواست جدید</a></li>
+                                <li><a href="PageProjectList.aspx"><i class="fa fa-circle-o"></i>لیست درخواست ها</a><div class="badj" id="projectList">0</div>
+                                </li>
+                                <%--   <li><a href="PageAbbr.aspx"><i class="fa fa-circle-o"></i>نامهای اختصاری</a></li>--%>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#"><i class="fa fa-link"></i><span>ارزش گذاری طرح ها </span>
+                                <span class="pull-left-container">
+                                    <!--<i class="fa fa-angle-right pull-left"></i>-->
+                                    <%-- <small class="label pull-left bg-green">
+                                        <asp:Label ID="lbNo1" runat="server" Text="Label"></asp:Label></small>--%>
+
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PageEstelamVahed.aspx"><i class="fa fa-circle-o"></i>استعلام سند چشم انداز</a>
+                                </li>
+                                <li><a href="PageKhobregan.aspx"><i class="fa fa-circle-o"></i>طرح در جلسه کارگروه توسعه <br/>&nbsp;&nbsp;&nbsp;&nbsp; فرآیندهای جاری</a><div class="badj" id="Khobregan">0</div>
+                                </li>
+                                <li><a href="PageReval.aspx"><i class="fa fa-circle-o"></i>روال اجرایی</a>
+                                    <div class="badj badj-warning" id="reval1W">0</div>
+                                    <div class="badj badj-error" style="margin-right: 10px;" id="reval1">0</div>
+                                    <div class="badj badj-warning" style="margin-right: 10px;" id="reval2W">0</div>
+                                    <div class="badj badj-error" style="margin-right: 10px;" id="reval2">0</div>
+
+                                </li>
+                                <li><a href="pageMosavabat.aspx"><i class="fa fa-circle-o"></i>مصوبات </a><div class="badj" id="mosavabatKhobregan">0</div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>طرح پیشنهادی </span>
+                                <span class="pull-left-container">
+                                    <span class="pull-left-container">
+                                        <%--<small class="label pull-left bg-yellow">
+                                            <asp:Label ID="lbNo2" runat="server" Text="Label"></asp:Label></small>
+                                        <small class="label pull-left bg-green">
+                                            <asp:Label ID="lbNo3" runat="server" Text="Label"></asp:Label></small>--%>
+                                        <%--     <small class="label pull-left bg-red"><asp:Label ID="lbNo4" runat="server" Text=""></asp:Label></small>--%>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PagetarhPishnehadi.aspx"><i class="fa fa-circle-o"></i>تعریف طرح پیشنهادی</a></li>
+                                <li><a href="PageElhaghNew.aspx"><i class="fa fa-circle-o"></i>ثبت الحاقیه</a></li>
+                                <li><a href="PageEstelamMohtavayi.aspx"><i class="fa fa-circle-o"></i>استعلام محتوایی و قیمتی</a></li>
+                                <li><a href="PageEstelamStep1.aspx"><i class="fa fa-circle-o"></i>پروژه های استعلام شده</a></li>
+                                <li><a href="PageEstelamStep2.aspx"><i class="fa fa-circle-o"></i>پروژه های پاسخ داده نشده</a>
+                                    <div class="badj badj-warning" id="posokhDadeNashodeW">0</div>
+                                    <div class="badj badj-error" id="posokhDadeNashode">0</div>
+                                </li>
+                                <li><a href="PageEstelamStep3.aspx"><i class="fa fa-circle-o"></i>ارسال به شرکت شده</a>
+                                    <div class="badj badj-warning" id="ersalBeSherkatShodeW">0</div>
+                                    <div class="badj badj-error" id="ersalBeSherkatShode">0</div>
+                                </li>
+                                <li><a href="PageEstelamStep4.aspx"><i class="fa fa-circle-o"></i>منتظر پاسخ شرکت</a>
+                                    <div class="badj badj-warning" id="montazerePasokhW">0</div>
+                                     <div class="badj badj-error" id="montazerePasokh">0</div>
+                                </li>
+                                <li><a href="PageEstelamStep5.aspx"><i class="fa fa-circle-o"></i>تدارکات - آنالیز قیمت</a>
+                                    <div class="badj" id="tadarokatAnalyzGheymat">0</div>
+                                </li>
+                                <li><a href="PageEstelamStep6.aspx"><i class="fa fa-circle-o"></i>پاسخ تدارکات - آنالیز قیمت</a>
+                                    <div class="badj badj-warning" id="pasokhTadarokatW">0</div>
+                                     <div class="badj badj-error" id="pasokhTadarokat">0</div>
+                                </li>
+
+
+
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>طرح در جلسه هیات نظارت وعقد قرارداد</span>
+                                <span class="pull-left-container">
+                                    <i class="fa fa-angle-right pull-left"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PageHeyatNezarat.aspx"><i class="fa fa-circle-o"></i>طرح در جلسه هیات نظارت</a>
+                                    <div class="badj" id="nezarat">0</div>
+                                </li>
+                                <li><a href="PageCommission.aspx"><i class="fa fa-circle-o"></i>طرح در جلسه کمیسیون</a>
+                                    <div class="badj" id="commission">0</div>
+                                </li>
+                                <li><a href="PageGharardad.aspx"><i class="fa fa-circle-o"></i>فرآیند انعقاد قرارداد</a>
+                                    <div class="badj badj-warning" id="gharardadW">0</div>
+                                       <div class="badj badj-error" id="gharardad">0</div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>پیش نویس صورتحساب</span>
+                                <span class="pull-left-container">
+                                    <!--<i class="fa fa-angle-right pull-left"></i>-->
+                                    <span class="pull-left-container">
+                                        <%--                          <small class="label pull-left bg-red">۳</small>--%>
+                                        <%--<small class="label pull-left bg-blue">
+                                            <asp:Label ID="lbNo5" runat="server" Text=""></asp:Label></small>--%> 
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PageSooratInsert.aspx?type=1"><i class="fa fa-circle-o"></i>ثبت</a></li>
+                                <li><a href="PageSooratEstelam.aspx?type=1"><i class="fa fa-circle-o"></i>صدور استعلام</a></li>
+                                <li><a href="PageSooratNazerAnswer.aspx"><i class="fa fa-circle-o"></i>پاسخ ناظر</a>
+                                     <div class="badj badj-warning" id="pasokhNazerW">0</div>
+                                       <div class="badj badj-error" id="pasokhNazer">0</div>
+                                </li>
+                                <li><a href="PageSooratErsalSHerkat.aspx"><i class="fa fa-circle-o"></i>ارسال به شرکت</a></li>
+                                <li><a href="PageSooratSherkatAnswer.aspx"><i class="fa fa-circle-o"></i>پاسخ شرکت</a>
+                                     <div class="badj badj-warning" id="pasokhSherkatW">0</div>
+                                       <div class="badj badj-error" id="pasokhSherkat">0</div>
+                                </li>
+                                <li><a href="PageSooratAnswers.aspx"><i class="fa fa-circle-o"></i>ارسال به تدارکات</a></li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>صدور صورتحساب</span>
+                                <span class="pull-left-container">
+                                    <!--<i class="fa fa-angle-right pull-left"></i>-->
+                                    <span class="pull-left-container">
+                                        <%--  <small class="label pull-left bg-red">۳</small>
+                          <small class="label pull-left bg-blue">۱۷</small>--%>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PageSooratNew.aspx"><i class="fa fa-circle-o"></i>ثبت پیش فاکتور صورتحساب</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>تدارکات و ممیزی صورتحساب</span>
+                                <span class="pull-left-container">
+                                    <!--<i class="fa fa-angle-right pull-left"></i>-->
+                                    <span class="pull-left-container">
+                                        <%--   <small class="label pull-left bg-red">۳</small>
+                          <small class="label pull-left bg-blue">۱۷</small>--%>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PageSooratMali.aspx"><i class="fa fa-circle-o"></i>ارسال به مالی / عودت</a>
+                                     <div class="badj badj-warning" id="ersalBeMaliW">0</div>
+                                       <div class="badj badj-error" id="ersalBeMali">0</div>
+                                </li>
+                                <li><a href="PageSooratPardakht.aspx"><i class="fa fa-circle-o"></i>تعیین تکلیف عودتی ها</a></li>
+                                <li><a href="PageSooratOdats.aspx"><i class="fa fa-circle-o"></i>بررسی عودتی ها</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>پرداخت و مالی صورتحساب</span>
+                                <span class="pull-left-container">
+                                    <!--<i class="fa fa-angle-right pull-left"></i>-->
+                                    <span class="pull-left-container">
+                                        <%--   <small class="label pull-left bg-red">۳</small>
+                          <small class="label pull-left bg-blue">۱۷</small>--%>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PageTaeefPardakht.aspx"><i class="fa fa-circle-o"></i>تایید و پرداخت / عودت</a></li>
+                                <li><a href="PageSooratMaliOdats.aspx"><i class="fa fa-circle-o"></i>تعیین تکلیف عودتی ها</a></li>
+                                <li><a href="PageSooratOdatsMali.aspx"><i class="fa fa-circle-o"></i>بررسی عودتی ها و پرداخت</a></li>
+                                <li><a href="PageSooratPays.aspx"><i class="fa fa-circle-o"></i>لیست پرداخت ها</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>گزارشات </span>
+                                <span class="pull-left-container">
+                                    <!--<i class="fa fa-angle-right pull-left"></i>-->
+                                    <span class="pull-left-container">
+                                        <%--  <small class="label pull-left bg-red">۳</small>
+                          <small class="label pull-left bg-blue">۱۷</small>--%>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a target="_blank" href="Reports/BlankReport.aspx"><i class="fa fa-circle-o"></i>گزارشات تحلیلی</a></li>
+                                <li><a href="ReportDiagram.aspx"><i class="fa fa-circle-o"></i>گزارش فرآیند</a></li>
+                                <%--<li><a href="ReportProjectKhobregan.aspx"><i class="fa fa-circle-o"></i>گزارش پروژه ها </a></li>--%>
+                                <li><a href="dashboardNew.aspx"><i class="fa fa-circle-o"></i>داشبورد</a></li>
+
+                                <li><a href="gozaresh96.pptx"><i class="fa fa-circle-o"></i>
+                                    گزارش پایان سال 96</a></li>
+                                <li><a href="gozaresh97.pptx"><i class="fa fa-circle-o"></i>گزارش پایان سال 97</a></li>
+                                <li><a href="gozaresh98.pptx"><i class="fa fa-circle-o"></i>گزارش پایان سال 98</a></li>
+                                <%--                 <li><a href="PageDashboardMosavab.aspx"><i class="fa fa-circle-o"></i>گزارش مصوبات خبرگان</a></li>--%>
+                                <%--              <li><a href="PageDashboardMosavab2.aspx"><i class="fa fa-circle-o"></i>گزارش روال اجرایی</a></li>--%>
+                                <%--      <li><a href="PageFinalDashboard.aspx"><i class="fa fa-circle-o"></i>داشبورد ظرفیت سنجی</a></li>--%>
+                                <li><a href="PageCapacity.aspx"><i class="fa fa-circle-o"></i>ظرفیت سنجی شرکتها</a>
+                                </li>
+                                  <li><a href="pageFinalizeView.aspx"><i class="fa fa-circle-o"></i>گزارش نظرسنجی</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>پروژه های مدیریت</span>
+                                <span class="pull-left-container">
+                                    <!--<i class="fa fa-angle-right pull-left"></i>-->
+                                    <span class="pull-left-container">
+                                        <%--    <small class="label pull-left bg-red">۳</small>
+                          <small class="label pull-left bg-blue">۱۷</small>--%>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+
+                                <li><a href="http://172.22.65.16/Pages/Dashbord.aspx"><i class="fa fa-circle-o"></i>پروژه های مهم</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i><span>تنظیمات</span>
+                                <span class="pull-left-container">
+                                    <!--<i class="fa fa-angle-right pull-left"></i>-->
+                                    <span class="pull-left-container">
+                                        <%--    <small class="label pull-left bg-red">۳</small>
+                          <small class="label pull-left bg-blue">۱۷</small>--%>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="PageCreateUser.aspx"><i class="fa fa-circle-o"></i>مدیریت کاربران</a></li>
+                                <li><a href="PageAdmins.aspx"><i class="fa fa-circle-o"></i>مدیران سیستم</a></li>
+                                <li><a href="PageAdminPages.aspx"><i class="fa fa-circle-o"></i>دسترسی به صفحات</a></li>
+
+                                <li><a href="PageAdminPremission.aspx"><i class="fa fa-circle-o"></i>دسترسی کاربران</a></li>
+
+                                <li><a href="PageAdminProject.aspx"><i class="fa fa-circle-o"></i>دسترسی پروژه ها</a></li>
+                                <li><a href="PageInfoSetting.aspx"><i class="fa fa-circle-o"></i>اطلاعات پایه</a>
+                                </li>
+                                  <li><a href="abbreviation.aspx"><i class="fa fa-circle-o"></i>حروف اختصاری</a>  </li>
+
+                                <li><a href="PageUploadXls.aspx"><i class="fa fa-circle-o"></i>بارگذاری سند</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+                    </ul>
+
+                </section>
+
+            </aside>
+
+
+            <div class="content-wrapper">
+
+                <section class="content-header">
+                    <h1>
+
+                        <asp:Label ID="lbHeader" runat="server" Text="Label"></asp:Label>
+                    </h1>
+                    <%-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li class="active">صفحه</li>
+      </ol>--%>
+                </section>
+
+                <!-- Main content -->
+                <section class="content container-fluid">
+
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+
+            <!-- Main Footer -->
+            <footer class="main-footer text-left">
+                <div align="center">سامانه یکپارچه مدیریت قراردادها (سایمپ) - نسخه 2</div>
+            </footer>
+
+
+            <aside class="control-sidebar control-sidebar-dark">
+
+                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                    <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+                </ul>
+
+                <div class="tab-content">
+
+                    <div class="tab-pane active" id="control-sidebar-home-tab">
+                        <h3 class="control-sidebar-heading">فعالیت ها</h3>
+                        <ul class="control-sidebar-menu">
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                                    <div class="menu-info">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- /.control-sidebar-menu -->
+
+                        <h3 class="control-sidebar-heading">پیشرفت کارها</h3>
+                        <ul class="control-sidebar-menu">
+                            <li>
+                                <a href="javascript:;">
+                                    <h4 class="control-sidebar-subheading">آپدیت لاراول
+                <span class="pull-left-container">
+                    <span class="label label-danger pull-left">70%</span>
+                </span>
+                                    </h4>
+
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <div class="tab-pane" id="control-sidebar-stats-tab">تب وضعیت</div>
+                    <div class="tab-pane" id="control-sidebar-settings-tab">
+                        <h3 class="control-sidebar-heading">تنظیمات عمومی</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                گزارش کنترلر پنل
+              <input type="checkbox" class="pull-left" checked>
+                            </label>
+
+                            <p>
+                                ثبت تمامی فعالیت های مدیران
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                    </div>
+                    <!-- /.tab-pane -->
+                </div>
+            </aside>
+
+            <div class="control-sidebar-bg"></div>
+        </div>
+
+        <!-- jQuery 3 -->
+        <script src="BootStrapTheme/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="BootStrapTheme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="BootStrapTheme/bower_components/fastclick/lib/fastclick.js"></script>
+        <!-- AdminLTE App -->
+        <script src="BootStrapTheme/dist/js/adminlte.min.js"></script>
+        <!-- Sparkline -->
+        <script src="BootStrapTheme/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+        <!-- jvectormap  -->
+        <script src="BootStrapTheme/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="BootStrapTheme/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <!-- SlimScroll -->
+        <script src="BootStrapTheme/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- ChartJS -->
+        <script src="BootStrapTheme/bower_components/Chart.js/Chart.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="BootStrapTheme/dist/js/pages/dashboard2.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="BootStrapTheme/dist/js/demo.js"></script>
+
+
+    </form>
+
+
+</body>
+</html>

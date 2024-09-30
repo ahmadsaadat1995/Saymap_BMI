@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewMellatTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbProjects">
+    <Key>
+      <PropertyRef Name="prId" />
+    </Key>
+    <Property Name="prId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prAct" Type="int" />
+    <Property Name="prRegDate" Type="date" />
+    <Property Name="prRegUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="prVahed" Type="int" />
+    <Property Name="prProjectType" Type="int" />
+    <Property Name="prSanadType" Type="int" />
+    <Property Name="prOlaviat" Type="int" />
+    <Property Name="prPeymankar" Type="int" />
+    <Property Name="status1" Type="nvarchar" MaxLength="50" />
+    <Property Name="status2" Type="nvarchar" MaxLength="50" />
+    <Property Name="status3" Type="nvarchar" MaxLength="50" />
+    <Property Name="prStatus" Type="int" />
+    <Property Name="prISEstelam" Type="int" />
+    <Property Name="prIsMohtava" Type="int" />
+    <Property Name="irIsAnalyz" Type="int" />
+    <Property Name="prIsTarh" Type="int" />
+    <Property Name="prIsEstelamMohtavayi" Type="int" />
+    <Property Name="prEstelamIsSubmit" Type="int" />
+    <Property Name="prIsErsalBeSherkat" Type="int" />
+    <Property Name="prIsAnswerTadarokatPending" Type="int" />
+    <Property Name="prTarhJalasePending" Type="int" />
+    <Property Name="prPishnevisPending" Type="int" />
+    <Property Name="prEstelamPending" Type="int" />
+    <Property Name="prKhobreganStatusMosavab" Type="int" />
+    <Property Name="prTemp" Type="int" />
+    <Property Name="prBody" Type="ntext" />
+    <Property Name="prProjectStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="prMainBody" Type="ntext" />
+    <Property Name="prProjectManager" Type="nvarchar" MaxLength="150" />
+    <Property Name="prSt" Type="nvarchar" MaxLength="150" />
+    <Property Name="prSt2" Type="nvarchar" MaxLength="150" />
+    <Property Name="prFinalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="prRiskType" Type="nvarchar" MaxLength="50" />
+    <Property Name="prRiskTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="prRiskDegree" Type="nvarchar" MaxLength="50" />
+    <Property Name="prRiskEhtemal" Type="nvarchar" MaxLength="50" />
+    <Property Name="prRiskPayamad" Type="nvarchar" MaxLength="250" />
+    <Property Name="prRiskAnswer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.ViewGharardad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewGharardad">
+    <Key>
+      <PropertyRef Name="prTitle" />
+      <PropertyRef Name="prId" />
+      <PropertyRef Name="ghId" />
+    </Key>
+    <Property Name="ghCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="prTitle" Type="ntext" Nullable="false" />
+    <Property Name="prFinalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="prId" Type="int" Nullable="false" />
+    <Property Name="ghId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NewMellat.dbo.ViewProjectSearch' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewProjectSearch">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Title" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Title" Type="ntext" Nullable="false" />
+    <Property Name="Hadaf" Type="nvarchar" MaxLength="550" />
+  </EntityType>
+  <EntityContainer Name="NewMellatTestModelStoreContainer">
+    <EntitySet Name="tbProjects" EntityType="Self.tbProjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewGharardad" EntityType="Self.ViewGharardad" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewGharardad].[ghCode] AS [ghCode], 
+[ViewGharardad].[prTitle] AS [prTitle], 
+[ViewGharardad].[prFinalCode] AS [prFinalCode], 
+[ViewGharardad].[prId] AS [prId], 
+[ViewGharardad].[ghId] AS [ghId]
+FROM [dbo].[ViewGharardad] AS [ViewGharardad]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewProjectSearch" EntityType="Self.ViewProjectSearch" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ViewProjectSearch].[Id] AS [Id], 
+[ViewProjectSearch].[Title] AS [Title], 
+[ViewProjectSearch].[Hadaf] AS [Hadaf]
+FROM [dbo].[ViewProjectSearch] AS [ViewProjectSearch]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Parstasmim.BusinessLayer.PRS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Parstasmim.BusinessLayer.PRS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://074-002-001-203.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+  <xs:import schemaLocation="http://074-002-001-203.mellat.bm/Mellat_WS_Final/PRS/PRS.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfWorkHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkHistory" nillable="true" type="tns:WorkHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkHistory" nillable="true" type="tns:ArrayOfWorkHistory" />
+  <xs:complexType name="WorkHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bzd_NameSaz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bzk_DurOk" type="xs:int" />
+      <xs:element minOccurs="0" name="emplCode" type="xs:double" />
+      <xs:element minOccurs="0" name="noe_bzd" type="xs:int" />
+      <xs:element minOccurs="0" name="shrh_bzd" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkHistory" nillable="true" type="tns:WorkHistory" />
+  <xs:complexType name="ArrayOfEnfesalHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnfesalHistory" nillable="true" type="tns:EnfesalHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnfesalHistory" nillable="true" type="tns:ArrayOfEnfesalHistory" />
+  <xs:complexType name="EnfesalHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Emp_no" type="xs:double" />
+      <xs:element minOccurs="0" name="baz_knd" type="xs:int" />
+      <xs:element minOccurs="0" name="baz_sharh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="enf_date" type="xs:double" />
+      <xs:element minOccurs="0" name="sanavat_mah" type="xs:int" />
+      <xs:element minOccurs="0" name="sanavat_rooz" type="xs:int" />
+      <xs:element minOccurs="0" name="sanavat_sal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnfesalHistory" nillable="true" type="tns:EnfesalHistory" />
+  <xs:complexType name="ArrayOfNoWorkHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NoWorkHistory" nillable="true" type="tns:NoWorkHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNoWorkHistory" nillable="true" type="tns:ArrayOfNoWorkHistory" />
+  <xs:complexType name="NoWorkHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EMPLOY" type="xs:int" />
+      <xs:element minOccurs="0" name="n_knd" type="xs:short" />
+      <xs:element minOccurs="0" name="n_sum" type="xs:int" />
+      <xs:element minOccurs="0" name="sharh" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoWorkHistory" nillable="true" type="tns:NoWorkHistory" />
+  <xs:complexType name="ArrayOfIsarHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IsarHistory" nillable="true" type="tns:IsarHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIsarHistory" nillable="true" type="tns:ArrayOfIsarHistory" />
+  <xs:complexType name="IsarHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Typejeb_112" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emplCode" type="xs:double" />
+      <xs:element minOccurs="0" name="jeb_dur" type="xs:double" />
+      <xs:element minOccurs="0" name="jeb_type" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IsarHistory" nillable="true" type="tns:IsarHistory" />
+  <xs:complexType name="ArrayOfVazKhedmat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VazKhedmat" nillable="true" type="tns:VazKhedmat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVazKhedmat" nillable="true" type="tns:ArrayOfVazKhedmat" />
+  <xs:complexType name="VazKhedmat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Vazkhedmatcode" type="xs:int" />
+      <xs:element minOccurs="0" name="vazkhedmatName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VazKhedmat" nillable="true" type="tns:VazKhedmat" />
+  <xs:complexType name="ArrayOfhozehData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="hozehData" nillable="true" type="tns:hozehData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfhozehData" nillable="true" type="tns:ArrayOfhozehData" />
+  <xs:complexType name="hozehData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepCode" type="xs:double" />
+      <xs:element minOccurs="0" name="HesabgariCode" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HozehCode" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HozehName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="hozehData" nillable="true" type="tns:hozehData" />
+  <xs:complexType name="ArrayOfVazKhedmat_Changes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VazKhedmat_Changes" nillable="true" type="tns:VazKhedmat_Changes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVazKhedmat_Changes" nillable="true" type="tns:ArrayOfVazKhedmat_Changes" />
+  <xs:complexType name="VazKhedmat_Changes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCode" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NeedTo_LoanControl" type="xs:int" />
+      <xs:element minOccurs="0" name="RowId" type="xs:int" />
+      <xs:element minOccurs="0" name="VazKhedmatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VazKhedmatNewName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vazkhedmat" type="xs:int" />
+      <xs:element minOccurs="0" name="VazkhedmatNew" type="xs:int" />
+      <xs:element minOccurs="0" name="emplCode" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VazKhedmat_Changes" nillable="true" type="tns:VazKhedmat_Changes" />
+  <xs:complexType name="ArrayOfVazKhedmatAllPrs">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VazKhedmatAllPrs" nillable="true" type="tns:VazKhedmatAllPrs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVazKhedmatAllPrs" nillable="true" type="tns:ArrayOfVazKhedmatAllPrs" />
+  <xs:complexType name="VazKhedmatAllPrs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCode" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NeedTo_LoanControl" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="VazKhedmatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vazkhedmat" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="emplCode" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VazKhedmatAllPrs" nillable="true" type="tns:VazKhedmatAllPrs" />
+  <xs:complexType name="ArrayOfFinancialReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FinancialReport" nillable="true" type="tns:FinancialReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFinancialReport" nillable="true" type="tns:ArrayOfFinancialReport" />
+  <xs:complexType name="FinancialReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acceptance_Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstallmentAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LoanAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LoanTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberMounth" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PerecentCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReminedAmount" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FinancialReport" nillable="true" type="tns:FinancialReport" />
+  <xs:complexType name="empImageData">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="PImage" nillable="true" type="q1:Binary" />
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="empImageData" nillable="true" type="tns:empImageData" />
+  <xs:complexType name="ArrayOfCht_S01_SavDarajHedData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cht_S01_SavDarajHedData" nillable="true" type="tns:Cht_S01_SavDarajHedData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCht_S01_SavDarajHedData" nillable="true" type="tns:ArrayOfCht_S01_SavDarajHedData" />
+  <xs:complexType name="Cht_S01_SavDarajHedData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DarajHedCod" type="xs:short" />
+      <xs:element minOccurs="0" name="DarajHedNam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mished_115" type="xs:int" />
+      <xs:element minOccurs="0" name="NamehDat" type="xs:int" />
+      <xs:element minOccurs="0" name="NamehShm" type="xs:int" />
+      <xs:element minOccurs="0" name="Radif" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cht_S01_SavDarajHedData" nillable="true" type="tns:Cht_S01_SavDarajHedData" />
+  <xs:complexType name="ArrayOfBaz_Erfagh_janData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Baz_Erfagh_janData" nillable="true" type="tns:Baz_Erfagh_janData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBaz_Erfagh_janData" nillable="true" type="tns:ArrayOfBaz_Erfagh_janData" />
+  <xs:complexType name="Baz_Erfagh_janData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kind_erfagh" type="xs:int" />
+      <xs:element minOccurs="0" name="sanavat_mah" type="xs:int" />
+      <xs:element minOccurs="0" name="sanavat_rooz" type="xs:int" />
+      <xs:element minOccurs="0" name="sanavat_sal" type="xs:int" />
+      <xs:element minOccurs="0" name="sharh_erfagh" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Baz_Erfagh_janData" nillable="true" type="tns:Baz_Erfagh_janData" />
+  <xs:complexType name="empSignatureData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SGN_114" type="xs:int" />
+      <xs:element minOccurs="0" name="SGN_115" type="xs:double" />
+      <xs:element minOccurs="0" name="missgn_112" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="smg_112" nillable="true" type="q2:Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="empSignatureData" nillable="true" type="tns:empSignatureData" />
+  <xs:complexType name="ArrayOfempSalaryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="empSalaryData" nillable="true" type="tns:empSalaryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfempSalaryData" nillable="true" type="tns:ArrayOfempSalaryData" />
+  <xs:complexType name="empSalaryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IDN_VAZ_KHEDMAT" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="P10_jazb_mahal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P1_Jazb_Ezafi" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P2_Tatbigh" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P3_Masoul" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P4_Farzand" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P5_Aele" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P6_Jazb" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P7_Sabet" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P8_Tafavot" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="P9_sakhti" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pyr_Darsad_Jazb" type="xs:short" />
+      <xs:element minOccurs="0" name="pyr_darsad_masul" type="xs:double" />
+      <xs:element minOccurs="0" name="pyr_ejra_date" type="xs:double" />
+      <xs:element minOccurs="0" name="pyr_no" type="xs:double" />
+      <xs:element minOccurs="0" name="pyr_shaghel" type="xs:short" />
+      <xs:element minOccurs="0" name="pyr_sharh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pyr_shoghl" type="xs:short" />
+      <xs:element minOccurs="0" name="pyr_sodoor_date" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="empSalaryData" nillable="true" type="tns:empSalaryData" />
+  <xs:complexType name="ArrayOfempSpecData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="empSpecData" nillable="true" type="tns:empSpecData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfempSpecData" nillable="true" type="tns:ArrayOfempSpecData" />
+  <xs:complexType name="empSpecData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDateEn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthDateFa" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthPlaceCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CellNo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ChartCode" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ChildCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DPCode" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="DepTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EduLevelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EduLevelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email_Temp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeTypeCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaithCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FaithName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HozehName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hozeh_HesabgariCode" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IDN_112_K" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IDN_113_K" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IDN_NoePostCod_K" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IDN_NoePostCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsMaoul" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Issue_Place" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobCode" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="JobTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobTitleCode_K" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="JobTitleName_K" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Job_Value" type="xs:short" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatusCode" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Mobile" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NationalCode" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NezamVaz_Code" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="NezamVaz_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoePostNam_K" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoePostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrsVazKhedmaTCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PrsVazKhedmatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecruitmentStatusCode" type="xs:int" />
+      <xs:element minOccurs="0" name="RecruitmentStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReligionCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ReligionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RetiermentDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RetiermentPossibleDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RetiermentPossibleDateEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitCode" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="UnitName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="certificate_number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="certificate_serial" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="chartDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chartId" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="comExeDate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="comIssueDate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="comKindCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="comKindName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="comNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="comTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dep_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emplDate" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="emplDateEn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="father_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mashghool_be_karCode" type="xs:int" />
+      <xs:element minOccurs="0" name="mashghool_be_karName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="priorityEmployment" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="priorityEmployment_Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="priorityPresent" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="priorityPresent_Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subname_K" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="supername_K" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="empSpecData" nillable="true" type="tns:empSpecData" />
+  <xs:complexType name="ArrayOfprivateEmpSpecData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="privateEmpSpecData" nillable="true" type="tns:privateEmpSpecData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfprivateEmpSpecData" nillable="true" type="tns:ArrayOfprivateEmpSpecData" />
+  <xs:complexType name="privateEmpSpecData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificationNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateEmploy" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Date_Born" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Degree" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DepCod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DepName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Father" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="G01_GROUP_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Meli" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MISSTD_113" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Reshteh" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="S01_DESC_SEMAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S01_RADE_CODE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="S01_VazeKhedmat_Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Semat" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VazeKhedmat" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="misstd_112" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="privateEmpSpecData" nillable="true" type="tns:privateEmpSpecData" />
+  <xs:complexType name="empWorkHistoryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AzadehMadeh13" type="xs:short" />
+      <xs:element minOccurs="0" name="AzadehMadeh13_Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsarType" type="xs:int" />
+      <xs:element minOccurs="0" name="IsarType_Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="absenceDays" type="xs:int" />
+      <xs:element minOccurs="0" name="acceptedOutOfBankWorkingDays" type="xs:int" />
+      <xs:element minOccurs="0" name="darsad_Janbazi" type="xs:short" />
+      <xs:element minOccurs="0" name="emplDate" type="xs:double" />
+      <xs:element minOccurs="0" name="emplDateEn" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="experienceAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="experienceMin" type="xs:int" />
+      <xs:element minOccurs="0" name="isarDays" type="xs:double" />
+      <xs:element minOccurs="0" name="militaryDays" type="xs:int" />
+      <xs:element minOccurs="0" name="militaryEndDate" type="xs:double" />
+      <xs:element minOccurs="0" name="militaryStartDate" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="empWorkHistoryData" nillable="true" type="tns:empWorkHistoryData" />
+  <xs:complexType name="ArrayOfempWorkHistoryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="empWorkHistoryData" nillable="true" type="tns:empWorkHistoryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfempWorkHistoryData" nillable="true" type="tns:ArrayOfempWorkHistoryData" />
+  <xs:complexType name="ArrayOfempCellData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="empCellData" nillable="true" type="tns:empCellData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfempCellData" nillable="true" type="tns:ArrayOfempCellData" />
+  <xs:complexType name="empCellData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CellNo" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="empCellData" nillable="true" type="tns:empCellData" />
+  <xs:complexType name="ArrayOfChartKindData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChartKindData" nillable="true" type="tns:ChartKindData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChartKindData" nillable="true" type="tns:ArrayOfChartKindData" />
+  <xs:complexType name="ChartKindData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ParentCode" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TypeID" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TypeTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChartKindData" nillable="true" type="tns:ChartKindData" />
+  <xs:complexType name="ArrayOfLoanConditionsData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoanConditionsData" nillable="true" type="tns:LoanConditionsData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoanConditionsData" nillable="true" type="tns:ArrayOfLoanConditionsData" />
+  <xs:complexType name="LoanConditionsData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ForeignKey_Ref" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Job_Grade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentCode" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TypeID" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TypeTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoanConditionsData" nillable="true" type="tns:LoanConditionsData" />
+  <xs:complexType name="ArrayOfIDN113KindData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDN113KindData" nillable="true" type="tns:IDN113KindData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDN113KindData" nillable="true" type="tns:ArrayOfIDN113KindData" />
+  <xs:complexType name="IDN113KindData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityCode" type="xs:double" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HozehCode" type="xs:double" />
+      <xs:element minOccurs="0" name="ParentCode" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TypeID" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TypeTitle" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDN113KindData" nillable="true" type="tns:IDN113KindData" />
+  <xs:complexType name="ArrayOfAmoozeshEmtiazData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AmoozeshEmtiazData" nillable="true" type="tns:AmoozeshEmtiazData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAmoozeshEmtiazData" nillable="true" type="tns:ArrayOfAmoozeshEmtiazData" />
+  <xs:complexType name="AmoozeshEmtiazData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="amoozesh_111" type="xs:decimal" />
+      <xs:element minOccurs="0" name="amoozesh_date" type="xs:decimal" />
+      <xs:element minOccurs="0" name="amoozesh_emtiyaz" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmoozeshEmtiazData" nillable="true" type="tns:AmoozeshEmtiazData" />
+  <xs:complexType name="MostamariData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Birth_Date" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EMPNO_FO" type="xs:double" />
+      <xs:element minOccurs="0" name="EMPNO_MOS" type="xs:double" />
+      <xs:element minOccurs="0" name="ENF_DATE" type="xs:double" />
+      <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hesab_Motemarkez" type="xs:double" />
+      <xs:element minOccurs="0" name="Mostamari_Kind" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MostamariData" nillable="true" type="tns:MostamariData" />
+  <xs:complexType name="ArrayOfPassedCoursesData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PassedCoursesData" nillable="true" type="tns:PassedCoursesData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPassedCoursesData" nillable="true" type="tns:ArrayOfPassedCoursesData" />
+  <xs:complexType name="PassedCoursesData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Course_code" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Course_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Employee_no" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Finishtdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Startdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Training_center_code" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Training_center_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PassedCoursesData" nillable="true" type="tns:PassedCoursesData" />
+  <xs:complexType name="NeedToLoanControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCode" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NeedTo_LoanControl" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NeedToLoanControl" nillable="true" type="tns:NeedToLoanControl" />
+  <xs:complexType name="ArrayOfArzeshyabiData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArzeshyabiData" nillable="true" type="tns:ArzeshyabiData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArzeshyabiData" nillable="true" type="tns:ArrayOfArzeshyabiData" />
+  <xs:complexType name="ArzeshyabiData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Arzesh_EmloyeeNo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Arzesh_Nomre" type="xs:double" />
+      <xs:element minOccurs="0" name="Arzesh_Sal" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArzeshyabiData" nillable="true" type="tns:ArzeshyabiData" />
+  <xs:complexType name="employeeBossData">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="employeeBossCode" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="employeeBossData" nillable="true" type="tns:employeeBossData" />
+  <xs:complexType name="ArrayOfComHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComHistory" nillable="true" type="tns:ComHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComHistory" nillable="true" type="tns:ArrayOfComHistory" />
+  <xs:complexType name="ComHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComKindName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Com_Date" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Com_ExecuteDate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Com_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Com_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComkindCode" type="xs:int" />
+      <xs:element minOccurs="0" name="DepCode" type="xs:double" />
+      <xs:element minOccurs="0" name="DepTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobCode" type="xs:int" />
+      <xs:element minOccurs="0" name="JobTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoePostCode" type="xs:int" />
+      <xs:element minOccurs="0" name="NoePostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitCode" type="xs:double" />
+      <xs:element minOccurs="0" name="UnitName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComHistory" nillable="true" type="tns:ComHistory" />
+  <xs:complexType name="ArrayOfComRewardHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComRewardHistory" nillable="true" type="tns:ComRewardHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComRewardHistory" nillable="true" type="tns:ArrayOfComRewardHistory" />
+  <xs:complexType name="ComRewardHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Com_Date" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Com_ExecuteDate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Com_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Com_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComkindCode" type="xs:int" />
+      <xs:element minOccurs="0" name="RewardNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComRewardHistory" nillable="true" type="tns:ComRewardHistory" />
+  <xs:complexType name="ArrayOfComKind">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComKind" nillable="true" type="tns:ComKind" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComKind" nillable="true" type="tns:ArrayOfComKind" />
+  <xs:complexType name="ComKind">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mistcm_112" type="xs:int" />
+      <xs:element minOccurs="0" name="mistcm_113" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComKind" nillable="true" type="tns:ComKind" />
+  <xs:complexType name="ArrayOfEduHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EduHistory" nillable="true" type="tns:EduHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEduHistory" nillable="true" type="tns:ArrayOfEduHistory" />
+  <xs:complexType name="EduHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EduCode" type="xs:int" />
+      <xs:element minOccurs="0" name="EduDate" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="EduName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmitDate" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="average" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="emplCode" type="xs:double" />
+      <xs:element minOccurs="0" name="trainingCenter" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EduHistory" nillable="true" type="tns:EduHistory" />
+</xs:schema>

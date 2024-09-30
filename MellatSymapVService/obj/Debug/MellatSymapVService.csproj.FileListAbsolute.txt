@@ -1,0 +1,12 @@
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\MellatSymapVService\bin\MellatSymapVService.dll.config
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\MellatSymapVService\bin\MellatSymapVService.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\MellatSymapVService\bin\MellatSymapVService.pdb
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\MellatSymapVService\obj\Debug\MellatSymapVService.csprojResolveAssemblyReference.cache
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\MellatSymapVService\obj\Debug\MellatSymapVService.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\MellatSymapVService\obj\Debug\MellatSymapVService.pdb
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\bin\MellatSymapVService.dll.config
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\bin\MellatSymapVService.dll
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\bin\MellatSymapVService.pdb
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\obj\Debug\MellatSymapVService.csprojResolveAssemblyReference.cache
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\obj\Debug\MellatSymapVService.dll
+D:\Projects\NewMellat\NewMellat\MellatSymapVService\obj\Debug\MellatSymapVService.pdb

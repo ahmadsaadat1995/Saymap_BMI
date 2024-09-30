@@ -1,0 +1,1510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C0EA0C2-7466-404E-97E8-728584F64331}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NewMellat</RootNamespace>
+    <AssemblyName>NewMellat</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxGauges.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1.Web, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.1.Core, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.1.Presets, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LavaControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Programs\Calender\LavaControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Persia">
+      <HintPath>..\..\EDMS\EDMS\bin\Persia.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2015.2.623.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q2 2015\Bin40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q2 2015\Bin40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1.png" />
+    <Content Include="assets\css\reset.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\supersized.css" />
+    <Content Include="assets\img\backgrounds\1.jpg" />
+    <Content Include="assets\img\backgrounds\2.jpg" />
+    <Content Include="assets\img\backgrounds\3.jpg" />
+    <Content Include="assets\img\facebook.png" />
+    <Content Include="assets\img\progress.gif" />
+    <Content Include="assets\img\twitter.png" />
+    <Content Include="assets\js\jquery-1.8.2.min.js" />
+    <Content Include="assets\js\scripts.js" />
+    <Content Include="assets\js\supersized-init.js" />
+    <Content Include="assets\js\supersized.3.2.7.min.js" />
+    <Content Include="Content\BootStrapTheme\dist\css\AdminLTE.css" />
+    <Content Include="Content\Dashboard.aspx" />
+    <Content Include="Content\DashboardNew.aspx" />
+    <Content Include="Content\Default.aspx" />
+    <Content Include="Content\images\152705_184.png" />
+    <Content Include="Content\images\bg.jpg" />
+    <Content Include="Content\images\bt.gif" />
+    <Content Include="Content\images\Diagram.png" />
+    <Content Include="Content\images\diagram2.png" />
+    <Content Include="Content\images\DXR.axd.gif" />
+    <Content Include="Content\images\footer-logo.png" />
+    <Content Include="Content\images\header_bg.jpg" />
+    <Content Include="Content\images\icons\0.png" />
+    <Content Include="Content\images\icons\1.png" />
+    <Content Include="Content\images\icons\2.png" />
+    <Content Include="Content\images\icons\3.png" />
+    <Content Include="Content\images\icons\Actions-bookmark-new-icon.png" />
+    <Content Include="Content\images\icons\Actions-bookmark-new-icon2.png" />
+    <Content Include="Content\images\icons\Actions-contact-new-icon.png" />
+    <Content Include="Content\images\icons\Actions-contact-new-icon2.png" />
+    <Content Include="Content\images\icons\Actions-document-decrypt-icon.png" />
+    <Content Include="Content\images\icons\Actions-document-encrypt-icon.png" />
+    <Content Include="Content\images\icons\Actions-document-save-icon.png" />
+    <Content Include="Content\images\icons\Actions-edit-delete-icon.png" />
+    <Content Include="Content\images\icons\Actions-insert-image-icon.png" />
+    <Content Include="Content\images\icons\Actions-list-add-user-icon.png" />
+    <Content Include="Content\images\icons\Actions-news-subscribe-icon.png" />
+    <Content Include="Content\images\icons\Actions-redo-icon2.png" />
+    <Content Include="Content\images\icons\Actions-reload-icon.png" />
+    <Content Include="Content\images\icons\Actions-tab-new-icon.png" />
+    <Content Include="Content\images\icons\Add-Folder-icon.png" />
+    <Content Include="Content\images\icons\Add-Folder-icon2.png" />
+    <Content Include="Content\images\icons\Add-Folder-icon3.png" />
+    <Content Include="Content\images\icons\add-icon.png" />
+    <Content Include="Content\images\icons\Add-ticket-icon.png" />
+    <Content Include="Content\images\icons\admin-privilege-icon.png" />
+    <Content Include="Content\images\icons\App-chart-icon.png" />
+    <Content Include="Content\images\icons\Arrow-OutRight-icon.png" />
+    <Content Include="Content\images\icons\Arrow-OutRight-icon2.png" />
+    <Content Include="Content\images\icons\attachment-icon.png" />
+    <Content Include="Content\images\icons\attachment-icon24.png" />
+    <Content Include="Content\images\icons\Bar-chart-icon.png" />
+    <Content Include="Content\images\icons\blue-mail-send-icon.png" />
+    <Content Include="Content\images\icons\Button-Blank-Gray-icon.png" />
+    <Content Include="Content\images\icons\Button-Blank-Gray-icon24.png" />
+    <Content Include="Content\images\icons\Button-Blank-Green-icon.png" />
+    <Content Include="Content\images\icons\Button-Blank-Green-icon24.png" />
+    <Content Include="Content\images\icons\Button-Blank-Red-icon.png" />
+    <Content Include="Content\images\icons\Button-Blank-Red-icon24.png" />
+    <Content Include="Content\images\icons\Button-Blank-Yellow-icon.png" />
+    <Content Include="Content\images\icons\Button-Blank-Yellow-icon24.png" />
+    <Content Include="Content\images\icons\chart-icon.png" />
+    <Content Include="Content\images\icons\chat-icon.png" />
+    <Content Include="Content\images\icons\check-icon.png" />
+    <Content Include="Content\images\icons\Close-2-icon.png" />
+    <Content Include="Content\images\icons\Close-24-icon.png" />
+    <Content Include="Content\images\icons\diagram-icon.png" />
+    <Content Include="Content\images\icons\distributor-report-icon.png" />
+    <Content Include="Content\images\icons\Document-Organization-Chart-icon.png" />
+    <Content Include="Content\images\icons\Documents-icon16.png" />
+    <Content Include="Content\images\icons\Documents-icon24.png" />
+    <Content Include="Content\images\icons\Downloads-icon.png" />
+    <Content Include="Content\images\icons\edit-icon.png" />
+    <Content Include="Content\images\icons\edit-icon24.png" />
+    <Content Include="Content\images\icons\edit-validated-icon.png" />
+    <Content Include="Content\images\icons\email-alert-icon.png" />
+    <Content Include="Content\images\icons\Email-Delete-icon.png" />
+    <Content Include="Content\images\icons\email-delete-icon2.png" />
+    <Content Include="Content\images\icons\email-receive-icon.png" />
+    <Content Include="Content\images\icons\Email-Reply-icon.png" />
+    <Content Include="Content\images\icons\email-send-icon.png" />
+    <Content Include="Content\images\icons\Excel-icon.png" />
+    <Content Include="Content\images\icons\exclamation-mark-yellow-icon.png" />
+    <Content Include="Content\images\icons\Eye-icon.png" />
+    <Content Include="Content\images\icons\file-icon.png" />
+    <Content Include="Content\images\icons\folder-data-icon.png" />
+    <Content Include="Content\images\icons\folder-documents-icon.png" />
+    <Content Include="Content\images\icons\folder-documents-icon24.png" />
+    <Content Include="Content\images\icons\Gallery-icon.png" />
+    <Content Include="Content\images\icons\green-mail-send-icon.png" />
+    <Content Include="Content\images\icons\image-edit-icon.png" />
+    <Content Include="Content\images\icons\Inbox-icon.png" />
+    <Content Include="Content\images\icons\Info-icon.png" />
+    <Content Include="Content\images\icons\logout-icon.png" />
+    <Content Include="Content\images\icons\math-add-icon.png" />
+    <Content Include="Content\images\icons\message-bubble-send-icon.png" />
+    <Content Include="Content\images\icons\message-bubble-show-icon.png" />
+    <Content Include="Content\images\icons\Microsoft-Excel-icon.png" />
+    <Content Include="Content\images\icons\Microsoft-Word-icon.png" />
+    <Content Include="Content\images\icons\Mimetypes-document-seal-icon.png" />
+    <Content Include="Content\images\icons\missed-calls-icon.png" />
+    <Content Include="Content\images\icons\mp3tag-icon.png" />
+    <Content Include="Content\images\icons\number-1-icon.png" />
+    <Content Include="Content\images\icons\Occupations-Firefighter-Male-Light-icon.png" />
+    <Content Include="Content\images\icons\Open-Folder-Add-icon.png" />
+    <Content Include="Content\images\icons\Open-Folder-Add-icon3.png" />
+    <Content Include="Content\images\icons\page-edit-icon.png" />
+    <Content Include="Content\images\icons\pencil-red-icon.png" />
+    <Content Include="Content\images\icons\Places-folder-add-icon.png" />
+    <Content Include="Content\images\icons\Places-folder-add-icon3.png" />
+    <Content Include="Content\images\icons\Preppy-icon.png" />
+    <Content Include="Content\images\icons\printer-blue-icon.png" />
+    <Content Include="Content\images\icons\printer-green-icon.png" />
+    <Content Include="Content\images\icons\printer-orange-icon.png" />
+    <Content Include="Content\images\icons\product-icon.png" />
+    <Content Include="Content\images\icons\product-sales-report-icon.png" />
+    <Content Include="Content\images\icons\refresh-icon.png" />
+    <Content Include="Content\images\icons\Register-icon.png" />
+    <Content Include="Content\images\icons\search-icon.png" />
+    <Content Include="Content\images\icons\Select-icon.png" />
+    <Content Include="Content\images\icons\Slide-Show-icon.png" />
+    <Content Include="Content\images\icons\soundcloud-icon.png" />
+    <Content Include="Content\images\icons\sync-icon.png" />
+    <Content Include="Content\images\icons\User-blue-icon.png" />
+    <Content Include="Content\images\icons\user-group-icon.png" />
+    <Content Include="Content\images\icons\User-orange-icon.png" />
+    <Content Include="Content\images\icons\Users-icon.png" />
+    <Content Include="Content\images\icons\Users-icon2.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-first-view-icon.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-first-view-icon2.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-last-view-icon.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-last-view-icon2.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-next-icon.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-next-icon2.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-previous-icon.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-previous-icon2.png" />
+    <Content Include="Content\images\icons\viewer\Actions-go-previous-view-page-icon.png" />
+    <Content Include="Content\images\icons\wood-folder-icon.png" />
+    <Content Include="Content\images\icons\yellow-mail-send-icon.png" />
+    <Content Include="Content\images\logo-area-bg.jpg" />
+    <Content Include="Content\images\mellatLogin.jpg" />
+    <Content Include="Content\images\refresh-icon.png" />
+    <Content Include="Content\images\Select-icon.png" />
+    <Content Include="Content\images\Sign-Delete-icon.png" />
+    <Content Include="Content\PageAdminPages.aspx" />
+    <Content Include="Content\PageAdminPremission.aspx" />
+    <Content Include="Content\PageAdminProject.aspx" />
+    <Content Include="Content\PageAdmins.aspx" />
+    <Content Include="Content\PageAnswer2.aspx" />
+    <Content Include="Content\PageAnswer3.aspx" />
+    <Content Include="Content\PageAnswer4.aspx" />
+    <Content Include="Content\PageAnswerAnalyz.aspx" />
+    <Content Include="Content\PageAnswerEdarat.aspx" />
+    <Content Include="Content\PageAnswerEdarat2.aspx" />
+    <Content Include="Content\PageAnswerGharardad.aspx" />
+    <Content Include="Content\PageAttach.aspx" />
+    <Content Include="Content\pageBody.aspx" />
+    <Content Include="Content\PageChangePwd.aspx" />
+    <Content Include="Content\PageCreateUser.aspx" />
+    <Content Include="Content\PageDashboardMosavab.aspx" />
+    <Content Include="Content\PageDashboardMosavab2.aspx" />
+    <Content Include="Content\PageDenied.aspx" />
+    <Content Include="Content\PageDiagram.aspx" />
+    <Content Include="Content\PageDiagram2.aspx" />
+    <Content Include="Content\PageDt.aspx" />
+    <Content Include="Content\PageEd.aspx" />
+    <Content Include="Content\PageEdarat.aspx" />
+    <Content Include="Content\PageEdarat2.aspx" />
+    <Content Include="Content\PageEdarat3.aspx" />
+    <Content Include="Content\PageElhaghNew.aspx" />
+    <Content Include="Content\PageEstelamGharardad.aspx" />
+    <Content Include="Content\PageEstelamMohtavayi.aspx" />
+    <Content Include="Content\PageEstelamVahed.aspx" />
+    <Content Include="Content\PageEstelamVahedNazar.aspx" />
+    <Content Include="Content\PageFinalDashboard.aspx" />
+    <Content Include="Content\PageGharardad.aspx" />
+    <Content Include="Content\PageGharardadCode.aspx" />
+    <Content Include="Content\PageGharardadEblagh.aspx" />
+    <Content Include="Content\PageHeyatNezarat.aspx" />
+    <Content Include="Content\PageHeyatNezaratMosavab.aspx" />
+    <Content Include="Content\PageIndex1.aspx" />
+    <Content Include="Content\PageIndex2.aspx" />
+    <Content Include="Content\PageIndex3.aspx" />
+    <Content Include="Content\PageInfoSetting.aspx" />
+    <Content Include="Content\PageIsAdmin.aspx" />
+    <Content Include="Content\PageKhobPaper.aspx" />
+    <Content Include="Content\PageKhobregan.aspx" />
+    <Content Include="Content\PageKhobreganDashboard.aspx" />
+    <Content Include="Content\PageKhobreganMosavab.aspx" />
+    <Content Include="Content\pageMosavabat.aspx" />
+    <Content Include="Content\PageNewProject.aspx" />
+    <Content Include="Content\PagePages.aspx" />
+    <Content Include="Content\PagePg.aspx" />
+    <Content Include="Content\PageProjectList.aspx" />
+    <Content Include="Content\PagePropozalFirst.aspx" />
+    <Content Include="Content\PageReportFull.aspx" />
+    <Content Include="Content\PageReval.aspx" />
+    <Content Include="Content\PageRole.aspx" />
+    <Content Include="Content\PageSheaseNumber.aspx" />
+    <Content Include="Content\PageSooratAnswers.aspx" />
+    <Content Include="Content\PageSooratEdit.aspx" />
+    <Content Include="Content\PageSooratErsalSHerkat.aspx" />
+    <Content Include="Content\PageSooratEstelam.aspx" />
+    <Content Include="Content\PageSooratEstelamMojadad.aspx" />
+    <Content Include="Content\PageSooratFull.aspx" />
+    <Content Include="Content\PageSooratInsert.aspx" />
+    <Content Include="Content\PageSooratList.aspx" />
+    <Content Include="Content\PageSooratMali.aspx" />
+    <Content Include="Content\PageSooratMaliOdats.aspx" />
+    <Content Include="Content\PageSooratNazerAnswer.aspx" />
+    <Content Include="Content\PageSooratNazerPaper.aspx" />
+    <Content Include="Content\PageSooratNew.aspx" />
+    <Content Include="Content\PageSooratOdats.aspx" />
+    <Content Include="Content\PageSooratOdatsMali.aspx" />
+    <Content Include="Content\PageSooratPage.aspx" />
+    <Content Include="Content\PageSooratPagesherkat.aspx" />
+    <Content Include="Content\PageSooratPaper.aspx" />
+    <Content Include="Content\PageSooratPaperEdare.aspx" />
+    <Content Include="Content\PageSooratPaperEdareMali.aspx" />
+    <Content Include="Content\PageSooratPaperErsal.aspx" />
+    <Content Include="Content\PageSooratPaperErsalMali.aspx" />
+    <Content Include="Content\PageSooratPaperSherkat.aspx" />
+    <Content Include="Content\PageSooratPaperSherkatMali.aspx" />
+    <Content Include="Content\PageSooratPardakht.aspx" />
+    <Content Include="Content\PageSooratPardakht2.aspx" />
+    <Content Include="Content\PageSooratPays.aspx" />
+    <Content Include="Content\PageSooratPishnevis.aspx" />
+    <Content Include="Content\PageSooratSendMali.aspx" />
+    <Content Include="Content\PageSooratSherkatAnswer.aspx" />
+    <Content Include="Content\PageTaeefPardakht.aspx" />
+    <Content Include="Content\PagetarhPishnehadi.aspx" />
+    <Content Include="Content\PageUploadXls.aspx" />
+    <Content Include="Content\PageZarfiatDashboard.aspx" />
+    <Content Include="Content\PageZarfiatReport.aspx" />
+    <Content Include="Content\Rep11.aspx" />
+    <Content Include="Content\ReportAnswerSherkatPending.aspx" />
+    <Content Include="Content\ReportAnswerTadarokatPending.aspx" />
+    <Content Include="Content\ReportBuilders.aspx" />
+    <Content Include="Content\ReportCancle.aspx" />
+    <Content Include="Content\ReportDastavard.aspx" />
+    <Content Include="Content\ReportDiagram.aspx" />
+    <Content Include="Content\ReportErsalBeSherkat.aspx" />
+    <Content Include="Content\ReportEstelamPending.aspx" />
+    <Content Include="Content\ReportGharardad.aspx" />
+    <Content Include="Content\ReportGharardadEblaghPening.aspx" />
+    <Content Include="Content\ReportGharardadEstelamAnswerPending.aspx" />
+    <Content Include="Content\ReportGharardadEstelamPending.aspx" />
+    <Content Include="Content\ReportGharardadPishnevis.aspx" />
+    <Content Include="Content\ReportGharardadTadarokPending.aspx" />
+    <Content Include="Content\ReportKhobreganEtmam.aspx" />
+    <Content Include="Content\ReportKhobreganMosavab.aspx" />
+    <Content Include="Content\ReportKhobreganMosavabEtmam.aspx" />
+    <Content Include="Content\ReportKhobreganPending.aspx" />
+    <Content Include="Content\ReportKhobreganRad.aspx" />
+    <Content Include="Content\ReportNoEstelam.aspx" />
+    <Content Include="Content\ReportPishnevisPending.aspx" />
+    <Content Include="Content\ReportProjectKhobregan.aspx" />
+    <Content Include="Content\ReportTadarokatPending.aspx" />
+    <Content Include="Content\site.css" />
+    <Content Include="fonts\WebYekan.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="PagePages2.aspx" />
+    <Content Include="test.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonClass.cs" />
+    <Compile Include="Content\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\DashboardNew.aspx.cs">
+      <DependentUpon>DashboardNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\DashboardNew.aspx.designer.cs">
+      <DependentUpon>DashboardNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAdminPages.aspx.cs">
+      <DependentUpon>PageAdminPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAdminPages.aspx.designer.cs">
+      <DependentUpon>PageAdminPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAdminPremission.aspx.cs">
+      <DependentUpon>PageAdminPremission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAdminPremission.aspx.designer.cs">
+      <DependentUpon>PageAdminPremission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAdminProject.aspx.cs">
+      <DependentUpon>PageAdminProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAdminProject.aspx.designer.cs">
+      <DependentUpon>PageAdminProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAdmins.aspx.cs">
+      <DependentUpon>PageAdmins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAdmins.aspx.designer.cs">
+      <DependentUpon>PageAdmins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAnswer2.aspx.cs">
+      <DependentUpon>PageAnswer2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAnswer2.aspx.designer.cs">
+      <DependentUpon>PageAnswer2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAnswer3.aspx.cs">
+      <DependentUpon>PageAnswer3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAnswer3.aspx.designer.cs">
+      <DependentUpon>PageAnswer3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAnswer4.aspx.cs">
+      <DependentUpon>PageAnswer4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAnswer4.aspx.designer.cs">
+      <DependentUpon>PageAnswer4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAnswerAnalyz.aspx.cs">
+      <DependentUpon>PageAnswerAnalyz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAnswerAnalyz.aspx.designer.cs">
+      <DependentUpon>PageAnswerAnalyz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAnswerEdarat.aspx.cs">
+      <DependentUpon>PageAnswerEdarat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAnswerEdarat.aspx.designer.cs">
+      <DependentUpon>PageAnswerEdarat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAnswerEdarat2.aspx.cs">
+      <DependentUpon>PageAnswerEdarat2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAnswerEdarat2.aspx.designer.cs">
+      <DependentUpon>PageAnswerEdarat2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAnswerGharardad.aspx.cs">
+      <DependentUpon>PageAnswerGharardad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAnswerGharardad.aspx.designer.cs">
+      <DependentUpon>PageAnswerGharardad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageAttach.aspx.cs">
+      <DependentUpon>PageAttach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageAttach.aspx.designer.cs">
+      <DependentUpon>PageAttach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\pageBody.aspx.cs">
+      <DependentUpon>pageBody.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\pageBody.aspx.designer.cs">
+      <DependentUpon>pageBody.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageChangePwd.aspx.cs">
+      <DependentUpon>PageChangePwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageChangePwd.aspx.designer.cs">
+      <DependentUpon>PageChangePwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageCreateUser.aspx.cs">
+      <DependentUpon>PageCreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageCreateUser.aspx.designer.cs">
+      <DependentUpon>PageCreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageDashboardMosavab.aspx.cs">
+      <DependentUpon>PageDashboardMosavab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageDashboardMosavab.aspx.designer.cs">
+      <DependentUpon>PageDashboardMosavab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageDashboardMosavab2.aspx.cs">
+      <DependentUpon>PageDashboardMosavab2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageDashboardMosavab2.aspx.designer.cs">
+      <DependentUpon>PageDashboardMosavab2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageDenied.aspx.cs">
+      <DependentUpon>PageDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageDenied.aspx.designer.cs">
+      <DependentUpon>PageDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageDiagram.aspx.cs">
+      <DependentUpon>PageDiagram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageDiagram.aspx.designer.cs">
+      <DependentUpon>PageDiagram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageDiagram2.aspx.cs">
+      <DependentUpon>PageDiagram2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageDiagram2.aspx.designer.cs">
+      <DependentUpon>PageDiagram2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageDt.aspx.cs">
+      <DependentUpon>PageDt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageDt.aspx.designer.cs">
+      <DependentUpon>PageDt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageEd.aspx.cs">
+      <DependentUpon>PageEd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageEd.aspx.designer.cs">
+      <DependentUpon>PageEd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageEdarat.aspx.cs">
+      <DependentUpon>PageEdarat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageEdarat.aspx.designer.cs">
+      <DependentUpon>PageEdarat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageEdarat2.aspx.cs">
+      <DependentUpon>PageEdarat2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageEdarat2.aspx.designer.cs">
+      <DependentUpon>PageEdarat2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageEdarat3.aspx.cs">
+      <DependentUpon>PageEdarat3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageEdarat3.aspx.designer.cs">
+      <DependentUpon>PageEdarat3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageElhaghNew.aspx.cs">
+      <DependentUpon>PageElhaghNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageElhaghNew.aspx.designer.cs">
+      <DependentUpon>PageElhaghNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageEstelamGharardad.aspx.cs">
+      <DependentUpon>PageEstelamGharardad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageEstelamGharardad.aspx.designer.cs">
+      <DependentUpon>PageEstelamGharardad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageEstelamMohtavayi.aspx.cs">
+      <DependentUpon>PageEstelamMohtavayi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageEstelamMohtavayi.aspx.designer.cs">
+      <DependentUpon>PageEstelamMohtavayi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageEstelamVahed.aspx.cs">
+      <DependentUpon>PageEstelamVahed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageEstelamVahed.aspx.designer.cs">
+      <DependentUpon>PageEstelamVahed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageEstelamVahedNazar.aspx.cs">
+      <DependentUpon>PageEstelamVahedNazar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageEstelamVahedNazar.aspx.designer.cs">
+      <DependentUpon>PageEstelamVahedNazar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageFinalDashboard.aspx.cs">
+      <DependentUpon>PageFinalDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageFinalDashboard.aspx.designer.cs">
+      <DependentUpon>PageFinalDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageGharardad.aspx.cs">
+      <DependentUpon>PageGharardad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageGharardad.aspx.designer.cs">
+      <DependentUpon>PageGharardad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageGharardadCode.aspx.cs">
+      <DependentUpon>PageGharardadCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageGharardadCode.aspx.designer.cs">
+      <DependentUpon>PageGharardadCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageGharardadEblagh.aspx.cs">
+      <DependentUpon>PageGharardadEblagh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageGharardadEblagh.aspx.designer.cs">
+      <DependentUpon>PageGharardadEblagh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageHeyatNezarat.aspx.cs">
+      <DependentUpon>PageHeyatNezarat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageHeyatNezarat.aspx.designer.cs">
+      <DependentUpon>PageHeyatNezarat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageHeyatNezaratMosavab.aspx.cs">
+      <DependentUpon>PageHeyatNezaratMosavab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageHeyatNezaratMosavab.aspx.designer.cs">
+      <DependentUpon>PageHeyatNezaratMosavab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageIndex1.aspx.cs">
+      <DependentUpon>PageIndex1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageIndex1.aspx.designer.cs">
+      <DependentUpon>PageIndex1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageIndex2.aspx.cs">
+      <DependentUpon>PageIndex2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageIndex2.aspx.designer.cs">
+      <DependentUpon>PageIndex2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageIndex3.aspx.cs">
+      <DependentUpon>PageIndex3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageIndex3.aspx.designer.cs">
+      <DependentUpon>PageIndex3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageInfoSetting.aspx.cs">
+      <DependentUpon>PageInfoSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageInfoSetting.aspx.designer.cs">
+      <DependentUpon>PageInfoSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageIsAdmin.aspx.cs">
+      <DependentUpon>PageIsAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageIsAdmin.aspx.designer.cs">
+      <DependentUpon>PageIsAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageKhobPaper.aspx.cs">
+      <DependentUpon>PageKhobPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageKhobPaper.aspx.designer.cs">
+      <DependentUpon>PageKhobPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageKhobregan.aspx.cs">
+      <DependentUpon>PageKhobregan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageKhobregan.aspx.designer.cs">
+      <DependentUpon>PageKhobregan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageKhobreganDashboard.aspx.cs">
+      <DependentUpon>PageKhobreganDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageKhobreganDashboard.aspx.designer.cs">
+      <DependentUpon>PageKhobreganDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageKhobreganMosavab.aspx.cs">
+      <DependentUpon>PageKhobreganMosavab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageKhobreganMosavab.aspx.designer.cs">
+      <DependentUpon>PageKhobreganMosavab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\pageMosavabat.aspx.cs">
+      <DependentUpon>pageMosavabat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\pageMosavabat.aspx.designer.cs">
+      <DependentUpon>pageMosavabat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageNewProject.aspx.cs">
+      <DependentUpon>PageNewProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageNewProject.aspx.designer.cs">
+      <DependentUpon>PageNewProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PagePages.aspx.cs">
+      <DependentUpon>PagePages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PagePages.aspx.designer.cs">
+      <DependentUpon>PagePages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PagePg.aspx.cs">
+      <DependentUpon>PagePg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PagePg.aspx.designer.cs">
+      <DependentUpon>PagePg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageProjectList.aspx.cs">
+      <DependentUpon>PageProjectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageProjectList.aspx.designer.cs">
+      <DependentUpon>PageProjectList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PagePropozalFirst.aspx.cs">
+      <DependentUpon>PagePropozalFirst.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PagePropozalFirst.aspx.designer.cs">
+      <DependentUpon>PagePropozalFirst.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageReportFull.aspx.cs">
+      <DependentUpon>PageReportFull.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageReportFull.aspx.designer.cs">
+      <DependentUpon>PageReportFull.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageReval.aspx.cs">
+      <DependentUpon>PageReval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageReval.aspx.designer.cs">
+      <DependentUpon>PageReval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageRole.aspx.cs">
+      <DependentUpon>PageRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageRole.aspx.designer.cs">
+      <DependentUpon>PageRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSheaseNumber.aspx.cs">
+      <DependentUpon>PageSheaseNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSheaseNumber.aspx.designer.cs">
+      <DependentUpon>PageSheaseNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratAnswers.aspx.cs">
+      <DependentUpon>PageSooratAnswers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratAnswers.aspx.designer.cs">
+      <DependentUpon>PageSooratAnswers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratEdit.aspx.cs">
+      <DependentUpon>PageSooratEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratEdit.aspx.designer.cs">
+      <DependentUpon>PageSooratEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratErsalSHerkat.aspx.cs">
+      <DependentUpon>PageSooratErsalSHerkat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratErsalSHerkat.aspx.designer.cs">
+      <DependentUpon>PageSooratErsalSHerkat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratEstelam.aspx.cs">
+      <DependentUpon>PageSooratEstelam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratEstelam.aspx.designer.cs">
+      <DependentUpon>PageSooratEstelam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratEstelamMojadad.aspx.cs">
+      <DependentUpon>PageSooratEstelamMojadad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratEstelamMojadad.aspx.designer.cs">
+      <DependentUpon>PageSooratEstelamMojadad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratFull.aspx.cs">
+      <DependentUpon>PageSooratFull.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratFull.aspx.designer.cs">
+      <DependentUpon>PageSooratFull.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratInsert.aspx.cs">
+      <DependentUpon>PageSooratInsert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratInsert.aspx.designer.cs">
+      <DependentUpon>PageSooratInsert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratList.aspx.cs">
+      <DependentUpon>PageSooratList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratList.aspx.designer.cs">
+      <DependentUpon>PageSooratList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratMali.aspx.cs">
+      <DependentUpon>PageSooratMali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratMali.aspx.designer.cs">
+      <DependentUpon>PageSooratMali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratMaliOdats.aspx.cs">
+      <DependentUpon>PageSooratMaliOdats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratMaliOdats.aspx.designer.cs">
+      <DependentUpon>PageSooratMaliOdats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratNazerAnswer.aspx.cs">
+      <DependentUpon>PageSooratNazerAnswer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratNazerAnswer.aspx.designer.cs">
+      <DependentUpon>PageSooratNazerAnswer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratNazerPaper.aspx.cs">
+      <DependentUpon>PageSooratNazerPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratNazerPaper.aspx.designer.cs">
+      <DependentUpon>PageSooratNazerPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratNew.aspx.cs">
+      <DependentUpon>PageSooratNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratNew.aspx.designer.cs">
+      <DependentUpon>PageSooratNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratOdats.aspx.cs">
+      <DependentUpon>PageSooratOdats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratOdats.aspx.designer.cs">
+      <DependentUpon>PageSooratOdats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratOdatsMali.aspx.cs">
+      <DependentUpon>PageSooratOdatsMali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratOdatsMali.aspx.designer.cs">
+      <DependentUpon>PageSooratOdatsMali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPage.aspx.cs">
+      <DependentUpon>PageSooratPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPage.aspx.designer.cs">
+      <DependentUpon>PageSooratPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPagesherkat.aspx.cs">
+      <DependentUpon>PageSooratPagesherkat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPagesherkat.aspx.designer.cs">
+      <DependentUpon>PageSooratPagesherkat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPaper.aspx.cs">
+      <DependentUpon>PageSooratPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPaper.aspx.designer.cs">
+      <DependentUpon>PageSooratPaper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperEdare.aspx.cs">
+      <DependentUpon>PageSooratPaperEdare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperEdare.aspx.designer.cs">
+      <DependentUpon>PageSooratPaperEdare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperEdareMali.aspx.cs">
+      <DependentUpon>PageSooratPaperEdareMali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperEdareMali.aspx.designer.cs">
+      <DependentUpon>PageSooratPaperEdareMali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperErsal.aspx.cs">
+      <DependentUpon>PageSooratPaperErsal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperErsal.aspx.designer.cs">
+      <DependentUpon>PageSooratPaperErsal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperErsalMali.aspx.cs">
+      <DependentUpon>PageSooratPaperErsalMali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperErsalMali.aspx.designer.cs">
+      <DependentUpon>PageSooratPaperErsalMali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperSherkat.aspx.cs">
+      <DependentUpon>PageSooratPaperSherkat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperSherkat.aspx.designer.cs">
+      <DependentUpon>PageSooratPaperSherkat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperSherkatMali.aspx.cs">
+      <DependentUpon>PageSooratPaperSherkatMali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPaperSherkatMali.aspx.designer.cs">
+      <DependentUpon>PageSooratPaperSherkatMali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPardakht.aspx.cs">
+      <DependentUpon>PageSooratPardakht.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPardakht.aspx.designer.cs">
+      <DependentUpon>PageSooratPardakht.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPardakht2.aspx.cs">
+      <DependentUpon>PageSooratPardakht2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPardakht2.aspx.designer.cs">
+      <DependentUpon>PageSooratPardakht2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPays.aspx.cs">
+      <DependentUpon>PageSooratPays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPays.aspx.designer.cs">
+      <DependentUpon>PageSooratPays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratPishnevis.aspx.cs">
+      <DependentUpon>PageSooratPishnevis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratPishnevis.aspx.designer.cs">
+      <DependentUpon>PageSooratPishnevis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratSendMali.aspx.cs">
+      <DependentUpon>PageSooratSendMali.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratSendMali.aspx.designer.cs">
+      <DependentUpon>PageSooratSendMali.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageSooratSherkatAnswer.aspx.cs">
+      <DependentUpon>PageSooratSherkatAnswer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageSooratSherkatAnswer.aspx.designer.cs">
+      <DependentUpon>PageSooratSherkatAnswer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageTaeefPardakht.aspx.cs">
+      <DependentUpon>PageTaeefPardakht.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageTaeefPardakht.aspx.designer.cs">
+      <DependentUpon>PageTaeefPardakht.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PagetarhPishnehadi.aspx.cs">
+      <DependentUpon>PagetarhPishnehadi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PagetarhPishnehadi.aspx.designer.cs">
+      <DependentUpon>PagetarhPishnehadi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageUploadXls.aspx.cs">
+      <DependentUpon>PageUploadXls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageUploadXls.aspx.designer.cs">
+      <DependentUpon>PageUploadXls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageZarfiatDashboard.aspx.cs">
+      <DependentUpon>PageZarfiatDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageZarfiatDashboard.aspx.designer.cs">
+      <DependentUpon>PageZarfiatDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PageZarfiatReport.aspx.cs">
+      <DependentUpon>PageZarfiatReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PageZarfiatReport.aspx.designer.cs">
+      <DependentUpon>PageZarfiatReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Rep11.aspx.cs">
+      <DependentUpon>Rep11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Rep11.aspx.designer.cs">
+      <DependentUpon>Rep11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportAnswerSherkatPending.aspx.cs">
+      <DependentUpon>ReportAnswerSherkatPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportAnswerSherkatPending.aspx.designer.cs">
+      <DependentUpon>ReportAnswerSherkatPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportAnswerTadarokatPending.aspx.cs">
+      <DependentUpon>ReportAnswerTadarokatPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportAnswerTadarokatPending.aspx.designer.cs">
+      <DependentUpon>ReportAnswerTadarokatPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportBuilders.aspx.cs">
+      <DependentUpon>ReportBuilders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportBuilders.aspx.designer.cs">
+      <DependentUpon>ReportBuilders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportCancle.aspx.cs">
+      <DependentUpon>ReportCancle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportCancle.aspx.designer.cs">
+      <DependentUpon>ReportCancle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportDastavard.aspx.cs">
+      <DependentUpon>ReportDastavard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportDastavard.aspx.designer.cs">
+      <DependentUpon>ReportDastavard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportDiagram.aspx.cs">
+      <DependentUpon>ReportDiagram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportDiagram.aspx.designer.cs">
+      <DependentUpon>ReportDiagram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportErsalBeSherkat.aspx.cs">
+      <DependentUpon>ReportErsalBeSherkat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportErsalBeSherkat.aspx.designer.cs">
+      <DependentUpon>ReportErsalBeSherkat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportEstelamPending.aspx.cs">
+      <DependentUpon>ReportEstelamPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportEstelamPending.aspx.designer.cs">
+      <DependentUpon>ReportEstelamPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportGharardad.aspx.cs">
+      <DependentUpon>ReportGharardad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportGharardad.aspx.designer.cs">
+      <DependentUpon>ReportGharardad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportGharardadEblaghPening.aspx.cs">
+      <DependentUpon>ReportGharardadEblaghPening.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportGharardadEblaghPening.aspx.designer.cs">
+      <DependentUpon>ReportGharardadEblaghPening.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportGharardadEstelamAnswerPending.aspx.cs">
+      <DependentUpon>ReportGharardadEstelamAnswerPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportGharardadEstelamAnswerPending.aspx.designer.cs">
+      <DependentUpon>ReportGharardadEstelamAnswerPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportGharardadEstelamPending.aspx.cs">
+      <DependentUpon>ReportGharardadEstelamPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportGharardadEstelamPending.aspx.designer.cs">
+      <DependentUpon>ReportGharardadEstelamPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportGharardadPishnevis.aspx.cs">
+      <DependentUpon>ReportGharardadPishnevis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportGharardadPishnevis.aspx.designer.cs">
+      <DependentUpon>ReportGharardadPishnevis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportGharardadTadarokPending.aspx.cs">
+      <DependentUpon>ReportGharardadTadarokPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportGharardadTadarokPending.aspx.designer.cs">
+      <DependentUpon>ReportGharardadTadarokPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganEtmam.aspx.cs">
+      <DependentUpon>ReportKhobreganEtmam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganEtmam.aspx.designer.cs">
+      <DependentUpon>ReportKhobreganEtmam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganMosavab.aspx.cs">
+      <DependentUpon>ReportKhobreganMosavab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganMosavab.aspx.designer.cs">
+      <DependentUpon>ReportKhobreganMosavab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganMosavabEtmam.aspx.cs">
+      <DependentUpon>ReportKhobreganMosavabEtmam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganMosavabEtmam.aspx.designer.cs">
+      <DependentUpon>ReportKhobreganMosavabEtmam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganPending.aspx.cs">
+      <DependentUpon>ReportKhobreganPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganPending.aspx.designer.cs">
+      <DependentUpon>ReportKhobreganPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganRad.aspx.cs">
+      <DependentUpon>ReportKhobreganRad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportKhobreganRad.aspx.designer.cs">
+      <DependentUpon>ReportKhobreganRad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportNoEstelam.aspx.cs">
+      <DependentUpon>ReportNoEstelam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportNoEstelam.aspx.designer.cs">
+      <DependentUpon>ReportNoEstelam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportPishnevisPending.aspx.cs">
+      <DependentUpon>ReportPishnevisPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportPishnevisPending.aspx.designer.cs">
+      <DependentUpon>ReportPishnevisPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportProjectKhobregan.aspx.cs">
+      <DependentUpon>ReportProjectKhobregan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportProjectKhobregan.aspx.designer.cs">
+      <DependentUpon>ReportProjectKhobregan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReportTadarokatPending.aspx.cs">
+      <DependentUpon>ReportTadarokatPending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReportTadarokatPending.aspx.designer.cs">
+      <DependentUpon>ReportTadarokatPending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataClassesDiagram.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClassesDiagram.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MellatModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MellatModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MellatModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MellatModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MellatModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PagePages2.aspx.cs">
+      <DependentUpon>PagePages2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagePages2.aspx.designer.cs">
+      <DependentUpon>PagePages2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="prInformation.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityClass.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="tbAccessPage.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbAdmin.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbAdminInPage.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbAdminPremission.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbAdminProject.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbAminPremissionAccess.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbChart.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbElhaghie.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbEstelamVahed.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbFile.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbGharardad.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbHeyatNezarat.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbHeyatNezaratMosavab.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbIndex1.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbKhbregan.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbKhobreganMosavab.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbNazar.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbPage.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbPaperProject.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbProject.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbProjectPaper.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbReval.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbShenaseNumber.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbSooratHesab.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbSooratPishNevi.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTarhPishnehadi.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbTemp.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vwDashboardAmaliatiSarRedisNashode.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwHeyatNezarat.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwHeyatNezarat2.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavab2.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavab3.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavab4.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavab5.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavab6.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavab7.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavabDashboard.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavabDashboardAjam.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavabDashboardAmaliatiAnjam.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavabDashboardAmaliatiTakhir.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMosavabDashboardTakhir.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwNoEstelam.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwServerDate.cs">
+      <DependentUpon>MellatModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZarfiatDataContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZarfiatDataContext.dbml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+    <Content Include="fonts\bbc-nassim-regular.eot" />
+    <Content Include="fonts\bbc-nassim-regular.ttf" />
+    <Content Include="fonts\bbc-nassim-regular.woff" />
+    <Content Include="fonts\BMitra.eot" />
+    <Content Include="fonts\BMitra.ttf" />
+    <Content Include="fonts\BMitra.woff" />
+    <Content Include="fonts\BTrafcBd.ttf" />
+    <Content Include="fonts\BTraffic.ttf" />
+    <Content Include="fonts\BYekan.ttf" />
+    <Content Include="fonts\nassim-bold.eot" />
+    <Content Include="fonts\nassim-bold.ttf" />
+    <Content Include="fonts\nassim-bold.woff" />
+    <Content Include="fonts\nassim-regular.eot" />
+    <Content Include="fonts\nassim-regular.ttf" />
+    <Content Include="fonts\nassim-regular.woff" />
+    <Content Include="fonts\terafik.ttf" />
+    <Content Include="fonts\WebYekan.eot" />
+    <Content Include="fonts\WebYekan.ttf" />
+    <Content Include="fonts\WebYekan.woff" />
+    <EntityDeploy Include="MellatModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MellatModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MellatModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MellatModel.edmx</DependentUpon>
+      <LastGenOutput>MellatModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MellatModel.edmx.diagram">
+      <DependentUpon>MellatModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="MellatModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MellatModel.edmx</DependentUpon>
+      <LastGenOutput>MellatModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="DataClassesDiagram.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClassesDiagram.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\gozaresh.pptx" />
+    <Content Include="Content\gazaresh94.pptx" />
+    <Content Include="Content\gazaresh95.pptx" />
+    <None Include="Properties\PublishProfiles\Mellat1.pubxml" />
+    <Content Include="Site2.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="ZarfiatDataContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ZarfiatDataContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ZarfiatDataContext.dbml.layout">
+      <DependentUpon>ZarfiatDataContext.dbml</DependentUpon>
+    </None>
+    <None Include="DataClassesDiagram.dbml.layout">
+      <DependentUpon>DataClassesDiagram.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BootStrapTheme\.idea\" />
+    <Folder Include="BootStrapTheme\bower_components\" />
+    <Folder Include="BootStrapTheme\build\" />
+    <Folder Include="BootStrapTheme\dist\" />
+    <Folder Include="BootStrapTheme\documentation\" />
+    <Folder Include="BootStrapTheme\pages\" />
+    <Folder Include="BootStrapTheme\plugins\" />
+    <Folder Include="Content\BootStrapTheme\.idea\" />
+    <Folder Include="Content\BootStrapTheme\bower_components\" />
+    <Folder Include="Content\BootStrapTheme\build\" />
+    <Folder Include="Content\BootStrapTheme\documentation\" />
+    <Folder Include="Content\BootStrapTheme\pages\" />
+    <Folder Include="Content\BootStrapTheme\plugins\" />
+    <Folder Include="Content\images\Documents\" />
+    <Folder Include="Content\tmp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>43916</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:43956/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

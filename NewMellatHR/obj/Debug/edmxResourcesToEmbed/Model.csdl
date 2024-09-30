@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectServer_Reporting_faModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MSP_EpmResource_UserView">
+    <Key>
+      <PropertyRef Name="ResourceUID" />
+      <PropertyRef Name="ResourceName" />
+      <PropertyRef Name="ResourceStandardRate" />
+      <PropertyRef Name="ResourceOvertimeRate" />
+      <PropertyRef Name="ResourceStatusUID" />
+      <PropertyRef Name="ResourceCostPerUse" />
+      <PropertyRef Name="ResourceType" />
+      <PropertyRef Name="ResourceMaxUnits" />
+      <PropertyRef Name="ResourceCanLevel" />
+      <PropertyRef Name="ResourceIsActive" />
+      <PropertyRef Name="ResourceIsGeneric" />
+      <PropertyRef Name="ResourceIsTeam" />
+      <PropertyRef Name="ResourceClientUniqueId" />
+      <PropertyRef Name="ResourceCreatedRevisionCounter" />
+      <PropertyRef Name="ResourceModifiedRevisionCounter" />
+      <PropertyRef Name="ResourceCreatedDate" />
+      <PropertyRef Name="ResourceModifiedDate" />
+      <PropertyRef Name="ResourceCount" />
+    </Key>
+    <Property Name="ResourceUID" Type="Guid" Nullable="false" />
+    <Property Name="ResourceName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ResourceStandardRate" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="ResourceOvertimeRate" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="ResourceStatusUID" Type="Guid" Nullable="false" />
+    <Property Name="ResourceCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceCostPerUse" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="ResourceEmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceInitials" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceMaterialLabel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceType" Type="Int16" Nullable="false" />
+    <Property Name="ResourceGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceMaxUnits" Type="Decimal" Precision="25" Scale="6" Nullable="false" />
+    <Property Name="ResourceBookingType" Type="Byte" />
+    <Property Name="ResourceTimesheetManagerUID" Type="Guid" />
+    <Property Name="ResourceEarliestAvailableFrom" Type="DateTime" Precision="3" />
+    <Property Name="ResourceLatestAvailableTo" Type="DateTime" Precision="3" />
+    <Property Name="ResourceCanLevel" Type="Boolean" Nullable="false" />
+    <Property Name="ResourceHyperlink" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceHyperlinkHref" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceNTAccount" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceIsActive" Type="Boolean" Nullable="false" />
+    <Property Name="ResourceIsGeneric" Type="Boolean" Nullable="false" />
+    <Property Name="ResourceIsTeam" Type="Boolean" Nullable="false" />
+    <Property Name="ResourceBaseCalendar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceWorkgroup" Type="Int16" />
+    <Property Name="ResourceClientUniqueId" Type="Int32" Nullable="false" />
+    <Property Name="ResourceCostCenter" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ResourceCreatedRevisionCounter" Type="Int32" Nullable="false" />
+    <Property Name="ResourceModifiedRevisionCounter" Type="Int32" Nullable="false" />
+    <Property Name="ResourceCreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ResourceModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ResourceCount" Type="Int32" Nullable="false" />
+    <Property Name="RBS" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="نوع_هزینه" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="دپارتمان_های_منبع" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="نام_و_نام_خانوادگی" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="کد_پرسنلی" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ProjectServer_Reporting_faEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MSP_EpmResource_UserView" EntityType="Self.MSP_EpmResource_UserView" />
+    <EntitySet Name="HrEmployeeDetails" EntityType="ProjectServer_Reporting_faModel.HrEmployeeDetail" />
+  </EntityContainer>
+  <EntityType Name="HrEmployeeDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeCode" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentCode" Type="Int32" />
+    <Property Name="Unit" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UnitCode" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="StatusCode" Type="Int32" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,749 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PageDiagram.aspx.cs" Inherits="NewMellat.Content.PageDiagram" %>
+
+<%@ Register assembly="DevExpress.Web.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        
+        .KadrQuick
+{
+            border: 1px solid #FFBA8C;
+            background-color: #FFFFFF;
+            padding: 5px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            text-decoration: none;
+            font-family: "b yekan";
+            font-size: 13px;
+        }
+        .WidhtCell {
+            padding: 2px;
+            height: 50px;
+            text-align: center;
+        }
+        .left {
+            font-family: tahoma;
+            font-size: 12px;
+            color: #663300;
+            width: 200px;
+            text-align: right;
+            padding-right: 1px;
+        }
+        .right {
+            font-family: "b yekan";
+            font-size: 12px;
+            color: #663300;
+            width: 100px;
+            text-align: right;
+        }
+        .KadrQuick2 {
+            border: 1px solid #663300;
+            background-color: #FFFFFF;
+            padding: 5px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            text-decoration: none;
+            font-family: "b yekan";
+            font-size: 13px;
+        }
+        .auto-style1 {
+            font-family: tahoma;
+            font-size: 12px;
+            color: #663300;
+            width: 200px;
+            text-align: right;
+            padding-right: 1px;
+            height: 36px;
+        }
+        .auto-style2 {
+            font-family: "b yekan";
+            font-size: 12px;
+            color: #663300;
+            width: 100px;
+            text-align: right;
+            height: 36px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align="center">
+    
+        <div align="center">
+            <table align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img1" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:SqlDataSource ID="source1" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT        tbProjects.prId, tbProjects.prTitle, tbProjects.prAct, tbProjects.prRegDate, tbProjects.prRegUser, tbProjects.prVahed, tbProjects.prProjectType, tbProjects.prSanadType, tbProjects.prOlaviat, 
+                         tbProjects.prPeymankar, tbProjects.status1, tbProjects.status2, tbProjects.status3, tbProjects.prStatus, tbProjects.prISEstelam, tbProjects.prIsMohtava, tbProjects.irIsAnalyz, tbProjects.prIsTarh, 
+                         tbProjects.prIsEstelamMohtavayi, tbProjects.prEstelamIsSubmit, tbProjects.prIsErsalBeSherkat, tbProjects.prIsAnswerTadarokatPending, tbProjects.prTarhJalasePending, tbProjects.prPishnevisPending, 
+                         tbProjects.prEstelamPending, prInformation.infTitle, tbProjectPaper.paType, tbProjectPaper.paAct, tbProjectPaper.paShenase, tbProjectPaper.paDate, prInformation_1.infTitle AS sanad
+FROM            tbProjects INNER JOIN
+                         prInformation ON tbProjects.prVahed = prInformation.infId INNER JOIN
+                         tbProjectPaper ON tbProjects.prId = tbProjectPaper.paProject INNER JOIN
+                         prInformation AS prInformation_1 ON tbProjects.prSanadType = prInformation_1.infId
+WHERE        (tbProjects.prId = @prId) AND (tbProjectPaper.paAct = 1) AND (tbProjectPaper.paType = 1)">
+                            <SelectParameters>
+                                <asp:QueryStringParameter Name="prId" QueryStringField="id" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img2" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img3" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img4" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label1" runat="server" Text="ثبت پروژه"></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Content/images/icons/Arrow-OutRight-icon.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label10" runat="server" Text="طرح در خبرگان"></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="Image3" runat="server" ImageUrl="~/Content/images/icons/Arrow-OutRight-icon.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label11" runat="server" Text="مصوب"></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="Image12" runat="server" ImageUrl="~/Content/images/icons/Arrow-OutRight-icon.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label12" runat="server" Text="دریافت پروپوزال"></asp:Label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="prId" DataSourceID="source1" GridLines="None" OnDataBound="GridView1_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label6" runat="server" Text='<%# Eval("infTitle") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label2" runat="server" Text=":متولی"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label7" runat="server" Text='<%# Eval("sanad") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label3" runat="server" Text=":نوع سند"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label8" runat="server" Text='<%# Eval("paShenase") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label4" runat="server" Text=":شناسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label9" runat="server" Text='<%# Eval("paDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label5" runat="server" Text=":تاریخ"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="khId" DataSourceID="Source2" GridLines="None" PageSize="1" ShowHeader="False" OnDataBound="GridView2_DataBound" ShowHeaderWhenEmpty="True">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label20" runat="server" Text='<%# Eval("khJalaseDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label21" runat="server" Text=":تاریخ جلسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label22" runat="server" Text='<%# Eval("khJalaseNumber") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label23" runat="server" Text=":شماره جلسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="Source2" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT khJalaseNumber, khJalaseDate, khId FROM tbKhbregan WHERE (khProject = @khProject) AND (khAct = 1)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="khProject" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="mosId" DataSourceID="source3" GridLines="None" OnDataBound="GridView3_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label28" runat="server" Text='<%# Eval("mosOlaviat") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label29" runat="server" Text=":اولویت"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label30" runat="server" Text='<%# Eval("mosErsalDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label31" runat="server" Text=":مهلت ارسال پروپوزال"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="auto-style1">
+                                                        <asp:Label ID="Label32" runat="server" Text='<%# Eval("mosAmaliatiDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="auto-style2">
+                                                        <asp:Label ID="Label33" runat="server" Text=":مهلت عملیاتی شدن"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label34" runat="server"></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label35" runat="server" Text=":متولی"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="source3" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT        tbKhobreganMosavab.mosId, tbKhobreganMosavab.mosAct, tbKhobreganMosavab.mosKhob, tbKhobreganMosavab.mosShenase, tbKhobreganMosavab.mosNumber, tbKhobreganMosavab.mosDate, 
+                         tbKhobreganMosavab.mosErsalDate, tbKhobreganMosavab.mosAmaliatiDate, tbKhobreganMosavab.mosbody, tbKhobreganMosavab.mosType, tbKhobreganMosavab.mosPropozal, 
+                         tbKhobreganMosavab.mosOlaviat, tbKhobreganMosavab.mosProjectId, tbKhbregan.khProject, tbKhbregan.khAct
+FROM            tbKhobreganMosavab INNER JOIN
+                         tbKhbregan ON tbKhobreganMosavab.mosKhob = tbKhbregan.khId
+WHERE        (tbKhbregan.khProject = @khProject) AND (tbKhobreganMosavab.mosAct = 1) AND (tbKhbregan.khAct = 1)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="khProject" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="thId" DataSourceID="Source4" GridLines="None" OnDataBound="GridView4_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label36" runat="server" Text='<%# Eval("thPriceTolid") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label37" runat="server" Text=":مبلغ تولید"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label38" runat="server" Text='<%# Eval("thPricePosh") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label39" runat="server" Text=":مبلغ پشتیبانی"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label40" runat="server" Text='<%# Eval("thModatTolid") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label41" runat="server" Text=":مدت تولید"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label42" runat="server" Text='<%# Eval("thModatPosh") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label43" runat="server" Text=":مدت پشتیبانی"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="Source4" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbTarhPishnehadi.* FROM tbTarhPishnehadi WHERE (thProject = @thProject)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="thProject" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img8" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img7" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img6" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img5" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label16" runat="server" Text="مصوب"></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="Image11" runat="server" ImageUrl="~/Content/images/icons/Arrow-OutRight-icon2.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label15" runat="server" Text="طرح در هیات نظارت"></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="Image10" runat="server" ImageUrl="~/Content/images/icons/Arrow-OutRight-icon2.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label14" runat="server" Text="آنالیز قیمت "></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="Image13" runat="server" ImageUrl="~/Content/images/icons/Arrow-OutRight-icon2.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label13" runat="server" Text="استعلام پروپوزال"></asp:Label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView8" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataSourceID="s8" GridLines="None" OnDataBound="GridView8_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label72" runat="server" Text='<%# Eval("shBody") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label73" runat="server" Text=":شناسه صورتجلسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label74" runat="server" Text='<%# Eval("shStatus") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label75" runat="server" Text=":نتیجه صورتجلسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="s8" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString1 %>" SelectCommand="SELECT        tbHeyatNezarat.heProject, tbHeyatNezarat.heJalaseNumber, tbHeyatNezarat.heJalaseDate, tbHeyatNezarat.heIsElhaghie, tbHeyatNezarat.heAct, tbShenaseNumbers.shBody, tbShenaseNumbers.shStatus, 
+                         tbHeyatNezarat.heId
+FROM            tbHeyatNezarat INNER JOIN
+                         tbShenaseNumbers ON tbHeyatNezarat.heId = tbShenaseNumbers.shHeyat
+WHERE        (tbHeyatNezarat.heAct = 1) AND (tbHeyatNezarat.heProject = @id)
+">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="id" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView7" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataSourceID="s7" GridLines="None" OnDataBound="GridView7_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label64" runat="server" Text='<%# Eval("heJalaseNumber") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label65" runat="server" Text=":شناسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label66" runat="server" Text='<%# Eval("heJalaseDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label67" runat="server" Text=":تاریخ"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="s7" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT        heProject, heJalaseNumber, heJalaseDate, heIsElhaghie, heAct
+FROM            tbHeyatNezarat
+WHERE        (heAct = 1) AND (heProject = @prId)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="prId" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView6" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="paId" DataSourceID="Source6" GridLines="None" OnDataBound="GridView6_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label56" runat="server" Text='<%# Eval("paShenase") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label57" runat="server" Text=":شناسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label58" runat="server" Text='<%# Eval("paDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label59" runat="server" Text=":تاریخ"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="Source6" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT        tbProjectPaper.paShenase, tbProjectPaper.paDate, tbProjectPaper.paType, tbProjectPaper.paMainProjectId, tbProjectPaper.paAct, tbProjectPaper.paId, tbTarhPishnehadi.thProject, tbTarhPishnehadi.thAct
+FROM            tbProjectPaper INNER JOIN
+                         tbTarhPishnehadi ON tbProjectPaper.paProject = tbTarhPishnehadi.thId
+WHERE        (tbProjectPaper.paType = 9) AND (tbProjectPaper.paAct = 1) AND (tbTarhPishnehadi.thProject = @paMainProjectId)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="paMainProjectId" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView5" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="paId" DataSourceID="Source5" GridLines="None" OnDataBound="GridView5_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label48" runat="server" Text='<%# Eval("paShenase") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label49" runat="server" Text=":شناسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label50" runat="server" Text='<%# Eval("paDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label51" runat="server" Text=":تاریخ"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="Source5" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT        tbProjectPaper.paShenase, tbProjectPaper.paDate, tbProjectPaper.paType, tbProjectPaper.paMainProjectId, tbProjectPaper.paAct, tbProjectPaper.paId, tbTarhPishnehadi.thProject, tbTarhPishnehadi.thAct
+FROM            tbProjectPaper INNER JOIN
+                         tbTarhPishnehadi ON tbProjectPaper.paProject = tbTarhPishnehadi.thId
+WHERE        (tbProjectPaper.paType = 8) AND (tbProjectPaper.paAct = 1) AND (tbTarhPishnehadi.thProject = @paMainProjectId)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="paMainProjectId" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img9" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img10" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="img11" runat="server" ImageUrl="~/Content/images/icons/Button-Blank-Gray-icon24.png" />
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label17" runat="server" Text="دریافت پیش نویس قرارداد"></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="Image14" runat="server" ImageUrl="~/Content/images/icons/Arrow-OutRight-icon.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label18" runat="server" Text="استعلام پیش نویس"></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">
+                        <asp:Image ID="Image15" runat="server" ImageUrl="~/Content/images/icons/Arrow-OutRight-icon.png" />
+                    </td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label19" runat="server" Text="قرارداد"></asp:Label>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick">
+                        <asp:Label ID="Label104" runat="server" Text="توضیحات"></asp:Label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView9" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="ghId" DataSourceID="Source7" GridLines="None" OnDataBound="GridView9_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label80" runat="server" Text='<%# Eval("paShenase") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label81" runat="server" Text=":شناسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label82" runat="server" Text='<%# Eval("paDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label83" runat="server" Text=":تاریخ"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="Source7" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbGharardad.*, tbProjectPaper.paType, tbProjectPaper.paAct, tbProjectPaper.paShenase, tbProjectPaper.paDate FROM tbGharardad INNER JOIN tbProjectPaper ON tbGharardad.ghId = tbProjectPaper.paProject WHERE (tbGharardad.ghProject = @ghProject) AND (tbProjectPaper.paAct = 1) AND (tbProjectPaper.paType = 25)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="ghProject" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView12" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="ghId" DataSourceID="Source8" GridLines="None" OnDataBound="GridView12_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label100" runat="server" Text='<%# Eval("paShenase") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label101" runat="server" Text=":شناسه"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label102" runat="server" Text='<%# Eval("paDate") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label103" runat="server" Text=":تاریخ"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="Source8" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbGharardad.*, tbProjectPaper.paType, tbProjectPaper.paAct, tbProjectPaper.paShenase, tbProjectPaper.paDate FROM tbGharardad INNER JOIN tbProjectPaper ON tbGharardad.ghId = tbProjectPaper.paProject WHERE (tbGharardad.ghProject = @ghProject) AND (tbProjectPaper.paAct = 1) AND (tbProjectPaper.paType = 26)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="ghProject" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell" valign="top">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView11" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="ghId" DataSourceID="Source9" GridLines="None" OnDataBound="GridView11_DataBound" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="left">
+                                                        <asp:Label ID="Label92" runat="server" Text='<%# Eval("ghCode") %>'></asp:Label>
+                                                    </td>
+                                                    <td class="right">
+                                                        <asp:Label ID="Label93" runat="server" Text=":شماره قرارداد"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            <asp:SqlDataSource ID="Source9" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT tbGharardad.* FROM tbGharardad WHERE (ghProject = @ghProject)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter DefaultValue="" Name="ghProject" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </div>
+                    </td>
+                    <td class="WidhtCell">&nbsp;</td>
+                    <td class="WidhtCell">
+                        <div class="KadrQuick2">
+                        <asp:GridView ID="GridView13" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderStyle="None" BorderWidth="0px" DataKeyNames="prId" DataSourceID="Source10" GridLines="None" PageSize="1" ShowHeader="False">
+                            <Columns>
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <div align="center" dir="rtl" style="text-align: justify">
+                                            <asp:Label ID="Label105" runat="server" Text='<%# Eval("prBody") %>'></asp:Label>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                            <PagerSettings Visible="False" />
+                        </asp:GridView>
+                            </div>
+                            <asp:SqlDataSource ID="Source10" runat="server" ConnectionString="<%$ ConnectionStrings:NewMellatConnectionString %>" SelectCommand="SELECT prId, prBody FROM tbProjects WHERE (prId = @prId)">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter Name="prId" QueryStringField="id" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                </tr>
+            </table>
+        </div>
+    
+    </div>
+    </form>
+</body>
+</html>

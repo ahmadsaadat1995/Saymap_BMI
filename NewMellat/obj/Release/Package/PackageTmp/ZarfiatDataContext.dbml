@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NewMellat" Class="ZarfiatDataContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=NewMellat;Persist Security Info=True;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NewMellatConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.spZarfiat" Method="spZarfiat">
+    <Parameter Name="hajm" Type="System.Int32" DbType="Int" />
+    <Parameter Name="zarib" Type="System.Double" DbType="Float" />
+    <Parameter Name="dayAdd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="month1" Type="System.String" DbType="NVarChar(2)" />
+    <Parameter Name="month2" Type="System.String" DbType="NVarChar(2)" />
+    <Parameter Name="month3" Type="System.String" DbType="NVarChar(2)" />
+    <Parameter Name="olaviat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sanadType" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spZarfiatResult">
+      <Column Name="counts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sums" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="years" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="months" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="prProjectType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

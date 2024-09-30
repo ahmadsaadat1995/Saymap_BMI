@@ -1,0 +1,28 @@
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe.config
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.pdb
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\EntityFramework.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\EntityFramework.SqlServer.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\Newtonsoft.Json.dll
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\EntityFramework.xml
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\EntityFramework.SqlServer.xml
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\bin\Debug\Newtonsoft.Json.xml
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.csprojResolveAssemblyReference.cache
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.ProjectInstaller.resources
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.csproj.GenerateResource.Cache
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.exe
+Z:\E\WorkSpace\Visual Studio 2013\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.pdb
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe.config
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.exe
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\NewMellatWinService.pdb
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\EntityFramework.dll
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\EntityFramework.xml
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.csprojResolveAssemblyReference.cache
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.ProjectInstaller.resources
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.csproj.GenerateResource.Cache
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.exe
+D:\Projects\NewMellat\NewMellat\NewMellatWinService\obj\Debug\NewMellatWinService.pdb
